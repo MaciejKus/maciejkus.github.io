@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://MaciejKus.github.io/sitemap.xml 
+Sitemap: http://maciejkus.com/sitemap.xml 

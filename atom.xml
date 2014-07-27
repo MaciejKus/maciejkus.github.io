@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
-  <link href="http://MaciejKus.github.io/atom.xml" rel="self"/>
-  <link href="http://MaciejKus.github.io/"/>
-  <updated>2014-07-27T14:41:07-07:00</updated>
-  <id>http://MaciejKus.github.io/</id>
+  <link href="http://maciejkus.com/atom.xml" rel="self"/>
+  <link href="http://maciejkus.com/"/>
+  <updated>2014-07-27T15:36:48-07:00</updated>
+  <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Best Subnetting Site]]></title>
-    <link href="http://MaciejKus.github.io/blog/2014/07/27/the-best-subnetting-site/"/>
+    <link href="http://maciejkus.com/blog/2014/07/27/the-best-subnetting-site/"/>
     <updated>2014-07-27T14:08:58-07:00</updated>
-    <id>http://MaciejKus.github.io/blog/2014/07/27/the-best-subnetting-site</id>
+    <id>http://maciejkus.com/blog/2014/07/27/the-best-subnetting-site</id>
     <content type="html"><![CDATA[<p>I recently began to study for the CCNA. I am taking my sweet time with it, mostly because I have instead ended up working on improving my JavaScript skills. One way I combined the two was by creating a <a href='http://subnettingpractice.com'>subnetting practice</a> website. I found existing subnetting sites to be lacking. They were mostly text based with the same nine or so question types repeated over and over. These questions do little to teach someone when and why to actually use subnetting. They make sure the student knows how to calculate a subnet mask, but not how to implement that knowledge when given a network diagram. The site I created uses graphical questions and diagrams along with text based questions to make sure the learner knows how to calculate things like the network mask, but also knows when and why to calculate it.</p>
 
 
@@ -37,9 +37,9 @@
   
   <entry>
     <title type="html"><![CDATA[Setting Up Octopress]]></title>
-    <link href="http://MaciejKus.github.io/blog/2014/07/26/setting-up-octopress/"/>
+    <link href="http://maciejkus.com/blog/2014/07/26/setting-up-octopress/"/>
     <updated>2014-07-26T12:13:08-07:00</updated>
-    <id>http://MaciejKus.github.io/blog/2014/07/26/setting-up-octopress</id>
+    <id>http://maciejkus.com/blog/2014/07/26/setting-up-octopress</id>
     <content type="html"><![CDATA[<p>This site is powered by Octopress. Octopress is a static site generator. I am still working on getting things to look just how I want, but I am pretty happy so far. For a website I want something simple and to the point. I want content to be the first thing a visitor sees. </p>
 
 
