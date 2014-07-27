@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: projects, | Maciej Kus is not a Figure Skater]]></title>
+  <link href="http://MaciejKus.github.io/blog/categories/projects/atom.xml" rel="self"/>
+  <link href="http://MaciejKus.github.io/"/>
+  <updated>2014-07-27T14:41:07-07:00</updated>
+  <id>http://MaciejKus.github.io/</id>
+  <author>
+    <name><![CDATA[Maciej Kus]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Best Subnetting Site]]></title>
+    <link href="http://MaciejKus.github.io/blog/2014/07/27/the-best-subnetting-site/"/>
+    <updated>2014-07-27T14:08:58-07:00</updated>
+    <id>http://MaciejKus.github.io/blog/2014/07/27/the-best-subnetting-site</id>
+    <content type="html"><![CDATA[<p>I recently began to study for the CCNA. I am taking my sweet time with it, mostly because I have instead ended up working on improving my JavaScript skills. One way I combined the two was by creating a <a href='http://subnettingpractice.com'>subnetting practice</a> website. I found existing subnetting sites to be lacking. They were mostly text based with the same nine or so question types repeated over and over. These questions do little to teach someone when and why to actually use subnetting. They make sure the student knows how to calculate a subnet mask, but not how to implement that knowledge when given a network diagram. The site I created uses graphical questions and diagrams along with text based questions to make sure the learner knows how to calculate things like the network mask, but also knows when and why to calculate it.</p>
+
+
+<!-- more -->
+
+
+<p>I built the site from scratch. Originally I was going to only create the subnetting practice section of the site, but soon I realized that to write the type of questions I was wanting to write I would need to program a way to calculate variable length subnet mask (VLSM) subnetting, so I wrote a <a href='http://subnettingpractice.com/vlsm.html'>VLSM calculator</a>. Once I had this coded, I was able to create VLSM style questions. </p>
+
+
+<p>The Internet is moving towards IPv6 implementation and the CCNA is beginning to reflect that with IPv6 questions being added to the test. Because of this I added some fairly basic (but more than one should need for the CCNA) <a href=http://subnettingpractice.com/ipv6.html>IPv6 questions</a>. There are a number of other features, including exponent practice, basic subnetting practice, and interactive view of how large IPv6 is, and IPv6 and IPv4 calculators.</p>
+
+
+<p>I find the sit to be useful, both in making sure my subneting is accurate and quick and in checking my work with the calculators. It's nice to code something that is of value to me and others.</p>
+
+]]></content>
+  </entry>
+  
+</feed>

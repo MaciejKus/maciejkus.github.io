@@ -5,12 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Maciej Kus is not a Figure Skater</title>
+	<title>The Best Subnetting Site - Maciej Kus is not a Figure Skater</title>
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Maciej Kus is not a figure skater
-Maciej can barely ice skate at all. Instead of figure skating, you might find him coding, hiking or bicycling &hellip;">
+	<meta name="description" content="While studying for the CCNA I created the best subnetting site on the Internet">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ Maciej can barely ice skate at all. Instead of figure skating, you might find hi
 
 	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://MaciejKus.github.io/">
+	<link rel="canonical" href="http://MaciejKus.github.io/blog/2014/07/27/the-best-subnetting-site/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -80,36 +79,24 @@ Maciej can barely ice skate at all. Instead of figure skating, you might find hi
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="page">
-    
-    <div class="entry-content"><h1>Maciej Kus is not a figure skater</h1>
-<p>Maciej can barely ice skate at all. Instead of figure skating, you might find him coding, hiking or bicycling around the Bay Area.</p>
-<p>Here are some projects Maciej has worked on:</p>
-<div id='projects'>
-  <div class='project' id='chinese'><a href='chinese_remainder/'>
-<p>
-<div class='project_pic' style='background:url(images/project-icons.png) -92px 0px;'></div>
-</p>
-<p >A Chinese remainder theorem calculator where the values do not have to be pairwise coprime.</p>
-</a>
-  </div><div class='project' id='subnet'><a href='http://subnettingpractice.com'>
-<p>
-<div class='project_pic' style='background:url(images/project-icons.png) -126px 0px;'></div>
-</p>
-<p>A subnetting practice and calcualtor site. Includes html5 graphical questions along with VLSM and IPv6.</p>
-</a>
-  </div><div class='project' id='thesis'><a href='http://www.diva-portal.org/smash/get/diva2:425069/FULLTEXT01.pdf'>
-<p>
-<div class='project_pic' style='background:url(images/project-icons.png) -170px 0px;'></div>
-</p>
-<p>My economis thesis paper. The Role of Religion in Determining
-Female Labor Force Participation Rates.
-</p>
-</a>
-  </div>
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">The Best Subnetting Site</h1>
+	<div class="entry-content" itemprop="articleBody"><p>I recently began to study for the CCNA. I am taking my sweet time with it, mostly because I have instead ended up working on improving my JavaScript skills. One way I combined the two was by creating a <a href='http://subnettingpractice.com'>subnetting practice</a> website. I found existing subnetting sites to be lacking. They were mostly text based with the same nine or so question types repeated over and over. These questions do little to teach someone when and why to actually use subnetting. They make sure the student knows how to calculate a subnet mask, but not how to implement that knowledge when given a network diagram. The site I created uses graphical questions and diagrams along with text based questions to make sure the learner knows how to calculate things like the network mask, but also knows when and why to calculate it.</p>
+
+
+<!-- more -->
+
+
+<p>I built the site from scratch. Originally I was going to only create the subnetting practice section of the site, but soon I realized that to write the type of questions I was wanting to write I would need to program a way to calculate variable length subnet mask (VLSM) subnetting, so I wrote a <a href='http://subnettingpractice.com/vlsm.html'>VLSM calculator</a>. Once I had this coded, I was able to create VLSM style questions. </p>
+
+
+<p>The Internet is moving towards IPv6 implementation and the CCNA is beginning to reflect that with IPv6 questions being added to the test. Because of this I added some fairly basic (but more than one should need for the CCNA) <a href=http://subnettingpractice.com/ipv6.html>IPv6 questions</a>. There are a number of other features, including exponent practice, basic subnetting practice, and interactive view of how large IPv6 is, and IPv6 and IPv4 calculators.</p>
+
+
+<p>I find the sit to be useful, both in making sure my subneting is accurate and quick and in checking my work with the calculators. It&#8217;s nice to code something that is of value to me and others.</p>
 
 </div>
-</div>
+
 </article>
 
 	<div class="share">
@@ -125,7 +112,6 @@ Female Labor Force Participation Rates.
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
 
 
 </div>
