@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Chinese Remainder Theorem Calculator - Maciej Kus is not a Figure Skater</title>
+	<title>Record Collector the game - Maciej Kus is not a Figure Skater</title>
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="A Chinese Remainder Theorem Calculator where the values do not have to be pairwise coprime!">
+	<meta name="description" content="A simple incremental game. Walk around, talk to people, collect records.">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
 
 	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://maciejkus.com/chinese_remainder/">
+	<link rel="canonical" href="http://maciejkus.com/record-collector/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -93,22 +93,10 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="page">
     
-    <h1 class="title">Chinese Remainder Theorem Calculator</h1>
+    <h1 class="title">Record Collector the Game</h1>
     
-    <div class="entry-content"><p>The only Chinese remainder theorem calculators I have found online requier that the values be pairwise coprime. This calculator will solve all possible instances, including those where the values are not pairwise coprime. Technically, this is actually a method of successive substitution calculator.</p>
-<p>Please enter your set of congruences in the form: <b> x = A mod B</b> with one congruence per line.</p>
-
-		<form onsubmit="return false;">
-			<textarea rows ="6" cols="30" id='input'>x = 13 mod 49 
-x = 6 mod 14 
-x = 20 mod 28</textarea><br>
-			<button onClick="chinese();">Submit</button>
-		</form>
-<p>Answer: <b><span id='answer'></span></b></p>
-<p>Check the work, if the answers are not integers, there is a problem: <br><span  id = 'check'></span></p>
-<p>Generally these problems will have more than one solution. The above gives the lowest positive solution. To find other solutions take the least common multiple of the mods and then start adding that number to the answer. In this case the LCM is <span id='lcm'></span></p>
-
-<script type="text/javascript" src="chinese.js"></script>
+    <div class="entry-content"><div id='enchant-stage'></div>
+<script type="text/javascript" src="game.js"></script>
 </div>
 </article>
 
