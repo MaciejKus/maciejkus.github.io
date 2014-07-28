@@ -6,10 +6,10 @@ comments: false
 description: 'Setting up an Octopress site'
 categories: [blog, Octopress]
 ---
-<p>This site and blog are powered by Octopress. It is a static site generator. I am still working on getting things to look just how I want, but I am pretty happy so far. For a website I want something simple and to the point. I want content to be the first thing a visitor sees. </p>
-<p>A lot of pages, especially those that use Twitter Bootstrap hide the content. Instead when visiting a page the user is greeted with a full-screen image or graphic of some kind. Usually the user is expected to scroll down to view the actual content of the site, and even then instead of content the site is filled with links and more images. This may be impressive the first time one sees a page, but usually I am looking for information and not pretty graphics. I hope this site remains simple and content is accessible. Users should never feel like they are forced to search  through a site to find content. </p>
+<p>This site is powered by Octopress. Octopress is a static site generator. I am still working on getting things to look just how I want, but I am pretty happy so far. For a website I want something simple and to the point. I want content to be the first thing a visitor sees. </p>
+<p>A lot of webpages, especially those that use Twitter Bootstrap hide the content. Instead when visiting a page the user is greeted with a full-screen image or graphic of some kind. Usually the user is expected to scroll down to view the actual content of the site, and even then instead of content the site is filled with links and more images. This may be impressive the first time one sees such a  page, but usually I am looking for information and not pretty graphics. I hope my site remains simple and content is accessible. Users should never feel like they have to search  through a site to find content. </p>
 <!-- more -->
-<p>With all that in mind, I did have a couple issues when setting up Octopress. First, when installing either the default theme or the Greyshade theme which I ended up using, I received the following errors:
+<p>With all that in mind, I did have a couple issues when setting up Octopress. First, when installing either the default theme or the <a href ='https://github.com/shashankmehta/greyshade'>Greyshade</a> theme which I ended up using, I received the following errors:
 {% codeblock %}
 :rake install
 rake aborted!
@@ -44,7 +44,7 @@ The issue ended up being that my Gemfile was pointing to an old version of strin
 to
 {% codeblock %}gem 'stringex', '~> 2.5.2'{% endcodeblock %}
 </p>
-<p>The second issue was that when I moved the default index.html file to blog/index.html as described on the Octopress <a href='http://octopress.org/docs/theme/template/'>website</a> blog/index.html would show up blank. There was no blog entries being listed on the page. when I moved the file back to the home directory the most recent blog posts once again showed up. The fix was to update _config.yml and set 
+<p>The second issue was that when I moved the default index.html file to blog/index.html as described on the Octopress <a href='http://octopress.org/docs/theme/template/'>website</a> blog/index.html would show up blank. There was no blog entries being listed on the page. When I moved the file back to the home directory the most recent blog posts once again showed up. The fix was to update _config.yml and set 
 {% codeblock %}paginate_path: "posts/:num"{% endcodeblock %}
 to 
 {% codeblock %}paginate_path: "blog/posts/:num"{% endcodeblock %}

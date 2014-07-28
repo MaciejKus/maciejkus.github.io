@@ -1,0 +1,17 @@
+.project {
+	display:inline-block;
+	margin: 0 2% ;
+	width: 29%;
+	a {
+		text-decoration: none;
+		color: #3D3D3D;
+	}
+	a:hover {
+		text-decoration: none; //add !important to make work
+		color: #000000;
+	}
+	
+}
+.project_pic {
+	margin-left:auto; margin-right:auto; width: 48px; height:36px;
+}
