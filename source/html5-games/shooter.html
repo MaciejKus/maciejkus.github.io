@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>	<html> <meta charset="UTF-8">
+<head>
+<style type='text/css'>
+canvas {
+	position:absolute;left:0px;top:0px;width:100%;height:100%; border:0px;
+	}
+</style>
+<title>Maciej is great</title>
+<script>
+// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+ 
+// MIT license
+ 
+(function() {
+var lastTime = 0;
+var vendors = ['ms', 'moz', 'webkit', 'o'];
+for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+|| window[vendors[x]+'CancelRequestAnimationFrame'];
+}
+if (!window.requestAnimationFrame)
+window.requestAnimationFrame = function(callback, element) {
+var currTime = new Date().getTime();
+var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+timeToCall);
+lastTime = currTime + timeToCall;
+return id;
+};
+if (!window.cancelAnimationFrame)
+window.cancelAnimationFrame = function(id) {
+clearTimeout(id);
+};
+}());
+
+
+
+window.onload = function() {
+	start();
+}
+// http://stackoverflow.com/questions/1664785/html5-canvas-resize-to-fit-window
+// http://jsfiddle.net/m1erickson/5vfVb/
+// resizeing - strech: http://blogs.msdn.com/b/davrous/archive/2012/04/06/modernizing-your-html5-canvas-games-with-offline-apis-file-apis-css3-amp-hardware-scaling.aspx
+//looks like have to redraw background when resizing. 
+start = function() {
+	canvas= document.getElementById("game");
+	context= canvas.getContext("2d");
+	canvasBG = document.getElementById("back");
+	contextBG = canvasBG.getContext("2d");
+	//corrects for streching out full window:
+	function resize() {
+	console.log("resizing");
+		var windowWidth = window.innerWidth;
+		var windowHeight = window.innerHeight;
+	
+		canvasBG.setAttribute('width', windowWidth);
+		canvasBG.setAttribute('height', windowHeight);
+		canvas.setAttribute('width', windowWidth);
+		canvas.setAttribute('height', windowHeight);
+
+	console.log("done resizing");
+	}
+	resize();
+	window.addEventListener("resize", resize, false);
+
+
+	
+	// render background
+	var background = createBackground();
+	contextBG.drawImage(background,100,100);
+
+	// creates random star background
+        function createBackground() {
+                contextBG.beginPath();
+                contextBG.fillStyle="black";
+                contextBG.rect(0,0,canvasBG.width,canvasBG.height);
+                contextBG.fill();
+		contextBG.closePath();
+                contextBG.beginPath();
+                //populate stars:
+		//sometimes in firefox three of the stars get connected into a white trianlge. dont know why. happens about 1/10 times
+                for(var n = 0; n < 100; n++) {
+                        var x = parseInt(Math.random()*canvasBG.width);
+                        var y = parseInt(Math.random()*canvasBG.height);
+                        var rad = Math.random()*3;
+                        contextBG.arc(x,y,rad,0,Math.PI*2,false);
+                        contextBG.closePath();
+                }
+                contextBG.fillStyle = "white"; 
+                contextBG.fill();
+                //same background as image:
+                var img = document.createElement("img");
+                img.src = canvasBG.toDataURL();
+                return(img);
+        }
+	//variables:
+	var ballRadius = canvas.width/40;
+	var ballSpeed = ballRadius/3; //player speed
+	var asteroidSpeed = ballRadius/5;
+	var bulletSpeed = ballSpeed;
+	var bulletRadius = ballRadius/4;
+	var asteroidNum = 1;
+	var gameon = true;
+	var points = 0;
+	var levelUp = 100; //how many points needed for asteriodNum to increase
+	
+	//ball class:
+	function Ball(x,y,dx,dy,color,radius) {
+		this.x =x;
+		this.y = y;
+		this.dx = dx;
+		this.dy = dy;
+		this.color = color;
+		this.radius = radius;
+	}
+	
+	Ball.prototype.move = function() {
+		this.x += this.dx;
+		this.y += this.dy;
+		if (this.x +this.radius> canvas.width) {
+			this.x = canvas.width - this.radius;
+		}
+		if (this . x - this.radius < 0) {
+			this.x = this.radius;
+		}
+	}
+	
+	Ball.prototype.rend = function() {
+		context.fillStyle = this.color;
+		context.beginPath();
+		context.arc(this.x,this.y,this.radius,0,2*Math.PI);
+		context.fill();
+		context.stroke();
+	}
+	var player = new Ball(canvasBG.width/2,canvasBG.height - ballRadius, 0,0,"green",ballRadius);
+	player.rend();
+
+	var keys=[]; //array holding key inputs
+
+	//listen for pressing of button
+	document.body.addEventListener('keydown', function(event){
+		keys[event.keyCode] = true;
+	});
+	//when key is released
+	document.body.addEventListener('keyup', function(event){
+		keys[event.keyCode] = false;
+	});
+	//makes changes based on current keydown
+	var keyUpdate = function() {
+		if (keys[37]) {
+			player.dx = -ballSpeed;
+		}
+		if (keys[39] ) {
+			player.dx = ballSpeed;
+		}
+		//check for no arrow keys or both arrow keys at once:
+		if ((!keys[37] && !keys[39]) || (keys[37] && keys[39])) {
+			player.dx = 0;
+		}
+		if (keys[32] ) {
+			player.shoot();
+		}	
+	}
+
+	function Bullet(x,y) {
+		this.x = x - bulletRadius;
+		this.y = y - bulletRadius;
+		this.dy = bulletSpeed;
+		}
+
+	Bullet.prototype.move = function() {
+		this.y -= this.dy;
+		}
+
+	Bullet.prototype.rend = function() {
+		context.beginPath();
+		context.fillStyle = "red";
+		context.fillRect(this.x,this.y,bulletRadius,bulletRadius);
+		}
+
+	var bullets = [];
+	Ball.prototype.shoot = function () {
+		var bul = new Bullet(player.x+bulletRadius/2,player.y-player.radius);
+		bullets.push(bul);
+	}
+	var updateBullets = function() {
+		for (var n =0; n < bullets.length; n++) {
+			bullets[n].move();
+			bullets[n].rend();
+			if (bullets[n].y < 0) {
+				bullets.splice(n, 1);
+			}
+		}
+	}
+
+	////////////////////astroids/////
+	var asteroids = [];
+	var asteroidSub = ballRadius/ballSpeed; //used to make sure droping balls do not overlap in terms of height
+	var asteroidCounter = ballRadius;
+	var updateAsteroids = function(num) {
+		asteroidCounter -=asteroidSub;
+		if (asteroidCounter <= 0) {
+			for( var n =0; n < num; n++) {
+				x = Math.random()*canvas.width;
+				var ast = new Ball(x,0,0,asteroidSpeed,"brown",ballRadius);
+				asteroids.push(ast);
+				asteroidCounter = ballRadius;
+			}
+		}
+		for (var n =0; n < asteroids.length; n++) {
+			asteroids[n].move();
+			asteroids[n].rend();
+			if (asteroids[n].y > canvas.height) {
+				asteroids.splice(n,1);
+			}
+		}
+	}
+
+	/////////////colisions:
+
+	//balls versus ship:
+	var asteroidShip = function() {
+		for(var n =0; n < asteroids.length; n++) {
+			var sumRadius = player.radius + asteroids[n].radius;
+			var sqrRadius = sumRadius * sumRadius;
+			var distx = player.x - asteroids[n].x;
+			var disty = player.y - asteroids[n].y;
+			
+			if((distx*distx+disty*disty)<= sqrRadius) {
+				gameon = false;
+			}
+		}
+	}
+
+	// balls v bullets
+	var asteroidBullets = function() {
+		for (var n =0; n< asteroids.length; n++) {
+			for (var i =0; i < bullets.length; i++) {
+				if((asteroids[n].x-asteroids[n].radius<bullets[i].x+bulletRadius) && (asteroids[n].x +asteroids[n].radius > bullets[i].x)  && (bullets[i].y+bulletRadius > asteroids[n].y) && (bullets[i].y < asteroids[n].y+asteroids[n].radius)) {
+					//is large asteroid, breaksup into 4 new small asteroids
+					if (asteroids[n].radius == ballRadius) {
+						var ast1 = new Ball(asteroids[n].x-asteroids[n].radius,asteroids[n].y-asteroids[n].radius,0,asteroidSpeed/2,"pink",ballRadius/4);
+						var ast2 = new Ball(asteroids[n].x+asteroids[n].radius,asteroids[n].y-asteroids[n].radius,0,asteroidSpeed/2,"pink",ballRadius/4);
+						var ast3 = new Ball(asteroids[n].x-asteroids[n].radius,asteroids[n].y+asteroids[n].radius,0,asteroidSpeed/2,"pink",ballRadius/4);
+						var ast4 = new Ball(asteroids[n].x+asteroids[n].radius,asteroids[n].y+asteroids[n].radius,0,asteroidSpeed/2,"pink",ballRadius/4);
+						asteroids.splice(n,1,ast1,ast2,ast3,ast4);
+					} else {
+						asteroids.splice(n,1);
+					}
+					bullets.splice(i,1);
+					points ++;
+					break; 	//without break, it looks for asteroids[n] which
+						//may be undefined
+				}
+			}
+		}
+	}
+
+	var printPoints = function() {
+		context.fillStyle= "yellow";
+		context.font = "bold 26px Arial";
+		context.fillText(points, canvas.width/2,canvas.height/10);
+	}
+	var newLevel = function() {
+		if(points > levelUp) {
+			asteroidNum++;
+			levelUp = levelUp*2;
+		}
+	}
+	
+			
+
+
+	game();
+	function game() {
+		context.clearRect(0,0,canvas.width,canvas.height);
+		keyUpdate();
+		printPoints();
+		newLevel();
+		updateAsteroids(asteroidNum);
+		updateBullets();
+		player.move();
+		player.rend();
+		asteroidBullets();
+		asteroidShip();
+		if (gameon) {
+			requestAnimationFrame(game);
+		}
+		else {
+			context.fillStyle = "blue";
+			context.font="50px Georgia";
+			context.fillText("Game Over " + points + " Points",canvas.width/8,canvas.height/6);
+			context.font="30px Georgia";
+			context.fillText("spress space to restart",canvas.width/8,canvas.height/4);
+			document.body.addEventListener('keydown', function(event){
+			if (event.keyCode==32) {
+			location.reload();
+		}
+	});
+		}
+	}
+
+}
+</script> </head> <body > <div>
+<canvas id='game'  style = "z-index: 2">
+nope
+</canvas>
+<canvas id ='back' style = "z-index: 1">
+oh oh
+</canvas>
+</div>
+</body>
+</html>
+

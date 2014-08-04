@@ -1,0 +1,51 @@
+---
+layout: post
+title: "Record Collector The Game"
+date: 2014-08-02 13:41:01 -0700
+comments: false
+categories: enchant.js, games, incremental, Javascript
+description: Record Collector - an incremental game built with enchant.js. Walk around talking to people and collecting records
+---
+<p>Record Collector is a simple game I made using the <a href='http://enchantjs.com/'>enchant.js</a> game engine. It was largely an exercise in JavaScript and using a game engine, but I also wanted to add my own flavor to the incremental game genre. Most incremental games are text and box based, where you click buttons or objects. In Record Collector you control a hero who walks around and interacts with other characters while trying to get more records.</p>
+<p>I chose enchant.js because it was small and simple. I did not want a framework that would do all the work for me. I meant this to be a learning experience for myself, and it was. I never made a game more advanced than pong before this. Here I had to not only code the game, but also design the game play and the graphics (my apologies. I am clearly not an artist.) Enchant helped me create the map and I was able to avoid writing my own collision detection function. But by and large the game is my own creation.</p>
+<!-- more -->
+<p>The biggest challenge while creating the game may have been to make the map and sprites scroll correctly while the hero moved around. Moving the hero around requires the game to look at the hero's current position (x and y), the last mouse click and the speed at which the hero walks. First I check to make sure that the mouse click is close enough to the hero that the hero does not really have to walk. If the distance between the mouse click and the current hero's position is less than the hero's walking speed I just move the hero the the mouse-click position. If the mouse-click is further away, I check a number of things. I see how close the hero is to the current edge or the map. If he is one third of the way to the edge of the direction he will be walking then I will scroll the background. I also check to make sure that there is more background to scroll into. Maybe the map has ended, in which case there is no need for further scrolling. I also make sure that there are no collisions with walls in the direction the hero is trying to move. If all of the above checks, then I change the background position (x and/or y) to make the background scroll, and then I change the position of the mouse-click to bring it closer to the position of the hero. The hero's x and y positions do not change in this case because the hero's sprite does not actually move relative to the window. It is the background that is moving and bringing the mouse-click point closer to the hero.
+</p>
+<p>If all the above checks failed, then that means I am probably near the edge of a map. There is probably no more background left to scroll. In this case I leave the background and the mouse-click points alone and I move the hero's sprite. I also check for collision with walls one last time, and if a collision occurs, I undo the hero's move.</p> 
+<p>The code is a bit hard to read as I have some magic numbers in there to make collisions with walls look better. But it goes something like this:
+
+{% codeblock lang:javascript %}
+//moving hero down
+hero.dir = DIR_DOWN;
+if (Math.abs(hero.y-hero.toY) < heroSpeed) {
+  hero.y=hero.toY;
+} else if (hero.y>game.height -(game.height/3) && floor.height+floor.y>game.height && (floor.hitTest(hero.x + offx+Math.abs(floor.x), hero.y+(offy*2)+Math.abs(floor.y)) === false)){
+  floor.y -= heroSpeed;
+  hero.toY -=heroSpeed;
+}
+else {
+  hero.y +=heroSpeed;
+  if (floor.hitTest(hero.x + offx+Math.abs(floor.x), hero.y+(offy*2) +Math.abs(floor.y))) hero.y -=heroSpeed;
+}
+{% endcodeblock %} 
+</p>
+<p>
+One other implementation that I had to think about was what to do about collisions. Enchant.js does a good job of making collision detection easy, but when the hero collides with another character in the game I wanted the dialogue box to pop up only a single time per collision. This was solved with having the none player characters all having a 'hit' property. So first the game checks for a collision, and if there is a collision it checks to make sure that the hit property is set to false. If it is set to false, then the dialogue box is rendered and the hit property is set to true. The hit property stays true until the collision no longer exists. If there is no collision then the hit property is set to false again. This is the code that loops through all the characters to see if they have collided with the hero. 
+{% codeblock lang:javascript %}
+var npcLength = npcArray.length;
+for (var i = 0; i < npcLength; i++ ) {
+ var curNpc = npcArray[i];
+ if(hero.within(curNpc, 16) ) { //number  is radius of collision
+   if (!curNpc.hit) { 
+     checkStats(); //checks and makes needed dialogue updates
+     game.pushScene(game.makeDialogueScene(curNpc.dialogue)); //adds dialogue box
+     curNpc.hit = true;
+   }
+ } else {
+   curNpc.hit = false;
+ }
+}
+{% endcodeblock %} 
+</p>
+<p>
+The game can be played <a href='../../../../../record-collector/'>here</a> and the code can be seen <a href='https://github.com/MaciejKus/record_collector'>here</a>. Next game I make will have better graphics, I promise.</p>
