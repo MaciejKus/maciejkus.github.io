@@ -1,0 +1,167 @@
+<!DOCTYPE HTML> <html> <meta charset="UTF-8"> <head> <script>
+window.onload = function() {
+	canvasball = document.getElementById("ball");
+	contextball = canvasball.getContext('2d');
+	canvasBG = document.getElementById('back');
+	contextBG = canvasBG.getContext("2d");
+
+	contextBG.fillStyle = 'ivory';
+	contextBG.fillRect(0,0,canvasBG.width,canvasBG.height);
+	// draw line
+	contextBG.beginPath();
+	contextBG.strokeStyle = 'black';
+	contextBG.lineWidth = '7';
+	contextBG.lineCap = 'round';
+	contextBG.moveTo(canvasBG.width/2,0);
+	contextBG.lineTo(canvasBG.width/2,(canvasBG.height/2)-30);
+	contextBG.stroke();
+	contextBG.closePath();
+	contextBG.beginPath();
+	contextBG.strokeStyle = 'black';
+	contextBG.lineWidth = '7';
+	contextBG.lineCap = 'round';
+	contextBG.moveTo(canvasBG.width/2,canvasBG.height/2+30);
+	contextBG.lineTo(canvasBG.width/2,canvasBG.height);
+	contextBG.stroke();
+	contextBG.closePath();
+
+
+
+	function Ball(Xpos, Ypos, changex, changey) {
+		this.Xpos = Xpos;
+		this.Ypos = Ypos;
+		this.changex = changex;
+		this.changey = changey;
+} //end of Ball
+
+	//create array:
+	var balls = [];
+	numOfBalls = 0;
+	function addball(x,y,dx,dy) {
+		if (x < canvasball.width/2) {
+			balls[numOfBalls] = new Ball(x,y,dx,dy);
+		} else {
+			balls[numOfBalls] = new Ball(x,y,0,0);
+		}
+		numOfBalls += 1;
+	}
+
+	//drops ball where mouse gets clicked. position of mouse is variable e
+	canvasball.onmousedown = function(e) {
+		var x;
+		var y;
+		var dy = Math.random()*10-5;
+		var dx = Math.random()*10-5;
+		if (e.pageX || e.pageY) {
+		x = e.pageX;
+		y = e.pageY;
+		}
+		addball(x,y,dx,dy);
+	}
+
+
+	//add randomness to the bounce in terms of speed and direction
+	function randchange(num) {
+		var rando = Math.floor(Math.random()*4)-2;
+		sum=  num + rando;
+		// make sure ball never gets too fast
+		if ((sum > 8) || ( sum < -8)) {
+			sum =3;
+		} 
+		return sum;
+	}
+
+
+	//move ball
+	function moveBall() {
+		for (var i = 0; i< balls.length; i++) {
+			if ( 	(balls[i].Xpos > canvasball.width - 10) ||
+				((balls[i].Xpos > canvasball.width/2-10) && (balls[i].Xpos < canvasball.width/2 ) && (balls[i].Ypos > canvasball.height/2 + 30)) ||
+				((balls[i].Xpos < canvasball.width/2) && (balls[i].Xpos > canvasball.width/2-10 ) && (balls[i].Ypos < canvasball.height/2 - 30))
+				) {
+					balls[i].Xpos -= 10; //moves ball so doesnt stick in wall
+					balls[i].changex = -balls[i].changex;
+					balls[i].changey = randchange(balls[i].changey);
+				}
+			if (
+				(balls[i].Xpos < 10) ||
+				((balls[i].Xpos > canvasball.width/2) && (balls[i].Xpos < canvasball.width/2+10 ) && (balls[i].Ypos < canvasball.height/2 - 30))  ||
+				((balls[i].Xpos < canvasball.width/2+10) && (balls[i].Xpos > canvasball.width/2 ) && (balls[i].Ypos > canvasball.height/2 + 30))) {
+					balls[i].Xpos += 10;
+					balls[i].changex = -balls[i].changex;
+					balls[i].changey = randchange(balls[i].changey);
+			}
+			if (balls[i].Ypos > canvasball.height -10)  {
+				balls[i].Ypos -= 10;
+				balls[i].changey = -balls[i].changey;
+				balls[i].changex = randchange(balls[i].changex);
+			}
+				if (balls[i].Ypos < 10)   {
+				balls[i].Ypos += 10;
+				balls[i].changey = -balls[i].changey;
+				balls[i].changex = randchange(balls[i].changex);
+				
+			}
+			balls[i].Xpos = balls[i].Xpos+ balls[i].changex;
+			balls[i].Ypos = balls[i].Ypos + balls[i].changey;
+		drawball(balls[i]);
+		} //end of for
+	} //end moveball
+
+
+	function checkCollision() {
+		for (var i = 0; i < balls.length; i++) {
+			for (var j = 0; j < balls.length && j != i; j++) {
+				x = balls[i].Xpos -balls[j].Xpos;
+				y = balls[i].Ypos - balls[j].Ypos;
+				if ( (x*x)+(y*y)< 400) { //400 = radius 
+					balliy = balls[i].changey;
+					ballix = balls[i].changex;
+					balls[i].changex = randchange(balls[j].changex);
+					balls[i].changey = randchange(balls[j].changey);
+					balls[j].changex = randchange(ballix);
+					balls[j].changey =randchange(balliy);
+					//stop balls from getting stuck together
+					balls[i].Xpos += balls[i].changex;
+					balls[i].Ypos += balls[i].changey;
+					balls[j].Xpos += balls[j].changex;
+					balls[j].Ypos += balls[j].changey;
+				}
+			}
+
+		}
+	} // end checkCollision
+
+	//drawball
+	function drawball(ball) {
+		contextball.fillStyle= 'black';
+                contextball.beginPath();
+                contextball.arc(ball.Xpos,ball.Ypos,10, 0, 2*Math.PI);
+                contextball.fill();
+                contextball.stroke();
+
+	}
+	
+	//the following allows clearing of screen between renderings
+	//i couldnt figure out where else to place the clearRect.
+	function rend() {
+		contextball.clearRect(0,0,canvasball.width, canvasball.height);	
+		moveBall();
+		checkCollision();
+	}
+	intervalID = setInterval(rend, 40);	
+}
+
+
+
+
+</script> </head> <body> <div>
+<canvas id='ball' width = '500' height='500' style = "border:7px solid black; position:absolute;    left:auto; top:auto; z-index: 2">
+nope
+</canvas>
+<canvas id ='back' width = '500' height='500' style = "border:7px solid black; position:absolute;  left:auto; top:auto; z-index: 1">
+oh oh
+</canvas>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML> <html> 
+<head>
+<meta charset="UTF-8">
+ <script type="text/javascript"> 
+window.onload = function() {
+	canvas = document.getElementById("canvas");
+	context = canvas.getContext('2d');
+	xpos = canvas.width/2;
+	ypos = canvas.height/2;
+	radius = 72;
+	
+	context.strokeStyle="black";	
+	context.lineWidth=5;
+	context.beginPath();
+	context.arc(xpos,ypos,radius,0,2*Math.PI);
+	context.shadowOffsetX = 7;
+	context.shadowOffsetY= 7;
+	context.shadowBlur = 10;
+	context.shadowColor = 'grey';
+	context.stroke();
+	context.closePath();
+
+	context.beginPath();
+	context.shadowOffsetX = 0;
+	context.shadowOffsetY= 0;
+	context.shadowBlur = 0;
+	context.arc(xpos,ypos,radius-2,0,2*Math.PI);
+	context.fillStyle='blue';
+	context.fill();
+	context.closePath();
+	
+}
+</script>
+</head>
+<body>
+<div>
+<canvas id ='canvas' width=400 height=400>
+hello
+</canvas>
+</body>
+</html>

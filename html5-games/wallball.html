@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>	<html> 
+<head><meta charset="UTF-8">
+<title>Wall Ball</title>
+<script>
+window.onload = function() {
+	//wallball game by Maciej Kus
+	canvasgame = document.getElementById("game");
+	contextgame = canvasgame.getContext("2d");
+	canvasBG = document.getElementById("back");
+	contextBG = canvasBG.getContext("2d");
+
+	contextBG.fillStyle = "tomato";
+	contextBG.fillRect(0,0,canvasBG.width,canvasBG.height);
+	//variables:
+	var padWidth = 6;
+	var padHeight = 60;
+	var paddleDistance = 5; //distance of paddle from edge
+	var paddlemove = 8; //speed at which paddles moves
+	var ballRadius = 12;
+	var AI = 4; //computer dificulty 10 being impossible
+	var ballSpeed = 8; //speed of ball horizontally (x)
+	var personScore = 0;
+	var computerScore = 0;
+	var turnCounter = 0; //taking the mod of this will tell either the players or computer turn
+	var time = 20; //time between canvas redrawings (speed of game) this value stayes constant, while vaqr time2 is what changes when a game is over to pause the game. time2 then changes back to the initial value of time given here. this is done to pause the game after a game over.
+	
+	//Paddle class:
+	function Paddle(x,y) {
+		this.x = x;
+		this.y = y;
+		this.width = padWidth;
+		this.height = padHeight;
+	}
+	
+	Paddle.prototype.rend = function() {
+		contextgame.fillStyle = this.color;
+		contextgame.fillRect(this.x,this.y,this.width, this.height);
+	}
+	
+	//create paddles:
+	var playerPaddle = new Paddle(canvasgame.width -(padWidth+paddleDistance), (canvasgame.height/2 - padHeight/2));
+	playerPaddle.color ="white";
+	var computerPaddle = new Paddle(canvasgame.width -(2*padWidth+paddleDistance), (canvasgame.height/2 - padHeight/2));
+	computerPaddle.color= "black";
+
+	//moves player paddle position based on up and down arrow
+	var playerpaddlemove = 0;
+	document.addEventListener('keydown', function(event){
+		switch (event.keyCode) {
+			case 38: //up
+				playerpaddlemove = -paddlemove;
+				break;
+			case 40: //down
+				playerpaddlemove =paddlemove;
+				break;
+		}});
+	document.addEventListener('keyup', function(event){
+			playerpaddlemove = 0;
+		});
+
+	var computerMove = function() {
+		if( ball.dx <0 ) {
+			var rand = Math.random()*10;
+			if (rand <AI) { //chance of not doing anyhting and missing
+				if (ball.y < computerPaddle.y ) {
+					computerPaddle.move(-paddlemove);
+				}
+				if (ball.y > computerPaddle.y+padHeight) {
+					computerPaddle.move(paddlemove);
+				}
+			}
+		}
+	}
+
+	
+	//move paddle:
+	Paddle.prototype.move = function(change){
+			this.y += change;
+			if(this.y<0) {
+				this.y = 0;
+			}
+			if(this.y>canvasgame.height-padHeight) {
+				this.y = canvasgame.height-padHeight;
+			}
+	}
+	
+	//ball class:
+	function Ball(x,y,dx,dy) {
+		this.x =x;
+		this.y = y;
+		this.dx = dx;
+		this.dy = dy;
+		this.color = "black";
+		this.radius = ballRadius;
+	}
+	
+	Ball.prototype.rend = function() {
+		contextgame.fillStyle = this.color;
+		contextgame.beginPath();
+		contextgame.arc(this.x,this.y,this.radius,0,2*Math.PI);
+		contextgame.fill();
+		contextgame.stroke();
+	}
+	
+	//used to add randomness to bounces:
+	function randchange(d) {
+		d += Math.round(Math.random())*2 -1;
+		return d;
+	}
+		
+	Ball.prototype.move = function() {
+		this.x += this.dx;
+		this.y += this.dy;
+		//bounce off top:
+		if(this.y-this.radius <0) {
+			this.y = this.radius;
+			this.dy = -this.dy;
+		}
+		//bounce off bottom:
+		if(this.y+this.radius > canvasgame.height) {
+			this.y = canvasgame.height-this.radius;
+			this.dy = -this.dy;
+		}
+		//bounce off left wall:
+		if (this.x <0) {
+			this.dx = -this.dx;
+		}
+	
+		//bounce off players paddle:
+		if((this.x> canvasgame.width-(padWidth+paddleDistance+this.radius))&& (this.y > playerPaddle.y) &&(this.y<playerPaddle.y+padHeight) &&(turnCounter%2==1)) {
+			this.x =canvasgame.width-this.radius-padWidth-paddleDistance;
+			this.dx =-this.dx; 
+			this.dy = randchange(this.dy);
+			turnCounter++;
+		}
+		//bounce off computer paddle:
+		if((this.x> canvasgame.width-(padWidth+paddleDistance+this.radius))&& (this.y > computerPaddle.y) &&(this.y<computerPaddle.y+padHeight) && (turnCounter%2==0)) {
+			this.x =canvasgame.width-this.radius-padWidth-paddleDistance;
+			this.dx = -this.dx;
+			this.dy = randchange(this.dy);
+			turnCounter++;
+		}
+		//see if someone won:
+		if (this.x > canvasgame.width) {
+			if (turnCounter%2==0) {
+				personScore++;
+			} else {
+			computerScore ++; }
+			newGame();
+		}
+	}
+	
+	//create a new ball:
+	var ball = new Ball(canvasgame.width/2,canvasgame.height/2,ballSpeed,0);
+
+	//writes whose turn it is:
+	function whoseTurn() {
+		contextgame.fillStyle = "brown";
+		contextgame.font = 'bold 24px courier';
+		if (turnCounter%2==0) {
+			contextgame.fillText("Computer's Turn",canvasgame.width/3,canvasgame.height/9);
+		} else {
+			contextgame.fillText("Your Turn",canvasgame.width/3,canvasgame.height/9);
+		}
+	}
+	
+	//draws everything:
+	function render() {
+	playerPaddle.move(playerpaddlemove);
+	ball.move();
+	computerMove();
+	playerPaddle.rend();
+	whoseTurn();
+	ball.rend();
+	computerPaddle.rend();
+	}
+
+	//clears and then rewrites background with new scores
+	var score = function() {
+	contextBG.clearRect(0,0,canvasgame.width, canvasgame.height);
+	contextBG.fillStyle = "tomato";
+	contextBG.fillRect(0,0,canvasBG.width,canvasBG.height);
+	contextBG.fillStyle = 'black';
+	contextBG.font = 'bold 24px courier';
+	contextBG.fillText(computerScore, canvasgame.width/8, canvasgame.height/8);
+	contextBG.fillStyle = 'white';
+	contextBG.fillText(personScore, canvasgame.width*7/8, canvasgame.height/8);
+	}
+	
+	//adjust AI based on how close the game is
+	var ai = function() {
+		if (computerScore>personScore+1) {
+			AI--;
+			}
+		else if( personScore > computerScore+1) {
+			AI++;
+			}
+		}
+	
+
+	//runs everything:
+	function loop() {
+		contextgame.clearRect(0,0,canvasgame.width, canvasgame.height);
+		render();
+		setTimeout(loop, time2);
+		time2 = time;
+	}
+
+	var newGame = function() {
+		ball = new Ball(canvasgame.width/2,canvasgame.height/2,ballSpeed,0);
+		turnCounter = 0;
+		playerPaddle = new Paddle(canvasgame.width -(padWidth+paddleDistance), (canvasgame.height/2 - padHeight/2));
+		playerPaddle.color = "white";
+		computerPaddle = new Paddle(canvasgame.width -(2*padWidth+paddleDistance), (canvasgame.height/2 - padHeight/2));
+		computerPaddle.color = "black";
+		//write scores:
+		score();
+		ai();
+		time2 = 1500;
+	}
+	time2 = time;
+	loop();
+} 
+</script> </head> <body> <div>
+<canvas id='game' width = '600' height='400' style = "border:7px solid black; position:absolute;    left:auto; top:auto; z-index: 2">
+nope
+</canvas>
+<canvas id ='back' width = '600' height='400' style = "border:7px solid black; position:absolute;  left:auto; top:auto; z-index: 1">
+oh oh
+</canvas>
+</div>
+</body>
+</html>
+
