@@ -28,43 +28,43 @@
   
   
   <url>
-    <loc>http://maciejkus.com/</loc>
-    <lastmod>2014-08-04T11:23:58-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2014-08-04T11:23:58-07:00</lastmod>
+    <lastmod>2014-08-16T15:49:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
+    <loc>http://maciejkus.com/</loc>
+    <lastmod>2014-08-16T15:49:15-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2014-08-04T11:23:58-07:00</lastmod>
+    <lastmod>2014-08-16T15:49:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2014-08-04T11:23:58-07:00</lastmod>
+    <lastmod>2014-08-16T15:49:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2014-08-04T11:23:58-07:00</lastmod>
+    <lastmod>2014-08-16T15:49:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2014-08-04T11:23:58-07:00</lastmod>
+    <lastmod>2014-08-16T15:49:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -73,6 +73,12 @@
   <url>
     <loc>http://maciejkus.com/404.html</loc>
     <lastmod>2014-07-27T10:51:1406483497Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/cop-or-not/index.html</loc>
+    <lastmod>2014-08-16T13:24:1408220699Z</lastmod>
     <priority>0.6</priority>
   </url>
   
