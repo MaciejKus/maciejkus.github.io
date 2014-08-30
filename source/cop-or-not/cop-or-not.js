@@ -12,7 +12,12 @@ $(document).ready(function() {
 		'NEVADA TEST and TRAINING RANGE, Nev. -- U.S. Special Forces soldiers search for the daughter of a village elder during a simulated hostage situation at the Urban Operations Center on the Nevada Test and Training Range, Oct. 21, 2009. Special Forces Units from all branches of service and allied nations use the facilities on the NTTR for a multitude of different training. (U.S. Air Force photo by Tech. Sgt. Michael R. Holzworth)(released)',
 		'Camp Blanding, Fla. (Feb. 18, 2005) - Aviation Warfare Systems Operator 2nd Class Amanda Egloff, left, Aviation Warfare Systems Operator 2nd Class Darien Durk, center, and safety observer Senior Chief Aviation Warfare Systems Operator Jim Zobrosky fire the M-4 Rifle during Combat Search and Rescue (CSAR) weapons qualifications. The Sailors are assigned to the "Dragonslayers" of Helicopter Anti-Submarine Squadron Eleven (HS-11). U.S. Navy photo by Photographer Mate 2nd Class Charles E. Hill (RELEASED)',
 		'Soldiers conduct a cordon and search in Buhriz, Iraq.',
-		'Special Forces soldiers of the 7th Special Forces Group (Airborne), armed with M4 CQBR carbines fitted with Eotech holographic sights, undergoing urban combat training at Fort Bragg. '
+		'Special Forces soldiers of the 7th Special Forces Group (Airborne), armed with M4 CQBR carbines fitted with Eotech holographic sights, undergoing urban combat training at Fort Bragg.',
+		'Marines and sailors with Command Element, 24th Marine Expeditionary Unit, conduct annual chemical, biological, radiological and nuclear defense training aboard Camp Lejeune, N.C., Feb. 27, 2012. This training enabled the Marines to learn how to use the new M50 joint service general purpose gas mask. Photo by Cpl. Michael Petersheim 24th Marine Expeditionary unit (DVIDS)',
+		'Marines assigned to the 22nd Marine Expeditionary Unit stand by while wearing their M50 gas masks during an M-16 service rifle live fire training exercise aboard the amphibious dock landing ship USS Whidbey Island.',
+		'Brawley, Ca - May 13, 2013: Capt. Matthew McCue, platoon commander the 13th Marine Expeditionary Unit and San Diego native, coordinates security from a blocking position during a training raid in Brawley, Calif., as part of Ground Realistic Urban Training.',
+		'In full riot-control gear, Marines and Sailors from Company E, Battalion Landing Team, 2nd Bn., 2nd Marine Regiment, 26th MEU, move into position during non-lethal munitions formation live-fire training aboard Marine Corps Base Camp Lejeune, N.C., Oct. 16, 2006. (Official USMC photo by Cpl. Jeremy Ross) (Released)',
+		'110th Maneuver Enhancement Brigade Soldiers stand ready to safely control a crowd of eager demonstrators during KFOR 10 riot control training at the Joint Multinational Readiness Center in Hohenfels, Germany, June 10, 2008.'
 		],
 		['A police officer monitoring people protesting the police shooting of teenager Michael Brown on Aug. 13, 2014, in Ferguson, Mo. Photo credit: Scott Olson/Getty Images ',
 		'A police officer pointing a gun at people protesting the police shooting of teenager Michael Brown on Aug. 13, 2014, in Ferguson, Mo.',
@@ -25,7 +30,13 @@ $(document).ready(function() {
 		'Heavily armed state police kept gawkers at bay during a May raid on an alleged fake ID ring. photo: Courteney Stuart',
 		'Heavily armed US state police troopers leave Sandy Hook School in Newtown, Connecticut, December 14, 2012.',
 		'Heavily armed police',
-		'A Metro SWAT team drives through the Boston CBD after two explosive devices detonated at the finish line of the 117th Boston Marathon in Boston, Massachusetts, April 15, 2013.'
+		'A Metro SWAT team drives through the Boston CBD after two explosive devices detonated at the finish line of the 117th Boston Marathon in Boston, Massachusetts, April 15, 2013.',
+		'Heavily armed police guard federal courthouse door in Columbus- Photo by Dorothy Boyett',
+		'Ferguson police',
+		'PBSO SWAT team members gather outside the Shell gas station at Drexel Road and Okeechobee Boulevard.',
+		'San Bernardino Police SWAT team leaves after tear gasing the house where a suspect barricaded himself in the attic for two hours Tuesday, April 17, 2012. (LaFonzo Carter / Staff Photographer)',
+		'The Albuquerque Police Department, owners of at least 350 AR-15 assult rifles',
+		'Riot police clear a street with smoke bombs while clashing with demonstrators in Ferguson, Missouri August 13, 2014. '
 		]] //first is mil, second is cop
 	var infoText= ''; //holds text from above to display when user guesses
 	$('#ans').hide();
@@ -51,7 +62,7 @@ $(document).ready(function() {
 
 	function selectPic() {
 		var choice = Math.floor(Math.random()*2); // choice of directory
-		var pic = Math.floor(Math.random()*12);
+		var pic = Math.floor(Math.random()*17);
 		if (choice < 1) {
 			$('#ans').html('military');
 		} else {
