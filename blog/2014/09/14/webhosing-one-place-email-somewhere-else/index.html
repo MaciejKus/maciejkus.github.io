@@ -1,0 +1,186 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Webhosing one place email somewhere else - Maciej Kus is not a Figure Skater</title>
+	<meta name="author" content="Maciej Kus">
+
+
+	<meta name="description" content="A description of how to seperate webhosting and email services using DNS">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://maciejkus.com/blog/2014/09/14/webhosing-one-place-email-somewhere-else/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-50427363-3']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<a href='/'><img src="/images/profile.jpg" alt="Profile Picture" style="width: 160px;" /></a>
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/blog/archives/">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/maciejkus" title="GitHub">GitHub</a>
+		
+		
+		
+		
+			<a class="linkedin" href="http://www.linkedin.com/in/maciejkus" title="LinkedIn">LinkedIn</a>
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Webhosing One Place Email Somewhere Else</h1>
+	<div class="entry-content" itemprop="articleBody"><p>A somewhat common problem that comes up at work is users wanting to host their website one place and have their email services go through somewhere else. The main issue is knowing how to setup DNS correctly.</p>
+
+
+<p>Start with the webhosting. Here you need an A record pointing to the IP address of the webhost. Say you want example.com to be hosted by 192.168.0.1.</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>example.com. 86400   IN  A   192.168.0.1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then you need to create an A record for a subdomain which will point at the IP address of the email server you are going to use. Lets say the email server is on 10.0.0.2.</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mail.example.com.    86400   IN  A   10.0.0.2</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I use the &#8216;mail&#8217; prefix, but this could be any subdomain that is not being used. Now you must create a MX record which tells emails that are sent to @example.com where to go. For this you will point the top level domain to the newly created subdomain. A common mistake is to try to point the MX record to an IP address. An MX record must point to an A record.</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>example.com. 86400   IN  MX  10 mail.example.com.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&#8217;s it. Now any requests, such as a HTTP request, looking for example.com will be sent to 192.168.0.1 and any email sent to @example.com will be forwarded on to mail.example.com which goes to 10.0.0.2.</p>
+
+
+<p>The above can and probably should also be done with IPv6 when IPv6 addresses are available. For that just add AAAA records in the same maner as the A records above. You will need one AAAA record for example.com pointing to the webhosting IPv6 address, and one AAAA record pointing mail.example.com pointing to the mail server&#8217;s IPv6 address.</p>
+
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Maciej Kus
+
+
+
+</footer>
+		</div>
+	</div>
+	
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
