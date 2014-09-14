@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Webhosing one place email somewhere else"
+title: "Webhosting one place email somewhere else"
 date: 2014-09-14 15:42:25 -0700
 comments: false
 categories: DNS, webhosting, email
