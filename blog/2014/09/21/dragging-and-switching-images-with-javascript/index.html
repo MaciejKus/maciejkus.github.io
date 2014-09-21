@@ -1,0 +1,227 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Dragging and Switching Images with JavaScript - Maciej Kus is not a Figure Skater</title>
+	<meta name="author" content="Maciej Kus">
+
+
+	<meta name="description" content="A simple way to drag and drop images using HTML5 and JavaScript">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://maciejkus.com/blog/2014/09/21/dragging-and-switching-images-with-javascript/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-50427363-3']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<a href='/'><img src="/images/profile.jpg" alt="Profile Picture" style="width: 160px;" /></a>
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/blog/archives/">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/maciejkus" title="GitHub">GitHub</a>
+		
+		
+		
+		
+			<a class="linkedin" href="http://www.linkedin.com/in/maciejkus" title="LinkedIn">LinkedIn</a>
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Dragging and Switching Images With JavaScript</h1>
+	<div class="entry-content" itemprop="articleBody"><p>I needed a simple mechanism to drag and drop images from one place to another on a webpage. Using the HTML5 draggable, ondragstart and ondragover events I made a simple script which allows the user to drag an image, and then drop that image onto another image. The two images then switch positions on the page. The HTML code for each image looks something like this:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;img src="imageSource.png" draggable="true" ondragstart="return dragStart(event)" ondragover="return dragOver(event)" ondrop="dragDrop(event)"></span></code></pre></td></tr></table></div></figure>
+draggable allows the image to be dragged. This is the default for most browsers when it comes to images, but it cannot hurt to explicitly set it.<br>
+ondragstart is triggered when the dragging starts.<br>
+ondragover is similar to a mouseover event. It is fired when the mouse is over the event.<br>
+ondrop is fired when the mouse button is finally released.
+The JavaScript looks like this:</p>
+
+
+<!-- more -->
+
+
+<p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">dragSrc</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">//used to store the dropped object</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">dragStart</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">ev</span><span class="p">.</span><span class="nx">dataTransfer</span><span class="p">.</span><span class="nx">effectAllowed</span><span class="o">=</span><span class="s1">&#39;move&#39;</span><span class="p">;</span> <span class="c1">//allows the object to be moved</span>
+</span><span class='line'>  <span class="nx">dragSrc</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span> <span class="c1">//sets the dragged object to be dragSrc</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">dragOver</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//stop default browser action</span>
+</span><span class='line'>      <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span> <span class="c1">// Allows us to drop.</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">dragDrop</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span> <span class="c1">//stops default browser action</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">dragSrc</span> <span class="o">!=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//only if dropping onto another image, not self</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">dragSrc</span><span class="p">.</span><span class="nx">outerHTML</span><span class="p">;</span> <span class="c1">//temp variable</span>
+</span><span class='line'>      <span class="nx">dragSrc</span><span class="p">.</span><span class="nx">outerHTML</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">outerHTML</span><span class="p">;</span> <span class="c1">//sets dragged object to current image</span>
+</span><span class='line'>      <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">outerHTML</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span> <span class="c1">//set current image to dragged image</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+</p>
+
+
+<p>
+This code should work for any kind of HTML, not only a img tag. You can see working demo of this at this <a href='http://subnettingpractice.com/ethernet_wiring.html'>Ethernet wire ordering</a> page. The JavaScript on that page is minified to make it load slightly faster, but you can see what the above is doing.
+</p>
+
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Maciej Kus
+
+
+
+</footer>
+		</div>
+	</div>
+	
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

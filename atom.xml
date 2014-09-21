@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2014-09-14T16:36:03-07:00</updated>
+  <updated>2014-09-21T16:18:40-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,84 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dragging and Switching Images with JavaScript]]></title>
+    <link href="http://maciejkus.com/blog/2014/09/21/dragging-and-switching-images-with-javascript/"/>
+    <updated>2014-09-21T15:46:14-07:00</updated>
+    <id>http://maciejkus.com/blog/2014/09/21/dragging-and-switching-images-with-javascript</id>
+    <content type="html"><![CDATA[<p>I needed a simple mechanism to drag and drop images from one place to another on a webpage. Using the HTML5 draggable, ondragstart and ondragover events I made a simple script which allows the user to drag an image, and then drop that image onto another image. The two images then switch positions on the page. The HTML code for each image looks something like this:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;img src="imageSource.png" draggable="true" ondragstart="return dragStart(event)" ondragover="return dragOver(event)" ondrop="dragDrop(event)"></span></code></pre></td></tr></table></div></figure>
+draggable allows the image to be dragged. This is the default for most browsers when it comes to images, but it cannot hurt to explicitly set it.<br>
+ondragstart is triggered when the dragging starts.<br>
+ondragover is similar to a mouseover event. It is fired when the mouse is over the event.<br>
+ondrop is fired when the mouse button is finally released.
+The JavaScript looks like this:</p>
+
+
+<!-- more -->
+
+
+<p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">dragSrc</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">//used to store the dropped object</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">dragStart</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">ev</span><span class="p">.</span><span class="nx">dataTransfer</span><span class="p">.</span><span class="nx">effectAllowed</span><span class="o">=</span><span class="s1">&#39;move&#39;</span><span class="p">;</span> <span class="c1">//allows the object to be moved</span>
+</span><span class='line'>  <span class="nx">dragSrc</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span> <span class="c1">//sets the dragged object to be dragSrc</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">dragOver</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//stop default browser action</span>
+</span><span class='line'>      <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span> <span class="c1">// Allows us to drop.</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">dragDrop</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span> <span class="c1">//stops default browser action</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">dragSrc</span> <span class="o">!=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//only if dropping onto another image, not self</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">dragSrc</span><span class="p">.</span><span class="nx">outerHTML</span><span class="p">;</span> <span class="c1">//temp variable</span>
+</span><span class='line'>      <span class="nx">dragSrc</span><span class="p">.</span><span class="nx">outerHTML</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">outerHTML</span><span class="p">;</span> <span class="c1">//sets dragged object to current image</span>
+</span><span class='line'>      <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">outerHTML</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span> <span class="c1">//set current image to dragged image</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+</p>
+
+
+<p>
+This code should work for any kind of HTML, not only a img tag. You can see working demo of this at this <a href='http://subnettingpractice.com/ethernet_wiring.html'>Ethernet wire ordering</a> page. The JavaScript on that page is minified to make it load slightly faster, but you can see what the above is doing.
+</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Webhosting one place email somewhere else]]></title>
