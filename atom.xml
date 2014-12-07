@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2014-09-28T15:54:50-07:00</updated>
+  <updated>2014-12-07T15:02:14-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IPv6 Packet Tracer Bug]]></title>
+    <link href="http://maciejkus.com/blog/2014/12/07/ipv6-packet-tracer-bug/"/>
+    <updated>2014-12-07T14:46:08-08:00</updated>
+    <id>http://maciejkus.com/blog/2014/12/07/ipv6-packet-tracer-bug</id>
+    <content type="html"><![CDATA[<p>After about an hour of struggling I finally figured out that Cisco&#8217;s Packet Tracer 6.1 has a bug in it in terms of IPv6 routing. When using the <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ipv6 route</span></code></pre></td></tr></table></div></figure> command, be sure to use an IP address for the destination, not a port address. </p>
+
+
+<!-- more -->
+
+
+<p>I created a simple little setup, based on the hands-on lab 14.2 in Todd Lamme
+l&#8217;s CCNa book. Three routers, one connected to second which was connected to a t
+hird. RouterA&#8212;RouterB&#8212;RouterC. Simple. I turned on ipv6 routing, assigned an
+ address, and created IPv6 routes using the outgoing interface. And then no matt
+er what I tried, I could not ping between the two subnets. I was able to ping to
+ one interface on the middle router, but not to the other interface. I checked f
+or mistypes, did the same thing for IPv4 and that worked fine. I couldn&#8217;t find t
+he problem at all. So I started to change things, and eventually used the neighboring IP address rather than the interface, and magically things started to work.</p>
+
+
+<p>So the point is, if you are playing around with IPv6 in Packet Tracer, do this:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ipv6 route 2001:db8:3c4d:1::/64 2001:db8:3c4d:2::1</span></code></pre></td></tr></table></div></figure>
+rather than this:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ipv6 route 2001:db8:3c4d:1::/64 g0/0</span></code></pre></td></tr></table></div></figure>
+</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Removing Event Listeners When Redrawing Canvas]]></title>

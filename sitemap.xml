@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2014/12/07/ipv6-packet-tracer-bug/</loc>
+    <lastmod>2014-12-07T14:46:08-08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2014/09/28/removing-event-listeners-when-redrawing-canvas/</loc>
     <lastmod>2014-09-28T15:43:08-07:00</lastmod>
     <priority>0.8</priority>
@@ -53,42 +59,42 @@
   
   <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2014-09-28T15:54:50-07:00</lastmod>
+    <lastmod>2014-12-07T15:04:05-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/</loc>
-    <lastmod>2014-09-28T15:54:50-07:00</lastmod>
+    <lastmod>2014-12-07T15:04:05-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2014-09-28T15:54:50-07:00</lastmod>
+    <lastmod>2014-12-07T15:04:05-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2014-09-28T15:54:50-07:00</lastmod>
+    <lastmod>2014-12-07T15:04:05-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2014-09-28T15:54:50-07:00</lastmod>
+    <lastmod>2014-12-07T15:04:05-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2014-09-28T15:54:50-07:00</lastmod>
+    <lastmod>2014-12-07T15:04:05-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
