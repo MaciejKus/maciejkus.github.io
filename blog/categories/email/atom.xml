@@ -4,7 +4,7 @@
   <title><![CDATA[Category: email | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/email/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2014-12-07T15:04:05-08:00</updated>
+  <updated>2014-12-08T14:45:06-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -24,23 +24,20 @@
 <p>Start with the webhosting. Here you need an A record pointing to the IP address of the webhost. Say you want example.com to be hosted by 192.168.0.1.</p>
 
 
-<p>{% codeblock %}
-example.com.    86400   IN  A   192.168.0.1
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>example.com.    86400   IN  A   192.168.0.1</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Then you need to create an A record for a subdomain which will point at the IP address of the email server you are going to use. Lets say the email server is on 10.0.0.2.</p>
 
 
-<p>{% codeblock %}
-mail.example.com.   86400   IN  A   10.0.0.2
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mail.example.com.   86400   IN  A   10.0.0.2</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>I use the 'mail' prefix, but this could be any subdomain that is not being used. Now you must create a MX record which tells emails that are sent to @example.com where to go. For this you will point the top level domain to the newly created subdomain. A common mistake is to try to point the MX record to an IP address. An MX record must point to an A record.</p>
 
 
-<p>{% codeblock %}
-example.com.    86400   IN  MX  10 mail.example.com.
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>example.com.    86400   IN  MX  10 mail.example.com.</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>That's it. Now any requests, such as a HTTP request, looking for example.com will be sent to 192.168.0.1 and any email sent to @example.com will be forwarded on to mail.example.com which goes to 10.0.0.2.</p>
 

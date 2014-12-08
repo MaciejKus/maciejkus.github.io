@@ -4,7 +4,7 @@
   <title><![CDATA[Category: enchant.js, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/enchant-dot-js/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2014-12-07T15:04:05-08:00</updated>
+  <updated>2014-12-08T14:45:06-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -38,41 +38,67 @@
 
 <p><p>The code is a bit hard to read as I have some magic numbers in there to make collisions with walls look better. But it goes something like this:</p>
 
-<p>{% codeblock lang:javascript %}
-//moving hero down
-hero.dir = DIR_DOWN;
-if (Math.abs(hero.y-hero.toY) &lt; heroSpeed) {
-  hero.y=hero.toY;
-} else if (hero.y>game.height &ndash;(game.height/3) &amp;&amp; floor.height+floor.y>game.height &amp;&amp; (floor.hitTest(hero.x + offx+Math.abs(floor.x), hero.y+(offy<em>2)+Math.abs(floor.y)) === false)){
-  floor.y &ndash;= heroSpeed;
-  hero.toY &ndash;=heroSpeed;
-}
-else {
-  hero.y +=heroSpeed;
-  if (floor.hitTest(hero.x + offx+Math.abs(floor.x), hero.y+(offy</em>2) +Math.abs(floor.y))) hero.y &ndash;=heroSpeed;
-}
-{% endcodeblock %}
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">//moving hero down</span>
+</span><span class='line'><span class="nx">hero</span><span class="p">.</span><span class="nx">dir</span> <span class="o">=</span> <span class="nx">DIR_DOWN</span><span class="p">;</span>
+</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="nx">hero</span><span class="p">.</span><span class="nx">toY</span><span class="p">)</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">heroSpeed</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">hero</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="nx">hero</span><span class="p">.</span><span class="nx">toY</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">y</span><span class="o">&gt;</span><span class="nx">game</span><span class="p">.</span><span class="nx">height</span> <span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;(</span><span class="nx">game</span><span class="p">.</span><span class="nx">height</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span> <span class="nx">floor</span><span class="p">.</span><span class="nx">height</span><span class="o">+</span><span class="nx">floor</span><span class="p">.</span><span class="nx">y</span><span class="o">&gt;</span><span class="nx">game</span><span class="p">.</span><span class="nx">height</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span> <span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">hitTest</span><span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">offx</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">x</span><span class="p">),</span> <span class="nx">hero</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="p">(</span><span class="nx">offy</span><span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">y</span><span class="p">))</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)){</span>
+</span><span class='line'>  <span class="nx">floor</span><span class="p">.</span><span class="nx">y</span> <span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;</span><span class="o">=</span> <span class="nx">heroSpeed</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">hero</span><span class="p">.</span><span class="nx">toY</span> <span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;</span><span class="o">=</span><span class="nx">heroSpeed</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">hero</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span><span class="nx">heroSpeed</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">hitTest</span><span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">offx</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">x</span><span class="p">),</span> <span class="nx">hero</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="p">(</span><span class="nx">offy</span><span class="o">&lt;</span><span class="err">/em&gt;2) +Math.abs(floor.y))) hero.y &amp;ndash;=heroSpeed;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 </p>
 <p>
 One other implementation that I had to think about was what to do about collisions. Enchant.js does a good job of making collision detection easy, but when the hero collides with another character in the game I wanted the dialogue box to pop up only a single time per collision. This was solved with having the none player characters all having a &lsquo;hit&rsquo; property. So first the game checks for a collision, and if there is a collision it checks to make sure that the hit property is set to false. If it is set to false, then the dialogue box is rendered and the hit property is set to true. The hit property stays true until the collision no longer exists. If there is no collision then the hit property is set to false again. This is the code that loops through all the characters to see if they have collided with the hero.
-{% codeblock lang:javascript %}
-var npcLength = npcArray.length;
-for (var i = 0; i &lt; npcLength; i++ ) {
- var curNpc = npcArray[i];
- if(hero.within(curNpc, 16) ) { //number  is radius of collision
-   if (!curNpc.hit) {</p>
-
-<pre><code> checkStats(); //checks and makes needed dialogue updates
- game.pushScene(game.makeDialogueScene(curNpc.dialogue)); //adds dialogue box
- curNpc.hit = true;
-</code></pre>
-
-<p>   }
- } else {
-   curNpc.hit = false;
- }
-}
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">npcLength</span> <span class="o">=</span> <span class="nx">npcArray</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">npcLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class='line'> <span class="kd">var</span> <span class="nx">curNpc</span> <span class="o">=</span> <span class="nx">npcArray</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span><span class='line'> <span class="k">if</span><span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">within</span><span class="p">(</span><span class="nx">curNpc</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span> <span class="c1">//number  is radius of collision</span>
+</span><span class='line'>   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">curNpc</span><span class="p">.</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span> <span class="nx">checkStats</span><span class="p">();</span> <span class="c1">//checks and makes needed dialogue updates</span>
+</span><span class='line'> <span class="nx">game</span><span class="p">.</span><span class="nx">pushScene</span><span class="p">(</span><span class="nx">game</span><span class="p">.</span><span class="nx">makeDialogueScene</span><span class="p">(</span><span class="nx">curNpc</span><span class="p">.</span><span class="nx">dialogue</span><span class="p">));</span> <span class="c1">//adds dialogue box</span>
+</span><span class='line'> <span class="nx">curNpc</span><span class="p">.</span><span class="nx">hit</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>   <span class="p">}</span>
+</span><span class='line'> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>   <span class="nx">curNpc</span><span class="p">.</span><span class="nx">hit</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'> <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 </p>
 <p>
 The game can be played <a href='../../../../../record-collector/'>here</a> and the code can be seen <a href='https://github.com/MaciejKus/record_collector'>here</a>. Next game I make will have better graphics, I promise.</p></p>
