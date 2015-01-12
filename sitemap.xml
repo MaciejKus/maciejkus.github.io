@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2015/01/11/most-accurate-bandwidth-speed-test/</loc>
+    <lastmod>2015-01-11T17:02:51-08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2014/12/07/ipv6-packet-tracer-bug/</loc>
     <lastmod>2014-12-07T14:46:08-08:00</lastmod>
     <priority>0.8</priority>
@@ -59,42 +65,42 @@
   
   <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2014-12-08T14:45:06-08:00</lastmod>
+    <lastmod>2015-01-11T17:05:53-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/</loc>
-    <lastmod>2014-12-08T14:45:06-08:00</lastmod>
+    <lastmod>2015-01-11T17:05:53-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2014-12-08T14:45:06-08:00</lastmod>
+    <lastmod>2015-01-11T17:05:53-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2014-12-08T14:45:06-08:00</lastmod>
+    <lastmod>2015-01-11T17:05:53-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2014-12-08T14:45:06-08:00</lastmod>
+    <lastmod>2015-01-11T17:05:53-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2014-12-08T14:45:06-08:00</lastmod>
+    <lastmod>2015-01-11T17:05:53-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

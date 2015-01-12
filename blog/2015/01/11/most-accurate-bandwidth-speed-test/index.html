@@ -1,0 +1,249 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Most Accurate Bandwidth Speed Test - Maciej Kus is not a Figure Skater</title>
+	<meta name="author" content="Maciej Kus">
+
+
+	<meta name="description" content="An example as why browser based Internet speed tests can be faulty and why iperf is a better speed test method.">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://maciejkus.com/blog/2015/01/11/most-accurate-bandwidth-speed-test/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-50427363-3']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<a href='/'><img src="/images/profile.jpg" alt="Profile Picture" style="width: 160px;" /></a>
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/blog/archives/">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/maciejkus" title="GitHub">GitHub</a>
+		
+		
+		
+		
+			<a class="linkedin" href="http://www.linkedin.com/in/maciejkus" title="LinkedIn">LinkedIn</a>
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Most Accurate Bandwidth Speed Test</h1>
+	<div class="entry-content" itemprop="articleBody"><p>There&#8217;s a lot of different sites which attempt to test home Internet speed, and they are all notoriously inaccurate. These different speed test&#8217;s usually run in your browser and are based on a flash or html5 program. They are designed for common Internet users and have a goal of making money through advertising or selling of certain Internet services. They claim to test your home&#8217;s connection speed, but are actually testing the speed between your home and their server. The results should be taken with a grain of salt, especially when testing speeds over 100Mbps. </p>
+
+
+<!-- more -->
+
+
+<p>Rather than rely on a browser based Internet speed test, to find a truly accurate reading of how fast your connection is, you should use a tool such as <a href="https://iperf.fr/">iperf</a>. This is a command line program available for all major operating systems. The program is not run in your browser, so the test results do not depend on the speed of flash or html5 or your browser. The most basic way to run iperf is simply
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>iperf -c SERVER</span></code></pre></td></tr></table></div></figure>
+Where SERVER is the IP address or URL of an iperf server you are testing to. You need both, a client computer you are testing from, and a server computer you are testing to. This may seem like a bit more work than simply going to a web-based speed test, but being able to specify a client and server allows you to specify exactly what connection you are testing. An online speed test can tell you how fast your connected is to some random server, but a connection to a different location is going to be at a totally different speed. On the server computer run
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>iperf -s</span></code></pre></td></tr></table></div></figure>
+to start the iperf server. </p>
+
+
+
+
+<p>It is better to test over a bit of time and find the average of those times. To do this run
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-w' flag.
+</span><span class='line'>iperf -c SERVER -t30 -i1</span></code></pre></td></tr></table></div></figure>
+The -t30 tells iperf to run for 30 seconds and the -i1 tells iperf to report back every one second. Running a bandwidth speed test over numerous seconds makes sure that a single moment of congestion or above average speed does not provide a misleading report. Another thing to try is adding multiple connections at once. 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>iperf -c SERVER -t30 -i1 -P10</span></code></pre></td></tr></table></div></figure>
+The -P10 tells iperf to run 10 simultaneous connection tests at once, and then iperf sums those up. This summed result should be close to the same as a single connection&#8217;s result. If there is a large difference, then there may be a issue with the network connection or with the computer settings. Another thing to try is manually changing the TCP window size. Iperf attempts to select a window size based on the operating system, as different operating systems have different limits. To see if an issue is being caused by TCP window size you can manually set window sizes using the &#8216;-w&#8217; flag.
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>iperf -c SERVER -w 64kb</span></code></pre></td></tr></table></div></figure>
+The above will use a window size of 64kb.</p>
+
+
+<p>To see how browser based speed tests do, I tested my 100mbps connection on a number of different sites, and also using iperf. First, the iperf result of testing to a server in the same location as I am in (but across 2 routers) which I know can handle over 100Mbps of traffic:
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>iperf -c SERVER 
+</span><span class='line'>------------------------------------------------------------
+</span><span class='line'>Client connecting to SERVER, TCP port 5001
+</span><span class='line'>TCP window size: 96.7 KByte (default)
+</span><span class='line'>------------------------------------------------------------
+</span><span class='line'>[  3] local 10.255.251.164 port 48516 connected with 192.168.227.10 port 5001
+</span><span class='line'>[ ID] Interval       Transfer     Bandwidth
+</span><span class='line'>[  3]  0.0-10.0 sec   105 MBytes  87.7 Mbits/sec</span></code></pre></td></tr></table></div></figure>
+The above shows that iperf transfered 105 Megabytes at an average speed of 87.7Mbits/second. This sounds about right for a 100Mbps connection. I ran the test a few times using a few different options, such as multiple connections at once, and the results were all about the same, every time. Because this test is to a close iperf server, it is going to be the most accurate in telling me what my bandwidth limit is where I currently am. All other delays in bandwidth are going to be as a result of having to travel further across the world or across more routing equipment. I then ran a test to Standford&#8217;s public iperf server:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>iperf -c netspeed1.stanford.edu
+</span><span class='line'>------------------------------------------------------------
+</span><span class='line'>Client connecting to netspeed1.stanford.edu, TCP port 5001
+</span><span class='line'>TCP window size: 96.7 KByte (default)
+</span><span class='line'>------------------------------------------------------------
+</span><span class='line'>[  3] local 10.255.251.164 port 60027 connected with 171.66.6.38 port 5001
+</span><span class='line'>[ ID] Interval       Transfer     Bandwidth
+</span><span class='line'>[  3]  0.0-10.0 sec  91.5 MBytes  76.6 Mbits/sec</span></code></pre></td></tr></table></div></figure>
+Stanford is in Norther California, as am I, and the connection between us us around 76.6 Mbits/sec. I again ran this a few times and the results were always within a 3Mbps range. Already the limit of the connection is being slowed down due to the data having to travel a longer path.<br>
+Most speed test users are trying to find the speed of their local connection, so the best thing to do is to test as close to that connection as possible. To finally prove this point I test to a public server in Estonia:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>iperf -c iperf.eenet.ee
+</span><span class='line'>------------------------------------------------------------
+</span><span class='line'>Client connecting to iperf.eenet.ee, TCP port 5001
+</span><span class='line'>TCP window size: 23.5 KByte (default)
+</span><span class='line'>------------------------------------------------------------
+</span><span class='line'>[  3] local 10.255.251.164 port 55661 connected with 193.40.100.7 port 5001
+</span><span class='line'>[ ID] Interval       Transfer     Bandwidth
+</span><span class='line'>[  3]  0.0-10.0 sec  32.6 MBytes  27.3 Mbits/sec</span></code></pre></td></tr></table></div></figure>
+Obviously the above is not telling me that my bandwidth is only 27.3Mbps, but that the transfer speed between me and the Estonian server is maxing out at 27.3Mbps. This illustrates that iperf allows testing of both local connections and global connections between two points.
+ </p>
+
+
+<p><p>Now let&rsquo;s see how browser based speed tests did. First I tried what seems to be the most popular speed test site, speedtest.net. The result? A download speed of 25.37 Mbps and upload of 68.95 Mbps. I&rsquo;m pretty shocked at how low speedtest.net claims my download speed it. I ran the test a second time a few minutes later and got a slightly better reading of 62.28 Mbps download and 66.66 Mbps upload, but this is still about 20Mbps less than what a local iperf test was able to reach. If I didn&rsquo;t know any better, I might believe that my home Internet connection reached only around 65Mbps.<br>
+I then tried testmy.net, which claims to be better due to not relying on flash, which it (correctly) claims may affect the results of any bandwidth test. The results however were even worse than speedstest.net&rsquo;s! I received a download speed of 68.8 Mbps and a very slow upload speed claim of 17.8 Mbps. Running the test a second time showed a similar download speed of 63.3 Mbps and an upload speed of 36.8Mbps. If the site is to be believed, my unchanged connection somehow doubled it&rsquo;s upload speed.<br>
+<p>Finally, I tried speedof.me. It claimed a download speed of 61.44 Mbps and upload of 65.3 Mbps. A second test a few minutes later showed a download speed of 31.49 Mpbs and a upload of 60.64Mbps. Their server is located in San Jose California, about the same distance as Standford. Again, wildly differing results.</p>
+<p>These browser speed tests show a variety of results, while iperf shows pretty much the same values run every singe time. With iperf I can setup a server close enough to me to know that my actual connection is being test, and that the results are not lowered due to geographic distance, a flash program, or an unknown proprietary methodology. Iperf also allows me to check the transfer rate between me and specific locations around the world.</p></p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2015
+
+    Maciej Kus
+
+
+
+</footer>
+		</div>
+	</div>
+	
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
