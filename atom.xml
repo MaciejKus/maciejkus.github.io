@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-01-11T17:05:53-08:00</updated>
+  <updated>2015-02-21T14:55:02-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[128 VPS]]></title>
+    <link href="http://maciejkus.com/blog/2015/02/21/128-vps/"/>
+    <updated>2015-02-21T14:40:30-08:00</updated>
+    <id>http://maciejkus.com/blog/2015/02/21/128-vps</id>
+    <content type="html"><![CDATA[<p>
+I have my first VPS. It&#8217;s a tiny 128mb RAM VPS which costs me a whooping $15 a year. Not too bad. I will be hosting a few static websties on it. These are CSS/HTML/JavaScript only sites. No database, no php, no backend. So unless traffic levels get crazy, a 128mb VPS should be fine. I setup a minimal 32-bit version of Debian on it and was ready to go.
+</p>
+
+
+<!-- more -->
+
+
+<p>
+The first thing I did was disable root ssh login and create a new user. I also went ahead and changes the default SSH port and installed fail2ban to avoid SSH attacks. I also setup automatic security updates using a cronjob. I figure this is enough security that the server will need. fail2ban takes about 3-4 mb of RAM, so I still have plenty left for webhosting.
+</p>
+
+
+<p>
+I then installed nginx and set it up to accommodate my little server. Since I only have one CPU, I set &#8216;worker_processes&#8217; to 1, &#8216;worker_connections&#8217; to 1024, and lowered the timout to 25 seconds. I also setup client caching of all CSS, JS, and image files. Finally I also turned &#8216;gzip_static&#8217; on, which allows pre-zipped files to be sent out by the server. This means if a file is gzipped before hand the server does not use CPU to gzip that file. I gzipped all my .html and .js files and kept both the original and the new .gz files in the  same directory. 
+</p>
+
+
+<p>If a .gz file does not exist, nginx will gzip the original file (.html for example) using up CPU resources to do so. However, if nginx sees both index.html and index.html.gz it will server up index.html.gz instead. The one gotcha is that every time you make a change to the .html file you will need to update the .html.gz file also. Apparently nginx also likes the original and the gzipped files to have the same time stamp, so once all the files were ready to go I has to &#8216;touch *&#8217; to give them all the same time stamp.
+</p>
+
+
+<p>The site that I have running on the VPS gets over 1,000 page views a day and the load and memory usage on the server is tiny. I can easily add other static sites to the server, or increase the amount of traffic to the server without and problems. Now I have a fun little virtual server to play with.
+</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Most Accurate Bandwidth Speed Test]]></title>
