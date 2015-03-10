@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-02-21T14:55:02-08:00</updated>
+  <updated>2015-03-09T18:00:28-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Giving Hexo a Try]]></title>
+    <link href="http://maciejkus.com/blog/2015/02/28/giving-hexo-a-try/"/>
+    <updated>2015-02-28T13:17:36-08:00</updated>
+    <id>http://maciejkus.com/blog/2015/02/28/giving-hexo-a-try</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m building a new website using Hexo, a javascript based static site generator.  This blog runs using Octopress, which is OK, but I don&rsquo;t know anything about Ruby and generating content seems to take longer than I would like. The author of Octopress isn&rsquo;t very <a href="http://octopress.org/2015/01/15/octopress-3.0-is-coming/">happy</a> with where the platform currently is and is rewriting it. So I figure it&rsquo;s a great time to try something new.</p>
+
+<!--more-->
+
+
+<p>I chose Hexo largely because it is written in Javascript and because it has some nice themes made and ready to go. Well, I am still customizing the theme I chose, but it&rsquo;s less work to edit an existing theme than start one up from scratch. Having dealt with Octopress I am somewhat used to a static blogging platform and for the most part things aren&rsquo;t all that different. I&rsquo;m using markdown for the first time ever, and boy is it nice. It&rsquo;s one of those things where I&rsquo;d rather start with HTML and then once I understand it try markdown in the same way I would rather learn vanilla Javascript before playing with jQuery or a framework. It&rsquo;s nice knowing what is going on &lsquo;under the hood&rsquo;. I&rsquo;m also going to get more familiar with EJS because that is what much of the theme I am working with is written in. It&rsquo;s a bit confusing at first glance, but I bet, like markdown will make sense and make life easier.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[128 VPS]]></title>

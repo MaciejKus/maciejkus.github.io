@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<head>
+<title> California Drought Size </title>
+<meta name="description" content="An interactive view of just how awesomely large the California Drought really is." />
+	<meta name="keywords" content="California, Drought, Size, Shower, Toilet, Gallons" />
+	<meta name=viewport content="width=device-width, initial-scale=1">
+<link rel="canonical" href="http://maciejkus.com/californiaDrought/" />
+<style>
+html {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  color: #291400;
+  background-color: #c30;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 180%;
+}
+
+.leftmenu {
+  float: left;
+  width: 25%;
+}
+
+.leftcat {
+  font-size: large;
+  margin: 4px;
+  background: #B88A00;
+  border-radius: 10px;
+  line-height: 30px;
+  vertical-align: bottom;
+  -webkit-box-shadow: -3px 3px 3px #331;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    -3px 3px 3px #331;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         -3px 3px 3px #331;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.mid {
+  float: left;
+  width: 50%;
+  font-size: 200%;
+}
+
+
+#map {
+  max-height: 690px;
+  max-width: 591px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  background: #ffa;
+  height: auto;
+  max-width: 100%;
+}
+
+.rightmenu {
+  float: right;
+  width: 25%;
+}
+
+.rightcat {
+  margin: 4px;
+  background: #FFA319;
+  border-radius: 8px;
+  min-height: 50px;
+  -webkit-box-shadow: -3px 3px 3px #331;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    -3px 3px 3px #331;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         -3px 3px 3px #331;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.rightcat:active {
+  background: #E69C5E;
+}
+
+.righttitle {
+  font-size: 150%;
+}
+
+.endnotes {
+float:left;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  font-size: medium;
+}
+
+</style>
+</head>
+<body>
+  <div class="leftmenu">
+    <div class="leftcat">
+     California needs at least <a href="http://science.nasa.gov/science-news/science-at-nasa/2014/16dec_drought/">11 trillion gallons</a> of water to end its drought. That's a whole heck of a lot of water. It's hard for us to think in terms of such amazingly large numbers, so maybe this page will help. Click on the items on the right to subtract their corresponding water usage from the 11 trillion gallons needed to get California's water supplies back to normal. 
+    </div>
+    <div class="leftcat">
+     Clicks: <span id="clicks"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Minutes: <span id="minutesclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Toilets Flushed: <span id="toiletclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Dishwasher Loads: <span id="dishwasherclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Clothes Washer Loads: <span id="clothesclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Lawns: <span id="lawnclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Faucets Running: <span id="faucetclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Showers Running: <span id="showerclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Sprinklers Running: <span id="sprinklerclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Hoses Running: <span id="hoseclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Almonds Grown: <span id="almondclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Avocados Grown: <span id="avocadoclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Sticks of Butter: <span id="butterclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Pounds of Beef: <span id="beefclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     160 Acres of Grain: <span id="grainclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     160 Acres of Alfalfa: <span id="alfalfaclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     California Agriculture: <span id="argocaliclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     Californias: <span id="californiaclick"> 0 </span>
+    </div>
+    <div class="leftcat">
+     USAs: <span id="usaclick"> 0 </span>
+    </div>
+  </div>
+
+  <div class="mid">
+  <h1>
+    California Drought Size
+  </h1>
+    <span id="waterneeded">11000000000000</span> Gallons Needed
+    <br />
+      <div id="map">
+        <img src="caoutl.png" alt="California Map">
+      </div> 
+  </div>
+
+  <div class ="rightmenu">
+    <div class ="rightcat once" id="toilet">
+      <span class="righttitle">Toilet</span>
+      <br />
+      5 gallons/flush
+    </div>
+    <div class ="rightcat once" id="dishwasher">
+      <span class="righttitle">Dishwasher</span>
+      <br />
+      10 gallons/load
+    </div>
+    <div class ="rightcat once" id="clothes">
+      <span class="righttitle">Clothes Washer</span>
+      <br />
+      45 gallons/load
+    </div>
+    <div class ="rightcat once" id="lawn">
+      <span class="righttitle">Small Lawn</span>
+      <br />
+      1,000 sq ft lawn uses 35,000 gallons / year
+    </div>
+    <div class ="rightcat per" id="faucet">
+      <span class="righttitle">A Running Faucet</span>
+      <br />
+      3 gpm
+    </div>
+    <div class ="rightcat per" id="shower">
+      <span class="righttitle">Running Shower</span>
+      <br />
+      4 gpm
+    </div>
+    <div class ="rightcat per" id="sprinkler">
+      <span class="righttitle">Single Lawn Sprinkler</span>
+      <br />
+      5 gpm
+    </div>
+    <div class ="rightcat per" id="hose">
+      <span class="righttitle">Garden Hose</span>
+      <br />
+      8 gpm
+    </div>
+    <div class ="rightcat once" id="almond">
+      <span class="righttitle">Growing a Single Almond</span>
+      <br />
+      1 gallon
+    </div>
+    <div class ="rightcat once" id="avocado">
+      <span class="righttitle">Growing a Large Avocado</span>
+      <br />
+      220 gallons
+    </div>
+    <div class ="rightcat once" id="butter">
+      <span class="righttitle">Manufacturing A Stick of Butter</span>
+      <br />
+      500 gallons
+    </div>
+    <div class ="rightcat once" id="beef">
+      <span class="righttitle">Growing a Pound of Beef</span>
+      <br />
+      5,000 gallons
+    </div>
+    <div class ="rightcat per" id="grain">
+      <span class="righttitle">Growing 160 Acres of Grain</span>
+      <br />
+      135 gpm
+    </div>
+    <div class ="rightcat per" id="alfalfa">
+      <span class="righttitle">Growing 160 Acres of Alfalfa</span>
+      <br />
+      460 gpm
+    </div>
+    <div class ="rightcat per" id="argocali">
+      <span class="righttitle">All California Agricultural Usage</span>
+      <br />
+      21,078,674 gpm
+    </div>
+    <div class ="rightcat per" id="california">
+      <span class="righttitle">All California Usage </span>
+      <br />
+      27,332,311 gpm
+    </div>
+    <div class ="rightcat per" id="usa">
+      <span class="righttitle">All USA Usage </span>
+      <br />
+      246,527,778 gpm
+    </div>
+  </div>
+
+  <div class = "endnotes">
+<p>
+11 trillion gallons is close to a whole year's worth of the 43 million acre-feet of water that California as a whole uses in a single year (that's a bit over 14 trillion gallons). So if all of California stopped using all water for one year, we would be in great condition. Obviously that is not realistic. 
+</p>
+<p>
+I hope the above helps people realize how major the current California drought is. The numbers are estimates. Clearly different model toilets, dishwashers, etc. are going to have different water usages. I did try to be fairly accurate though. Some of the websites that I looked at when searching for numbers include:
+</p>
+<p>
+http://www.slate.com/articles/technology/future_tense/2014/05/_10_percent_of_california_s_water_goes_to_almond_farming.html
+<br>
+http://www.stormwater.cecs.ucf.edu/toolkit/vol1/Contents/pdfs/Water%20Conservation/Water%20used%20handout.pdf
+<br>
+http://www.acwa.com/content/conservation/californias-water-facts-water-efficency-gardens-full-bloom
+<br>
+http://water.usgs.gov/watuse/wuto.html
+<br>
+http://www.water.ca.gov/wateruseefficiency/agricultural/
+<br>
+</p>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+var water = 11000000000000, gpm = 0, minutes = 0, mintime = 0;
+var oneTimeOnly = {
+  toilet: 5,
+  dishwasher: 10,
+  clothes: 45,
+  lawn: 35000,
+  almond: 1,
+  avocado: 220,
+  butter: 500,
+  beef: 5000
+};
+  
+var everyMinute = {
+  faucet: 3,
+  shower: 4,
+  sprinkler: 5,
+  hose: 8,
+  grain: 135,
+  alfalfa: 460,
+  argocali: 21078674,
+  california: 27332311,
+  usa: 246527778
+};
+
+
+
+//gpm items
+$(".per").click(function() {
+  gpm += everyMinute[this.id];
+  var counterr = this.id + "click";
+  var countervalue = $("#" + counterr).html();
+  $("#" + counterr).html(parseInt(countervalue) +1 );
+  var clicksvalue = $("#clicks").html();
+  $("#clicks").html(parseInt(clicksvalue) + 1);
+  mintime = 1;
+});
+
+//items counted only once
+$(".once").click( function() {
+  water -= oneTimeOnly[this.id];
+  $("#waterneeded").html(water);
+  var counterr = this.id + "click";
+  var countervalue = $("#" + counterr).html();
+  $("#" + counterr).html(parseInt(countervalue) +1 );
+  var clicksvalue = $("#clicks").html();
+  $("#clicks").html(parseInt(clicksvalue) + 1);
+});
+
+//every second gpm is subtracted
+function countDown() {
+  water -= gpm;
+  if (water < 0) {
+    water = 0;
+    clearInterval(refreshing);
+    $("#waterneeded").html("Drought Finally Over! That sure is a lot of water! 0 ");
+  }
+  $("#waterneeded").html(water);
+  minutes += mintime; //mintime used so minutes doesnt start counting as soon as page is loaded, only after first cliick
+  $("#minutesclick").html(minutes);
+  if (water < 1000000000000)  { $("img").css("background", "#0000ff"); } else
+  if (water < 2000000000000)  { $("img").css("background", "#1919ff"); } else
+  if (water < 3000000000000)  { $("img").css("background", "#3333ff"); } else
+  if (water < 4000000000000)  { $("img").css("background", "#4d4dff"); } else
+  if (water < 5000000000000)  { $("img").css("background", "#6666ff"); } else
+  if (water < 6000000000000)  { $("img").css("background", "#8080ff"); } else
+  if (water < 7000000000000)  { $("img").css("background", "#9999ff"); } else
+  if (water < 8000000000000)  { $("img").css("background", "#b2b2ff"); } else
+  if (water < 9000000000000)  { $("img").css("background", "#ccccff"); } else
+  if (water < 10000000000000) { $("img").css("background", "#e6e6ff");};
+}
+
+var refreshing = setInterval(countDown, 1000);
+
+  </script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50427363-2', 'subnettingpractice.com');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+
+<!--
+Created by Maciej Kus. MaciejKus.com
+-->
