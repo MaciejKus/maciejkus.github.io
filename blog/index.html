@@ -9,7 +9,7 @@
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Feb 28th, 2015 Giving Hexo a Try I&rsquo;m building a new website using Hexo, a javascript based static site generator. This blog runs using &hellip;">
+	<meta name="description" content="Mar 13th, 2015 python Accurate Rounding in Python Rounding floats doesn&rsquo;t work all that well. I was using python to write some code which &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,6 +93,57 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-03-13T14:25:15-07:00" data-updated="true" itemprop="datePublished">Mar 13<sup>th</sup>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/python/'>python</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/03/13/accurate-rounding-in-python/" itemprop="url">Accurate Rounding in Python</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Rounding floats doesn&rsquo;t work all that well. I was using python to write some code which outputs math problems related to rounding. I needed the problems to use random numbers, so I just used</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>num= random.uniform(.5,10.9)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>which returns a random floating point number. Easy enough. Later on I needed to round this to an integer, however, rounding floating numbers doesn&rsquo;t always work as expected. This is pretty well documented all over the Internet, yet a simple solution took me a bit more time than it should have. At one point I just thought about turning the number into a string, parsing out the digit after the decimal point and if it was greater than 4 rounding up and if not, rounding down. That would have worked.</p>
+
+<p>But I was stubborn and figured there must be a more mathy way of doing things. The solution was:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>round1 = Decimal(format( num1, '.2f'))
+</span><span class='line'>round1 = Decimal(round1.quantize(Decimal('1')))</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Turn the number into a decimal, and then round. All arithmetic functions such as &ldquo;+&rdquo; still work fine without having to convert back to float or anything like that.</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -473,46 +524,6 @@ A while ago I wanted to work with graphics. Before then all I have ever coded we
 
 		
 		<a href="/blog/2014/08/04/simple-html5-games/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-02T13:41:01-07:00" data-updated="true" itemprop="datePublished">Aug 2<sup>nd</sup>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/enchant-dot-js/'>enchant.js,</a>, <a class='category' href='/blog/categories/games/'>games,</a>, <a class='category' href='/blog/categories/incremental/'>incremental,</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/08/02/record-collector-the-game/" itemprop="url">Record Collector the Game</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Record Collector is a simple game I made using the <a href='http://enchantjs.com/'>enchant.js</a> game engine. It was largely an exercise in JavaScript and using a game engine, but I also wanted to add my own flavor to the incremental game genre. Most incremental games are text and box based, where you click buttons or objects. In Record Collector you control a hero who walks around and interacts with other characters while trying to get more records.</p>
-
-
-<p>I chose enchant.js because it was small and simple. I did not want a framework that would do all the work for me. I meant this to be a learning experience for myself, and it was. I never made a game more advanced than pong before this. Here I had to not only code the game, but also design the game play and the graphics (my apologies. I am clearly not an artist.) Enchant helped me create the map and I was able to avoid writing my own collision detection function. But by and large the game is my own creation.</p>
-
-
-
-		
-		<a href="/blog/2014/08/02/record-collector-the-game/" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>
