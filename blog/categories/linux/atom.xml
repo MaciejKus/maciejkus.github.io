@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: linux | Maciej Kus is not a Figure Skater]]></title>
+  <link href="http://maciejkus.com/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://maciejkus.com/"/>
+  <updated>2015-04-13T15:29:02-07:00</updated>
+  <id>http://maciejkus.com/</id>
+  <author>
+    <name><![CDATA[Maciej Kus]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[linux is cool]]></title>
+    <link href="http://maciejkus.com/blog/2015/04/13/linux-is-cool/"/>
+    <updated>2015-04-13T14:46:23-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/04/13/linux-is-cool</id>
+    <content type="html"><![CDATA[<p>I like wget and sed. Want to download a whole website?</p>
+
+<pre><code>wget -r --no-parent http://example.com/
+</code></pre>
+
+<p>Want to insert the test of input.txt after the head tag into all html files?</p>
+
+<pre><code>sed -i '/&lt;head&gt;/r input.txt' *.html
+</code></pre>
+
+<p>Tools like these make life so easy.</p>
+]]></content>
+  </entry>
+  
+</feed>
