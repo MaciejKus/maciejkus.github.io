@@ -1,0 +1,10 @@
+---
+layout: post
+title: "New Site"
+date: 2015-04-04 15:08:12 -0700
+comments: false
+categories: 
+description: 
+---
+
+So I'm playing with Wordpress for a [smoothie and fitness](http://smoothiegains.com/) site. I do love drinking smoothies so it should be fun to post some of my favorite recipes on there. 
