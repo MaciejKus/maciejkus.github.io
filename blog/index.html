@@ -9,7 +9,7 @@
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Apr 13th, 2015 linux Linux Is Cool I like wget and sed. Want to download a whole website? wget -r --no-parent http://example.com/ Want to insert the &hellip;">
+	<meta name="description" content="Apr 25th, 2015 css Responsive Design Responsive design in the idea that a webpage will respond to and accommodate the width of a browser. What this &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,6 +93,46 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-25T15:16:46-07:00" data-updated="true" itemprop="datePublished">Apr 25<sup>th</sup>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/css/'>css</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/04/25/responsive-design/" itemprop="url">Responsive Design</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Responsive design in the idea that a webpage will respond to and accommodate the width of a browser. What this means is that if you are looking at a website on a small screen, such as those found in smart phones, the page will adjust to fit that small screen. Usually things that happen is the line height and font increase and the layout of the page becomes more vertical. Elements line up on top of one another rather than to the left or right of one another.</p>
+
+<p>My job&rsquo;s main webpage was designed years ago, well before mobile phones were widely used to browse the Internet. The webpage still works fine and the belief is that there is little reason to change the site. All the information that customers and potential customers may need can be easily found. However, up until a week ago the site looked pretty terrible on mobile devices. This was a problem, especially since Google was going to start punishing non-mobile friendly sites in its search results.</p>
+
+<p>I took a look at the existing CSS and realized I can make the site responsive. So I added some CSS media queries, removed some inline CSS, changed a tiny bit of html, and bam! Now on a desktop or wider screen the site looks exactly like it used to, but on a smaller screen or on a mobile phone the layout of the site is a lot more vertical and user friendly.</p>
+
+
+		
+		<a href="/blog/2015/04/25/responsive-design/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -440,69 +480,6 @@ The JavaScript looks like this:</p>
 
 		
 		<a href="/blog/2014/09/21/dragging-and-switching-images-with-javascript/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-14T15:42:25-07:00" data-updated="true" itemprop="datePublished">Sep 14<sup>th</sup>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/dns/'>dns,</a>, <a class='category' href='/blog/categories/email/'>email</a>, <a class='category' href='/blog/categories/webhosting/'>webhosting,</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/09/14/webhosing-one-place-email-somewhere-else/" itemprop="url">Webhosting One Place Email Somewhere Else</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>A somewhat common problem that comes up at work is users wanting to host their website one place and have their email services go through somewhere else. The main issue is knowing how to setup DNS correctly.</p>
-
-
-<p>Start with the webhosting. Here you need an A record pointing to the IP address of the webhost. Say you want example.com to be hosted by 192.168.0.1.</p>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>example.com. 86400   IN  A   192.168.0.1</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then you need to create an A record for a subdomain which will point at the IP address of the email server you are going to use. Lets say the email server is on 10.0.0.2.</p>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mail.example.com.    86400   IN  A   10.0.0.2</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I use the &#8216;mail&#8217; prefix, but this could be any subdomain that is not being used. Now you must create a MX record which tells emails that are sent to @example.com where to go. For this you will point the top level domain to the newly created subdomain. A common mistake is to try to point the MX record to an IP address. An MX record must point to an A record.</p>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>example.com. 86400   IN  MX  10 mail.example.com.</span></code></pre></td></tr></table></div></figure>
-
-
-<p>That&#8217;s it. Now any requests, such as a HTTP request, looking for example.com will be sent to 192.168.0.1 and any email sent to @example.com will be forwarded on to mail.example.com which goes to 10.0.0.2.</p>
-
-
-<p>The above can and probably should also be done with IPv6 when IPv6 addresses are available. For that just add AAAA records in the same maner as the A records above. You will need one AAAA record for example.com pointing to the webhosting IPv6 address, and one AAAA record pointing mail.example.com pointing to the mail server&#8217;s IPv6 address.</p>
-
-
-		
-		
 	</div>
 
 </article>

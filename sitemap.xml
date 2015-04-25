@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2015/04/25/responsive-design/</loc>
+    <lastmod>2015-04-25T15:16:46-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2015/04/13/linux-is-cool/</loc>
     <lastmod>2015-04-13T14:46:23-07:00</lastmod>
     <priority>0.8</priority>
@@ -95,42 +101,42 @@
   
   <url>
     <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2015-04-13T15:36:01-07:00</lastmod>
+    <lastmod>2015-04-25T15:55:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/</loc>
-    <lastmod>2015-04-13T15:36:01-07:00</lastmod>
+    <lastmod>2015-04-25T15:55:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2015-04-13T15:36:01-07:00</lastmod>
+    <lastmod>2015-04-25T15:55:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2015-04-13T15:36:01-07:00</lastmod>
+    <lastmod>2015-04-25T15:55:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2015-04-13T15:36:01-07:00</lastmod>
+    <lastmod>2015-04-25T15:55:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2015-04-13T15:36:01-07:00</lastmod>
+    <lastmod>2015-04-25T15:55:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-04-13T15:36:01-07:00</updated>
+  <updated>2015-04-25T15:55:05-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -28,46 +28,69 @@
 
 
 <p>With all that in mind, I did have a couple issues when setting up Octopress. First, when installing either the default theme or the <a href ='https://github.com/shashankmehta/greyshade'>Greyshade</a> theme which I ended up using, I received the following errors:
-{% codeblock %}
-:rake install
-rake aborted!
-LoadError: cannot load such file -- stringex
-/var/www/maciej/octopress/Rakefile:3:in `require'
-/var/www/maciej/octopress/Rakefile:3:in `<top (required)>'
-(See full trace by running task with --trace)
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:rake install
+</span><span class='line'>rake aborted!
+</span><span class='line'>LoadError: cannot load such file -- stringex
+</span><span class='line'>/var/www/maciej/octopress/Rakefile:3:in `require'
+</span><span class='line'>/var/www/maciej/octopress/Rakefile:3:in `&lt;top (required)>'
+</span><span class='line'>(See full trace by running task with --trace)</span></code></pre></td></tr></table></div></figure></notextile></div>
 and
-{% codeblock %}
-rake install['greyshade'] --trace
-rake aborted!
-LoadError: cannot load such file -- stringex
-/var/www/maciej/maciejkus925.github.io/octopress/Rakefile:3:in `require'
-/var/www/maciej/maciejkus925.github.io/octopress/Rakefile:3:in `<top (required)>'
-/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_module.rb:28:in `load'
-/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_module.rb:28:in `load_rakefile'
-/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:687:in `raw_load_rakefile'
-/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:94:in `block in load_rakefile'
-/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:176:in `standard_exception_handling'
-/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:93:in `load_rakefile'
-/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:77:in `block in run'
-/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:176:in `standard_exception_handling'
-/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:75:in `run'
-/var/lib/gems/1.9.1/gems/rake-10.3.2/bin/rake:33:in `<top (required)>'
-/usr/local/bin/rake:23:in `load'
-/usr/local/bin/rake:23:in `<main>'
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install['greyshade'] --trace
+</span><span class='line'>rake aborted!
+</span><span class='line'>LoadError: cannot load such file -- stringex
+</span><span class='line'>/var/www/maciej/maciejkus925.github.io/octopress/Rakefile:3:in `require'
+</span><span class='line'>/var/www/maciej/maciejkus925.github.io/octopress/Rakefile:3:in `&lt;top (required)>'
+</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_module.rb:28:in `load'
+</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_module.rb:28:in `load_rakefile'
+</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:687:in `raw_load_rakefile'
+</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:94:in `block in load_rakefile'
+</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:176:in `standard_exception_handling'
+</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:93:in `load_rakefile'
+</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:77:in `block in run'
+</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:176:in `standard_exception_handling'
+</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:75:in `run'
+</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/bin/rake:33:in `&lt;top (required)>'
+</span><span class='line'>/usr/local/bin/rake:23:in `load'
+</span><span class='line'>/usr/local/bin/rake:23:in `&lt;main>'</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 The issue ended up being that my Gemfile was pointing to an old version of stringex. To get things working I changed my Gemfile from
-{% codeblock %}gem 'stringex', '~> 1.4.0'{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem 'stringex', '~> 1.4.0'</span></code></pre></td></tr></table></div></figure></notextile></div>
 to
-{% codeblock %}gem 'stringex', '~> 2.5.2'{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem 'stringex', '~> 2.5.2'</span></code></pre></td></tr></table></div></figure></notextile></div>
 </p>
 
 
 <p>The second issue was that when I moved the default index.html file to blog/index.html as described on the Octopress <a href='http://octopress.org/docs/theme/template/'>website</a> blog/index.html would show up blank. There was no blog entries being listed on the page. When I moved the file back to the home directory the most recent blog posts once again showed up. The fix was to update _config.yml and set 
-{% codeblock %}paginate_path: "posts/:num"{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>paginate_path: "posts/:num"</span></code></pre></td></tr></table></div></figure></notextile></div>
 to 
-{% codeblock %}paginate_path: "blog/posts/:num"{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>paginate_path: "blog/posts/:num"</span></code></pre></td></tr></table></div></figure></notextile></div>
 It's a simple step that the Octopress documentation did not mention.</p>
 
 
