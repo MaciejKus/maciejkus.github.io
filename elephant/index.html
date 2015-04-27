@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Elephants Fear Mice</title>
+<style>
+#image {
+ position: absolute;
+}
+
+body {
+ line-height: 1.2em;
+}
+
+.content {
+ max-width: 800px;
+}
+div {
+ margin:0;
+}
+
+</style>
+</head>
+<body>
+<div class='content'>
+<div id='image'>
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="400">
+
+<rect x="70" y="240" rx="5" ry="5" width="40" height="100"
+  style="fill:grey;stroke:black;stroke-width:2" />
+
+<rect x="210" y="240" rx="5" ry="5" width="40" height="100"
+  style="fill:grey;stroke:black;stroke-width:2" />
+
+<rect x="40" y="60" rx="60" ry="60" width="250" height="200"
+  style="fill:grey;stroke:black;stroke-width:2" />
+
+<circle cx="90" cy="250" r="20" style="fill:grey" />
+<circle cx="230" cy="250" r="20" style="fill:grey" />
+
+  <ellipse  cx="300" cy="140" rx="50" ry="80" style="fill:grey;stroke:black;stroke-width:2" />
+
+ <circle cx="270" cy="180" r="35" style="fill:grey" />
+
+  <path d="M290 70 C 250 50, 220 10, 190 65 S 150 80, 180 120 C 250 300, 270 140, 280 160" style="stroke:black;fill:grey;stroke-width:2" />
+
+  <path d="M42 160 S 30 200, 10 220 S 30 230, 42 190" style="fill:grey;stroke:black;stroke-width:2" />
+
+<path id='trunk' d="M320 200 S 340 180, 330 260 C 320 300, 340 300, 340 280 S 360 190, 350 140" style="fill:grey;stroke:black;stroke-width:2" />
+
+<circle id='eye' cx="330" cy="120" r="4" style="fill:black" />
+
+   opps, looks like SVG doesnt work for you. No Elephant.
+  </svg>
+
+
+  
+</div>
+<div style='float:left; height: 1.2em; width: 0; clear:both;'></div>
+<div style='float:left; height: 1.2em; width: 15em; clear:both;'></div>
+<div style='float:left; height: 1.2em; width: 17em; clear:both;'></div>
+<div style='float:left; height: 1.2em; width: 20.5em; clear:both;'></div>
+<div style='float:left; height: 1.2em; width: 21.5em; clear:both;'></div>
+<div style='float:left; height: 1.2em; width: 22em; clear:both;'></div>
+<div style='float:left; height: 1.2em; width: 22.5em; clear:both;'></div>
+<div id='move1' style='float:left; height: 1.2em; width: 22.5em; clear:both;'></div>
+<div id='move2' style='float:left; height: 1.2em; width: 22.5em; clear:both;'></div>
+<div id='move3' style='float:left; height: 1.2em; width: 22.5em; clear:both;'></div>
+<div id='move4' style='float:left; height: 1.2em; width: 22em; clear:both;'></div>
+<div id='move5' style='float:left; height: 1.2em; width: 22em; clear:both;'></div>
+<div id='move6' style='float:left; height: 1.2em; width: 21.8em; clear:both;'></div>
+<div id='move7' style='float:left; height: 1.2em; width: 21.5em; clear:both;'></div>
+<div id='move8' style='float:left; height: 1.2em; width: 21.5em; clear:both;'></div>
+<div style='float:left; height: 1.2em; width: 16em; clear:both;'></div>
+<div style='float:left; height: 1.2em; width: 16em; clear:both;'></div>
+<div style='float:left; height: 1.2em; width: 16em; clear:both;'></div>
+
+This is an elephant. She is handcoded in svg. In Chrome the css property "shape-outside: ellipse(180px 160px at 50% 45%);" worked well when trying to wrap text around her, however this did not work at all in Firefox. "Shape-outside" isnt supported in Firefox at the moment. So instead the elephant has been positioned as absolute, and a number of empty divs have been created to float the text around the svg image. Another option would have been to make the svg image a background-image, but using absolute positioning allows easier changes when the mouse is hovered over the elephant.
+<p>
+Javascript is used to move things around when a mouse hovers over the elephant (after all, elephants fear mice, right?). It changes the 'd' element of the svg path which draws the trunk, and also changes the width of the empty divs which move the text over. One of the best things about SVG is that the path elements of case sensitive, with a lowercase 'q' meaning that the coordinates are going to be relative while a uppercase 'Q' would have the coordinates be absolute. The more I play the more sense it all makes. 
+</div>
+<script type='text/javascript'>
+var image = document.getElementById('image'),
+  move1 = document.getElementById('move1'),
+  move2 = document.getElementById('move2'),
+  move3 = document.getElementById('move3'),
+  move4 = document.getElementById('move4'),
+  eye = document.getElementById('eye'),
+  trunk = document.getElementById('trunk');
+image.addEventListener('mouseenter', function() {
+ trunk.setAttribute('d', 'M320 200 q 50 10, 100 -30 q 30 -20, 5 -20 q -60 50 -76 0');
+ eye.setAttribute('r',5);
+ move1.style.width = '27.5em';
+ move2.style.width = '28em';
+ move3.style.width = '26em';
+ move4.style.width = '23.5em';
+ move5.style.width = '20.5em';
+ move6.style.width = '18em';
+ move7.style.width = '16em';
+ move8.style.width = '16em';
+});
+image.addEventListener('mouseleave', function() {
+ trunk.setAttribute('d', 'M320 200 S 340 180, 330 260 C 320 300, 340 300, 340 280 S 360 190, 350 140');
+ eye.setAttribute('r',4);
+ move1.style.width = '22.5em';
+ move2.style.width = '22.5em';
+ move3.style.width = '22.5em';
+ move4.style.width = '22em';
+ move5.style.width = '22em';
+ move6.style.width = '21.8em';
+ move7.style.width = '21.5em';
+ move8.style.width = '21.5em';
+});
+</script>
+</body>
+</html>
