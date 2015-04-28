@@ -9,7 +9,7 @@
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Sep 14th, 2014 dns,, email, webhosting, Webhosting One Place Email Somewhere Else A somewhat common problem that comes up at work is users wanting &hellip;">
+	<meta name="description" content="Sep 21st, 2014 html5, javascript, Dragging and Switching Images With JavaScript I needed a simple mechanism to drag and drop images from one place &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,6 +93,50 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-21T15:46:14-07:00" data-updated="true" itemprop="datePublished">Sep 21<sup>st</sup>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/html5/'>html5</a>, <a class='category' href='/blog/categories/javascript/'>javascript,</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/09/21/dragging-and-switching-images-with-javascript/" itemprop="url">Dragging and Switching Images With JavaScript</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I needed a simple mechanism to drag and drop images from one place to another on a webpage. Using the HTML5 draggable, ondragstart and ondragover events I made a simple script which allows the user to drag an image, and then drop that image onto another image. The two images then switch positions on the page. The HTML code for each image looks something like this:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;img src="imageSource.png" draggable="true" ondragstart="return dragStart(event)" ondragover="return dragOver(event)" ondrop="dragDrop(event)"></span></code></pre></td></tr></table></div></figure>
+draggable allows the image to be dragged. This is the default for most browsers when it comes to images, but it cannot hurt to explicitly set it.<br>
+ondragstart is triggered when the dragging starts.<br>
+ondragover is similar to a mouseover event. It is fired when the mouse is over the event.<br>
+ondrop is fired when the mouse button is finally released.
+The JavaScript looks like this:</p>
+
+
+
+		
+		<a href="/blog/2014/09/21/dragging-and-switching-images-with-javascript/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">

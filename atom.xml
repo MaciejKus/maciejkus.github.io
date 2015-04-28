@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-04-27T14:47:16-07:00</updated>
+  <updated>2015-04-28T15:40:38-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[bootstrap is the best]]></title>
+    <link href="http://maciejkus.com/blog/2015/04/28/bootstrap/"/>
+    <updated>2015-04-28T15:35:33-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/04/28/bootstrap</id>
+    <content type="html"><![CDATA[<p>I took a quick little Bootstrap course online through edx. I then made a simple little band website using Bootstrap here: <a href="http://maciejkus.com/we-are-the-best/">We are the Best</a>. It is a fan site for the punk rock band in the Swedish film <em>We are the Best</em>. Practice Practice Practice, it&rsquo;s all one can do to learn.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Responsive Design]]></title>
