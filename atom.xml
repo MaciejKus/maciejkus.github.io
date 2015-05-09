@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-04-28T15:40:38-07:00</updated>
+  <updated>2015-05-09T15:11:07-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Star Wars Crawler]]></title>
+    <link href="http://maciejkus.com/blog/2015/05/09/star-wars-crawler/"/>
+    <updated>2015-05-09T15:08:23-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/05/09/star-wars-crawler</id>
+    <content type="html"><![CDATA[<p>Inspired by <a href="http://www.sitepoint.com/css3-starwars-scrolling-text/">http://www.sitepoint.com/css3-starwars-scrolling-text/</a> I created A Star Wars themed &lsquo;about&rsquo; page. See it here: <a href="http://maciejkus.com/starwars/">http://maciejkus.com/starwars/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[bootstrap is the best]]></title>
