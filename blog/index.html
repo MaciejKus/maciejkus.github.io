@@ -470,6 +470,242 @@ I have my first VPS. It&#8217;s a tiny 128mb RAM VPS which costs me a whooping $
 
 </article>
 
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-07T14:46:08-08:00" data-updated="true" itemprop="datePublished">Dec 7<sup>th</sup>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ipv6/'>ipv6</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/12/07/ipv6-packet-tracer-bug/" itemprop="url">IPv6 Packet Tracer Bug</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>After about an hour of struggling I finally figured out that Cisco&#8217;s Packet Tracer 6.1 has a bug in it in terms of IPv6 routing. When using the <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ipv6 route</span></code></pre></td></tr></table></div></figure> command, be sure to use an IP address for the destination, not a port address. </p>
+
+
+
+		
+		<a href="/blog/2014/12/07/ipv6-packet-tracer-bug/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-28T15:43:08-07:00" data-updated="true" itemprop="datePublished">Sep 28<sup>th</sup>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/canvas/'>canvas,</a>, <a class='category' href='/blog/categories/html5/'>html5,</a>, <a class='category' href='/blog/categories/javascript/'>javascript,</a>, <a class='category' href='/blog/categories/jquery/'>jquery</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/09/28/removing-event-listeners-when-redrawing-canvas/" itemprop="url">Removing Event Listeners When Redrawing Canvas</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I was drawing a network graph using canvas, it had nodes and edges and when a user clicks on a node the canvas is redrawn. All of this is fine, but then I also wanted to have a navigation bar outside of the canvas which would redraw the canvas when that was clicked. Now redrawing the canvas is easy, but the redraw did not remove the event listeners from the previously drawn canvas. For example, say a node moves to the middle of the graph if it is clicked on. Even if the canvas is redrawn with that node gone, the event listener stayed around and when the user clicked on the section of the canvas where the node used to be, the event would still trigger and the node would be drawn in the middle of the graph. </p>
+
+
+
+		
+		<a href="/blog/2014/09/28/removing-event-listeners-when-redrawing-canvas/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-21T15:46:14-07:00" data-updated="true" itemprop="datePublished">Sep 21<sup>st</sup>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/html5/'>html5</a>, <a class='category' href='/blog/categories/javascript/'>javascript,</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/09/21/dragging-and-switching-images-with-javascript/" itemprop="url">Dragging and Switching Images With JavaScript</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I needed a simple mechanism to drag and drop images from one place to another on a webpage. Using the HTML5 draggable, ondragstart and ondragover events I made a simple script which allows the user to drag an image, and then drop that image onto another image. The two images then switch positions on the page. The HTML code for each image looks something like this:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;img src="imageSource.png" draggable="true" ondragstart="return dragStart(event)" ondragover="return dragOver(event)" ondrop="dragDrop(event)"></span></code></pre></td></tr></table></div></figure>
+draggable allows the image to be dragged. This is the default for most browsers when it comes to images, but it cannot hurt to explicitly set it.<br>
+ondragstart is triggered when the dragging starts.<br>
+ondragover is similar to a mouseover event. It is fired when the mouse is over the event.<br>
+ondrop is fired when the mouse button is finally released.
+The JavaScript looks like this:</p>
+
+
+
+		
+		<a href="/blog/2014/09/21/dragging-and-switching-images-with-javascript/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-14T15:42:25-07:00" data-updated="true" itemprop="datePublished">Sep 14<sup>th</sup>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/dns/'>dns,</a>, <a class='category' href='/blog/categories/email/'>email</a>, <a class='category' href='/blog/categories/webhosting/'>webhosting,</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/09/14/webhosing-one-place-email-somewhere-else/" itemprop="url">Webhosting One Place Email Somewhere Else</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>A somewhat common problem that comes up at work is users wanting to host their website one place and have their email services go through somewhere else. The main issue is knowing how to setup DNS correctly.</p>
+
+
+<p>Start with the webhosting. Here you need an A record pointing to the IP address of the webhost. Say you want example.com to be hosted by 192.168.0.1.</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>example.com. 86400   IN  A   192.168.0.1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then you need to create an A record for a subdomain which will point at the IP address of the email server you are going to use. Lets say the email server is on 10.0.0.2.</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mail.example.com.    86400   IN  A   10.0.0.2</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I use the &#8216;mail&#8217; prefix, but this could be any subdomain that is not being used. Now you must create a MX record which tells emails that are sent to @example.com where to go. For this you will point the top level domain to the newly created subdomain. A common mistake is to try to point the MX record to an IP address. An MX record must point to an A record.</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>example.com. 86400   IN  MX  10 mail.example.com.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&#8217;s it. Now any requests, such as a HTTP request, looking for example.com will be sent to 192.168.0.1 and any email sent to @example.com will be forwarded on to mail.example.com which goes to 10.0.0.2.</p>
+
+
+<p>The above can and probably should also be done with IPv6 when IPv6 addresses are available. For that just add AAAA records in the same maner as the A records above. You will need one AAAA record for example.com pointing to the webhosting IPv6 address, and one AAAA record pointing mail.example.com pointing to the mail server&#8217;s IPv6 address.</p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-30T15:22:19-07:00" data-updated="true" itemprop="datePublished">Aug 30<sup>th</sup>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/games/'>games,</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/svg/'>svg,</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/08/30/middle-east-game/" itemprop="url">Middle East Game</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I wrote a little turn based game. It is inspired by American involvement in the Middle East. The idea is you are newly elected President Obama. You inherited two wars. What actions will you take in the Middle East?</p>
+
+
+<p>Since 2008 the Middle East has seen a dramatic change in political aliances. The Arab Spring had a huge impact on the regoin. Recently the Hamas and Israel conflict showed just how profound that impact has been. Egypt and other Arab countries were more inclined to ally with Israel than they were with Islamic Hamas. That is just a single example of how dynamic the Middle East is.</p>
+
+
+<p>The game starts somewhat realistically to what Obama found when he became president. “With the 2008 election of Barack Obama, favorable attitudes toward the U.S. more than doubled in many Arab countries.” (<a href='http://www.aaiusa.org/reports/arab-attitudes-2011'>aaiusa</a>) I used a number of sources for the game. These include:</p>
+
+
+<p><a href="http://en.wikipedia.org/wiki/United_States_Foreign_Military_Financing">http://en.wikipedia.org/wiki/United_States_Foreign_Military_Financing</a><br>
+<a href="http://midknightgraphs.blogspot.com/2011/02/sunnishia-demographics-in-middle-east.html">http://midknightgraphs.blogspot.com/2011/02/sunnishia-demographics-in-middle-east.html</a><br>
+<a href="http://trade.gov/press/publications/newsletters/ita_0408/middle-east_0408.asp">http://trade.gov/press/publications/newsletters/ita_0408/middle-east_0408.asp</a><br>
+<a href="http://gbk.eads.usaidallnet.gov/data/country.html">http://gbk.eads.usaidallnet.gov/data/country.html</a><br>
+Fragile State Index: <a href="http://ffp.statesindex.org/rankings-2008-sortable">http://ffp.statesindex.org/rankings-2008-sortable</a><br>
+<a href="http://gbk.eads.usaidallnet.gov/data/country.html">http://gbk.eads.usaidallnet.gov/data/country.html</a><br>
+<a href="http://graphics.eiu.com/PDF/Democracy%20Index%202008.pdf">http://graphics.eiu.com/PDF/Democracy%20Index%202008.pdf</a><br>
+<a href="http://www.aaiusa.org/page/-/Polls/ArabOpinion/Obama100Days_SixNationSurvey_2009.pdf">http://www.aaiusa.org/page/-/Polls/ArabOpinion/Obama100Days_SixNationSurvey_2009.pdf</a> and <a href="http://www.pewglobal.org/2013/07/18/chapter-1-attitudes-toward-the-united-states/">http://www.pewglobal.org/2013/07/18/chapter-1-attitudes-toward-the-united-states/</a><br></p>
+
+<p>The code can be found on github. Play the <a href='http://maciejkus.com/middle-east-diplomacy/'>game</a>.</p>
+
+
+		
+		
+	</div>
+
+</article>
+
 </div>
 <nav id="pagenavi">
     
