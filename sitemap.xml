@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2015/05/16/asset-allocation-bootstrap/</loc>
+    <lastmod>2015-05-16T10:39:03-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2015/05/09/star-wars-crawler/</loc>
     <lastmod>2015-05-09T15:08:23-07:00</lastmod>
     <priority>0.8</priority>
@@ -113,42 +119,42 @@
   
   <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2015-05-09T15:11:07-07:00</lastmod>
+    <lastmod>2015-05-16T10:47:20-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/</loc>
-    <lastmod>2015-05-09T15:11:07-07:00</lastmod>
+    <lastmod>2015-05-16T10:47:20-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2015-05-09T15:11:07-07:00</lastmod>
+    <loc>http://maciejkus.com/blog/archives/</loc>
+    <lastmod>2015-05-16T10:47:20-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2015-05-09T15:11:07-07:00</lastmod>
+    <loc>http://maciejkus.com/chinese_remainder/</loc>
+    <lastmod>2015-05-16T10:47:20-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2015-05-09T15:11:07-07:00</lastmod>
+    <lastmod>2015-05-16T10:47:20-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2015-05-09T15:11:07-07:00</lastmod>
+    <lastmod>2015-05-16T10:47:20-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -205,6 +211,12 @@
   <url>
     <loc>http://maciejkus.com/we-are-the-best/index.html</loc>
     <lastmod>2015-04-28T15:44:1430261081Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/asset-allocation/index.html</loc>
+    <lastmod>2015-05-16T10:38:1431797887Z</lastmod>
     <priority>0.6</priority>
   </url>
   

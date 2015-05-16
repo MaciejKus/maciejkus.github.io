@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.vert-add-top {
+  margin-top: 1em;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+</style>
+</head>
+<body>
+<div class='jumbotron'>
+ <div class='container'>
+  <h1>Asset Allocation Calculator</h1>
+ </div>
+</div>
+<div class='container'>
+ <div class='row'>
+  <div class='col-md-7 text-center'>
+  <h2><u>Current Assets</u></h2>
+    <div class='form-inline'>
+    <label for='Total' class='lead'>Cash to Invest:</label>
+    <div class='input-group'>
+     <div class='input-group-addon'>$</div>
+     <input type='text' class="form-control input-lg" id='Total' placeholder='Total Amount'>
+    </div> <!--end input-grpu-->
+    </div> <!--end form inline-->
+    <div class='row'>
+     <div class='col-xs-4'>
+      <h3>Asset</h3>
+     </div>
+     <div class='col-xs-3'>
+      <h3>Desired Percent</h3>
+     </div>
+     <div class='col-xs-5'>
+      <h3>Current Value</h3>
+       (Optional)
+     </div>
+    </div> <!-- end row-->
+    <div class='row'>
+      <form class='form-inline' id='leftassets'>
+       <div class='row'>
+        <div class='col-xs-4'>
+         <div class='input-group'>
+          <input type='text' id='asset1' class='form-control' placeholder='VTI'>
+         </div>
+        </div>
+        <div class='col-xs-3'>
+         <div class='input-group'>
+          <input type='text' id='per1' class='form-control' placeholder='100'>
+          <div class='input-group-addon hidden-xs'>%</div>
+         </div>
+        </div>
+        <div class='col-xs-5'>
+         <div class='input-group'>
+          <div class='input-group-addon hidden-xs'>$</div>
+          <input type='text' id='cash1' class='form-control' placeholder='100'>
+         </div>
+       </div> 
+     </div> <!--end row-->
+
+       <div class='row'>
+        <div class='col-xs-4'>
+         <div class='input-group'>
+          <input type='text' id='asset2' class='form-control' >
+         </div>
+        </div>
+        <div class='col-xs-3'>
+         <div class='input-group'>
+          <input type='text' id='per2' class='form-control' >
+          <div class='input-group-addon hidden-xs'>%</div>
+         </div>
+        </div>
+        <div class='col-xs-5'>
+         <div class='input-group'>
+          <div class='input-group-addon hidden-xs'>$</div>
+          <input type='text' id='cash2' class='form-control' >
+         </div>
+       </div> 
+     </div> <!--end row-->
+
+       <div class='row'>
+        <div class='col-xs-4'>
+         <div class='input-group'>
+          <input type='text' id='asset3' class='form-control' >
+         </div>
+        </div>
+        <div class='col-xs-3'>
+         <div class='input-group'>
+          <input type='text' id='per3' class='form-control' >
+          <div class='input-group-addon hidden-xs'>%</div>
+         </div>
+        </div>
+        <div class='col-xs-5'>
+         <div class='input-group'>
+          <div class='input-group-addon hidden-xs'>$</div>
+          <input type='text' id='cash3' class='form-control' >
+         </div>
+       </div> 
+     </div> <!--end row-->
+
+       <div class='row'>
+        <div class='col-xs-4'>
+         <div class='input-group'>
+          <input type='text' id='asset4' class='form-control' >
+         </div>
+        </div>
+        <div class='col-xs-3'>
+         <div class='input-group'>
+          <input type='text' id='per4' class='form-control' >
+          <div class='input-group-addon hidden-xs'>%</div>
+         </div>
+        </div>
+        <div class='col-xs-5'>
+         <div class='input-group'>
+          <div class='input-group-addon hidden-xs'>$</div>
+          <input type='text' id='cash4' class='form-control' >
+         </div>
+       </div> 
+     </div> <!--end row-->
+
+       <div class='row'>
+        <div class='col-xs-4'>
+         <div class='input-group'>
+          <input type='text' id='asset5' class='form-control' >
+         </div>
+        </div>
+        <div class='col-xs-3'>
+         <div class='input-group'>
+          <input type='text' id='per5' class='form-control' >
+          <div class='input-group-addon hidden-xs'>%</div>
+         </div>
+        </div>
+        <div class='col-xs-5'>
+         <div class='input-group'>
+          <div class='input-group-addon hidden-xs'>$</div>
+          <input type='text' id='cash5' class='form-control' >
+         </div>
+       </div> 
+     </div> <!--end row-->
+      </form> 
+    </div> <!-- end row-->
+  
+     <div  class='row vert-add-top'>
+      <div class='col-xs-4'>
+       <input class='btn btn-warning' id='reset' type='button' value='Reset'>
+      </div>
+      <div class='col-xs-4'>
+       <input class='btn btn-info' id='add' type='button' value='Add Asset'>
+      </div>
+      <div class='col-xs-4'>
+       <input class='btn btn-primary' id='calculate' type='button' value='Calculate'>
+      </div>
+     </div> <!--end row-->
+     <div id='error'style='display:none' class='alert alert-danger' role='alert'>
+      </div>
+
+  </div><!-- end col-->
+  <div class='col-md-5 text-center'>
+   <h2><u>Desired Allocation</u></h2>
+Press Calculate to find the correct amount you should invest in each asset to hit your desired percentage, along with the monetary difference between desired and current percentage. 
+    <table id='restable' class='table table-striped table-bordered'>
+     <tr class='lead'>
+      <th>Asset</th>
+      <th>Correct Amount</th>
+      <th>Current Percent</th>
+      <th>Percent Difference</th>
+      <th>Dollar Difference</th>
+     </tr>
+    </table>    
+
+  </div><!--end col-->
+ </div>
+</div>
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Use this asset allocation calculator to see how much you should invest in each asset for your intended percentages to match. You can also see how far away your current asset allocation is compared to your intended asset allocation. This calculator can be used instead of a portfolio spreadsheet. Created by <a href='http://maciejkus.com'>Maciej Kus</a>.</p>
+      </div>
+    </footer>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script> 
+<script src='allocation.js'></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bootstrap | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/bootstrap/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-05-09T15:11:07-07:00</updated>
+  <updated>2015-05-16T10:47:20-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[asset allocation bootstrap]]></title>
+    <link href="http://maciejkus.com/blog/2015/05/16/asset-allocation-bootstrap/"/>
+    <updated>2015-05-16T10:39:03-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/05/16/asset-allocation-bootstrap</id>
+    <content type="html"><![CDATA[<p>Another bootstrap project is the <a href='http://maciejkus.com/asset-allocation/'>asset allocation calculator</a> I created. The JavaScript is mostly simple math and there&rsquo;s some jQuery to create and remove fields. Thanks to bootstrap the page is responsive, works well across browsers and looks pretty.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[bootstrap is the best]]></title>
