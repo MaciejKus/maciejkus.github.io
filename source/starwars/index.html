@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background: black;
+  overflow: hidden;
+}
+#main {
+  font-size: 2em;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+}
+
+#first {
+  margin: 40% auto;
+  text-align: left;
+  color: #09f;
+  font-family: Helvetica;
+  position: absolute;
+}
+
+.first-clicked {
+  animation: first 2s linear;
+  opacity: 0;
+}
+
+@keyframes first {
+  0% {opacity: 1;}
+  50% {opacity: .5;}
+  100% {opacity: 0;}
+}
+
+#second {
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 5em;
+  color: black;
+  text-shadow: -2px -2px yellow, 2px -2px yellow, -2px 2px yellow, 2px 2px yellow;
+  font-family: Impact;
+  opacity: 0;
+}
+
+.second-clicked {
+  animation: second 6s linear;
+  animation-delay: 2s;
+}
+
+@keyframes second {
+  0% {transform: scale(1);
+      opacity: 1;}
+  60% {opacity: 1;}
+  100%{transform: scale(0.1);
+       opacity: 0;}
+} 
+
+#third {
+  position: absolute;
+  width: 16em;
+  height: 50em;
+  bottom: 0;
+  left: 50%;
+  margin-left: -8em;
+  font-size: 200%;
+  font-weight: bold;
+  text-align: justify;
+  overflow:hidden;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(20deg);
+}
+
+#bleh {
+  width: 100%;
+  position: absolute;
+  color: yellow;
+  font-family: Helvetica;
+  top: 100%;
+}
+.third-clicked {
+  opacity: 1;
+  animation: third 45s infinite;
+  animation-delay: 8s;
+}
+
+@keyframes third {
+  0% {top:100%}
+  100% {top: 23%;}
+}
+ 
+#fourth {
+  position: absolute;
+  color: white;
+  margin-top: 650px;
+}
+
+
+</style>
+</head>
+<body>
+<div id='main'>
+<div id='first'>
+Click here to find out more...
+</div>
+<div id='second'>
+Star Wars Intro
+</div>
+<div id='third'>
+<div id='bleh'>
+This is a Star Wars title crawl inspired about page. It uses mostly CSS and a bit of Javascript to get things started when the user clicks for the first time.
+<p>
+The code can be seen in the source or on my github page.
+<p>
+This was largely an exercise in CSS and also a fun idea for a 'about' page or an introduction page to use on a website. I wasn't sure what the best way to end the crawl was so I just have it repeating in a loop, but that can be easily changed to something else. If this were a real 'about' page maybe a picture or link or something could appear at the end of the crawl. 
+
+</div>
+</div>
+<div id='fourth'>
+The <a href='https://github.com/MaciejKus/starwarstitle'>source</a> (is strong in this one?)
+<p>
+Inspired by <a href='http://www.sitepoint.com/css3-starwars-scrolling-text/'>this</a> article.
+</div>
+</div>
+<script type='text/javascript'>
+document.getElementById('main').onclick = function() {
+  document.getElementById('first').className = 'first-clicked';
+  document.getElementById('second').className = 'second-clicked';
+  document.getElementById('bleh').className = 'third-clicked';
+}
+</script>
+</body>
+</html>
