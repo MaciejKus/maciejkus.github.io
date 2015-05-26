@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+ <style>
+html, body, #map-canvas, #map-canvas2 {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+ </style>
+
+<script type="text/javascript"
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCULuIURV7mx66e0RP3iFRSGp7uU-ajx_8">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type='text/javascript' src='bikewalk.js'></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div class='container'>
+<form class="form-horizontal" role='form'>
+  <div class="form-group">
+  <label for='startAd' class='col-sm-2 control-label' >Start Location:</label>
+  <div class='col-sm-10 col-lg-8'>
+   <input type='text' id='startAd' class='form-control input-lg' placeholder='Enter Start Address'>
+  </div>
+ </div> <!--end form-group-->
+ <div class='form-group'>
+  <label for='endAd' class='col-sm-2 control-label'>End Location:</label>
+  <div class='col-sm-10 col-lg-8'>
+   <input type='text' id='endAd'class='form-control input-lg'  placeholder='Enter End Address'>
+  </div>
+ </div> <!--end form-goup-->
+ <div class='form-group'> <!-- adds vertical space-->
+  <div class='col-sm-offset-2 col-sm-10'>
+   <input type="button" value='Submit' class="btn-lg btn-primary" onclick="calc()">
+  </div>
+ </div> <!--end form-group-->
+</form>
+</div> <!--end container-->
+
+<div class='container'>
+ <div class='row'>
+  <div class='col-sm-offset-2 col-sm-10 col-lg-8' role='tabpanel'>
+   <ul class='nav nav-tabs' id='myTabs' role='tablist'>
+    <li class='active'><a href='#outputDiv' data-toggle='tab' role='presentation'>Info</a></li>
+    <li id='maptab1'><a href='#map' data-toggle='tab' role='presentation'>Bicycle Map</a></li>
+    <li id='maptab2'><a href='#map2' data-toggle='tab' role='presentation'>Driving Map</a></li>
+   </ul>
+
+   <div class='tab-content'>
+    <div class='tab-pane active' role='tabpanel' id ='outputDiv'>See a brief comparison in driving versus bicycling to a location. Just enter your start and end addresses above and hit 'Submit'</div>
+    <div class='tab-pane' id='map' role='tabpanel' >
+     <div id="map-canvas" style='height: 400px; width: 100%;'></div>
+    </div>
+    <div class='tab-pane' id='map2' role='tabpanel' >
+     <div id="map-canvas2" style='height: 400px; width: 100%;'></div>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</div>
+ 
+<footer class='footer'>
+  <div class='container'>
+   <div class='col-sm-offset-2 col-sm-10 col-lg-8'>
+    <p class='text-muted'>Source</p>
+   </div>
+  </div>
+</footer>
+
+<script type='text/javascript'>
+
+var directionsDisplay, directionsDisplay2;
+var directionsService = new google.maps.DirectionsService();
+var map, map2;
+var start, end;
+
+function initialize() {
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay2 = new google.maps.DirectionsRenderer();
+  var latlng = new google.maps.LatLng(37.8, -122.3);
+  var mapOptions = {
+    zoom:11,
+    center: latlng
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  map2 = new google.maps.Map(document.getElementById('map-canvas2'), mapOptions);
+  directionsDisplay.setMap(map);
+  directionsDisplay2.setMap(map2);
+}
+
+//map render
+function calcRoute(transType, drrr) {
+  var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.TravelMode[transType]
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+     //redrawing the map when it is not active resets it to a really far out zoom. 
+     //so avoiding redrawing the map when it is not in an actice tab makes things
+     //look a lot cleaner when reactivating a map tab later on
+     if ($('#maptab1').hasClass('active') || $('#maptab2').hasClass('active')) drrr.setDirections(response);
+/*      var $outputDiv = $('#outputDiv');
+      if (transType === 'BICYCLING') {
+        $outputDiv.html( response.routes[0].overview_path[0].lat() + 'A bike ride is ' + response.routes[0].legs[0].distance.value +' meteres and takes around ' + response.routes[0].legs[0].duration.value );
+      } else {
+        var gas_priceAPI = "http://devapi.mygasfeed.com/stations/radius/37.8/-122.3/5/reg/distance/rfej9napna.json?"
+$.ajax({
+   url: gas_priceAPI
+ }).done(function ( html) {
+  html = JSON.parse(html);
+});
+ 
+      } */
+    }
+  });
+}
+
+//text tab output
+function textRoute(transType) {
+    var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.TravelMode[transType]
+  };
+    directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      var $outputDiv = $('#outputDiv');
+      var dist = (response.routes[0].legs[0].distance.value/1000).toFixed(2);
+      //minutes or hours:
+      var time = (response.routes[0].legs[0].duration.value/60) > 60 ? (response.routes[0].legs[0].duration.value/3600).toFixed(2) + ' hours' : (response.routes[0].legs[0].duration.value/60).toFixed(2) + ' minutes';
+      if (transType === 'BICYCLING') {
+        var calories = Math.round(581 * response.routes[0].legs[0].duration.value / 3600); //assuming 581 calories per hour of cycling
+        $outputDiv.append('A bike ride is ' + dist +'km and takes around ' + time + '<p>This would burn around ' + calories + ' calories');
+      } else {
+        var gas_priceAPI = "http://devapi.mygasfeed.com/stations/radius/" + response.routes[0].overview_path[0].lat() + "/" +response.routes[0].overview_path[0].lng() + "/5/reg/distance/rfej9napna.json?"; //long and latitude of starting location
+        var gas_price;
+        $.ajax({
+          url: gas_priceAPI
+        }).done(function ( html) {
+          html = JSON.parse(html);
+          gas_price = html['stations'][0]['reg_price'];
+          $outputDiv.append('<p>Driving is ' + dist + 'km and would take around ' + time + '<br>This would cost around ' + ((gas_price * dist * 0.62137)/27).toFixed(2) + ' dollars in gas'); //gas price *dist * km/miles * average US mpg
+        }).fail(function() {
+          $outputDiv.append('<p>Driving is ' + dist + 'km and would take around ' + time);
+         });
+
+      }
+    }
+  })    
+}
+
+ 
+function calc() {
+  start = document.getElementById('startAd').value;
+  end = document.getElementById('endAd').value;
+  $('#outputDiv').html('');
+  textRoute('BICYCLING');
+  textRoute('DRIVING');
+  if($('#maptab1').hasClass('active')) {
+    calcRoute('BICYCLING', directionsDisplay);
+  }
+  else if($('#maptab2').hasClass('active')) {
+    calcRoute('DRIVING', directionsDisplay2);
+  } 
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+var map1notinitialized = 1;
+$('#maptab1').on('shown.bs.tab', function (e) {
+  if(map1notinitialized) {
+    map1notinitialized = 0;
+    google.maps.event.trigger(map, 'resize');
+  }
+  calcRoute('BICYCLING', directionsDisplay);
+});
+
+var map2notinitialized = 1;
+$('#maptab2').on('shown.bs.tab', function (e) {
+  if(map2notinitialized) {
+    map2notinitialized = 0;
+    google.maps.event.trigger(map2, 'resize');
+  }
+  calcRoute('DRIVING', directionsDisplay2);
+});
+</script>
+</body>
+</html>
