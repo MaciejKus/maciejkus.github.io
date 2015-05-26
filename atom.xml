@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-05-26T14:51:18-07:00</updated>
+  <updated>2015-05-26T14:59:05-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -18,7 +18,7 @@
     <link href="http://maciejkus.com/blog/2015/05/26/bicycle-or-walk/"/>
     <updated>2015-05-26T14:40:11-07:00</updated>
     <id>http://maciejkus.com/blog/2015/05/26/bicycle-or-walk</id>
-    <content type="html"><![CDATA[<p>Playing around with Bootstrap a tiny bit more I made a little (bicycle versus driving)[<a href="http://maciejkus.com/bike-drive/">http://maciejkus.com/bike-drive/</a>] app. It&rsquo;s pretty simple in terms of the data that is shows. I used google maps and tabs, which do not get along very well, but luckily others have run into this problem in the past and there is a fair amount of recommendations out there.</p>
+    <content type="html"><![CDATA[<p>Playing around with Bootstrap a tiny bit more I made a little <a href="http://maciejkus.com/bike-drive/">bicycle versus driving</a> app. It&rsquo;s pretty simple in terms of the data that is shows. I used google maps and tabs, which do not get along very well, but luckily others have run into this problem in the past and there is a fair amount of recommendations out there.</p>
 
 <!-- more -->
 
@@ -27,7 +27,7 @@
 
 <p>I also used an API feed from myGasFeed.com. Playing with two separate APIs was a nice reminder of the asynchronous nature of AJAX.</p>
 
-<p>I feel really comfortable with Bootstrap at this point. Time to find something new to expirament with?</p>
+<p>I feel really comfortable with Bootstrap at this point. Time to find something new to experiment with?</p>
 ]]></content>
   </entry>
   
