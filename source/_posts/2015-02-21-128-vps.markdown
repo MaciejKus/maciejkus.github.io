@@ -13,7 +13,7 @@ I have my first VPS. It's a tiny 128mb RAM VPS which costs me a whooping $15 a y
 </p>
 <!-- more -->
 <p>
-The first thing I did was disable root ssh login and create a new user. I also went ahead and changes the default SSH port and installed fail2ban to avoid SSH attacks. I also setup automatic security updates using a cronjob. I figure this is enough security that the server will need. fail2ban takes about 3-4 mb of RAM, so I still have plenty left for webhosting.
+The first thing I did was disable root ssh login and create a new user. I also went ahead and changed the default SSH port and installed fail2ban to avoid SSH attacks. I also setup [automatic](http://www.the-art-of-web.com/system/cron-apt-wheezy/) security updates using a cronjob. I figure this is enough security that the server will need. fail2ban takes about 3-4 mb of RAM, so I still have plenty left for webhosting.
 </p>
 <p>
 I then installed nginx and set it up to accommodate my little server. Since I only have one CPU, I set 'worker_processes' to 1, 'worker_connections' to 1024, and lowered the timout to 25 seconds. I also setup client caching of all CSS, JS, and image files. Finally I also turned 'gzip_static' on, which allows pre-zipped files to be sent out by the server. This means if a file is gzipped before hand the server does not use CPU to gzip that file. I gzipped all my .html and .js files and kept both the original and the new .gz files in the  same directory. 
