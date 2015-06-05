@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>128 VPS - Maciej Kus is not a Figure Skater</title>
+	<title>angular-baseball-game - Maciej Kus is not a Figure Skater</title>
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="What I am doing with a 128mb VPS">
+	<meta name="description" content="A simple javascript baseball game.">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
 
 	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://maciejkus.com/blog/2015/02/21/128-vps/">
+	<link rel="canonical" href="http://maciejkus.com/blog/2015/06/05/angular-baseball-game/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -92,32 +92,8 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name">128 VPS</h1>
-	<div class="entry-content" itemprop="articleBody"><p>
-I have my first VPS. It&#8217;s a tiny 128mb RAM VPS which costs me a whooping $15 a year. Not too bad. I will be hosting a few static websties on it. These are CSS/HTML/JavaScript only sites. No database, no php, no backend. So unless traffic levels get crazy, a 128mb VPS should be fine. I setup a minimal 32-bit version of Debian on it and was ready to go.
-</p>
-
-
-<!-- more -->
-
-
-<p>
-The first thing I did was disable root ssh login and create a new user. I also went ahead and changed the default SSH port and installed fail2ban to avoid SSH attacks. I also setup [automatic](http://www.the-art-of-web.com/system/cron-apt-wheezy/) security updates using a cronjob. I figure this is enough security that the server will need. fail2ban takes about 3-4 mb of RAM, so I still have plenty left for webhosting.
-</p>
-
-
-<p>
-I then installed nginx and set it up to accommodate my little server. Since I only have one CPU, I set &#8216;worker_processes&#8217; to 1, &#8216;worker_connections&#8217; to 1024, and lowered the timout to 25 seconds. I also setup client caching of all CSS, JS, and image files. Finally I also turned &#8216;gzip_static&#8217; on, which allows pre-zipped files to be sent out by the server. This means if a file is gzipped before hand the server does not use CPU to gzip that file. I gzipped all my .html and .js files and kept both the original and the new .gz files in the  same directory. 
-</p>
-
-
-<p>If a .gz file does not exist, nginx will gzip the original file (.html for example) using up CPU resources to do so. However, if nginx sees both index.html and index.html.gz it will server up index.html.gz instead. The one gotcha is that every time you make a change to the .html file you will need to update the .html.gz file also. Apparently nginx also likes the original and the gzipped files to have the same time stamp, so once all the files were ready to go I has to &#8216;touch *&#8217; to give them all the same time stamp.
-</p>
-
-
-<p>The site that I have running on the VPS gets over 1,000 page views a day and the load and memory usage on the server is tiny. I can easily add other static sites to the server, or increase the amount of traffic to the server without and problems. Now I have a fun little virtual server to play with.
-</p>
-
+	<h1 class="title" itemprop="name">Angular-baseball-game</h1>
+	<div class="entry-content" itemprop="articleBody"><p>Inspired by a Codewars kata I created a simple <a href="http://maciejkus.com/baseball-game/">baseball game</a>. It was the first time I used AngularJS, but I feel like the Angular was unnecessary. I will need to build a few other pages to get the full idea of Angular.</p>
 </div>
 
 </article>

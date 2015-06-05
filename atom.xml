@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-05-26T14:59:05-07:00</updated>
+  <updated>2015-06-05T12:45:33-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[angular-baseball-game]]></title>
+    <link href="http://maciejkus.com/blog/2015/06/05/angular-baseball-game/"/>
+    <updated>2015-06-05T12:40:07-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/06/05/angular-baseball-game</id>
+    <content type="html"><![CDATA[<p>Inspired by a Codewars kata I created a simple <a href="http://maciejkus.com/baseball-game/">baseball game</a>. It was the first time I used AngularJS, but I feel like the Angular was unnecessary. I will need to build a few other pages to get the full idea of Angular.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Bicycle or Walk]]></title>
@@ -161,7 +170,7 @@ I have my first VPS. It&#8217;s a tiny 128mb RAM VPS which costs me a whooping $
 
 
 <p>
-The first thing I did was disable root ssh login and create a new user. I also went ahead and changes the default SSH port and installed fail2ban to avoid SSH attacks. I also setup automatic security updates using a cronjob. I figure this is enough security that the server will need. fail2ban takes about 3-4 mb of RAM, so I still have plenty left for webhosting.
+The first thing I did was disable root ssh login and create a new user. I also went ahead and changed the default SSH port and installed fail2ban to avoid SSH attacks. I also setup [automatic](http://www.the-art-of-web.com/system/cron-apt-wheezy/) security updates using a cronjob. I figure this is enough security that the server will need. fail2ban takes about 3-4 mb of RAM, so I still have plenty left for webhosting.
 </p>
 
 
@@ -622,92 +631,6 @@ The game can be played <a href='../../../../../record-collector/'>here</a> and t
 
 
 <p>I find the sit to be useful, both in making sure my subneting is accurate and quick and in checking my work with the calculators. It&#8217;s nice to code something that is of value to me and others.</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Setting Up Octopress]]></title>
-    <link href="http://maciejkus.com/blog/2014/07/26/setting-up-octopress/"/>
-    <updated>2014-07-26T12:13:08-07:00</updated>
-    <id>http://maciejkus.com/blog/2014/07/26/setting-up-octopress</id>
-    <content type="html"><![CDATA[<p>This site is powered by Octopress. Octopress is a static site generator. I am still working on getting things to look just how I want, but I am pretty happy so far. For a website I want something simple and to the point. I want content to be the first thing a visitor sees. </p>
-
-
-<p>A lot of webpages, especially those that use Twitter Bootstrap hide the content. Instead when visiting a page the user is greeted with a full-screen image or graphic of some kind. Usually the user is expected to scroll down to view the actual content of the site, and even then instead of content the site is filled with links and more images. This may be impressive the first time one sees such a  page, but usually I am looking for information and not pretty graphics. I hope my site remains simple and content is accessible. Users should never feel like they have to search  through a site to find content. </p>
-
-
-<!-- more -->
-
-
-<p>With all that in mind, I did have a couple issues when setting up Octopress. First, when installing either the default theme or the <a href ='https://github.com/shashankmehta/greyshade'>Greyshade</a> theme which I ended up using, I received the following errors:
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>:rake install
-</span><span class='line'>rake aborted!
-</span><span class='line'>LoadError: cannot load such file -- stringex
-</span><span class='line'>/var/www/maciej/octopress/Rakefile:3:in `require'
-</span><span class='line'>/var/www/maciej/octopress/Rakefile:3:in `&lt;top (required)>'
-</span><span class='line'>(See full trace by running task with --trace)</span></code></pre></td></tr></table></div></figure>
-and
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake install['greyshade'] --trace
-</span><span class='line'>rake aborted!
-</span><span class='line'>LoadError: cannot load such file -- stringex
-</span><span class='line'>/var/www/maciej/maciejkus925.github.io/octopress/Rakefile:3:in `require'
-</span><span class='line'>/var/www/maciej/maciejkus925.github.io/octopress/Rakefile:3:in `&lt;top (required)>'
-</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_module.rb:28:in `load'
-</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_module.rb:28:in `load_rakefile'
-</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:687:in `raw_load_rakefile'
-</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:94:in `block in load_rakefile'
-</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:176:in `standard_exception_handling'
-</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:93:in `load_rakefile'
-</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:77:in `block in run'
-</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:176:in `standard_exception_handling'
-</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/lib/rake/application.rb:75:in `run'
-</span><span class='line'>/var/lib/gems/1.9.1/gems/rake-10.3.2/bin/rake:33:in `&lt;top (required)>'
-</span><span class='line'>/usr/local/bin/rake:23:in `load'
-</span><span class='line'>/usr/local/bin/rake:23:in `&lt;main>'</span></code></pre></td></tr></table></div></figure>
-
-The issue ended up being that my Gemfile was pointing to an old version of stringex. To get things working I changed my Gemfile from
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem 'stringex', '~> 1.4.0'</span></code></pre></td></tr></table></div></figure>
-to
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem 'stringex', '~> 2.5.2'</span></code></pre></td></tr></table></div></figure>
-</p>
-
-
-<p>The second issue was that when I moved the default index.html file to blog/index.html as described on the Octopress <a href='http://octopress.org/docs/theme/template/'>website</a> blog/index.html would show up blank. There was no blog entries being listed on the page. When I moved the file back to the home directory the most recent blog posts once again showed up. The fix was to update _config.yml and set 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>paginate_path: "posts/:num"</span></code></pre></td></tr></table></div></figure>
-to 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>paginate_path: "blog/posts/:num"</span></code></pre></td></tr></table></div></figure>
-It&#8217;s a simple step that the Octopress documentation did not mention.</p>
-
-
-<p>Beyond that, the setup was pretty painless.</p>
 
 ]]></content>
   </entry>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vps | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/vps/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-05-26T14:59:05-07:00</updated>
+  <updated>2015-06-05T12:45:33-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -27,7 +27,7 @@ I have my first VPS. It's a tiny 128mb RAM VPS which costs me a whooping $15 a y
 
 
 <p>
-The first thing I did was disable root ssh login and create a new user. I also went ahead and changes the default SSH port and installed fail2ban to avoid SSH attacks. I also setup automatic security updates using a cronjob. I figure this is enough security that the server will need. fail2ban takes about 3-4 mb of RAM, so I still have plenty left for webhosting.
+The first thing I did was disable root ssh login and create a new user. I also went ahead and changed the default SSH port and installed fail2ban to avoid SSH attacks. I also setup [automatic](http://www.the-art-of-web.com/system/cron-apt-wheezy/) security updates using a cronjob. I figure this is enough security that the server will need. fail2ban takes about 3-4 mb of RAM, so I still have plenty left for webhosting.
 </p>
 
 

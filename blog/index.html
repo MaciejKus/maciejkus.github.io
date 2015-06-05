@@ -9,7 +9,7 @@
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="May 26th, 2015 Bicycle or Walk Playing around with Bootstrap a tiny bit more I made a little bicycle versus driving app. It&rsquo;s pretty simple in &hellip;">
+	<meta name="description" content="Jun 5th, 2015 Angular-baseball-game Inspired by a Codewars kata I created a simple baseball game. It was the first time I used AngularJS, but I feel &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,6 +93,37 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-05T12:40:07-07:00" data-updated="true" itemprop="datePublished">Jun 5<sup>th</sup>, 2015</time></div>
+		<div class="tags">
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/06/05/angular-baseball-game/" itemprop="url">Angular-baseball-game</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Inspired by a Codewars kata I created a simple <a href="http://maciejkus.com/baseball-game/">baseball game</a>. It was the first time I used AngularJS, but I feel like the Angular was unnecessary. I will need to build a few other pages to get the full idea of Angular.</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -617,69 +648,6 @@ The JavaScript looks like this:</p>
 
 		
 		<a href="/blog/2014/09/21/dragging-and-switching-images-with-javascript/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-14T15:42:25-07:00" data-updated="true" itemprop="datePublished">Sep 14<sup>th</sup>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/dns/'>dns,</a>, <a class='category' href='/blog/categories/email/'>email</a>, <a class='category' href='/blog/categories/webhosting/'>webhosting,</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/09/14/webhosing-one-place-email-somewhere-else/" itemprop="url">Webhosting One Place Email Somewhere Else</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>A somewhat common problem that comes up at work is users wanting to host their website one place and have their email services go through somewhere else. The main issue is knowing how to setup DNS correctly.</p>
-
-
-<p>Start with the webhosting. Here you need an A record pointing to the IP address of the webhost. Say you want example.com to be hosted by 192.168.0.1.</p>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>example.com. 86400   IN  A   192.168.0.1</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then you need to create an A record for a subdomain which will point at the IP address of the email server you are going to use. Lets say the email server is on 10.0.0.2.</p>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mail.example.com.    86400   IN  A   10.0.0.2</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I use the &#8216;mail&#8217; prefix, but this could be any subdomain that is not being used. Now you must create a MX record which tells emails that are sent to @example.com where to go. For this you will point the top level domain to the newly created subdomain. A common mistake is to try to point the MX record to an IP address. An MX record must point to an A record.</p>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>example.com. 86400   IN  MX  10 mail.example.com.</span></code></pre></td></tr></table></div></figure>
-
-
-<p>That&#8217;s it. Now any requests, such as a HTTP request, looking for example.com will be sent to 192.168.0.1 and any email sent to @example.com will be forwarded on to mail.example.com which goes to 10.0.0.2.</p>
-
-
-<p>The above can and probably should also be done with IPv6 when IPv6 addresses are available. For that just add AAAA records in the same maner as the A records above. You will need one AAAA record for example.com pointing to the webhosting IPv6 address, and one AAAA record pointing mail.example.com pointing to the mail server&#8217;s IPv6 address.</p>
-
-
-		
-		
 	</div>
 
 </article>
