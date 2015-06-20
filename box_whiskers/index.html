@@ -125,72 +125,7 @@ Third Quartile: <span id='third'></span>
 <br>
 <p>
 <canvas id='boxCanvas' width='420' height='220' style='border:1px solid #000000;'>Your broswer does not support HTMl5 canvas, so you cannot see the graph</canvas>
-<script type='text/javascript'>
-calc = function() {
-//box whiskers. maciejkus.com//
-//The math calculations ///
-var nums = document.getElementById(&lsquo;input&rsquo;).value;
-nums = nums.replace(/,/g, &lsquo; &rsquo;);
-nums = nums.replace(/\s\s+/g, &lsquo; &rsquo;).trim();
-nums = nums.split(&lsquo; &rsquo;);
-nums = nums.map(function (x) {
-return parseInt(x);
-}).sort(numSort);
-function numSort(a,b) { return a &ndash; b; };
-var min = Math.min.apply(Math, nums);
-var max = Math.max.apply(Math, nums);
-var midtop, midbottom; //where to start and end quartile calculations from
-function median(arr) {
-var len = arr.length;
-if (len % 2 !== 0) {
-midtop = Math.ceil(len / 2);
-midbottom = Math.floor(len/2);
-return arr[midbottom];
-} else {
-midtop = len/2;
-midbottom = len/2;
-return (arr[(len/2)-1] + arr[len/2])/2;
-}
-} //end median()
-med = median(nums);
-var firstquartile, thirdquartile;
-function quarters(t,b) {
-thirdquartile = median(nums.slice(t));
-firstquartile = median(nums.slice(0,b));
-}
-quarters(midtop,midbottom);
-////end of calculations///
-document.getElementById(&lsquo;numbers&rsquo;).innerHTML = nums;
-document.getElementById(&lsquo;minimum&rsquo;).innerHTML = min;
-document.getElementById(&lsquo;maximum&rsquo;).innerHTML = max;
-document.getElementById(&lsquo;median&rsquo;).innerHTML = med;
-document.getElementById(&lsquo;first&rsquo;).innerHTML = firstquartile;
-document.getElementById(&lsquo;third&rsquo;).innerHTML = thirdquartile;
-//draw canvas graph ///
-var c = document.getElementById(&lsquo;boxCanvas&rsquo;);
-var context = c.getContext(&lsquo;2d&rsquo;);
-context.clearRect(0, 0, c.width, c.height);
-context.beginPath();
-var unit = 400/max;
-context.moveTo(10,100);
-context.lineTo(410,100);
-context.strokeStyle = &lsquo;black&rsquo;;
-context.stroke();
-context.beginPath();
-context.rect(firstquartile<em>unit,50,(med-firstquartile)</em>unit,100);
-context.rect(med<em>unit,50,(thirdquartile-med)</em>unit,100);
-context.fillStyle=&ldquo;#fff&rdquo;;
-context.fill();
-context.stroke();
-context.font = &lsquo;16px Ariel&rsquo;;
-context.fillStyle=&ldquo;#000&rdquo;;
-context.fillText(min,2,120);
-context.fillText(max,390,120);
-context.fillText(med,med<em>unit &ndash; 5,180);
-context.fillText(firstquartile,firstquartile</em>unit-5,40);
-context.fillText(thirdquartile,thirdquartile*unit-5,40);
-} //end calc()
-</script></p>
+<script type='text/javascript' src='box.js'></script></p>
 </div>
 </article>
 
