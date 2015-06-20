@@ -1,0 +1,255 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>box_whiskers - Maciej Kus is not a Figure Skater</title>
+	<meta name="author" content="Maciej Kus">
+
+
+	<meta name="description" content="An accurate Box and Whiskers Plot calculator.">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://maciejkus.com/box-whiskers/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-50427363-3']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<a href='/'><img src="/images/profile.jpg" alt="Profile Picture" style="width: 160px;" /></a>
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/blog/archives/">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/maciejkus" title="GitHub">GitHub</a>
+		
+		
+		
+		
+			<a class="linkedin" href="http://www.linkedin.com/in/maciejkus" title="LinkedIn">LinkedIn</a>
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="page">
+    
+    <h1 class="title">Box_whiskers</h1>
+    
+    <div class="entry-content"><h1>Box and Whiskers Plot Calculator</h1>
+
+
+<p>
+This is an accurate box and whiskers plot calculator. It might be the only accurate box and whiskers calculator one on the Internet. All the others that I have come across contain calculation errors, even with a simple set of numbers such as 1,1,2,2,3,3,4,4. Mainly they are unable to calculate the quartile values correctly. This calculator calculates all the values accurately. </p>
+
+
+<p>To use this box and whiskers calculator, simply enter a group of numbers into the text box and click &#8216;Submit&#8217;. The group of numbers can be either comma separated or space separated. Maybe even a mix of both.</p>
+
+
+<p><form onsubmit="return false;">
+<textarea placeholder='1 2 3 4...' rows ="4" cols="40" id='input' ></textarea><br>
+<button onClick="calc();">Submit</button>
+</form></p>
+
+<p><p>
+Numbers: <span id='numbers'></span>
+<br>
+Minimum: <span id='minimum'></span>
+<br>
+Maximum: <span id='maximum'></span>
+<br>
+Median: <span id='median'></span>
+<br>
+First Quartile: <span id='first'></span>
+<br>
+Third Quartile: <span id='third'></span>
+<br>
+<p>
+<canvas id='boxCanvas' width='420' height='220' style='border:1px solid #000000;'>Your broswer does not support HTMl5 canvas, so you cannot see the graph</canvas>
+<script type='text/javascript'>
+calc = function() {
+//box whiskers. maciejkus.com//
+//The math calculations ///
+var nums = document.getElementById(&lsquo;input&rsquo;).value;
+nums = nums.replace(/,/g, &lsquo; &rsquo;);
+nums = nums.replace(/\s\s+/g, &lsquo; &rsquo;).trim();
+nums = nums.split(&lsquo; &rsquo;);
+nums = nums.map(function (x) {
+return parseInt(x);
+}).sort(numSort);
+function numSort(a,b) { return a &ndash; b; };
+var min = Math.min.apply(Math, nums);
+var max = Math.max.apply(Math, nums);
+var midtop, midbottom; //where to start and end quartile calculations from
+function median(arr) {
+var len = arr.length;
+if (len % 2 !== 0) {
+midtop = Math.ceil(len / 2);
+midbottom = Math.floor(len/2);
+return arr[midbottom];
+} else {
+midtop = len/2;
+midbottom = len/2;
+return (arr[(len/2)-1] + arr[len/2])/2;
+}
+} //end median()
+med = median(nums);
+var firstquartile, thirdquartile;
+function quarters(t,b) {
+thirdquartile = median(nums.slice(t));
+firstquartile = median(nums.slice(0,b));
+}
+quarters(midtop,midbottom);
+////end of calculations///
+document.getElementById(&lsquo;numbers&rsquo;).innerHTML = nums;
+document.getElementById(&lsquo;minimum&rsquo;).innerHTML = min;
+document.getElementById(&lsquo;maximum&rsquo;).innerHTML = max;
+document.getElementById(&lsquo;median&rsquo;).innerHTML = med;
+document.getElementById(&lsquo;first&rsquo;).innerHTML = firstquartile;
+document.getElementById(&lsquo;third&rsquo;).innerHTML = thirdquartile;
+//draw canvas graph ///
+var c = document.getElementById(&lsquo;boxCanvas&rsquo;);
+var context = c.getContext(&lsquo;2d&rsquo;);
+context.clearRect(0, 0, c.width, c.height);
+context.beginPath();
+var unit = 400/max;
+context.moveTo(10,100);
+context.lineTo(410,100);
+context.strokeStyle = &lsquo;black&rsquo;;
+context.stroke();
+context.beginPath();
+context.rect(firstquartile<em>unit,50,(med-firstquartile)</em>unit,100);
+context.rect(med<em>unit,50,(thirdquartile-med)</em>unit,100);
+context.fillStyle=&ldquo;#fff&rdquo;;
+context.fill();
+context.stroke();
+context.font = &lsquo;16px Ariel&rsquo;;
+context.fillStyle=&ldquo;#000&rdquo;;
+context.fillText(min,2,120);
+context.fillText(max,390,120);
+context.fillText(med,med<em>unit &ndash; 5,180);
+context.fillText(firstquartile,firstquartile</em>unit-5,40);
+context.fillText(thirdquartile,thirdquartile*unit-5,40);
+} //end calc()
+</script></p>
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2015
+
+    Maciej Kus
+
+
+
+</footer>
+		</div>
+	</div>
+	
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

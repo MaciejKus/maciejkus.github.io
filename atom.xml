@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-06-05T12:45:33-07:00</updated>
+  <updated>2015-06-20T12:32:05-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[box_whiskers_calc]]></title>
+    <link href="http://maciejkus.com/blog/2015/06/20/box-whiskers-calc/"/>
+    <updated>2015-06-20T12:30:32-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/06/20/box-whiskers-calc</id>
+    <content type="html"><![CDATA[<p> There is a shocking lack of box and whisker graph calculators on the Internet. Well, accurate ones anyway, so I made one. Originally I needed one for some calculations I was doing and made one in Python, but then I figured I can easily rewrite it into Javascript and make it available for others. I even added a simple HTML5 canvas graph. You can find it at <a href="http://maciejkus.com/box_whiskers/">http://maciejkus.com/box_whiskers/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[angular-baseball-game]]></title>
@@ -609,28 +618,6 @@ One other implementation that I had to think about was what to do about collisio
 
 <p>
 The game can be played <a href='../../../../../record-collector/'>here</a> and the code can be seen <a href='https://github.com/MaciejKus/record_collector'>here</a>. Next game I make will have better graphics, I promise.</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Best Subnetting Site]]></title>
-    <link href="http://maciejkus.com/blog/2014/07/27/the-best-subnetting-site/"/>
-    <updated>2014-07-27T14:08:58-07:00</updated>
-    <id>http://maciejkus.com/blog/2014/07/27/the-best-subnetting-site</id>
-    <content type="html"><![CDATA[<p>I recently began to study for the CCNA. I am taking my sweet time with it, mostly because I have instead ended up working on improving my JavaScript skills. One way I combined the two was by creating a <a href='http://subnettingpractice.com'>subnetting practice</a> website. I found existing subnetting sites to be lacking. They were mostly text based with the same nine or so question types repeated over and over. These questions do little to teach someone when and why to actually use subnetting. They make sure the student knows how to calculate a subnet mask, but not how to implement that knowledge when given a network diagram. The site I created uses graphical questions and diagrams along with text based questions to make sure the learner knows how to calculate things like the network mask, but also knows when and why to calculate it.</p>
-
-
-<!-- more -->
-
-
-<p>I built the site from scratch. Originally I was going to only create the subnetting practice section of the site, but soon I realized that to write the type of questions I was wanting to write I would need to program a way to calculate variable length subnet mask (VLSM) subnetting, so I wrote a <a href='http://subnettingpractice.com/vlsm.html'>VLSM calculator</a>. Once I had this coded, I was able to create VLSM style questions. </p>
-
-
-<p>The Internet is moving towards IPv6 implementation and the CCNA is beginning to reflect that with IPv6 questions being added to the test. Because of this I added some fairly basic (but more than one should need for the CCNA) <a href=http://subnettingpractice.com/ipv6.html>IPv6 questions</a>. There are a number of other features, including exponent practice, basic subnetting practice, and interactive view of how large IPv6 is, and IPv6 and IPv4 calculators.</p>
-
-
-<p>I find the sit to be useful, both in making sure my subneting is accurate and quick and in checking my work with the calculators. It&#8217;s nice to code something that is of value to me and others.</p>
 
 ]]></content>
   </entry>

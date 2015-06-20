@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2015/06/20/box-whiskers-calc/</loc>
+    <lastmod>2015-06-20T12:30:32-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2015/06/05/angular-baseball-game/</loc>
     <lastmod>2015-06-05T12:40:07-07:00</lastmod>
     <priority>0.8</priority>
@@ -130,50 +136,57 @@
   
   
   <url>
-    <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2015-06-05T12:45:33-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
     <loc>http://maciejkus.com/</loc>
-    <lastmod>2015-06-05T12:45:33-07:00</lastmod>
+    <lastmod>2015-06-20T12:32:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2015-06-05T12:45:33-07:00</lastmod>
+    <lastmod>2015-06-20T12:32:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2015-06-05T12:45:33-07:00</lastmod>
+    <loc>http://maciejkus.com/record-collector/</loc>
+    <lastmod>2015-06-20T12:32:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2015-06-05T12:45:33-07:00</lastmod>
+    <lastmod>2015-06-20T12:32:05-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/chinese_remainder/</loc>
+    <lastmod>2015-06-20T12:32:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2015-06-05T12:45:33-07:00</lastmod>
+    <lastmod>2015-06-20T12:32:05-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/box-whiskers/</loc>
+    <lastmod>2015-06-20T12:32:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/resume/</loc>
-    <lastmod>2015-06-05T12:45:33-07:00</lastmod>
+    <lastmod>2015-06-20T12:32:05-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
