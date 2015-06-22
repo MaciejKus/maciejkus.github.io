@@ -1,0 +1,7 @@
+<h3>{{id}}'s Posts:</h3>
+<p>
+<div ng-repeat='post in posts | filter: {author: id}'>
+  {{post.title}}<br>
+</div>
+<p>
+<a href='#/forum'>Home</a>

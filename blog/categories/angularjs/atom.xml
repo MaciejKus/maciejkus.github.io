@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: angularjs, | Maciej Kus is not a Figure Skater]]></title>
+  <link href="http://maciejkus.com/blog/categories/angularjs/atom.xml" rel="self"/>
+  <link href="http://maciejkus.com/"/>
+  <updated>2015-06-22T14:57:59-07:00</updated>
+  <id>http://maciejkus.com/</id>
+  <author>
+    <name><![CDATA[Maciej Kus]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[angular_forum]]></title>
+    <link href="http://maciejkus.com/blog/2015/06/22/angular-forum/"/>
+    <updated>2015-06-22T14:46:04-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/06/22/angular-forum</id>
+    <content type="html"><![CDATA[<p>Welp, I made a simple forum using angularJS. This is a lot more of what angular was meant to do than that baseball game I made a bit ago. It&rsquo;s a simple single page app. I did not create any backend functionality to save the posts or anything like that, partly because it is just an exercise, and partly because github   pages do not have backend access.</p>
+
+<!--more-->
+
+
+<p>You can see it at <a href="http://maciejkus.com/angular-forum/">http://maciejkus.com/angular-forum/</a>
+You can make new posts, you can click on a username to see post titles made by that user. Nothing too fancy but it covers a lot of angular ideas.</p>
+]]></content>
+  </entry>
+  
+</feed>

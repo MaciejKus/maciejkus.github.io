@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-06-21T11:02:22-07:00</updated>
+  <updated>2015-06-22T14:57:59-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[angular_forum]]></title>
+    <link href="http://maciejkus.com/blog/2015/06/22/angular-forum/"/>
+    <updated>2015-06-22T14:46:04-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/06/22/angular-forum</id>
+    <content type="html"><![CDATA[<p>Welp, I made a simple forum using angularJS. This is a lot more of what angular was meant to do than that baseball game I made a bit ago. It&rsquo;s a simple single page app. I did not create any backend functionality to save the posts or anything like that, partly because it is just an exercise, and partly because github   pages do not have backend access.</p>
+
+<!--more-->
+
+
+<p>You can see it at <a href="http://maciejkus.com/angular-forum/">http://maciejkus.com/angular-forum/</a>
+You can make new posts, you can click on a username to see post titles made by that user. Nothing too fancy but it covers a lot of angular ideas.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[box_whiskers_calc]]></title>
@@ -527,97 +542,6 @@ Finally, I wanted something more advanced, so I made a space shooter game. Inste
 <p>
 The above three were all learning experiences, and I believe I could go through the code and make it a bit nicer and maybe more efficient today. I am posting them as I originally wrote them. No improvments or anything, but I found that looking at how other simple games were coded was very helpful. Hopefully looking at the page source for the above might be helpful for others who are starting out. 
 </p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Record Collector The Game]]></title>
-    <link href="http://maciejkus.com/blog/2014/08/02/record-collector-the-game/"/>
-    <updated>2014-08-02T13:41:01-07:00</updated>
-    <id>http://maciejkus.com/blog/2014/08/02/record-collector-the-game</id>
-    <content type="html"><![CDATA[<p>Record Collector is a simple game I made using the <a href='http://enchantjs.com/'>enchant.js</a> game engine. It was largely an exercise in JavaScript and using a game engine, but I also wanted to add my own flavor to the incremental game genre. Most incremental games are text and box based, where you click buttons or objects. In Record Collector you control a hero who walks around and interacts with other characters while trying to get more records.</p>
-
-
-<p>I chose enchant.js because it was small and simple. I did not want a framework that would do all the work for me. I meant this to be a learning experience for myself, and it was. I never made a game more advanced than pong before this. Here I had to not only code the game, but also design the game play and the graphics (my apologies. I am clearly not an artist.) Enchant helped me create the map and I was able to avoid writing my own collision detection function. But by and large the game is my own creation.</p>
-
-
-<!-- more -->
-
-
-<p>The biggest challenge while creating the game may have been to make the map and sprites scroll correctly while the hero moved around. Moving the hero around requires the game to look at the hero&#8217;s current position (x and y), the last mouse click and the speed at which the hero walks. First I check to make sure that the mouse click is close enough to the hero that the hero does not really have to walk. If the distance between the mouse click and the current hero&#8217;s position is less than the hero&#8217;s walking speed I just move the hero the the mouse-click position. If the mouse-click is further away, I check a number of things. I see how close the hero is to the current edge or the map. If he is one third of the way to the edge of the direction he will be walking then I will scroll the background. I also check to make sure that there is more background to scroll into. Maybe the map has ended, in which case there is no need for further scrolling. I also make sure that there are no collisions with walls in the direction the hero is trying to move. If all of the above checks, then I change the background position (x and/or y) to make the background scroll, and then I change the position of the mouse-click to bring it closer to the position of the hero. The hero&#8217;s x and y positions do not change in this case because the hero&#8217;s sprite does not actually move relative to the window. It is the background that is moving and bringing the mouse-click point closer to the hero.
-</p>
-
-
-<p>If all the above checks failed, then that means I am probably near the edge of a map. There is probably no more background left to scroll. In this case I leave the background and the mouse-click points alone and I move the hero&#8217;s sprite. I also check for collision with walls one last time, and if a collision occurs, I undo the hero&#8217;s move.</p>
-
-
-<p></p>
-
-<p>The code is a bit hard to read as I have some magic numbers in there to make collisions with walls look better. But it goes something like this:
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">//moving hero down</span>
-</span><span class='line'><span class="nx">hero</span><span class="p">.</span><span class="nx">dir</span> <span class="o">=</span> <span class="nx">DIR_DOWN</span><span class="p">;</span>
-</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="nx">hero</span><span class="p">.</span><span class="nx">toY</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nx">heroSpeed</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">hero</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="nx">hero</span><span class="p">.</span><span class="nx">toY</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">y</span><span class="o">&gt;</span><span class="nx">game</span><span class="p">.</span><span class="nx">height</span> <span class="o">-</span><span class="p">(</span><span class="nx">game</span><span class="p">.</span><span class="nx">height</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">floor</span><span class="p">.</span><span class="nx">height</span><span class="o">+</span><span class="nx">floor</span><span class="p">.</span><span class="nx">y</span><span class="o">&gt;</span><span class="nx">game</span><span class="p">.</span><span class="nx">height</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">hitTest</span><span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">offx</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">x</span><span class="p">),</span> <span class="nx">hero</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="p">(</span><span class="nx">offy</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">y</span><span class="p">))</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)){</span>
-</span><span class='line'>  <span class="nx">floor</span><span class="p">.</span><span class="nx">y</span> <span class="o">-=</span> <span class="nx">heroSpeed</span><span class="p">;</span>
-</span><span class='line'>  <span class="nx">hero</span><span class="p">.</span><span class="nx">toY</span> <span class="o">-=</span><span class="nx">heroSpeed</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="k">else</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">hero</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span><span class="nx">heroSpeed</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">hitTest</span><span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">offx</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">x</span><span class="p">),</span> <span class="nx">hero</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="p">(</span><span class="nx">offy</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">floor</span><span class="p">.</span><span class="nx">y</span><span class="p">)))</span> <span class="nx">hero</span><span class="p">.</span><span class="nx">y</span> <span class="o">-=</span><span class="nx">heroSpeed</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure> 
-</p>
-
-
-<p>
-One other implementation that I had to think about was what to do about collisions. Enchant.js does a good job of making collision detection easy, but when the hero collides with another character in the game I wanted the dialogue box to pop up only a single time per collision. This was solved with having the none player characters all having a &#8216;hit&#8217; property. So first the game checks for a collision, and if there is a collision it checks to make sure that the hit property is set to false. If it is set to false, then the dialogue box is rendered and the hit property is set to true. The hit property stays true until the collision no longer exists. If there is no collision then the hit property is set to false again. This is the code that loops through all the characters to see if they have collided with the hero. 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">npcLength</span> <span class="o">=</span> <span class="nx">npcArray</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">npcLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
-</span><span class='line'> <span class="kd">var</span> <span class="nx">curNpc</span> <span class="o">=</span> <span class="nx">npcArray</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-</span><span class='line'> <span class="k">if</span><span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">within</span><span class="p">(</span><span class="nx">curNpc</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span> <span class="c1">//number  is radius of collision</span>
-</span><span class='line'>   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">curNpc</span><span class="p">.</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>     <span class="nx">checkStats</span><span class="p">();</span> <span class="c1">//checks and makes needed dialogue updates</span>
-</span><span class='line'>     <span class="nx">game</span><span class="p">.</span><span class="nx">pushScene</span><span class="p">(</span><span class="nx">game</span><span class="p">.</span><span class="nx">makeDialogueScene</span><span class="p">(</span><span class="nx">curNpc</span><span class="p">.</span><span class="nx">dialogue</span><span class="p">));</span> <span class="c1">//adds dialogue box</span>
-</span><span class='line'>     <span class="nx">curNpc</span><span class="p">.</span><span class="nx">hit</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</span><span class='line'>   <span class="p">}</span>
-</span><span class='line'> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span><span class='line'>   <span class="nx">curNpc</span><span class="p">.</span><span class="nx">hit</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-</span><span class='line'> <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure> 
-</p>
-
-
-<p>
-The game can be played <a href='../../../../../record-collector/'>here</a> and the code can be seen <a href='https://github.com/MaciejKus/record_collector'>here</a>. Next game I make will have better graphics, I promise.</p>
 
 ]]></content>
   </entry>
