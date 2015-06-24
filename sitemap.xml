@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2015/06/23/unit-vector-eyes-follow-mouse/</loc>
+    <lastmod>2015-06-23T17:11:11-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2015/06/22/angular-forum/</loc>
     <lastmod>2015-06-22T14:46:04-07:00</lastmod>
     <priority>0.8</priority>
@@ -136,57 +142,57 @@
   
   
   <url>
-    <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2015-06-22T15:03:32-07:00</lastmod>
+    <loc>http://maciejkus.com/chinese_remainder/</loc>
+    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/</loc>
-    <lastmod>2015-06-22T15:03:32-07:00</lastmod>
+    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2015-06-22T15:03:32-07:00</lastmod>
+    <loc>http://maciejkus.com/record-collector/</loc>
+    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2015-06-22T15:03:32-07:00</lastmod>
+    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2015-06-22T15:03:32-07:00</lastmod>
+    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2015-06-22T15:03:32-07:00</lastmod>
+    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/box_whiskers/</loc>
-    <lastmod>2015-06-22T15:03:32-07:00</lastmod>
+    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/resume/</loc>
-    <lastmod>2015-06-22T15:03:32-07:00</lastmod>
+    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -207,6 +213,12 @@
   <url>
     <loc>http://maciejkus.com/cop-or-not/index.html</loc>
     <lastmod>2014-08-17T17:39:1408322345Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/unit-vector-eyes/index.html</loc>
+    <lastmod>2015-06-23T17:19:1435105163Z</lastmod>
     <priority>0.6</priority>
   </url>
   

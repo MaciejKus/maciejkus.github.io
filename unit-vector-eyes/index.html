@@ -1,0 +1,80 @@
+<DOCTYPE! html>
+<html>
+<head>
+</head>
+<body>
+  <canvas id="myCanvas" width="600" height="300" style="border:1px solid #000000;"></canvas>
+
+<script type='text/javascript'>
+ var c = document.getElementById('myCanvas');
+ var context = c.getContext('2d');
+ var eyeDistance = 80;
+ var leftEyeX = c.width/2 - eyeDistance;
+ var rightEyeX = c.width/2 + eyeDistance;
+ var eyeY = c.height/2;
+ var eyeRadius = 20; //inner eye
+ var outterEyeRadius = 50;
+ var pupilShift = outterEyeRadius - eyeRadius;
+ context.fillStyle = 'brown';
+ //outer outline of eye
+ function drawOutter() {
+   context.beginPath();
+   context.arc(leftEyeX,eyeY,outterEyeRadius,0,2*Math.PI);
+   context.stroke();
+   context.beginPath();
+   context.arc(rightEyeX,eyeY,outterEyeRadius,0,2*Math.PI);
+   context.stroke();
+ }
+ //draw pupil. arguments are right and left x and y
+ function drawInner(rx,ry,lx,ly) {
+   context.beginPath();
+  //your left not face's left
+   context.arc(leftEyeX+(pupilShift*lx),eyeY+(pupilShift*ly),eyeRadius,0,2*Math.PI);
+   context.fill();
+   context.beginPath();
+   //your right
+   //pupileShift is multiplied by the unit vector's x and y
+   context.arc(rightEyeX+(pupilShift*rx),eyeY+(pupilShift*ry),eyeRadius,0,2*Math.PI);
+   context.fill();
+ }
+
+ //mouse cordinates relative to canvas
+ function getMouse(canvas, evt) {
+  var rect = canvas.getBoundingClientRect();
+  return {
+   x: evt.clientX - rect.left,
+   y: evt.clientY - rect.top
+  };
+ } 
+
+ //find unit vector for both eyes
+ function findUnit(mousex,mousey) {
+  lxDist = mousex-leftEyeX;
+  rxDist = mousex-rightEyeX;
+  yDist = mousey-eyeY;
+  rdist = Math.sqrt(rxDist*rxDist+yDist*yDist);
+  ldist = Math.sqrt(lxDist*lxDist+yDist*yDist);
+  return { 
+   rx: (rxDist)/rdist,
+   lx: (lxDist)/ldist,
+   ry: (yDist)/rdist,
+   ly: (yDist)/ldist
+  };
+ }
+
+ //listen for mouse moving over canvas, and redraw everything
+ c.addEventListener('mousemove', function(evt) {
+  var mousepos = getMouse(c, evt);
+  context.clearRect(0,0,c.width,c.height);
+  drawOutter();
+  var unitVector = findUnit(mousepos.x,mousepos.y);
+  drawInner(unitVector.rx,unitVector.ry,unitVector.lx,unitVector.ly);
+
+ });//end addEventListener
+
+ //initially draw eyes with pupils in center (0 offset)
+ drawOutter();
+ drawInner(0,0,0,0);
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: canvas | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/canvas/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-06-22T15:03:32-07:00</updated>
+  <updated>2015-06-23T17:20:13-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,18 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[unit-vector-eyes-follow-mouse]]></title>
+    <link href="http://maciejkus.com/blog/2015/06/23/unit-vector-eyes-follow-mouse/"/>
+    <updated>2015-06-23T17:11:11-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/06/23/unit-vector-eyes-follow-mouse</id>
+    <content type="html"><![CDATA[<p>A unit vector or normal vector is useful for pointing things at other things. Like pointing eyes at a mouse. See here what a unit vector is:
+<a href="https://en.wikipedia.org/wiki/Unit_vector">https://en.wikipedia.org/wiki/Unit_vector</a></p>
+
+<p>and then check out <a href="http://maciejkus.com/unit-vector-eyes/">http://maciejkus.com/unit-vector-eyes/</a> to see some html5/canvas eyes which follow your mouse cursor. They currently only follow the mouse when it is inside the canvas element, but this can easily be changed.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[box_whiskers_calc]]></title>
