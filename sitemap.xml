@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2015/06/26/snake/</loc>
+    <lastmod>2015-06-26T15:20:57-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2015/06/23/unit-vector-eyes-follow-mouse/</loc>
     <lastmod>2015-06-23T17:11:11-07:00</lastmod>
     <priority>0.8</priority>
@@ -143,56 +149,56 @@
   
   <url>
     <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
+    <lastmod>2015-06-26T15:23:11-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/</loc>
-    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
+    <lastmod>2015-06-26T15:23:11-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
+    <lastmod>2015-06-26T15:23:11-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
+    <lastmod>2015-06-26T15:23:11-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
+    <lastmod>2015-06-26T15:23:11-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
+    <lastmod>2015-06-26T15:23:11-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/box_whiskers/</loc>
-    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
+    <lastmod>2015-06-26T15:23:11-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/resume/</loc>
-    <lastmod>2015-06-23T17:20:13-07:00</lastmod>
+    <lastmod>2015-06-26T15:23:11-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -218,7 +224,7 @@
   
   <url>
     <loc>http://maciejkus.com/unit-vector-eyes/index.html</loc>
-    <lastmod>2015-06-23T17:19:1435105163Z</lastmod>
+    <lastmod>2015-06-26T11:31:1435343488Z</lastmod>
     <priority>0.6</priority>
   </url>
   
@@ -303,6 +309,12 @@
   <url>
     <loc>http://maciejkus.com/bike-drive/index.html</loc>
     <lastmod>2015-05-26T14:39:1432676388Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/snake/index.html</loc>
+    <lastmod>2015-06-26T15:20:1435357235Z</lastmod>
     <priority>0.6</priority>
   </url>
   

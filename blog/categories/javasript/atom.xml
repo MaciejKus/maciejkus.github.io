@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: javasript, | Maciej Kus is not a Figure Skater]]></title>
+  <link href="http://maciejkus.com/blog/categories/javasript/atom.xml" rel="self"/>
+  <link href="http://maciejkus.com/"/>
+  <updated>2015-06-26T15:23:11-07:00</updated>
+  <id>http://maciejkus.com/</id>
+  <author>
+    <name><![CDATA[Maciej Kus]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[snake]]></title>
+    <link href="http://maciejkus.com/blog/2015/06/26/snake/"/>
+    <updated>2015-06-26T15:20:57-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/06/26/snake</id>
+    <content type="html"><![CDATA[<p>Snake, the classic game, now in html5/Canvas: <a href="http://maciejkus.com/snake/">http://maciejkus.com/snake/</a></p>
+]]></content>
+  </entry>
+  
+</feed>
