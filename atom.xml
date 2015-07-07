@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-07-04T10:40:17-07:00</updated>
+  <updated>2015-07-06T17:40:16-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Canvas/HTML5 Tower Defense]]></title>
+    <link href="http://maciejkus.com/blog/2015/07/06/canvas-tower-defense/"/>
+    <updated>2015-07-06T17:30:41-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/07/06/canvas-tower-defense</id>
+    <content type="html"><![CDATA[<p>I made a fairly simply tower defense game in html5/canvas/javascript. It works fine as is. Most of the features I would want to create are there, the game just needs some work on the actual game play. Details like the cost of towers, and how rapid the attackers are spawned will probably need to be changed to make the game more enjoyable. The current version works well enough to play.</p>
+
+<p>Check it out at <a href="http://maciejkus.com/tower/">http://maciejkus.com/tower/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[snake]]></title>
@@ -472,34 +483,6 @@ This code should work for any kind of HTML, not only a img tag. You can see work
 
 
 <p>The above can and probably should also be done with IPv6 when IPv6 addresses are available. For that just add AAAA records in the same maner as the A records above. You will need one AAAA record for example.com pointing to the webhosting IPv6 address, and one AAAA record pointing mail.example.com pointing to the mail server&#8217;s IPv6 address.</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Middle East game]]></title>
-    <link href="http://maciejkus.com/blog/2014/08/30/middle-east-game/"/>
-    <updated>2014-08-30T15:22:19-07:00</updated>
-    <id>http://maciejkus.com/blog/2014/08/30/middle-east-game</id>
-    <content type="html"><![CDATA[<p>I wrote a little turn based game. It is inspired by American involvement in the Middle East. The idea is you are newly elected President Obama. You inherited two wars. What actions will you take in the Middle East?</p>
-
-
-<p>Since 2008 the Middle East has seen a dramatic change in political aliances. The Arab Spring had a huge impact on the regoin. Recently the Hamas and Israel conflict showed just how profound that impact has been. Egypt and other Arab countries were more inclined to ally with Israel than they were with Islamic Hamas. That is just a single example of how dynamic the Middle East is.</p>
-
-
-<p>The game starts somewhat realistically to what Obama found when he became president. “With the 2008 election of Barack Obama, favorable attitudes toward the U.S. more than doubled in many Arab countries.” (<a href='http://www.aaiusa.org/reports/arab-attitudes-2011'>aaiusa</a>) I used a number of sources for the game. These include:</p>
-
-
-<p><a href="http://en.wikipedia.org/wiki/United_States_Foreign_Military_Financing">http://en.wikipedia.org/wiki/United_States_Foreign_Military_Financing</a><br>
-<a href="http://midknightgraphs.blogspot.com/2011/02/sunnishia-demographics-in-middle-east.html">http://midknightgraphs.blogspot.com/2011/02/sunnishia-demographics-in-middle-east.html</a><br>
-<a href="http://trade.gov/press/publications/newsletters/ita_0408/middle-east_0408.asp">http://trade.gov/press/publications/newsletters/ita_0408/middle-east_0408.asp</a><br>
-<a href="http://gbk.eads.usaidallnet.gov/data/country.html">http://gbk.eads.usaidallnet.gov/data/country.html</a><br>
-Fragile State Index: <a href="http://ffp.statesindex.org/rankings-2008-sortable">http://ffp.statesindex.org/rankings-2008-sortable</a><br>
-<a href="http://gbk.eads.usaidallnet.gov/data/country.html">http://gbk.eads.usaidallnet.gov/data/country.html</a><br>
-<a href="http://graphics.eiu.com/PDF/Democracy%20Index%202008.pdf">http://graphics.eiu.com/PDF/Democracy%20Index%202008.pdf</a><br>
-<a href="http://www.aaiusa.org/page/-/Polls/ArabOpinion/Obama100Days_SixNationSurvey_2009.pdf">http://www.aaiusa.org/page/-/Polls/ArabOpinion/Obama100Days_SixNationSurvey_2009.pdf</a> and <a href="http://www.pewglobal.org/2013/07/18/chapter-1-attitudes-toward-the-united-states/">http://www.pewglobal.org/2013/07/18/chapter-1-attitudes-toward-the-united-states/</a><br></p>
-
-<p>The code can be found on github. Play the <a href='http://maciejkus.com/middle-east-diplomacy/'>game</a>.</p>
 
 ]]></content>
   </entry>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: games | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/games/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-07-04T10:40:17-07:00</updated>
+  <updated>2015-07-06T17:40:16-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Canvas/HTML5 Tower Defense]]></title>
+    <link href="http://maciejkus.com/blog/2015/07/06/canvas-tower-defense/"/>
+    <updated>2015-07-06T17:30:41-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/07/06/canvas-tower-defense</id>
+    <content type="html"><![CDATA[<p>I made a fairly simply tower defense game in html5/canvas/javascript. It works fine as is. Most of the features I would want to create are there, the game just needs some work on the actual game play. Details like the cost of towers, and how rapid the attackers are spawned will probably need to be changed to make the game more enjoyable. The current version works well enough to play.</p>
+
+<p>Check it out at <a href="http://maciejkus.com/tower/">http://maciejkus.com/tower/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Simple HTML5 Games]]></title>
