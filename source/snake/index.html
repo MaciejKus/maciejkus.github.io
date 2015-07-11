@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 Canvas Snake Game</title>
+<meta name='description' content='A HTML5 Canvas classic Snake game.'>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style='border:1px solid #000;'>oh oh, your browser does not support Canvas</canvas>
+<p>
+A HTML5 Canvas version of the classic Snake game. Use the arrow keys on your keyboard to move the snake. The snake eats red fruit, but dies if it hits a wall or tries to eat itself. 
+<script>
+//html5 canvas snake game by Maciej Kus maciejkus.com
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var rectWidth = 15;
+var maxWidth = canvas.width/rectWidth -1; //add maxHEight if canvas is not perfect square!
+var snake;
+var snakeDir = 'R';
+var snakeLength = 3;
+var food;
+var FPS = 10;
+newGame();
+drawSnake();
+drawFood();
+
+function newGame() {
+  //emptry snake array
+  snake = [];
+  for (var i = 0; i < snakeLength; i++) {
+    snake[i] = {x:snakeLength-i, y:0};
+  }
+  calFood();
+  snakeDir = 'R';
+} 
+
+ 
+function drawSnake() {
+  for( var i = 0, j = snake.length; i < j; i++) {
+    context.beginPath();
+    context.fillStyle = 'green';
+    context.strokeStyle = 'yellow';
+    context.rect(snake[i].x*rectWidth,snake[i].y*rectWidth,rectWidth,rectWidth);
+    context.fill();
+    context.stroke();
+  }
+}
+
+//food position
+function calFood () {
+  food = {
+     x: Math.floor(Math.random()*maxWidth),
+     y: Math.floor(Math.random()*maxWidth)
+  };
+  //do not draw food in same space snake occupies
+  for( var i = 0, j = snake.length; i < j; i++) {
+    if (snake[i].x === food.x && snake[i].y === food.y) {
+      i = 0;
+      calFood();
+    }
+  }; //end for
+}
+
+function drawFood() {
+  context.beginPath();
+  context.fillStyle = 'red';
+  context.strokeStyle = 'black';
+  context.rect(food.x*rectWidth,food.y*rectWidth,rectWidth,rectWidth);
+  context.fill();
+  context.stroke();
+}
+
+function moveSnake() {
+  var dx = 0, dy = 0;
+  if (snakeDir === 'R') dx++;
+  else if (snakeDir === 'L') dx--;
+  else if (snakeDir === 'D') dy++;
+  else dy--;
+  var nextX = snake[0].x+dx;
+  var nextY = snake[0].y+dy;
+  //does snake eat self?
+  for( var i = 0, j = snake.length; i < j; i++) {
+    if (snake[i].x === nextX && snake[i].y === nextY) {
+      newGame();
+      return;
+    }
+  }
+  //check canvas boundaries
+  if (nextX < 0 || nextY < 0 || nextX > maxWidth || nextY > maxWidth ) {
+    newGame();
+    return;
+  }
+  snake.unshift( {x:snake[0].x+dx, y: snake[0].y+dy});
+  //if hit food do not pop tail
+  if (food.x !== nextX || food.y !== nextY ) snake.pop();
+  else calFood();
+}
+
+
+//arrow key input
+window.addEventListener('keydown', function(e) {
+  switch (e.keyCode) {
+    case 38:
+      (snakeDir !== 'D') && (snakeDir = 'U');
+      break;
+    case 40:
+      (snakeDir !== 'U') && (snakeDir = 'D');
+      break;
+    case 37:
+      (snakeDir !== 'R') && (snakeDir = 'L');
+      break;
+    case 39:
+      (snakeDir !== 'L') && (snakeDir = 'R');
+      break;
+  } //end switch
+},false);
+
+setInterval(function() {
+  context.beginPath();
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  moveSnake();
+  drawFood();
+  drawSnake();
+}, 1000/FPS);
+</script>
+</body>
+</html>

@@ -1,13 +1,12 @@
 ---
 layout: page
-title: "box_whiskers"
+title: "Box and Whiskers Plot Calculator"
 date: 2015-06-20 12:26
 comments: false
 description: An accurate Box and Whiskers Plot calculator. 
 sharing: true
 footer: true
 ---
-<h1>Box and Whiskers Plot Calculator</h1>
 <p>
 This is an accurate box and whiskers plot calculator. It might be the only accurate box and whiskers calculator one on the Internet. All the others that I have come across contain calculation errors, even with a simple set of numbers such as 1,1,2,2,3,3,4,4. Mainly they are unable to calculate the quartile values correctly. This calculator calculates all the values accurately. </p>
 <p>To use this box and whiskers calculator, simply enter a group of numbers into the text box and click 'Submit'. The group of numbers can be either comma separated or space separated. Maybe even a mix of both.</p>

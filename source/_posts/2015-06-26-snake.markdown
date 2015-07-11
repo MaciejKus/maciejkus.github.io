@@ -1,0 +1,9 @@
+---
+layout: post
+title: "snake"
+date: 2015-06-26 15:20:57 -0700
+comments: false
+categories: javasript, canvas, html5
+description: A javascript/Canvas version of Snake
+---
+Snake, the classic game, now in html5/Canvas: http://maciejkus.com/snake/
