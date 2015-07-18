@@ -4,7 +4,7 @@
   <title><![CDATA[Category: angularjs, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/angularjs/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-07-13T09:36:39-07:00</updated>
+  <updated>2015-07-18T15:48:24-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -25,6 +25,15 @@
 
 <p>You can see it at <a href="http://maciejkus.com/angular-forum/">http://maciejkus.com/angular-forum/</a>
 You can make new posts, you can click on a username to see post titles made by that user. Nothing too fancy but it covers a lot of angular ideas.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[angular-baseball-game]]></title>
+    <link href="http://maciejkus.com/blog/2015/06/05/angular-baseball-game/"/>
+    <updated>2015-06-05T12:40:07-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/06/05/angular-baseball-game</id>
+    <content type="html"><![CDATA[<p>Inspired by a Codewars kata I created a simple <a href="http://maciejkus.com/baseball-game/">baseball game</a>. It was the first time I used AngularJS, but I feel like the Angular was unnecessary. I will need to build a few other pages to get the full idea of Angular.</p>
 ]]></content>
   </entry>
   

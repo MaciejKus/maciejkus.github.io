@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-07-13T09:36:39-07:00</updated>
+  <updated>2015-07-18T15:48:24-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -30,6 +30,15 @@
     <updated>2015-06-20T12:30:32-07:00</updated>
     <id>http://maciejkus.com/blog/2015/06/20/box-whiskers-calc</id>
     <content type="html"><![CDATA[<p> There is a shocking lack of box and whisker graph calculators on the Internet. Well, accurate ones anyway, so I made one. Originally I needed one for some calculations I was doing and made one in Python, but then I figured I can easily rewrite it into Javascript and make it available for others. I even added a simple HTML5 canvas graph. You can find it at <a href="http://maciejkus.com/box_whiskers/">Box and Whiskers Calculator</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[angular-baseball-game]]></title>
+    <link href="http://maciejkus.com/blog/2015/06/05/angular-baseball-game/"/>
+    <updated>2015-06-05T12:40:07-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/06/05/angular-baseball-game</id>
+    <content type="html"><![CDATA[<p>Inspired by a Codewars kata I created a simple <a href="http://maciejkus.com/baseball-game/">baseball game</a>. It was the first time I used AngularJS, but I feel like the Angular was unnecessary. I will need to build a few other pages to get the full idea of Angular.</p>
 ]]></content>
   </entry>
   
@@ -125,44 +134,6 @@ The JavaScript looks like this:</p>
 
 <p>
 This code should work for any kind of HTML, not only a img tag. You can see working demo of this at this <a href='http://subnettingpractice.com/ethernet_wiring.html'>Ethernet wire ordering</a> page. The JavaScript on that page is minified to make it load slightly faster, but you can see what the above is doing.
-</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Simple HTML5 Games]]></title>
-    <link href="http://maciejkus.com/blog/2014/08/04/simple-html5-games/"/>
-    <updated>2014-08-04T10:39:21-07:00</updated>
-    <id>http://maciejkus.com/blog/2014/08/04/simple-html5-games</id>
-    <content type="html"><![CDATA[<p>
-A while ago I wanted to work with graphics. Before then all I have ever coded were text based programs. Calculators, problem generators, text games, console scripts, etc. I figured a game would be the best way to do this and that HTML5/canvas would be the best area to learn. Internet browsers have largely adopted canvas and it works on all kinds of devices, including smart phones. I hope posting these early experiments will allow others to speed up their own learning of HTML5/canvas. 
-</p>
-
-
-<p>A coworker suggested I start with making a breakout style game and then move on to pong. My first step was to actually learn how to draw a <a href='../../../../../html5-games/ball_shadow.html'>circle</a>. Then how to move the circle. Once I got that down the rest was easy.
-</p>
-
-
-<!-- more -->
-
-
-<p>OK, maybe not easy, but there is enough documentation out there that I was able to make  some simple graphical programs. Rather than dive right into breakout I made a little 'game' where balls simply bounce around in two 'rooms'. This was largely a way to practice collision detection and collision response before making a more advanced game. The result can be played <a href='../../../../../html5-games/click-balls.html'>here</a>. The collision response in the game is definitely lacking, but it worked well enough for me to feel like I understood how things should work.
-</p>
-
-
-<p>
-After that I felt like I understood collisions well enough that I did not need to make a breakout game and instead could move straight to a pong game, which is what I did. Instead of regular pong I made it more of a wall-ball style game where both players are on the same side. It's pretty much pong, with a tiny difference. See it in action <a href='../../../../../html5-games/wallball.html'>here</a>.
-</p>
-
-
-<p>
-Finally, I wanted something more advanced, so I made a space shooter game. Instead of trying to use sprites I just used basic canvas shapes like circles, but the idea works pretty well. Play it <a href='../../../../../html5-games/shooter.html'>here</a>.
-</p>
-
-
-<p>
-The above three were all learning experiences, and I believe I could go through the code and make it a bit nicer and maybe more efficient today. I am posting them as I originally wrote them. No improvments or anything, but I found that looking at how other simple games were coded was very helpful. Hopefully looking at the page source for the above might be helpful for others who are starting out. 
 </p>
 
 ]]></content>

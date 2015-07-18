@@ -4,7 +4,7 @@
   <title><![CDATA[Category: games | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/games/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-07-13T09:36:39-07:00</updated>
+  <updated>2015-07-18T15:48:24-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -21,6 +21,15 @@
     <content type="html"><![CDATA[<p>I made a fairly simply tower defense game in html5/canvas/javascript. It works fine as is. Most of the features I would want to create are there, the game just needs some work on the actual game play. Details like the cost of towers, and how rapid the attackers are spawned will probably need to be changed to make the game more enjoyable. The current version works well enough to play.</p>
 
 <p>Check it out at <a href="http://maciejkus.com/tower/">http://maciejkus.com/tower/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[angular-baseball-game]]></title>
+    <link href="http://maciejkus.com/blog/2015/06/05/angular-baseball-game/"/>
+    <updated>2015-06-05T12:40:07-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/06/05/angular-baseball-game</id>
+    <content type="html"><![CDATA[<p>Inspired by a Codewars kata I created a simple <a href="http://maciejkus.com/baseball-game/">baseball game</a>. It was the first time I used AngularJS, but I feel like the Angular was unnecessary. I will need to build a few other pages to get the full idea of Angular.</p>
 ]]></content>
   </entry>
   
