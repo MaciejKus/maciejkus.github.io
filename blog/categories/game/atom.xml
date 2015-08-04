@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: game | Maciej Kus is not a Figure Skater]]></title>
+  <link href="http://maciejkus.com/blog/categories/game/atom.xml" rel="self"/>
+  <link href="http://maciejkus.com/"/>
+  <updated>2015-08-04T09:26:52-07:00</updated>
+  <id>http://maciejkus.com/</id>
+  <author>
+    <name><![CDATA[Maciej Kus]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Canvas Breakout]]></title>
+    <link href="http://maciejkus.com/blog/2015/08/04/canvas-breakout/"/>
+    <updated>2015-08-04T09:24:11-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/08/04/canvas-breakout</id>
+    <content type="html"><![CDATA[<p>Continuing with the Canvas/JavaScript game theme that I&rsquo;ve been on recently, I just coded a game of <a href="/breakout/">Breakout</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
