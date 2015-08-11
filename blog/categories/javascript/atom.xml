@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-08-04T18:02:18-07:00</updated>
+  <updated>2015-08-11T09:25:51-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[jsbreakouts]]></title>
+    <link href="http://maciejkus.com/blog/2015/08/11/jsbreakouts/"/>
+    <updated>2015-08-11T09:12:00-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/08/11/jsbreakouts</id>
+    <content type="html"><![CDATA[<p>There&rsquo;s a project, JavaScript <a href="http://www.jsbreakouts.org/">Breakouts</a> which is a collection of different JavaScript game engines. All the game engines are used to create the same version of Breakout, with the same features, etc. It&rsquo;s a way to allow people to compare different game engines by looking at them in action.</p>
+
+<p>Since I&rsquo;ve used enchant.js before, I figured I would add an enchant.js version to the Breakouts. The game can be played <a href="http://www.jsbreakouts.org/enchantjs/index.html">here</a>. Coding this game I realized that enchant.js is out of date. The last time it has been updated was around 2013. There was one <a href="https://github.com/wise9/enchant.js/issues/312">issue</a> where I actually had to go in and change the code for enchant.js to make the game work. There is an outdated web audio line:</p>
+
+<p><code>this.src.disconnect(this.connectTarget);</code></p>
+
+<p>This caused Chrome and other webkit based browsers to issue a</p>
+
+<p><code>Uncaught InvalidAccessError: Failed to execute 'disconnect' on 'AudioNode': the given destination is not connected.</code></p>
+
+<p>error. This was fixed by changing the above line to</p>
+
+<p><code>this.src.disconnect();</code></p>
+
+<p>Before this change, the game would crash as soon as a sound was played. I see there are other issues with enchant.js. On older versions of Firefox the game does not finish loading. Instead it throws a</p>
+
+<p><code>Error: failed in Deferred</code></p>
+
+<p>error. It&rsquo;s unfortunate, but it seems like enchant.js is no longer being maintained, and so I will have to find a new game engine to use, if I ever decide to use a game engine for a game.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Canvas Breakout]]></title>
@@ -48,25 +75,6 @@
     <updated>2015-06-05T12:40:07-07:00</updated>
     <id>http://maciejkus.com/blog/2015/06/05/angular-baseball-game</id>
     <content type="html"><![CDATA[<p>Inspired by a Codewars kata I created a simple <a href="http://maciejkus.com/baseball-game/">baseball game</a>. It was the first time I used AngularJS, but I feel like the Angular was unnecessary. I will need to build a few other pages to get the full idea of Angular.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Removing Event Listeners When Redrawing Canvas]]></title>
-    <link href="http://maciejkus.com/blog/2014/09/28/removing-event-listeners-when-redrawing-canvas/"/>
-    <updated>2014-09-28T15:43:08-07:00</updated>
-    <id>http://maciejkus.com/blog/2014/09/28/removing-event-listeners-when-redrawing-canvas</id>
-    <content type="html"><![CDATA[<p>I was drawing a network graph using canvas, it had nodes and edges and when a user clicks on a node the canvas is redrawn. All of this is fine, but then I also wanted to have a navigation bar outside of the canvas which would redraw the canvas when that was clicked. Now redrawing the canvas is easy, but the redraw did not remove the event listeners from the previously drawn canvas. For example, say a node moves to the middle of the graph if it is clicked on. Even if the canvas is redrawn with that node gone, the event listener stayed around and when the user clicked on the section of the canvas where the node used to be, the event would still trigger and the node would be drawn in the middle of the graph. </p>
-
-
-<!--more-->
-
-
-<p>The problem came about because the navigation bar was outside of the scope of the canvas function. Even if I turned 'canvas' into a global variable, 'canvas.removeEventListener' did not work because the event handler was not a global variable. I could eventually moved enough of the variables into the global scope that maybe things would have worked. 'removeEventListener' worked fine when I used it inside the canvas function. But luckily the page was already using jQuery, so after playing around and giving up on 'removeEventListener', I moved on to use the jQuery 'on()' and 'off()' event handler functions. </p>
-
-
-<p>The reason these worked so well is that using 'off()' without any arguments removes all event handlers which were added using the 'on()' function. You cannot mix 'addEventListener' and 'off()' together. But anything attached with a 'on()' was fair game. So all I needed to add to the sidebar was '$(canvas).off();' and any event listener attached to the canvas element was removed.</p>
-
 ]]></content>
   </entry>
   
