@@ -1,0 +1,241 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>memoization - Maciej Kus is not a Figure Skater</title>
+	<meta name="author" content="Maciej Kus">
+
+
+	<meta name="description" content="Memoization It&rsquo;s pretty amazing how much faster caching makes code. I was doing a CodeWars exercise trying to go through an array and find the &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://maciejkus.com/blog/2015/08/21/memoization/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-50427363-3']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<a href='/'><img src="/images/profile.jpg" alt="Profile Picture" style="width: 160px;" /></a>
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a rel="nofollow" href="/resume/">About</a></li>
+    <li><a href="/blog/archives/">Archives</a></li>
+    <li><a rel="nofollow" href="/contact/">Contact</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/maciejkus" title="GitHub">GitHub</a>
+		
+		
+		
+		
+			<a class="linkedin" href="http://www.linkedin.com/in/maciejkus" title="LinkedIn">LinkedIn</a>
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Memoization</h1>
+	<div class="entry-content" itemprop="articleBody"><p>It&rsquo;s pretty amazing how much faster caching makes code. I was doing a CodeWars exercise trying to go through an array and find the first (left most) pair of numbers which add up to a given sum (<code>s</code>). I first tried:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var pairs=function(ints, s){
+</span><span class='line'>  for(var i = 1, j= ints.length; i &lt; j; i++) {
+</span><span class='line'>    for (var x = 0; x &lt; i; x++) {
+</span><span class='line'>      if(ints[i] + ints[x] === s) return [ints[x],ints[i]];
+</span><span class='line'>    }
+</span><span class='line'>  }   
+</span><span class='line'>  return undefined;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pretty self explanatory, it goes through the array and for every number goes through all the numbers before that one to see if they add up to the sum. It works, but was too slow and timed out when the array was huge.</p>
+
+<p>I tried to speed things up a bit by using indexOf() rather than a second for loop, but that actually slowed things down, as indexOf() is like a loop, but with a bunch of checks included in it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var pairs=function(ints, s){
+</span><span class='line'>  for(var i = 1, j= ints.length; i &lt; j; i++) {
+</span><span class='line'>    var otherIndex = ints.indexOf(s - ints[i])
+</span><span class='line'>    if(otherIndex &gt; -1 && otherIndex &lt; i) return [(s - ints[i]),ints[i]];
+</span><span class='line'>  }   
+</span><span class='line'>  return undefined;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I then thought about caching or memoization, and that is where the solution lay. Basically, the trick is to create a JavaScript object which holds all the values which have already been seen in the <code>ints</code> array.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var pairs=function(ints, s){
+</span><span class='line'>//variable to hold numbers already checked
+</span><span class='line'>var cached = {};
+</span><span class='line'>  for(var i = 0, j= ints.length; i &lt; j; i++) {
+</span><span class='line'>    var num = ints[i];
+</span><span class='line'>    //the value needed to form a pair
+</span><span class='line'>    var num2 = s - num;
+</span><span class='line'>    //if have seen num2 already 
+</span><span class='line'>    //then this is the answer
+</span><span class='line'>    if(num2 in cached) {
+</span><span class='line'>      return [num2,num];
+</span><span class='line'>    //add num2 to cache
+</span><span class='line'>    } else {
+</span><span class='line'>      cached[num] = 1;
+</span><span class='line'>    }
+</span><span class='line'>  }   
+</span><span class='line'>  //no pair found
+</span><span class='line'>  return undefined;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2015
+
+    Maciej Kus
+
+
+
+</footer>
+		</div>
+	</div>
+	
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
