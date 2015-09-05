@@ -58,6 +58,9 @@ See how your earnings compare to inflation, compensation growth for CEOs, the S&
  <div id='ans' style='display:none;' class='bg-success'>
   
  </div>
+<div class="fb-share-button" data-href="http://maciejkus.com/wage-calculator/" data-layout="button"></div>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://maciejkus.com/wage-calculator/" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
  </div> <!--end row-->
 </div> <!--end .container-->
  <div class='footer'>
@@ -134,13 +137,21 @@ $('#calc').click(function() {
   $('#ans').html(
     "<h3>A wage of $" + $wage.toLocaleString('en') + " in " + $startYear + " is the same as a wage <strong>$" + cpiDiff.toLocaleString('en') + "</strong> in " + $endYear + " when adjusted for inflation. </h3><p><h4>If you made $" + $wage.toLocaleString('en') + " in " + $startYear + " but " + yearChange + "  less than $" + cpiDiff.toLocaleString('en') + " in " + $endYear + " your real income actually went down. You got poorer.</h4><p>" +
     "<h3>If $" + $wage.toLocaleString('en') + " was part of a CEO's compensation in " + $startYear + ", it would have " + ceoChanged.toLocaleString('en') + " to <strong>$" + ceoDiff.toLocaleString('en') + "</strong> by " + $endYear + ".<p>" +
-    "If $" + $wage.toLocaleString('en') + " was invested in the S&P 500 stock index it would have turned into <strong>$" + sp500Diff.toLocaleString('en') + "</strong>.<p>" +
+    "$" + $wage.toLocaleString('en') + " invested in the S&P 500 stock index would have turned into <strong>$" + sp500Diff.toLocaleString('en') + "</strong>.<p>" +
     "$" + $wage.toLocaleString('en') + " worth of San Francisco real estate in " + $startYear + " would be worth <strong>$" + sfhouseDiff.toLocaleString('en') + "</strong> in " + $endYear + ".</h3>" 
   ).fadeIn();
 
 });
 
 </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>
 
