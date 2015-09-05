@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Real Wage Calculator</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha256-j7Dtnd7ZjexEiPNbscbopFn9+Cs0b3TLipKsWAPHZIM= sha512-RFhfi6P8zWMAJrEGU+CPjuxPh3r/UUBGqQ+/o6WKPIVZmQqeOipGotH2ihRULuQ8wsMBoK15TSZqc/7VYWyuIw==" crossorigin="anonymous">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+ <style>
+.largerText{
+  font-size: 2em;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+
+ </style>
+</head>
+<body>
+<div class='jumbotron'>
+<h1>Real Wage Calculator</h1>
+See how your earnings compare to inflation, compensation growth for CEOs, the S&P500, and San Francisco's real estate market. Is r > g?
+</div>
+<div class='container'>
+ <div class='row'>
+  <div class='col-xs-6 col-xs-offset-2 col-sm-4 col-sm-offset-4'>
+   <div class='form-horizontal'>
+    <label for='startYear'>Year You Started Working:</label> 
+    <input type='number' maxlength='4' class='form-control' id='startYear' placeholder='1989-2014' />
+    <label for='wage'>Starting Wage:</label> 
+    <div class='input-group'>
+     <div class="input-group-addon">$</div>
+     <input type='number' class='form-control' id='wage' placeholder='40,000' />
+    </div>
+    <label for='startYear'>Year You Finished Working (optional):</label> 
+    <input type='number' maxlength='4' class='form-control' id='endYear' placeholder='2015' />
+    <br>
+    <input class="btn btn-info" id="calc" value="Calculate Wage" type="button">
+    <p>
+   </div>
+  </div> <!--end column-->
+ </div> <!--end row-->
+ <div class='row'>
+ <div id='error' style='display:none;' class='bg-danger'>
+  
+ </div>
+ <div id='ans' style='display:none;' class='bg-success'>
+  
+ </div>
+ </div> <!--end row-->
+</div> <!--end .container-->
+ <div class='footer'>
+ <small>
+This calculator was inspired by the EPI's wages v productivity <a target="_blank" href='http://www.epi.org/multimedia/wage-calculator/'>calculator</a>. Inflation data was taken from the <a target="_blank" href='https://www.minneapolisfed.org/community/teaching-aids/cpi-calculator-information/consumer-price-index-and-inflation-rates-1913'>consumer price index</a> with the 2015 data point being the most recent CPI point available from the <a target="_blank" href='http://www.bls.gov/cpi/'>Bureau of Labor Statistics</a>.
+<br>
+CEO compensation is taken from the top 350 firms for <a target="_blank" href='http://s3.epi.org/files/2015/top-ceos-make-300-times-more-than-typical-workers.pdf'>20014-2009</a>. For other years it is from the <a target="_blank" href='http://www.forbes.com/lists/2012/12/ceo-compensation-12-historical-pay-chart.html'>top 500 or top 800</a> firms. The 2015 number is found by increasing the 2014 number by <a target="_blank" href='http://www.mercer.com/newsroom/new-mercer-analysis-shows-ceo-pay-up-5-propelled-by-gains-in-long-term-incentives.html'>5%</a>.
+<br>
+S&P 500 data is from <a target="_blank" href='http://ycharts.com/indicators/sandp_500_annual'>here</a> with the 2015 data point being the price of the s&p 500 on September 5th 2015. San Francisco real estate data is from <a target="_blank" href='https://research.stlouisfed.org/fred2/series/SFXRSA'>here</a>.
+ </small>
+ </div>
+<script>
+var data = {
+  "1989": {"ceo": 2548, "cpi": 124.0, "sp500": 353, "sfhouse": 69},
+  "1990": {"ceo": 2622, "cpi": 130.7, "sp500": 330, "sfhouse": 74},
+  "1991": {"ceo": 2797, "cpi": 136.2, "sp500": 417, "sfhouse": 71},
+  "1992": {"ceo": 2945, "cpi": 140.3, "sp500": 435, "sfhouse": 69},
+  "1993": {"ceo": 4330, "cpi": 144.5, "sp500": 466, "sfhouse": 67},
+  "1994": {"ceo": 4441, "cpi": 148.2, "sp500": 459, "sfhouse": 68},
+  "1995": {"ceo": 3336, "cpi": 152.4, "sp500": 616, "sfhouse": 67},
+  "1996": {"ceo": 4193, "cpi": 156.9, "sp500": 740, "sfhouse": 68},
+  "1997": {"ceo": 6043, "cpi": 160.5, "sp500": 970, "sfhouse": 73},
+  "1998": {"ceo": 7070, "cpi": 163.0, "sp500": 1229, "sfhouse": 82},
+  "1999": {"ceo": 9186, "cpi": 166.6, "sp500": 1469, "sfhouse": 93},
+  "2000": {"ceo": 14340, "cpi": 172.2, "sp500": 1320, "sfhouse": 116},
+  "2001": {"ceo": 13668, "cpi": 177.1, "sp500": 1148, "sfhouse": 131},
+  "2002": {"ceo": 12422, "cpi": 179.9, "sp500": 880, "sfhouse": 137},
+  "2003": {"ceo": 7813, "cpi": 184.0, "sp500": 1112, "sfhouse": 148},
+  "2004": {"ceo": 8274, "cpi": 188.9, "sp500": 1212, "sfhouse": 171},
+  "2005": {"ceo": 12397, "cpi": 195.3, "sp500": 1248, "sfhouse": 207},
+  "2006": {"ceo": 12740, "cpi": 201.6, "sp500": 1418, "sfhouse": 216},
+  "2007": {"ceo": 17116, "cpi": 207.3, "sp500": 1468, "sfhouse": 206},
+  "2008": {"ceo": 14110, "cpi": 215.3, "sp500": 903, "sfhouse": 156},
+  "2009": {"ceo": 10575, "cpi": 214.5, "sp500": 1115, "sfhouse": 127},
+  "2010": {"ceo": 12662, "cpi": 218.1, "sp500": 1258, "sfhouse": 139},
+  "2011": {"ceo": 12863, "cpi": 224.9, "sp500": 1258, "sfhouse": 132},
+  "2012": {"ceo": 14998, "cpi": 229.6, "sp500": 1426, "sfhouse": 137},
+  "2013": {"ceo": 15711, "cpi": 233.0, "sp500": 1848, "sfhouse": 169},
+  "2014": {"ceo": 16316, "cpi": 236.7, "sp500": 2059, "sfhouse": 192},
+  "2015": {"ceo": 17131, "cpi": 238.6, "sp500": 1921, "sfhouse": 209}
+};
+
+$('#calc').click(function() {
+  $('#error').hide();
+  $('#ans').hide();
+
+  var $startYear = $('#startYear').val();
+  var $endYear = $('#endYear').val() || '2015';
+  var $wage = parseInt($('#wage').val());
+ 
+  if (!$wage || $wage < 1) {
+    $('#error').show().html('<h3>Please enter a valid wage</h3>');
+    return;
+  }
+  
+  if (!$startYear || $startYear < 1989 || $startYear > 2014) {
+    $('#error').show().html('<h3>Please enter a star year between 1989 and 2014</h3>');
+    return;
+  }
+
+  if ($startYear >= $endYear || $endYear > 2015) {
+    $('#error').show().text('<h3>End year must be higher than start year but less than 2016</h3>');
+    return;
+  }
+  var ceoDiff = Math.round($wage * data[$endYear].ceo / data[$startYear].ceo * 100)/100;
+  var cpiDiff = Math.round($wage * data[$endYear].cpi / data[$startYear].cpi * 100)/100;
+  var sp500Diff = Math.round($wage * data[$endYear].sp500 / data[$startYear].sp500 * 100)/100;
+  var sfhouseDiff = Math.round($wage * data[$endYear].sfhouse / data[$startYear].sfhouse * 100)/100;
+ 
+  //word used to describe change in ceo compensation
+  var ceoChanged = ceoDiff > $wage ? 'increased' : 'decreased';
+  var yearChange = $endYear === '2015' ? 'make' : 'made';
+ 
+  $('#ans').html(
+    "<h3>A wage of $" + $wage.toLocaleString('en') + " in " + $startYear + " is the same as a wage <strong>$" + cpiDiff.toLocaleString('en') + "</strong> in " + $endYear + " when adjusted for inflation. </h3><p><h4>If you made $" + $wage.toLocaleString('en') + " in " + $startYear + " but " + yearChange + "  less than $" + cpiDiff.toLocaleString('en') + " in " + $endYear + " your real income actually went down. You got poorer.</h4><p>" +
+    "<h3>If $" + $wage.toLocaleString('en') + " was part of a CEO's compensation in " + $startYear + ", it would have " + ceoChanged.toLocaleString('en') + " to <strong>$" + ceoDiff.toLocaleString('en') + "</strong> by " + $endYear + ".<p>" +
+    "If $" + $wage.toLocaleString('en') + " was invested in the S&P 500 stock index it would have turned into <strong>$" + sp500Diff.toLocaleString('en') + "</strong>.<p>" +
+    "$" + $wage.toLocaleString('en') + " worth of San Francisco real estate in " + $startYear + " would be worth <strong>$" + sfhouseDiff.toLocaleString('en') + "</strong> in " + $endYear + ".</h3>" 
+  ).fadeIn();
+
+});
+
+</script>
+</body>
+</html>
+
