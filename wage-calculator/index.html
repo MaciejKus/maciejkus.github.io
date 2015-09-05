@@ -6,9 +6,6 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
  <style>
-.largerText{
-  font-size: 2em;
-}
 html {
   position: relative;
   min-height: 100%;
@@ -23,6 +20,9 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
+}
+.social iframe {
+	vertical-align: middle;
 }
 
  </style>
@@ -58,12 +58,14 @@ See how your earnings compare to inflation, compensation growth for CEOs, the S&
  <div id='ans' style='display:none;' class='bg-success'>
   
  </div>
-<div class="fb-share-button" data-href="http://maciejkus.com/wage-calculator/" data-layout="button"></div>
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://maciejkus.com/wage-calculator/" data-count="none">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
  </div> <!--end row-->
 </div> <!--end .container-->
  <div class='footer'>
+
+<div class="fb-share-button" data-href="http://maciejkus.com/wage-calculator/" data-layout="button"></div>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://maciejkus.com/wage-calculator/" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
  <small>
 This calculator was inspired by the EPI's wages v productivity <a target="_blank" href='http://www.epi.org/multimedia/wage-calculator/'>calculator</a>. Inflation data was taken from the <a target="_blank" href='https://www.minneapolisfed.org/community/teaching-aids/cpi-calculator-information/consumer-price-index-and-inflation-rates-1913'>consumer price index</a> with the 2015 data point being the most recent CPI point available from the <a target="_blank" href='http://www.bls.gov/cpi/'>Bureau of Labor Statistics</a>.
 <br>
