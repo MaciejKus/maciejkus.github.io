@@ -127,7 +127,7 @@ $('#calc').click(function() {
   }
 
   if ($startYear >= $endYear || $endYear > 2015) {
-    $('#error').show().text('<h3>End year must be higher than start year but less than 2016</h3>');
+    $('#error').show().html('<h3>End year must be higher than start year but less than 2016</h3>');
     return;
   }
   var ceoDiff = Math.round($wage * data[$endYear].ceo / data[$startYear].ceo * 100)/100;
