@@ -4,7 +4,7 @@
   <title><![CDATA[Category: angularjs, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/angularjs/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-09-05T17:48:25-07:00</updated>
+  <updated>2015-09-06T11:23:25-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Searchable-Reddit-Brogress]]></title>
+    <link href="http://maciejkus.com/blog/2015/09/06/searchable-reddit-brogress/"/>
+    <updated>2015-09-06T11:16:17-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/09/06/searchable-reddit-brogress</id>
+    <content type="html"><![CDATA[<p>Reddit has a number of fitness progress picture communities. The problem is there is no good way to search through the posts. A lot of the posts are either people trying to lose weight, or 16 year olds who gain 30 pounds of muscle in 3 months. I am not interested in losing weight, nor do I have the raging growth hormones of a teenager.</p>
+
+<p>I wanted to be able to search through the posts to find photos of people similar to me in height and weight so I could have a realistic fitness goal to strive for when I go to the gym. So, using angularJS I made my own.</p>
+
+<p>I present the world with a <a href='http://brogress.smoothiegains.com/'>searchable fitness photo</a> web app.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[angular_forum]]></title>
