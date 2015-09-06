@@ -1,10 +1,67 @@
 ---
 layout: page
-title: "Maciej's Resume"
+title: "About Maciej Kus"
 date: 2015-05-23 16:03
 comments: false
 description: Maciej Kus' Resume
-footer: false
+noindex: true
 ---
-//maybe a graph of some kind, kinda like hat i made for the math site?
-//make this more of an about me page than resume. maybe just have 'behind the door' kind things. like a squar that reads 'javascript' and when clicked on it spins around to reveal a message from me about my javascript skills, etc. the page will be a bunch of these squares with a title at the top 'How MAciej Can Help You'
+###Maciej's experience:
+
+<u>__Support Engineer/Associate Mathematician__  
+Hurricane Electric</u>  
+2012 - Present<ul style='margin-top:0'><li>Programing dynamic math questions and solutions in Python.</li>
+<li>Transcribing static math questions and solutions in LaTeX, Asymptote and XML.</li>
+<li>Responsive web design.</li>
+<li>Remote hands, including OS installs, server hardware changes and making and running cables.</li>
+<li>Troubleshooting transit, collocation, and LAMP stack web-hosting problems over the phone and through email.</li>
+<li>Identifying and resolving IP, BGP, DNS and other networking issues.</li>
+<li>Assisting in the training of new employees.</li></ul>
+
+<u>__Webmaster__  
+Independent</u>  
+2014 - Present<ul style='margin-top:0;'><li>Created a number of websites from scratch using HTML, CSS and JavaScript.</li>
+<li>Setup and managed remote VPS hosting, ensuring reliability and security.</li>
+<li>Successfully used white-hat SEO techniques to reach top Google rankings.</li>
+<li>Developed a small but reliable side income using AdWords.</li></ul>
+
+###Certificates:
+  * _CCNA_
+  * _LPIC-1_
+  * _Linux+_
+  * _MySQL 5 Developer_
+  * _Security+_
+  * _Network+_
+  * _IPv6 Sage_
+
+###Education:  
+_Sodertorns hogskola_ (Sweden)  
+  - MS, Economics (Pass with Distinction)  
+_San Francisco State University_  
+  - BA, Economics  
+_San Francisco State University_  
+  - BA, Political Science  
+
+###How can Maciej Kus help you?
+
++ Coding
+  - JavaScript
+  - jQuery
+  - AngularJS
+  - Python
++ Web Design
+  - HTML
+  - CSS
+  - Bootstrap
+  - WordPress
+  - Octopress
++ Networking
+  - TCP/IP
+  - OSPF
+  - EIGRP
+  - DNS
+  - IPv6
++ System Administration
+  - Linux
+
+Maciej can be reached at maciejkus925@gmail.com.

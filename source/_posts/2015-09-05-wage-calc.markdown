@@ -1,0 +1,9 @@
+---
+layout: post
+title: "wage-calc"
+date: 2015-09-05 17:18:07 -0700
+comments: false
+categories: jquery, javascript
+description: r > g?
+---
+A <a href='/wage-calculator/'>wage calculator</a> which calculates inflation, top CEO compensation, S&P 500, and San Francisco real estate growth. See if r is greater than g in the short term.
