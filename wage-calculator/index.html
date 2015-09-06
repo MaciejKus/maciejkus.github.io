@@ -141,7 +141,7 @@ $('#calc').click(function() {
  
   $('#ans').html(
     "<h3>A wage of $" + $wage.toLocaleString('en') + " in " + $startYear + " is the same as a wage <strong>$" + cpiDiff.toLocaleString('en') + "</strong> in " + $endYear + " when adjusted for inflation. </h3><p><h4>If you made $" + $wage.toLocaleString('en') + " in " + $startYear + " but " + yearChange + "  less than $" + cpiDiff.toLocaleString('en') + " in " + $endYear + " your real income actually went down. You got poorer.</h4><p>" +
-    "<h3>If $" + $wage.toLocaleString('en') + " was part of a CEO's compensation in " + $startYear + ", it would have " + ceoChanged.toLocaleString('en') + " to <strong>$" + ceoDiff.toLocaleString('en') + "</strong> by " + $endYear + ".<p>" +
+    "<h3><p>If $" + $wage.toLocaleString('en') + " was part of a CEO's compensation in " + $startYear + ", it would have " + ceoChanged.toLocaleString('en') + " to <strong>$" + ceoDiff.toLocaleString('en') + "</strong> by " + $endYear + ".</p><p>" +
     "$" + $wage.toLocaleString('en') + " invested in the S&P 500 stock index would have turned into <strong>$" + sp500Diff.toLocaleString('en') + "</strong>.<p>" +
     "$" + $wage.toLocaleString('en') + " worth of San Francisco real estate in " + $startYear + " would be worth <strong>$" + sfhouseDiff.toLocaleString('en') + "</strong> in " + $endYear + ".</h3>" 
   ).fadeIn();

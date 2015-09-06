@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2015/09/05/wage-calc/</loc>
+    <lastmod>2015-09-05T17:18:07-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2015/08/21/memoization/</loc>
     <lastmod>2015-08-21T13:59:37-07:00</lastmod>
     <priority>0.8</priority>
@@ -179,63 +185,63 @@
   
   <url>
     <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2015-09-05T16:56:27-07:00</lastmod>
+    <lastmod>2015-09-05T17:23:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/</loc>
-    <lastmod>2015-09-05T16:56:27-07:00</lastmod>
+    <lastmod>2015-09-05T17:23:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2015-09-05T16:56:27-07:00</lastmod>
+    <lastmod>2015-09-05T17:23:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2015-09-05T16:56:27-07:00</lastmod>
+    <lastmod>2015-09-05T17:23:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2015-09-05T16:56:27-07:00</lastmod>
+    <lastmod>2015-09-05T17:23:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2015-09-05T16:56:27-07:00</lastmod>
+    <lastmod>2015-09-05T17:23:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/box_whiskers/</loc>
-    <lastmod>2015-09-05T16:56:27-07:00</lastmod>
+    <lastmod>2015-09-05T17:23:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/resume/</loc>
-    <lastmod>2015-09-05T16:56:27-07:00</lastmod>
+    <lastmod>2015-09-05T17:23:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/contact/</loc>
-    <lastmod>2015-09-05T16:56:27-07:00</lastmod>
+    <lastmod>2015-09-05T17:23:42-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -351,7 +357,7 @@
   
   <url>
     <loc>http://maciejkus.com/wage-calculator/index.html</loc>
-    <lastmod>2015-09-05T16:55:1441497336Z</lastmod>
+    <lastmod>2015-09-05T17:17:1441498668Z</lastmod>
     <priority>0.6</priority>
   </url>
   
