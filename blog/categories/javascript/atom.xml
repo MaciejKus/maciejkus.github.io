@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-09-12T12:22:12-07:00</updated>
+  <updated>2015-09-29T09:51:21-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Canvas Match 3 Game]]></title>
+    <link href="http://maciejkus.com/blog/2015/09/29/canvas-match-3-game/"/>
+    <updated>2015-09-29T09:39:45-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/09/29/canvas-match-3-game</id>
+    <content type="html"><![CDATA[<p>I decided to make a match three game as a first step to learning a new game engine. Since Enchant.js is pretty much abandoned at this point, I figured it was time to try something new, and I decided on Phaser.js. So I start making the game, but it just seems that using a game engine was overkill for something as simple as a match-three game.</p>
+
+<p>So I decided to save learning Phaser.js for a different project and just make the match-three game using plain old vanilla JavaScript and the html5 canvas element. Play it <a href='http://brogress.smoothiegains.com/smoothie_match/'>here</a>.</p>
+
+<!-- more -->
+
+
+<p>The coolest thing about making the game was dealing with all the animations. I split up the animations to only render the tile which is moving, instead of rendering the whole canvas every time something has to be changed. This saves a lot of resources, making the game run faster and smoother. The trick was to make sure that things didn&rsquo;t overlap.  The animations run asynchronously, so I had to avoid situations where multiple animations were running on top of one another, or that the logic from a running animation did not interfere with the logic of a new mouse click.</p>
+
+<p>The game is pretty basic, but I was able to remove all the little glitches I came across when testing. I&rsquo;m also pleased to have made a game where the graphics actually look OK. This is all thanks to finding creative commons images and playing with GIMP a little bit.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[jsbreakouts]]></title>
@@ -66,15 +84,6 @@
     <updated>2015-06-20T12:30:32-07:00</updated>
     <id>http://maciejkus.com/blog/2015/06/20/box-whiskers-calc</id>
     <content type="html"><![CDATA[<p> There is a shocking lack of box and whisker graph calculators on the Internet. Well, accurate ones anyway, so I made one. Originally I needed one for some calculations I was doing and made one in Python, but then I figured I can easily rewrite it into Javascript and make it available for others. I even added a simple HTML5 canvas graph. You can find it at <a href="http://maciejkus.com/box_whiskers/">Box and Whiskers Calculator</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[angular-baseball-game]]></title>
-    <link href="http://maciejkus.com/blog/2015/06/05/angular-baseball-game/"/>
-    <updated>2015-06-05T12:40:07-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/06/05/angular-baseball-game</id>
-    <content type="html"><![CDATA[<p>Inspired by a Codewars kata I created a simple <a href="http://maciejkus.com/baseball-game/">baseball game</a>. It was the first time I used AngularJS, but I feel like the Angular was unnecessary. I will need to build a few other pages to get the full idea of Angular.</p>
 ]]></content>
   </entry>
   
