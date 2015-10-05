@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-09-29T09:51:21-07:00</updated>
+  <updated>2015-10-05T16:50:03-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JS object inherit]]></title>
+    <link href="http://maciejkus.com/blog/2015/10/05/js-object-inherit/"/>
+    <updated>2015-10-05T16:43:56-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/10/05/js-object-inherit</id>
+    <content type="html"><![CDATA[<p>As found here: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript</a></p>
+
+<p>Proper JavaScript inheritance looks like this:</p>
+
+<p>//Inherit from Tower  prototype</p>
+
+<p><code>
+var Tower2 = function(x,y,z) {
+  Tower.call(this,x,y);
+  this.z = z; //not from Tower
+}
+Tower2.prototype = Object.create(Tower.prototype);
+Tower2.prototype.constructor = Tower2;
+</code></p>
+
+<p>Mainly this post is a reminder for myself so I don&rsquo;t have to search to see if I got everything correct.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Canvas Match 3 Game]]></title>
@@ -340,15 +364,6 @@ You can make new posts, you can click on a username to see post titles made by t
 </code></pre>
 
 <p>Tools like these make life so easy.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[New Site]]></title>
-    <link href="http://maciejkus.com/blog/2015/04/04/new-site/"/>
-    <updated>2015-04-04T15:08:12-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/04/04/new-site</id>
-    <content type="html"><![CDATA[<p>So I&rsquo;m playing with Wordpress for a <a href="http://smoothiegains.com/">smoothie and fitness</a> site. I do love drinking smoothies so it should be fun to post some of my favorite recipes on there.</p>
 ]]></content>
   </entry>
   

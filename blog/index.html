@@ -9,7 +9,7 @@
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Sep 29th, 2015 canvas, games,, javascript, Canvas Match 3 Game I decided to make a match three game as a first step to learning a new game engine. &hellip;">
+	<meta name="description" content="Oct 5th, 2015 javascript JS Object Inherit As found here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object- &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,6 +96,56 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-10-05T16:43:56-07:00" data-updated="true" itemprop="datePublished">Oct 5<sup>th</sup>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/javascript/'>javascript</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/10/05/js-object-inherit/" itemprop="url">JS Object Inherit</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>As found here: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript</a></p>
+
+<p>Proper JavaScript inheritance looks like this:</p>
+
+<p>//Inherit from Tower  prototype</p>
+
+<p><code>
+var Tower2 = function(x,y,z) {
+  Tower.call(this,x,y);
+  this.z = z; //not from Tower
+}
+Tower2.prototype = Object.create(Tower.prototype);
+Tower2.prototype.constructor = Tower2;
+</code></p>
+
+<p>Mainly this post is a reminder for myself so I don&rsquo;t have to search to see if I got everything correct.</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -652,41 +702,6 @@
 
 		
 		<a href="/blog/2015/05/26/bicycle-or-walk/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-05-16T10:39:03-07:00" data-updated="true" itemprop="datePublished">May 16<sup>th</sup>, 2015</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/bootstrap/'>bootstrap</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/05/16/asset-allocation-bootstrap/" itemprop="url">Asset Allocation Bootstrap</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Another bootstrap project is the <a href='http://maciejkus.com/asset-allocation/'>asset allocation calculator</a> I created. The JavaScript is mostly simple math and there&rsquo;s some jQuery to create and remove fields. Thanks to bootstrap the page is responsive, works well across browsers and looks pretty.</p>
-
-		
-		
 	</div>
 
 </article>
