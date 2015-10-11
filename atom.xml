@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-10-11T13:08:01-07:00</updated>
+  <updated>2015-10-11T15:57:19-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New Website]]></title>
+    <link href="http://maciejkus.com/blog/2015/10/11/new-website/"/>
+    <updated>2015-10-11T15:38:33-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/10/11/new-website</id>
+    <content type="html"><![CDATA[<p>I made a new website. The idea is to create a <a href='http://adminhacks.com/'>IT technician information</a> website. Something for those looking to get into system administration or network administration, but not really knowing where to start. The idea is to write some posts and code some useful tools for those looking to get on the Internet, whether that be by running a web-server, or improving their home routing, or setting up an IPv6 tunnel.</p>
+
+<!-- more -->
+
+
+<p>The site is a static html site running off a very low power VPS. It can handle a decent amount of traffic, but if it ever got a reddit hug of death or got slashdotted, it would probably become unaccessible fairly quickly. Setting up nginx was about all that needed to be done on the server side to get the site up and running.</p>
+
+<p>The content is largely created using <a href='http://www.metalsmith.io/'>metalsmith<a/> which is JavaScript based static site generator (though it can be used for a lot more than that). I use handlebars.js templates and markdown to make my life a bit easier. The setup is very basic. My build.js file looks like this:</p>
+
+<p><code>
+var Metalsmith = require(&lsquo;metalsmith&rsquo;),
+  templates = require(&lsquo;metalsmith-templates&rsquo;),
+  collections = require(&lsquo;metalsmith-collections&rsquo;),
+  markdown = require(&ldquo;metalsmith-markdown&rdquo;);</p>
+
+<p>Metalsmith(__dirname)</p>
+
+<pre><code>.use(collections({
+    articles: {
+      pattern:'*.md',
+      sortBy: 'date',
+      reverse: true
+   }
+ }))
+.use(markdown())
+.use(templates('handlebars'))
+.destination('./build')
+.build(function(err) {
+if (err) console.log(err);
+</code></pre>
+
+<p>  })
+</code></p>
+
+<p>Nothing too fancy. The collections() part allows me to create an array of all the markdown posts which I can then input into the handlebars.js templates to create an <a href='http://adminhacks.com/all-articles.html'>all posts</a> page.</p>
+
+<p>There is a source/ directory, which the above build.js takes, runs the above functions on and spits out into a build/ directory.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[jumpy jquery slide animation]]></title>
@@ -341,28 +386,6 @@ You can make new posts, you can click on a username to see post titles made by t
     <updated>2015-04-28T15:35:33-07:00</updated>
     <id>http://maciejkus.com/blog/2015/04/28/bootstrap</id>
     <content type="html"><![CDATA[<p>I took a quick little Bootstrap course online through edx. I then made a simple little band website using Bootstrap here: <a href="http://maciejkus.com/we-are-the-best/">We are the Best</a>. It is a fan site for the punk rock band in the Swedish film <em>We are the Best</em>. Practice Practice Practice, it&rsquo;s all one can do to learn.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Responsive Design]]></title>
-    <link href="http://maciejkus.com/blog/2015/04/25/responsive-design/"/>
-    <updated>2015-04-25T15:16:46-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/04/25/responsive-design</id>
-    <content type="html"><![CDATA[<p>Responsive design in the idea that a webpage will respond to and accommodate the width of a browser. What this means is that if you are looking at a website on a small screen, such as those found in smart phones, the page will adjust to fit that small screen. Usually things that happen is the line height and font increase and the layout of the page becomes more vertical. Elements line up on top of one another rather than to the left or right of one another.</p>
-
-<p>My job&rsquo;s main webpage was designed years ago, well before mobile phones were widely used to browse the Internet. The webpage still works fine and the belief is that there is little reason to change the site. All the information that customers and potential customers may need can be easily found. However, up until a week ago the site looked pretty terrible on mobile devices. This was a problem, especially since Google was going to start punishing non-mobile friendly sites in its search results.</p>
-
-<p>I took a look at the existing CSS and realized I can make the site responsive. So I added some CSS media queries, removed some inline CSS, changed a tiny bit of html, and bam! Now on a desktop or wider screen the site looks exactly like it used to, but on a smaller screen or on a mobile phone the layout of the site is a lot more vertical and user friendly.</p>
-
-<!--more-->
-
-
-<p>Making an existing page responsive is not too difficult. Most of the challenge revolves around understanding the existing CSS. First you want to understand what the page is doing and why it is doing it, and then you will be able to move elements around without breaking everything. The basic ideas are, make lots of elements have a width of 100%. This ensures elements are stacked vertically. Be sure to keep line heights larger than you would on a desktop, this is especially true for links. Hard to press links create a crummy user experience. &lsquo;Max-width&rsquo; is your friend. This is especially true for images.</p>
-
-<p>I didn&rsquo;t want to touch the existing HTML when I could help it, but there were a couple things I just couldn&rsquo;t help but touch up. On one page there was an empty table element which was used to create whitespace. I was easily able to remove this element and add the whitespace with CSS. It is considered best practice to separate the content of a page (HTML) from the design of the page (CSS). I also had to add a couple of classes to some HTML elements, but that doesn&rsquo;t affect anything in terms of the way the page looks.</p>
-
-<p>It was a neat little project, working with HTML and CSS that I originally had nothing to do with and trying to make the page work great on small screens while not changing anything on the desktop version. I remember the first time I tried to do anything with CSS I hated it, but now I realize that was because I was unfamiliar with it.</p>
 ]]></content>
   </entry>
   
