@@ -7,3 +7,5 @@ categories: jquery, javascript
 description: r > g?
 ---
 A <a href='/wage-calculator/'>wage calculator</a> which calculates inflation, top CEO compensation, S&P 500, and San Francisco real estate growth. See if r is greater than g in the short term.
+
+The chart was made using chart.js
