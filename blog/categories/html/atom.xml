@@ -4,7 +4,7 @@
   <title><![CDATA[Category: html, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/html/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-10-11T15:57:19-07:00</updated>
+  <updated>2015-10-11T16:13:28-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -25,7 +25,7 @@
 
 <p>The site is a static html site running off a very low power VPS. It can handle a decent amount of traffic, but if it ever got a reddit hug of death or got slashdotted, it would probably become unaccessible fairly quickly. Setting up nginx was about all that needed to be done on the server side to get the site up and running.</p>
 
-<p>The content is largely created using <a href='http://www.metalsmith.io/'>metalsmith<a/> which is JavaScript based static site generator (though it can be used for a lot more than that). I use handlebars.js templates and markdown to make my life a bit easier. The setup is very basic. My build.js file looks like this:</p>
+<p>The content is largely created using <a href='http://www.metalsmith.io/'>metalsmith</a> which is JavaScript based static site generator (though it can be used for a lot more than that). I use handlebars.js templates and markdown to make my life a bit easier. The setup is very basic. My build.js file looks like this:</p>
 
 <p><code>
 var Metalsmith = require(&lsquo;metalsmith&rsquo;),
