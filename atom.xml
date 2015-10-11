@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-10-11T16:26:00-07:00</updated>
+  <updated>2015-10-11T16:36:17-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[which vps app]]></title>
+    <link href="http://maciejkus.com/blog/2015/10/11/which-vps-app/"/>
+    <updated>2015-10-11T16:29:28-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/10/11/which-vps-app</id>
+    <content type="html"><![CDATA[<p>I made a list of the <a href='http://adminhacks.com/vps-compare.html'>best VPS hosting</a> providers and threw that information into an angular.js webapp. I used bootstrap for the style of the page.</p>
+
+<p>As far as I can tell the VPS hosts in the app are the most dependable and most well known in the industry. I hope the app is useful to those looking to get a new virtual private server.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[New Website]]></title>
@@ -394,15 +405,6 @@ You can make new posts, you can click on a username to see post titles made by t
     <updated>2015-05-09T15:08:23-07:00</updated>
     <id>http://maciejkus.com/blog/2015/05/09/star-wars-crawler</id>
     <content type="html"><![CDATA[<p>Inspired by <a href="http://www.sitepoint.com/css3-starwars-scrolling-text/">http://www.sitepoint.com/css3-starwars-scrolling-text/</a> I created A Star Wars themed &lsquo;about&rsquo; page. See it here: <a href="http://maciejkus.com/starwars/">http://maciejkus.com/starwars/</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[bootstrap is the best]]></title>
-    <link href="http://maciejkus.com/blog/2015/04/28/bootstrap/"/>
-    <updated>2015-04-28T15:35:33-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/04/28/bootstrap</id>
-    <content type="html"><![CDATA[<p>I took a quick little Bootstrap course online through edx. I then made a simple little band website using Bootstrap here: <a href="http://maciejkus.com/we-are-the-best/">We are the Best</a>. It is a fan site for the punk rock band in the Swedish film <em>We are the Best</em>. Practice Practice Practice, it&rsquo;s all one can do to learn.</p>
 ]]></content>
   </entry>
   

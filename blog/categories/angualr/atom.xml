@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: angualr, | Maciej Kus is not a Figure Skater]]></title>
+  <link href="http://maciejkus.com/blog/categories/angualr/atom.xml" rel="self"/>
+  <link href="http://maciejkus.com/"/>
+  <updated>2015-10-11T16:36:17-07:00</updated>
+  <id>http://maciejkus.com/</id>
+  <author>
+    <name><![CDATA[Maciej Kus]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[which vps app]]></title>
+    <link href="http://maciejkus.com/blog/2015/10/11/which-vps-app/"/>
+    <updated>2015-10-11T16:29:28-07:00</updated>
+    <id>http://maciejkus.com/blog/2015/10/11/which-vps-app</id>
+    <content type="html"><![CDATA[<p>I made a list of the <a href='http://adminhacks.com/vps-compare.html'>best VPS hosting</a> providers and threw that information into an angular.js webapp. I used bootstrap for the style of the page.</p>
+
+<p>As far as I can tell the VPS hosts in the app are the most dependable and most well known in the industry. I hope the app is useful to those looking to get a new virtual private server.</p>
+]]></content>
+  </entry>
+  
+</feed>
