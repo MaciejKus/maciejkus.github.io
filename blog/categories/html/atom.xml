@@ -4,7 +4,7 @@
   <title><![CDATA[Category: html, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/html/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-10-11T16:13:28-07:00</updated>
+  <updated>2015-10-11T16:26:00-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -27,7 +27,7 @@
 
 <p>The content is largely created using <a href='http://www.metalsmith.io/'>metalsmith</a> which is JavaScript based static site generator (though it can be used for a lot more than that). I use handlebars.js templates and markdown to make my life a bit easier. The setup is very basic. My build.js file looks like this:</p>
 
-<p><code>
+<p>```
 var Metalsmith = require(&lsquo;metalsmith&rsquo;),
   templates = require(&lsquo;metalsmith-templates&rsquo;),
   collections = require(&lsquo;metalsmith-collections&rsquo;),
@@ -50,7 +50,7 @@ if (err) console.log(err);
 </code></pre>
 
 <p>  })
-</code></p>
+```</p>
 
 <p>Nothing too fancy. The collections() part allows me to create an array of all the markdown posts which I can then input into the handlebars.js templates to create an <a href='http://adminhacks.com/all-articles.html'>all posts</a> page.</p>
 

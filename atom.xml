@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-10-11T16:13:28-07:00</updated>
+  <updated>2015-10-11T16:26:00-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -27,30 +27,47 @@
 
 <p>The content is largely created using <a href='http://www.metalsmith.io/'>metalsmith</a> which is JavaScript based static site generator (though it can be used for a lot more than that). I use handlebars.js templates and markdown to make my life a bit easier. The setup is very basic. My build.js file looks like this:</p>
 
-<p><code>
-var Metalsmith = require(&lsquo;metalsmith&rsquo;),
-  templates = require(&lsquo;metalsmith-templates&rsquo;),
-  collections = require(&lsquo;metalsmith-collections&rsquo;),
-  markdown = require(&ldquo;metalsmith-markdown&rdquo;);</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var Metalsmith = require('metalsmith'),
+</span><span class='line'>  templates = require('metalsmith-templates'),
+</span><span class='line'>  collections = require('metalsmith-collections'),
+</span><span class='line'>  markdown = require("metalsmith-markdown");
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Metalsmith(__dirname)
+</span><span class='line'>    .use(collections({
+</span><span class='line'>        articles: {
+</span><span class='line'>          pattern:'*.md',
+</span><span class='line'>          sortBy: 'date',
+</span><span class='line'>          reverse: true
+</span><span class='line'>       }
+</span><span class='line'>     }))
+</span><span class='line'>    .use(markdown())
+</span><span class='line'>    .use(templates('handlebars'))
+</span><span class='line'>    .destination('./build')
+</span><span class='line'>    .build(function(err) {
+</span><span class='line'>  if (err) console.log(err);
+</span><span class='line'>  })</span></code></pre></td></tr></table></div></figure>
 
-<p>Metalsmith(__dirname)</p>
-
-<pre><code>.use(collections({
-    articles: {
-      pattern:'*.md',
-      sortBy: 'date',
-      reverse: true
-   }
- }))
-.use(markdown())
-.use(templates('handlebars'))
-.destination('./build')
-.build(function(err) {
-if (err) console.log(err);
-</code></pre>
-
-<p>  })
-</code></p>
 
 <p>Nothing too fancy. The collections() part allows me to create an array of all the markdown posts which I can then input into the handlebars.js templates to create an <a href='http://adminhacks.com/all-articles.html'>all posts</a> page.</p>
 
