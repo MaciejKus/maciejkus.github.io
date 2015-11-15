@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="Pizza Value Calculator. Which Pizza Should I Get? Which is the cheaper pizza?">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  text-align: center;
+  margin: auto;
+  max-width: 800px;
+  background-image: url('pizza.jpg');
+}
+caption {
+ font-size: 1.6em;
+}
+input {
+  max-width: 100px;
+}
+.floatLeft {
+  float: left;
+  max-width: 50%;
+}
+.floatRight {
+  float: right;
+  max-width: 50%;
+}
+.colored {
+  background: #FFFFAD;
+}
+.clear {
+/*  visibility: hidden; */
+  clear: both;
+}
+#ans {
+  padding: 26px;
+}
+#foot {
+  padding-top: 160px;
+}
+
+@media (max-width: 800px) {
+  .floatLeft, .floatRight {
+    clear: both;
+    float: none;
+    max-width: 100%;
+  }
+
+}
+</style>
+</head>
+<body>
+ <h1>Which Pizza is the Best Deal?</h1>
+ <div class='questionContainer'>
+   <div class='floatLeft'>
+    <p>
+     <table>
+    <caption>Pizzaria A
+    <!--  <br>
+      <input type='text' placeholder='Pizzaria A' id='pizzariaA'>
+    -->
+    </caption>
+      <tr>
+        <th> </th>
+        <th>Diameter</th>
+        <th>Cost</th>
+      </tr>
+      <tr>
+         <td>Small</td>
+         <td><input type='number' id='smAD'></td>
+         <td><input type='number' id='smAP' step="0.01"></td>
+      </tr>
+      <tr>
+         <td>Medium</td>
+         <td><input type='number' id='mdAD'></td>
+         <td><input type='number' id='mdAP' step="0.01"></td>
+      </tr>
+      <tr>
+         <td>Large</td>
+         <td><input type='number' id='lgAD'></td>
+         <td><input type='number' id='lgAP' step="0.01"></td>
+      </tr>
+      <tr>
+         <td>XLarge</td>
+         <td><input type='number' id='xlAD'></td>
+         <td><input type='number' id='xlAP' step="0.01"></td>
+      </tr>
+     </table>
+   </div>
+
+   <div class='floatRight'>
+    <p>
+     <table>
+    <caption>Pizzaria B
+    <!--
+      <br>
+      <input type='text' placeholder='Pizzaria B' id='pizzariaB'>
+    -->
+    </caption>
+      <tr>
+        <th> </th>
+        <th>Diameter</th>
+        <th>Cost</th>
+      </tr>
+      <tr>
+         <td>Small</td>
+         <td><input type='number' id='smBD'></td>
+         <td><input type='number' id='smBP' step="0.01"></td>
+      </tr>
+      <tr>
+         <td>Medium</td>
+         <td><input type='number' id='mdBD'></td>
+         <td><input type='number' id='mdBP' step="0.01"></td>
+      </tr>
+      <tr>
+         <td>Large</td>
+         <td><input type='number' id='lgBD'></td>
+         <td><input type='number' id='lgBP' step="0.01"></td>
+      </tr>
+      <tr>
+         <td>XLarge</td>
+         <td><input type='number' id='xlBD'></td>
+         <td><input type='number' id='xlBP' step="0.01"></td>
+      </tr>
+     </table>
+   </div>
+  </div>
+
+  <div class='clear' id='ans'>
+    <h2>
+      The best value is the <span id='ansSize' class='colored'></span> pizza from <span id='ansPizzaria' class='colored'></span>
+    </h2>
+    
+    <div class='floatLeft'>
+     <table>
+        <caption id='pizzANAME'>Pizzaria A</caption>
+      <tr>
+        <td>Small<div id='smAV'></div></td>
+        <td id='smAA'> </td>
+      </tr>
+      <tr>
+        <td>Medium <div id='mdAV'></div></td>
+        <td id='mdAA'> </td>
+      </tr>
+      <tr>
+        <td>Large<div id='lgAV'></div></td>
+        <td id='lgAA'> </td>
+      </tr>
+      <tr>
+        <td>XLarge<div id='xlAV'></div></td>
+        <td id='xlAA'> </td>
+      </tr>
+     </table>
+   </div>
+
+    <div class='floatRight'>
+    <table>
+        <caption id='pizzANAME'>Pizzaria B</caption>
+      <tr>
+        <td>Small<div id='smBV'></div></td>
+        <td id='smBA'> </td>
+      </tr>
+      <tr>
+        <td>Medium<div id='mdBV'></div></td>
+        <td id='mdBA'> </td>
+      </tr>
+      <tr>
+        <td>Large<div id='lgBV'></div></td>
+        <td id='lgBA'> </td>
+      </tr>
+      <tr>
+        <td>XLarge<div id='xlBV'></div></td>
+        <td id='xlBA'> </td>
+      </tr>
+     </table>
+   </div>
+<div class='clear' id='foot'>
+  <small>
+    Use this calculator to see which pizza size is the best bang for your buck. Obviously toppings and quality of the pizza are not considered here. 
+<p>
+Larger pizza sizes are usually a better value, but I have found exceptions. At my local pizza place, the medium size pizza is by far the worse value. Even the small is a lot better value. I bet the medium is the most popular order size, so the pizzeria is able to make a larger profit by charging more per inch than the other sizes. 
+  </small>
+</div> 
+  </div>
+<script>
+  //diameters
+  var smAD = document.getElementById('smAD');
+  var mdAD = document.getElementById('mdAD');
+  var lgAD = document.getElementById('lgAD');
+  var xlAD = document.getElementById('xlAD');
+  var smBD = document.getElementById('smBD');
+  var mdBD = document.getElementById('mdBD');
+  var lgBD = document.getElementById('lgBD');
+  var xlBD = document.getElementById('xlBD');
+  var DArray = [smAD,mdAD,lgAD,xlAD,smBD,mdBD,lgBD,xlBD];
+  
+  //prices
+  var smAP = document.getElementById('smAP');
+  var mdAP = document.getElementById('mdAP');
+  var lgAP = document.getElementById('lgAP');
+  var xlAP = document.getElementById('xlAP');
+  var smBP = document.getElementById('smBP');
+  var mdBP = document.getElementById('mdBP');
+  var lgBP = document.getElementById('lgBP');
+  var xlBP = document.getElementById('xlBP');
+  var PArray = [smAP,mdAP,lgAP,xlAP,smBP,mdBP,lgBP,xlBP];
+
+  //ratios (answers)
+  var smAA = document.getElementById('smAA');
+  var mdAA = document.getElementById('mdAA');
+  var lgAA = document.getElementById('lgAA');
+  var xlAA = document.getElementById('xlAA');
+  var smBA = document.getElementById('smBA');
+  var mdBA = document.getElementById('mdBA');
+  var lgBA = document.getElementById('lgBA');
+  var xlBA = document.getElementById('xlBA');
+  var AArray = [smAA,mdAA,lgAA,xlAA,smBA,mdBA,lgBA,xlBA];
+
+  //values (cents / inches)
+  var smAV = document.getElementById('smAV');
+  var mdAV = document.getElementById('mdAV');
+  var lgAV = document.getElementById('lgAV');
+  var xlAV = document.getElementById('xlAV');
+  var smBV = document.getElementById('smBV');
+  var mdBV = document.getElementById('mdBV');
+  var lgBV = document.getElementById('lgBV');
+  var xlBV = document.getElementById('xlBV');
+  var VArray = [smAV,mdAV,lgAV,xlAV,smBV,mdBV,lgBV,xlBV];
+
+  //add onkeydown to all input fields
+  for (var i =0; i < PArray.length; i++) {
+    DArray[i].addEventListener('keyup', checkIfEnoughData);
+    PArray[i].addEventListener('keyup', checkIfEnoughData);
+  }
+
+  var sizes = ['Small', 'Medium', 'Large', 'XLarge'];
+
+  //populate pizza values
+  function checkIfEnoughData() {
+    //holder for best value
+    var best = -1;
+    var bestValue = Infinity;
+    for (var i =0; i < PArray.length; i++) {
+      //reset all answers to blank
+      AArray[i].innerHTML = '';
+      //make sure both diameter and price exist
+      if(parseFloat(DArray[i].value) > 2 && parseFloat(PArray[i].value) > 2) {
+        //cents per sq inch:
+        var numberOfDollars = 100*parseFloat(PArray[i].value) / (parseFloat(DArray[i].value) * (3.14/4) * parseFloat(DArray[i].value)); 
+        //checks to see if it is best value so far
+        if(bestValue > numberOfDollars) {
+          best = i;
+          bestValue = numberOfDollars;
+        }
+        //input cents/inch
+        VArray[i].innerHTML = "<strong>" + numberOfDollars.toFixed(2) + "</strong> cents/inch"; 
+        //draw dollar 
+        var inHtml = '';
+        while(numberOfDollars > 0.5) {
+          inHtml += '<img src="dollar.svg" alt="dollar sign" width="25" height="25">';
+          numberOfDollars--;
+        }
+        AArray[i].innerHTML = inHtml;
+      }
+    } //end for 
+    //populate best title sentance. 
+    if(best > 3) {
+      document.getElementById('ansPizzaria').innerHTML = ' Pizzaria B';
+      best = best - 4;
+    } else {
+      document.getElementById('ansPizzaria').innerHTML = ' Pizzaria A';
+    }
+    document.getElementById('ansSize').innerHTML = sizes[best] || '';
+  } //end checkIfEnoughData()
+
+</script>
+</body>
+</html>

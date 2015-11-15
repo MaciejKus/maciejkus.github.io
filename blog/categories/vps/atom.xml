@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vps | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/vps/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-10-11T16:36:17-07:00</updated>
+  <updated>2015-11-15T15:21:55-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -19,7 +19,7 @@
     <updated>2015-02-21T14:40:30-08:00</updated>
     <id>http://maciejkus.com/blog/2015/02/21/128-vps</id>
     <content type="html"><![CDATA[<p>
-I have my first VPS. It's a tiny 128mb RAM VPS which costs me a whooping $15 a year. Not too bad. I will be hosting a few static websties on it. These are CSS/HTML/JavaScript only sites. No database, no php, no backend. So unless traffic levels get crazy, a 128mb VPS should be fine. I setup a minimal 32-bit version of Debian on it and was ready to go.
+I have my first <a href='http://adminhacks.com/vps-webhosting-dedicated.html'>VPS</a>. It's a tiny 128mb RAM VPS which costs me a whooping $15 a year. Not too bad. I will be hosting a few static websties on it. These are CSS/HTML/JavaScript only sites. No database, no php, no backend. So unless traffic levels get crazy, a 128mb VPS should be fine. I setup a minimal 32-bit version of Debian on it and was ready to go.
 </p>
 
 

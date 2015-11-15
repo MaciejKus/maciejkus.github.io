@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2015/11/15/pizza-calculator/</loc>
+    <lastmod>2015-11-15T15:18:20-08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2015/10/11/which-vps-app/</loc>
     <lastmod>2015-10-11T16:29:28-07:00</lastmod>
     <priority>0.8</priority>
@@ -221,63 +227,63 @@
   
   <url>
     <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2015-10-11T16:36:17-07:00</lastmod>
+    <lastmod>2015-11-15T15:21:55-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/</loc>
-    <lastmod>2015-10-11T16:36:17-07:00</lastmod>
+    <lastmod>2015-11-15T15:21:55-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2015-10-11T16:36:17-07:00</lastmod>
+    <lastmod>2015-11-15T15:21:55-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2015-10-11T16:36:17-07:00</lastmod>
+    <lastmod>2015-11-15T15:21:55-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2015-10-11T16:36:17-07:00</lastmod>
+    <lastmod>2015-11-15T15:21:55-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2015-10-11T16:36:17-07:00</lastmod>
+    <lastmod>2015-11-15T15:21:55-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/box_whiskers/</loc>
-    <lastmod>2015-10-11T16:36:17-07:00</lastmod>
+    <lastmod>2015-11-15T15:21:55-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/resume/</loc>
-    <lastmod>2015-10-11T16:36:17-07:00</lastmod>
+    <lastmod>2015-11-15T15:21:55-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/contact/</loc>
-    <lastmod>2015-10-11T16:36:17-07:00</lastmod>
+    <lastmod>2015-11-15T15:21:55-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -286,6 +292,12 @@
   <url>
     <loc>http://maciejkus.com/tower/index.html</loc>
     <lastmod>2015-08-15T11:33:1439663628Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/pizza_calc/index.html</loc>
+    <lastmod>2015-11-15T15:20:1447629658Z</lastmod>
     <priority>0.6</priority>
   </url>
   
