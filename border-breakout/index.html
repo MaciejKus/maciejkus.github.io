@@ -1,0 +1,41 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=0 minimal-ui" />
+ 	 <meta name="description" content="Border Breakout game. You are a refugee who must get past racists to gain your freedom">
+	<title>Border Breakout</title>
+	<script type="text/javascript" src="js/phaser.min.js"></script>
+	<script type="text/javascript" src="js/boot.js"></script>
+	<script type="text/javascript" src="js/preload.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/gameover.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+	    background: #FFDB4D;
+        }
+    </style>
+    <script type="text/javascript">
+		(function() {
+
+				//Create a new game that fills the screen
+				game = new Phaser.Game(1024, 768, Phaser.AUTO);
+
+				//Add all states
+				game.state.add("Boot", Boot);
+				game.state.add("Preload", Preload);
+				game.state.add("Main", Main);
+				game.state.add("GameOver", GameOver);
+
+
+				//Start the first state
+				game.state.start("Boot");
+
+
+		})();
+    </script>
+</head>
+<body>
+</body>
+</html>
