@@ -18,6 +18,9 @@ Main.prototype = {
     this.man = null; 
     this.woman = null;
 
+    //sound variables
+    this.bounce = game.add.audio('bounce');
+    this.doh = game.add.audio('doh');
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.checkCollision.down = false;
@@ -108,8 +111,11 @@ Main.prototype = {
     this.game.physics.arcade.collide(this.ball,this.paddle, this.ballPaddle, null, this);
     if(this.man && this.man.y < 200) this.state.start('GameOver');
   },
+
   //ball hits brick
   collisionHandler: function(ball, brick) {
+     //play sound
+     this.doh.play();     
      //disables collisions for dead bricks
      brick.body.enable = false;
      //image
@@ -161,6 +167,8 @@ Main.prototype = {
     this.ball.onPaddle = false;
   },
   ballPaddle: function(ball, paddle) {
+    //sound
+    this.bounce.play();
     var diff = 0;
     if( ball.x < paddle.x) {
       diff = paddle.x - ball.x;
