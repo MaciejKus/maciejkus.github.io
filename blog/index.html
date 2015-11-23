@@ -9,7 +9,7 @@
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Nov 22nd, 2015 games,, javascript,, phaser Another Breakout Game Welp, I made another breakout game. This time with Phaser.js. It was my first &hellip;">
+	<meta name="description" content="Nov 23rd, 2015 javascript Javascript-closure-loop Placing a closure inside a loop in JavaScript was a common source of headaches. The results were &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,6 +96,110 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-11-23T09:30:33-08:00" data-updated="true" itemprop="datePublished">Nov 23<sup>rd</sup>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/javascript/'>javascript</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/11/23/javascript-closure-loop/" itemprop="url">Javascript-closure-loop</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Placing a closure inside a loop in JavaScript was a common source of headaches. The results were often unexpected. Using a codewars.com example as the basic idea, say you have a function which returns an array of functions, which return their index in the array.</p>
+
+<pre><code>var callbacks = createFunctions(5); // create an array, containing 5 functions
+
+callbacks[0](); // must return 0
+callbacks[3](); // must return 3
+</code></pre>
+
+<p>Well, a closure is a solution that comes to mind, maybe something like this:</p>
+
+<pre><code>function createFunctions(n) {
+  var callbacks = [];
+
+  for (var i=0; i&lt;n; i++) {
+    callbacks.push(function() {
+      return i;
+    });
+  }
+
+  return callbacks;
+}
+</code></pre>
+
+<p>But that doesn&rsquo;t work. Every callback will return &lsquo;n&rsquo;.</p>
+
+<pre><code>var callbacks = createFunctions(5); // create an array, containing 5 functions
+
+callbacks[0](); // returns 5
+callbacks[3](); // returns 5
+</code></pre>
+
+<p>The reason is that the only thing happening inside the createFunctions function is that functions are being added to an array. They are not being executed until i=n. At that point each function sees that i is equal to n, and uses the last value of i.</p>
+
+<p>One solution for this is to wrap things in a function that does execute every time the loop is run. Something like:</p>
+
+<pre><code>function createFunctions(n) {
+  var callbacks = [];
+
+  for (var i=0; i&lt;n; i++) {
+    (function(x) {callbacks.push(function() {
+      return x;
+    });
+    }(i));
+  }
+
+  return callbacks;
+}
+</code></pre>
+
+<p>Now every time the loop increments a function executes and the current value of i is passed into the function which is added to the array. Now you get the expected results.</p>
+
+<p>ECMAScript 2015 (ES6) introduces a new &lsquo;let&rsquo; statement which is a block level scope! Previously all we had was &lsquo;var&rsquo; which was a function-wide scope. &lsquo;Let&rsquo; creates a variable within a block, for example an &lsquo;if&rsquo; or &lsquo;for&rsquo; block.</p>
+
+<p>The new, ECMAScript 2015 solution to the above problem is a lot nicer looking:</p>
+
+<pre><code>function createFunctions(n) {
+  var callbacks = [];
+
+  for (var i=0; i&lt;n; i++) {
+    let x = i; //x has a scope only within the 'for' loop
+     callbacks.push(function() {
+      return x;
+    });
+  }
+
+  return callbacks;
+}
+</code></pre>
+
+<p>Pretty Exciting!</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -677,41 +781,6 @@ Tower2.prototype.constructor = Tower2;
 		<p>I made a fairly simply tower defense game in html5/canvas/javascript. It works fine as is. Most of the features I would want to create are there, the game just needs some work on the actual game play. Details like the cost of towers, and how rapid the attackers are spawned will probably need to be changed to make the game more enjoyable. The current version works well enough to play.</p>
 
 <p>Check it out at <a href="http://maciejkus.com/tower/">http://maciejkus.com/tower/</a></p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-06-26T15:20:57-07:00" data-updated="true" itemprop="datePublished">Jun 26<sup>th</sup>, 2015</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/canvas/'>canvas,</a>, <a class='category' href='/blog/categories/html5/'>html5</a>, <a class='category' href='/blog/categories/javasript/'>javasript,</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/06/26/snake/" itemprop="url">Snake</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Snake, the classic game, now in html5/Canvas: <a href="http://maciejkus.com/snake/">http://maciejkus.com/snake/</a></p>
 
 		
 		

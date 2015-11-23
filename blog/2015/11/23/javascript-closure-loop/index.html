@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Categories - Maciej Kus is not a Figure Skater</title>
+	<title>Javascript-closure-loop - Maciej Kus is not a Figure Skater</title>
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Blog [ 1 ] Octopress [ 1 ] Ccna [ 1 ] Projects, [ 1 ] Subnetting, [ 1 ] Enchant.js, [ 1 ] Games, [ 4 ] Incremental, [ 1 ] Javascript [ 11 ] Games [ &hellip;">
+	<meta name="description" content="ECMAScript 2015 (ES6) has a easy solution for the infamous JavaScript closure inside a loop problem.">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@
 
 	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://maciejkus.com/blog/categories/">
+	<link rel="canonical" href="http://maciejkus.com/blog/2015/11/23/javascript-closure-loop/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -94,92 +94,95 @@
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="page">
-    
-    <h1 class="title">Categories</h1>
-    
-    <div class="entry-content"><ul>
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Javascript-closure-loop</h1>
+	<div class="entry-content" itemprop="articleBody"><p>Placing a closure inside a loop in JavaScript was a common source of headaches. The results were often unexpected. Using a codewars.com example as the basic idea, say you have a function which returns an array of functions, which return their index in the array.</p>
 
-    <li><a href="/blog/categories/blog/">Blog</a> [ 1 ]</li>
+<pre><code>var callbacks = createFunctions(5); // create an array, containing 5 functions
 
-    <li><a href="/blog/categories/octopress/">Octopress</a> [ 1 ]</li>
+callbacks[0](); // must return 0
+callbacks[3](); // must return 3
+</code></pre>
 
-    <li><a href="/blog/categories/ccna/">Ccna</a> [ 1 ]</li>
+<p>Well, a closure is a solution that comes to mind, maybe something like this:</p>
 
-    <li><a href="/blog/categories/projects,/">Projects,</a> [ 1 ]</li>
+<pre><code>function createFunctions(n) {
+  var callbacks = [];
 
-    <li><a href="/blog/categories/subnetting,/">Subnetting,</a> [ 1 ]</li>
+  for (var i=0; i&lt;n; i++) {
+    callbacks.push(function() {
+      return i;
+    });
+  }
 
-    <li><a href="/blog/categories/enchant.js,/">Enchant.js,</a> [ 1 ]</li>
+  return callbacks;
+}
+</code></pre>
 
-    <li><a href="/blog/categories/games,/">Games,</a> [ 4 ]</li>
+<p>But that doesn&rsquo;t work. Every callback will return &lsquo;n&rsquo;.</p>
 
-    <li><a href="/blog/categories/incremental,/">Incremental,</a> [ 1 ]</li>
+<pre><code>var callbacks = createFunctions(5); // create an array, containing 5 functions
 
-    <li><a href="/blog/categories/javascript/">Javascript</a> [ 11 ]</li>
+callbacks[0](); // returns 5
+callbacks[3](); // returns 5
+</code></pre>
 
-    <li><a href="/blog/categories/games/">Games</a> [ 4 ]</li>
+<p>The reason is that the only thing happening inside the createFunctions function is that functions are being added to an array. They are not being executed until i=n. At that point each function sees that i is equal to n, and uses the last value of i.</p>
 
-    <li><a href="/blog/categories/html5,/">Html5,</a> [ 4 ]</li>
+<p>One solution for this is to wrap things in a function that does execute every time the loop is run. Something like:</p>
 
-    <li><a href="/blog/categories/javascript,/">Javascript,</a> [ 11 ]</li>
+<pre><code>function createFunctions(n) {
+  var callbacks = [];
 
-    <li><a href="/blog/categories/svg,/">Svg,</a> [ 1 ]</li>
+  for (var i=0; i&lt;n; i++) {
+    (function(x) {callbacks.push(function() {
+      return x;
+    });
+    }(i));
+  }
 
-    <li><a href="/blog/categories/dns,/">Dns,</a> [ 1 ]</li>
+  return callbacks;
+}
+</code></pre>
 
-    <li><a href="/blog/categories/email/">Email</a> [ 1 ]</li>
+<p>Now every time the loop increments a function executes and the current value of i is passed into the function which is added to the array. Now you get the expected results.</p>
 
-    <li><a href="/blog/categories/webhosting,/">Webhosting,</a> [ 1 ]</li>
+<p>ECMAScript 2015 (ES6) introduces a new &lsquo;let&rsquo; statement which is a block level scope! Previously all we had was &lsquo;var&rsquo; which was a function-wide scope. &lsquo;Let&rsquo; creates a variable within a block, for example an &lsquo;if&rsquo; or &lsquo;for&rsquo; block.</p>
 
-    <li><a href="/blog/categories/html5/">Html5</a> [ 2 ]</li>
+<p>The new, ECMAScript 2015 solution to the above problem is a lot nicer looking:</p>
 
-    <li><a href="/blog/categories/canvas,/">Canvas,</a> [ 4 ]</li>
+<pre><code>function createFunctions(n) {
+  var callbacks = [];
 
-    <li><a href="/blog/categories/jquery/">Jquery</a> [ 1 ]</li>
+  for (var i=0; i&lt;n; i++) {
+    let x = i; //x has a scope only within the 'for' loop
+     callbacks.push(function() {
+      return x;
+    });
+  }
 
-    <li><a href="/blog/categories/ipv6/">Ipv6</a> [ 1 ]</li>
+  return callbacks;
+}
+</code></pre>
 
-    <li><a href="/blog/categories/vps/">Vps</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/linux/">Linux</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/css/">Css</a> [ 4 ]</li>
-
-    <li><a href="/blog/categories/bootstrap/">Bootstrap</a> [ 2 ]</li>
-
-    <li><a href="/blog/categories/angularjs,/">Angularjs,</a> [ 3 ]</li>
-
-    <li><a href="/blog/categories/canvas/">Canvas</a> [ 3 ]</li>
-
-    <li><a href="/blog/categories/javasript,/">Javasript,</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/game/">Game</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/enchantjs,/">Enchantjs,</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/jquery,/">Jquery,</a> [ 2 ]</li>
-
-    <li><a href="/blog/categories/admin/">Admin</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/css,/">Css,</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/handlebars.js,/">Handlebars.js,</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/html,/">Html,</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/metalsmith,/">Metalsmith,</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/sys/">Sys</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/angualr,/">Angualr,</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/phaser/">Phaser</a> [ 1 ]</li>
-
-</ul>
-
+<p>Pretty Exciting!</p>
 </div>
+
 </article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
 
 </div>
