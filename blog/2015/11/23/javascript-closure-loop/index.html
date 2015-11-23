@@ -96,7 +96,12 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 	<h1 class="title" itemprop="name">Javascript-closure-loop</h1>
-	<div class="entry-content" itemprop="articleBody"><p>Placing a closure inside a loop in JavaScript was a common source of headaches. The results were often unexpected. Using a codewars.com example as the basic idea, say you have a function which returns an array of functions, which return their index in the array.</p>
+	<div class="entry-content" itemprop="articleBody"><p>Placing a closure inside a loop in JavaScript was a common source of headaches. The results were often unexpected. ECMAScript 2015 offers a new simple solution.</p>
+
+<!-- more -->
+
+
+<p>Using a codewars.com example as the basic idea, say you have a function which returns an array of functions, which return their index in the array.</p>
 
 <pre><code>var callbacks = createFunctions(5); // create an array, containing 5 functions
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-11-23T09:48:18-08:00</updated>
+  <updated>2015-11-23T09:53:15-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -18,7 +18,12 @@
     <link href="http://maciejkus.com/blog/2015/11/23/javascript-closure-loop/"/>
     <updated>2015-11-23T09:30:33-08:00</updated>
     <id>http://maciejkus.com/blog/2015/11/23/javascript-closure-loop</id>
-    <content type="html"><![CDATA[<p>Placing a closure inside a loop in JavaScript was a common source of headaches. The results were often unexpected. Using a codewars.com example as the basic idea, say you have a function which returns an array of functions, which return their index in the array.</p>
+    <content type="html"><![CDATA[<p>Placing a closure inside a loop in JavaScript was a common source of headaches. The results were often unexpected. ECMAScript 2015 offers a new simple solution.</p>
+
+<!-- more -->
+
+
+<p>Using a codewars.com example as the basic idea, say you have a function which returns an array of functions, which return their index in the array.</p>
 
 <pre><code>var callbacks = createFunctions(5); // create an array, containing 5 functions
 
