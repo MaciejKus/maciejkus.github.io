@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-11-22T15:08:02-08:00</updated>
+  <updated>2015-11-22T16:10:21-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Another Breakout Game]]></title>
+    <link href="http://maciejkus.com/blog/2015/11/22/another-breakout/"/>
+    <updated>2015-11-22T16:06:56-08:00</updated>
+    <id>http://maciejkus.com/blog/2015/11/22/another-breakout</id>
+    <content type="html"><![CDATA[<p>Welp, I made another breakout game. This time with Phaser.js. It was my first project with Phaser and was a nice introduction to the game engine.</p>
+
+<p>Play <a href='http://maciejkus.com/border-breakout/'>Border Breakout</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[pizza calculator]]></title>
@@ -73,17 +84,6 @@
     <updated>2015-08-04T09:24:11-07:00</updated>
     <id>http://maciejkus.com/blog/2015/08/04/canvas-breakout</id>
     <content type="html"><![CDATA[<p>Continuing with the Canvas/JavaScript game theme that I&rsquo;ve been on recently, I just coded a game of <a href="/breakout/">Breakout</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Canvas/HTML5 Tower Defense]]></title>
-    <link href="http://maciejkus.com/blog/2015/07/06/canvas-tower-defense/"/>
-    <updated>2015-07-06T17:30:41-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/07/06/canvas-tower-defense</id>
-    <content type="html"><![CDATA[<p>I made a fairly simply tower defense game in html5/canvas/javascript. It works fine as is. Most of the features I would want to create are there, the game just needs some work on the actual game play. Details like the cost of towers, and how rapid the attackers are spawned will probably need to be changed to make the game more enjoyable. The current version works well enough to play.</p>
-
-<p>Check it out at <a href="http://maciejkus.com/tower/">http://maciejkus.com/tower/</a></p>
 ]]></content>
   </entry>
   

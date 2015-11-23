@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: phaser | Maciej Kus is not a Figure Skater]]></title>
+  <link href="http://maciejkus.com/blog/categories/phaser/atom.xml" rel="self"/>
+  <link href="http://maciejkus.com/"/>
+  <updated>2015-11-22T16:10:21-08:00</updated>
+  <id>http://maciejkus.com/</id>
+  <author>
+    <name><![CDATA[Maciej Kus]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Another Breakout Game]]></title>
+    <link href="http://maciejkus.com/blog/2015/11/22/another-breakout/"/>
+    <updated>2015-11-22T16:06:56-08:00</updated>
+    <id>http://maciejkus.com/blog/2015/11/22/another-breakout</id>
+    <content type="html"><![CDATA[<p>Welp, I made another breakout game. This time with Phaser.js. It was my first project with Phaser and was a nice introduction to the game engine.</p>
+
+<p>Play <a href='http://maciejkus.com/border-breakout/'>Border Breakout</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
