@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2015-11-23T13:25:38-08:00</updated>
+  <updated>2016-01-01T12:02:14-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[phaser addColor text]]></title>
+    <link href="http://maciejkus.com/blog/2015/12/01/phaser-addcolor-text/"/>
+    <updated>2015-12-01T12:19:00-08:00</updated>
+    <id>http://maciejkus.com/blog/2015/12/01/phaser-addcolor-text</id>
+    <content type="html"><![CDATA[<p>So I am making a text game in Phaserjs. Right now I am working on a simple way to move a cursor around a bunch of text. I have a background rectangle which is the same color as the text and the size of a single letter. This is similar to VIM or other text editors. However when moving to a new letter the letter itself have to change color to contrast the background. Again, exactly what VIM and other text editors do.</p>
+
+<p>I currently do this using a simple function:</p>
+
+<pre><code>colorLetter: function(letter, color) {
+  this.text.addColor(color, letter);
+  this.text.addColor('#0f0', letter+1);
+}
+</code></pre>
+
+<p>where &lsquo;letter&rsquo; is the position of the letter. This colors that letter and all the other letters a color &lsquo;color&rsquo;, and then the next line colors all letters after &lsquo;letter&rsquo; back to green.</p>
+
+<p>The problem is, this addColor() function takes forever and the code ends up being really laggy. I might look into doing things with retroFont, or I might have to change the color schemes so that the letters are different colors than the cursor rectangle. Hmmm&hellip;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Javascript-closure-loop]]></title>
@@ -463,15 +484,6 @@ You can make new posts, you can click on a username to see post titles made by t
     <updated>2015-06-20T12:30:32-07:00</updated>
     <id>http://maciejkus.com/blog/2015/06/20/box-whiskers-calc</id>
     <content type="html"><![CDATA[<p> There is a shocking lack of box and whisker graph calculators on the Internet. Well, accurate ones anyway, so I made one. Originally I needed one for some calculations I was doing and made one in Python, but then I figured I can easily rewrite it into Javascript and make it available for others. I even added a simple HTML5 canvas graph. You can find it at <a href="http://maciejkus.com/box_whiskers/">Box and Whiskers Calculator</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[angular-baseball-game]]></title>
-    <link href="http://maciejkus.com/blog/2015/06/05/angular-baseball-game/"/>
-    <updated>2015-06-05T12:40:07-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/06/05/angular-baseball-game</id>
-    <content type="html"><![CDATA[<p>Inspired by a Codewars kata I created a simple <a href="http://maciejkus.com/baseball-game/">baseball game</a>. It was the first time I used AngularJS, but I feel like the Angular was unnecessary. I will need to build a few other pages to get the full idea of Angular.</p>
 ]]></content>
   </entry>
   
