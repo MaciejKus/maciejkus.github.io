@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kickfurther Statistics</title>
+  <meta name="description" content="Statistics regarding funded and completed Kickfurther investments.">
+  <meta name="author" content="Maciej Kus">
+
+<style>
+.infobox {
+  display: none;
+  border: 3px solid;
+  min-width: 200px;
+  position: absolute;
+  background-color: 'grey';
+}
+</style>
+</head>
+
+<body>
+<h1>Kickfurther Investment Statistics</h1>
+<div class='about'>
+<a href='http://kickfurther.com/s/j1x8s3zjrv'>Kickfurther</a> is a crowd funding platform similar to kickstarter. The difference is that with kickfurther you invest and get a monetary return. 
+<p>
+Existing companies raise a certain amount of funds and then promise to pay back those funds plus a percentage to their backers. 
+<p>
+The following is a graphical representation of funded and completed companies. The data was gathered using Python from the kickfurther website. The graph was made using d3.js.
+<p>
+Larger circles represent more funds raised, and lighter colors represent a higher return. Red are completed offers, green are funded but not yet (as of Jan 18, 2016) completed.
+</div>
+
+<div class='infobox'>
+Name: <strong><span id='name'></span></strong>
+<br>
+Amount Raised: <strong>$<span id='raised'></span></strong>
+<br>
+Percent Returned: <strong><span id='returned'></span>%</strong>
+<br>
+Followers: <strong><span id='followers'></span></strong>
+</div>
+<section id="graph"></section>
+
+<div>
+<small>
+Note that I have invested in a few companies on kickfurther. 
+<p>
+This includes a <a href='https://themulberrysilkco.com/'>comforter</a> company, an <a href='http://www.msamps.com/'>amp</a> company and a <a href='http://merchmakr.com/'>screen printing</a> company. 
+</small>
+</div>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="completed-data.js" charset="utf-8"></script>
+<script src="funded-data.js" charset="utf-8"></script>
+<script src="kickgraph.js" charset="utf-8"></script>
+</body>
+</html>
