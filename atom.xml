@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-01-19T13:56:49-08:00</updated>
+  <updated>2016-01-19T14:17:07-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[using-d3-to-visualize-data]]></title>
+    <link href="http://maciejkus.com/blog/2016/01/19/using-d3-to-visualize-data/"/>
+    <updated>2016-01-19T14:10:57-08:00</updated>
+    <id>http://maciejkus.com/blog/2016/01/19/using-d3-to-visualize-data</id>
+    <content type="html"><![CDATA[<p>I started playing with d3.js, a visualization library. I got some data from the kickfurther website using a little python script I wrote. The script parsed out the relevant data and saved it as a JavaScript object.</p>
+
+<p>From there I used <a href=http://chimera.labs.oreilly.com/books/1230000000345'>Interactive Data Visualization for the Web</a> as an intro to d3.js and built a fun little bubble graph. I don&rsquo;t know if a bubble graph is the most informative way to present this data, but it was the coolest looking, and mainly I was attempting to learn d3.js.</p>
+
+<p>Check out my <a href='http://maciejkus.com/kickfurther-data/'>Kickfurther visualization</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[phaser addColor text]]></title>
@@ -475,15 +488,6 @@ Tower2.prototype.constructor = Tower2;
 
 <p>You can see it at <a href="http://maciejkus.com/angular-forum/">http://maciejkus.com/angular-forum/</a>
 You can make new posts, you can click on a username to see post titles made by that user. Nothing too fancy but it covers a lot of angular ideas.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[box_whiskers_calc]]></title>
-    <link href="http://maciejkus.com/blog/2015/06/20/box-whiskers-calc/"/>
-    <updated>2015-06-20T12:30:32-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/06/20/box-whiskers-calc</id>
-    <content type="html"><![CDATA[<p> There is a shocking lack of box and whisker graph calculators on the Internet. Well, accurate ones anyway, so I made one. Originally I needed one for some calculations I was doing and made one in Python, but then I figured I can easily rewrite it into Javascript and make it available for others. I even added a simple HTML5 canvas graph. You can find it at <a href="http://maciejkus.com/box_whiskers/">Box and Whiskers Calculator</a></p>
 ]]></content>
   </entry>
   
