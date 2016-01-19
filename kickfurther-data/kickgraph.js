@@ -3,6 +3,7 @@ var w = 900
 var d = 90; //max circle diameter
 var dataset = completed.concat(funded);
 
+
 //used to create a scale for the size of the circles
 var rScale = d3.scale.linear()
   .domain([d3.min(dataset, function(d) { return d.raised;}), d3.max(dataset, function(d) { return d.raised;})])
@@ -61,6 +62,8 @@ var nodes = svg.selectAll('circle')
       .text(d.raised);
     d3.select('#returned')
       .text(d.percentReturned);
+    d3.select('#monthly')
+      .text(Math.round(100 * d.percentReturned/d.timeReturned)/100);
     d3.select('#followers')
       .text(d.amountRaised);
    })
