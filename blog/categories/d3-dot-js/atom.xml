@@ -4,7 +4,7 @@
   <title><![CDATA[Category: d3.js, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/d3-dot-js/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-01-19T14:17:07-08:00</updated>
+  <updated>2016-01-19T14:38:52-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -20,7 +20,7 @@
     <id>http://maciejkus.com/blog/2016/01/19/using-d3-to-visualize-data</id>
     <content type="html"><![CDATA[<p>I started playing with d3.js, a visualization library. I got some data from the kickfurther website using a little python script I wrote. The script parsed out the relevant data and saved it as a JavaScript object.</p>
 
-<p>From there I used <a href=http://chimera.labs.oreilly.com/books/1230000000345'>Interactive Data Visualization for the Web</a> as an intro to d3.js and built a fun little bubble graph. I don&rsquo;t know if a bubble graph is the most informative way to present this data, but it was the coolest looking, and mainly I was attempting to learn d3.js.</p>
+<p>From there I used <a href='http://chimera.labs.oreilly.com/books/1230000000345'>Interactive Data Visualization for the Web</a> as an intro to d3.js and built a fun little bubble graph. I don&rsquo;t know if a bubble graph is the most informative way to present this data, but it was the coolest looking, and mainly I was attempting to learn d3.js.</p>
 
 <p>Check out my <a href='http://maciejkus.com/kickfurther-data/'>Kickfurther visualization</a>.</p>
 ]]></content>
