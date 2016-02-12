@@ -20,7 +20,7 @@
 
 	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://maciejkus.com/blog/2016/02/12/roman-numeral-calculator/">
+	<link rel="canonical" href="http://maciejkus.com/roman-numeral-calculator/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -99,34 +99,8 @@
 	<div class="entry-content" itemprop="articleBody"><p>Enter Your number: <input type='number' id='num'></input></p>
 
 <p><p>
-<strong><div id='roman'></div></storng>
-<script>
-var num  = document.getElementById(&lsquo;num&rsquo;);
-num.onchange = function() {
-  var value = this.value;
-  //remove nondigits
-  value = value.replace(/\D/g, &ldquo;&rdquo;);
-  document.getElemebtById(&lsquo;roman&rsquo;).innerHTML = toRoman(value);
-}</p>
-
-<p>function toRoman(n) {
-  var rA = [&rsquo;M',&lsquo;CM&rsquo;,&rsquo;D',&lsquo;CD&rsquo;,&lsquo;C&rsquo;,&lsquo;XC&rsquo;,&lsquo;L&rsquo;,&lsquo;XL&rsquo;,&lsquo;X&rsquo;,&lsquo;IX&rsquo;,&lsquo;V&rsquo;,&lsquo;IV&rsquo;,&lsquo;I&rsquo;];
-  var dA = [1000,900,500,400,100,90,50,40,10,9,5,4,1];</p>
-
-<p>  var ans = &lsquo;&rsquo;;
-  for( var x = 0, y = rA.length; x &lt; y; x++) {</p>
-
-<pre><code>while(n &gt;= dA[x]) {
-  n -= dA[x];
-  ans = ans + rA[x];
-}
-</code></pre>
-
-<p>  }
-  return ans;
-}</p>
-
-<p></script></p>
+<strong><div id='roman'></div></strong>
+<script src='roman.js'></script></p>
 </div>
 
 </article>
