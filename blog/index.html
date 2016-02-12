@@ -9,7 +9,8 @@
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Jan 19th, 2016 d3.js,, javascript,, python Using-d3-to-visualize-data I started playing with d3.js, a visualization library. I got some data from &hellip;">
+	<meta name="description" content="Feb 12th, 2016 javascript Roman-numeral-calculator Enter Your number: var num = document.getElementById(&lsquo;num&rsquo;);
+num.onchange = function &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,6 +97,71 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-02-12T14:49:23-08:00" data-updated="true" itemprop="datePublished">Feb 12<sup>th</sup>, 2016</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/javascript/'>javascript</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2016/02/12/roman-numeral-calculator/" itemprop="url">Roman-numeral-calculator</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Enter Your number: <input type='number' id='num'></input></p>
+
+<p><p>
+<strong><div id='roman'></div></storng>
+<script>
+var num  = document.getElementById(&lsquo;num&rsquo;);
+num.onchange = function() {
+  var value = this.value;
+  //remove nondigits
+  value = value.replace(/\D/g, &ldquo;&rdquo;);
+  document.getElemebtById(&lsquo;roman&rsquo;).innerHTML = toRoman(value);
+}</p>
+
+<p>function toRoman(n) {
+  var rA = [&rsquo;M',&lsquo;CM&rsquo;,&rsquo;D',&lsquo;CD&rsquo;,&lsquo;C&rsquo;,&lsquo;XC&rsquo;,&lsquo;L&rsquo;,&lsquo;XL&rsquo;,&lsquo;X&rsquo;,&lsquo;IX&rsquo;,&lsquo;V&rsquo;,&lsquo;IV&rsquo;,&lsquo;I&rsquo;];
+  var dA = [1000,900,500,400,100,90,50,40,10,9,5,4,1];</p>
+
+<p>  var ans = &lsquo;&rsquo;;
+  for( var x = 0, y = rA.length; x &lt; y; x++) {</p>
+
+<pre><code>while(n &gt;= dA[x]) {
+  n -= dA[x];
+  ans = ans + rA[x];
+}
+</code></pre>
+
+<p>  }
+  return ans;
+}</p>
+
+<p></script></p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -674,59 +740,6 @@ Tower2.prototype.constructor = Tower2;
 	<h1 class="title" itemprop="name"><a href="/blog/2015/08/16/tdee-calculator/" itemprop="url">Tdee-calculator</a></h1>
 	<div class="entry-content" itemprop="articleBody">
 		<p>A <a href="http://smoothiegains.com/tdee-and-bmr-calculator/">TDEE and BMR calculator</a> helps measure how many calories are needed to gain or lose weight. The inputs include exercise levels, age and body description.</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-08-11T09:12:00-07:00" data-updated="true" itemprop="datePublished">Aug 11<sup>th</sup>, 2015</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/enchantjs/'>enchantjs,</a>, <a class='category' href='/blog/categories/games/'>games</a>, <a class='category' href='/blog/categories/javascript/'>javascript,</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/08/11/jsbreakouts/" itemprop="url">Jsbreakouts</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>There&rsquo;s a project, JavaScript <a href="http://www.jsbreakouts.org/">Breakouts</a> which is a collection of different JavaScript game engines. All the game engines are used to create the same version of Breakout, with the same features, etc. It&rsquo;s a way to allow people to compare different game engines by looking at them in action.</p>
-
-<p>Since I&rsquo;ve used enchant.js before, I figured I would add an enchant.js version to the Breakouts. The game can be played <a href="http://www.jsbreakouts.org/enchantjs/index.html">here</a>. Coding this game I realized that enchant.js is out of date. The last time it has been updated was around 2013. There was one <a href="https://github.com/wise9/enchant.js/issues/312">issue</a> where I actually had to go in and change the code for enchant.js to make the game work. There is an outdated web audio line:</p>
-
-<p><code>this.src.disconnect(this.connectTarget);</code></p>
-
-<p>This caused Chrome and other webkit based browsers to issue a</p>
-
-<p><code>Uncaught InvalidAccessError: Failed to execute 'disconnect' on 'AudioNode': the given destination is not connected.</code></p>
-
-<p>error. This was fixed by changing the above line to</p>
-
-<p><code>this.src.disconnect();</code></p>
-
-<p>Before this change, the game would crash as soon as a sound was played. I see there are other issues with enchant.js. On older versions of Firefox the game does not finish loading. Instead it throws a</p>
-
-<p><code>Error: failed in Deferred</code></p>
-
-<p>error. It&rsquo;s unfortunate, but it seems like enchant.js is no longer being maintained, and so I will have to find a new game engine to use, if I ever decide to use a game engine for a game.</p>
 
 		
 		
