@@ -3,7 +3,7 @@ num.onchange = function() {
   var value = this.value;
   //remove nondigits
   value = value.replace(/\D/g, "");
-  document.getElemebtById('roman').innerHTML = toRoman(value);
+  document.getElementById('roman').innerHTML = toRoman(value);
 }
 
 function toRoman(n) {
