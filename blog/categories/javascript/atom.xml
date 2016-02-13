@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-02-12T16:03:14-08:00</updated>
+  <updated>2016-02-12T16:10:44-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Roman numbers]]></title>
+    <link href="http://maciejkus.com/blog/2016/02/12/roman-numbers/"/>
+    <updated>2016-02-12T16:07:50-08:00</updated>
+    <id>http://maciejkus.com/blog/2016/02/12/roman-numbers</id>
+    <content type="html"><![CDATA[<p>A quick <a hef='/roman-numeral-calculator/'>Roman numeral converter</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[using-d3-to-visualize-data]]></title>
@@ -61,33 +70,6 @@
 <p>The coolest thing about making the game was dealing with all the animations. I split up the animations to only render the tile which is moving, instead of rendering the whole canvas every time something has to be changed. This saves a lot of resources, making the game run faster and smoother. The trick was to make sure that things didn&rsquo;t overlap.  The animations run asynchronously, so I had to avoid situations where multiple animations were running on top of one another, or that the logic from a running animation did not interfere with the logic of a new mouse click.</p>
 
 <p>The game is pretty basic, but I was able to remove all the little glitches I came across when testing. I&rsquo;m also pleased to have made a game where the graphics actually look OK. This is all thanks to finding creative commons images and playing with GIMP a little bit.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[jsbreakouts]]></title>
-    <link href="http://maciejkus.com/blog/2015/08/11/jsbreakouts/"/>
-    <updated>2015-08-11T09:12:00-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/08/11/jsbreakouts</id>
-    <content type="html"><![CDATA[<p>There&rsquo;s a project, JavaScript <a href="http://www.jsbreakouts.org/">Breakouts</a> which is a collection of different JavaScript game engines. All the game engines are used to create the same version of Breakout, with the same features, etc. It&rsquo;s a way to allow people to compare different game engines by looking at them in action.</p>
-
-<p>Since I&rsquo;ve used enchant.js before, I figured I would add an enchant.js version to the Breakouts. The game can be played <a href="http://www.jsbreakouts.org/enchantjs/index.html">here</a>. Coding this game I realized that enchant.js is out of date. The last time it has been updated was around 2013. There was one <a href="https://github.com/wise9/enchant.js/issues/312">issue</a> where I actually had to go in and change the code for enchant.js to make the game work. There is an outdated web audio line:</p>
-
-<p><code>this.src.disconnect(this.connectTarget);</code></p>
-
-<p>This caused Chrome and other webkit based browsers to issue a</p>
-
-<p><code>Uncaught InvalidAccessError: Failed to execute 'disconnect' on 'AudioNode': the given destination is not connected.</code></p>
-
-<p>error. This was fixed by changing the above line to</p>
-
-<p><code>this.src.disconnect();</code></p>
-
-<p>Before this change, the game would crash as soon as a sound was played. I see there are other issues with enchant.js. On older versions of Firefox the game does not finish loading. Instead it throws a</p>
-
-<p><code>Error: failed in Deferred</code></p>
-
-<p>error. It&rsquo;s unfortunate, but it seems like enchant.js is no longer being maintained, and so I will have to find a new game engine to use, if I ever decide to use a game engine for a game.</p>
 ]]></content>
   </entry>
   

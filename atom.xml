@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-02-12T16:03:14-08:00</updated>
+  <updated>2016-02-12T16:10:44-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Roman numbers]]></title>
+    <link href="http://maciejkus.com/blog/2016/02/12/roman-numbers/"/>
+    <updated>2016-02-12T16:07:50-08:00</updated>
+    <id>http://maciejkus.com/blog/2016/02/12/roman-numbers</id>
+    <content type="html"><![CDATA[<p>A quick <a hef='/roman-numeral-calculator/'>Roman numeral converter</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[using-d3-to-visualize-data]]></title>
@@ -473,21 +482,6 @@ Tower2.prototype.constructor = Tower2;
 <a href="https://en.wikipedia.org/wiki/Unit_vector">https://en.wikipedia.org/wiki/Unit_vector</a></p>
 
 <p>and then check out <a href="http://maciejkus.com/unit-vector-eyes/">http://maciejkus.com/unit-vector-eyes/</a> to see some html5/canvas eyes which follow your mouse cursor. They currently only follow the mouse when it is inside the canvas element, but this can easily be changed.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[angular_forum]]></title>
-    <link href="http://maciejkus.com/blog/2015/06/22/angular-forum/"/>
-    <updated>2015-06-22T14:46:04-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/06/22/angular-forum</id>
-    <content type="html"><![CDATA[<p>Welp, I made a simple forum using angularJS. This is a lot more of what angular was meant to do than that baseball game I made a bit ago. It&rsquo;s a simple single page app. I did not create any backend functionality to save the posts or anything like that, partly because it is just an exercise, and partly because github   pages do not have backend access.</p>
-
-<!--more-->
-
-
-<p>You can see it at <a href="http://maciejkus.com/angular-forum/">http://maciejkus.com/angular-forum/</a>
-You can make new posts, you can click on a username to see post titles made by that user. Nothing too fancy but it covers a lot of angular ideas.</p>
 ]]></content>
   </entry>
   
