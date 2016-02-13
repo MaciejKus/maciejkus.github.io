@@ -1,8 +1,11 @@
 var num  = document.getElementById('num');
 num.onchange = function() {
-  var value = this.value;
-  //remove nondigits
-  value = value.replace(/\D/g, "");
+  var value = parseInt(this.value);
+  document.getElementById('roman').innerHTML = toRoman(value);
+}
+
+num.onkeyup = function() {
+  var value = parseInt(this.value);
   document.getElementById('roman').innerHTML = toRoman(value);
 }
 
