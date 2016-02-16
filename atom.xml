@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-02-12T16:14:49-08:00</updated>
+  <updated>2016-02-16T09:43:31-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[design first]]></title>
+    <link href="http://maciejkus.com/blog/2016/02/16/design-first/"/>
+    <updated>2016-02-16T09:37:13-08:00</updated>
+    <id>http://maciejkus.com/blog/2016/02/16/design-first</id>
+    <content type="html"><![CDATA[<p>When making a game, or probably any program it is probably a better idea to design what you want to create before you actually begin to code.</p>
+
+<!-- more -->
+
+
+<p>I started working on a little RPG style game recently, but I started to code before I had a full idea of how the game will be played, what the goals of the game will be, etc. I figured that this would all come along as I coded. It&rsquo;s happened before with other things I wrote. But this time I just kept running into road blocks. I would either have too many ideas and now know how to implement them all to interact with one another or I just didn&rsquo;t know where to go from a certain idea and how that idea would further the gameplay.</p>
+
+<p>It wasn&rsquo;t a coding issue. It was that I was trying to make something that I didn&rsquo;t have a clear concept of. I have heard that writers of novels will find that their characters end up doing things that the author never expected while writing the book. I had hopes that the game would do the same.</p>
+
+<p>It did not.</p>
+
+<p>I&rsquo;m putting the game &lsquo;on hold&rsquo; for now because I just cannot figure out what I want the actual gameplay to be like. But it was a valuable lesson. Have a design before actually starting to code. At least a rough one that can change along the way.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Roman numbers]]></title>
@@ -470,18 +490,6 @@ Tower2.prototype.constructor = Tower2;
     <updated>2015-06-26T15:20:57-07:00</updated>
     <id>http://maciejkus.com/blog/2015/06/26/snake</id>
     <content type="html"><![CDATA[<p>Snake, the classic game, now in html5/Canvas: <a href="http://maciejkus.com/snake/">http://maciejkus.com/snake/</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[unit-vector-eyes-follow-mouse]]></title>
-    <link href="http://maciejkus.com/blog/2015/06/23/unit-vector-eyes-follow-mouse/"/>
-    <updated>2015-06-23T17:11:11-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/06/23/unit-vector-eyes-follow-mouse</id>
-    <content type="html"><![CDATA[<p>A unit vector or normal vector is useful for pointing things at other things. Like pointing eyes at a mouse. See here what a unit vector is:
-<a href="https://en.wikipedia.org/wiki/Unit_vector">https://en.wikipedia.org/wiki/Unit_vector</a></p>
-
-<p>and then check out <a href="http://maciejkus.com/unit-vector-eyes/">http://maciejkus.com/unit-vector-eyes/</a> to see some html5/canvas eyes which follow your mouse cursor. They currently only follow the mouse when it is inside the canvas element, but this can easily be changed.</p>
 ]]></content>
   </entry>
   
