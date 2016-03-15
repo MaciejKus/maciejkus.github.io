@@ -9,7 +9,7 @@
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Aug 16th, 2015 javascript Tdee-calculator A TDEE and BMR calculator helps measure how many calories are needed to gain or lose weight. The inputs &hellip;">
+	<meta name="description" content="Aug 21st, 2015 javascript Memoization It&rsquo;s pretty amazing how much faster caching makes code. I was doing a CodeWars exercise trying to go &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,6 +96,80 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-21T13:59:37-07:00" data-updated="true" itemprop="datePublished">Aug 21<sup>st</sup>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/javascript/'>javascript</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/08/21/memoization/" itemprop="url">Memoization</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>It&rsquo;s pretty amazing how much faster caching makes code. I was doing a CodeWars exercise trying to go through an array and find the first (left most) pair of numbers which add up to a given sum (<code>s</code>). I first tried:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var pairs=function(ints, s){
+</span><span class='line'>  for(var i = 1, j= ints.length; i &lt; j; i++) {
+</span><span class='line'>    for (var x = 0; x &lt; i; x++) {
+</span><span class='line'>      if(ints[i] + ints[x] === s) return [ints[x],ints[i]];
+</span><span class='line'>    }
+</span><span class='line'>  }   
+</span><span class='line'>  return undefined;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pretty self explanatory, it goes through the array and for every number goes through all the numbers before that one to see if they add up to the sum. It works, but was too slow and timed out when the array was huge.</p>
+
+<p>I tried to speed things up a bit by using indexOf() rather than a second for loop, but that actually slowed things down, as indexOf() is like a loop, but with a bunch of checks included in it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var pairs=function(ints, s){
+</span><span class='line'>  for(var i = 1, j= ints.length; i &lt; j; i++) {
+</span><span class='line'>    var otherIndex = ints.indexOf(s - ints[i])
+</span><span class='line'>    if(otherIndex &gt; -1 && otherIndex &lt; i) return [(s - ints[i]),ints[i]];
+</span><span class='line'>  }   
+</span><span class='line'>  return undefined;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+
+		
+		<a href="/blog/2015/08/21/memoization/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -609,51 +683,6 @@
 
 		
 		<a href="/blog/2015/04/25/responsive-design/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-04-13T14:46:23-07:00" data-updated="true" itemprop="datePublished">Apr 13<sup>th</sup>, 2015</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/linux/'>linux</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/04/13/linux-is-cool/" itemprop="url">Linux Is Cool</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>I like wget and sed. Want to download a whole website?</p>
-
-<pre><code>wget -r --no-parent http://example.com/
-</code></pre>
-
-<p>Want to insert the test of input.txt after the head tag into all html files?</p>
-
-<pre><code>sed -i '/&lt;head&gt;/r input.txt' *.html
-</code></pre>
-
-<p>Tools like these make life so easy.</p>
-
-		
-		
 	</div>
 
 </article>

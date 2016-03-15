@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript, | Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-02-16T09:43:31-08:00</updated>
+  <updated>2016-03-15T09:21:51-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[canvas-game]]></title>
+    <link href="http://maciejkus.com/blog/2016/03/14/canvas-game/"/>
+    <updated>2016-03-14T10:03:59-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/03/14/canvas-game</id>
+    <content type="html"><![CDATA[<p>I wanted to try out Jasmine, which is a JavaScript unit testing library. I also had an idea for what could be a fun little <a href='http://maciejkus.com/canvas-game/'>game</a>, so I went ahead and made a html5/canvas game and used Jasmine to test things as I coded.</p>
+
+<!-- more -->
+
+
+<p>Though there are some plug-ins out there to make Jasmine work with canvas rendering, I skipped those, so I didn&rsquo;t truly test everything. But I did test all the non-drawing aspects of the game.</p>
+
+<p>The game is simple enough that I don&rsquo;t think the unit testing helped too much, but if I were to expand the game it is useful to have the existing tests in place.</p>
+
+<p>The tricky thing about this game was all the math. Do you remember those smart aleck kids in math class who would ask the teacher when they would ever use the math that they were learning? Well, at times I felt like my work on this game justified as an answer for all those teachers. This might have been the first time I ever had to find the intersection of two line segments outside of a school setting.</p>
+
+<p>The game is all vanilla JavaScript using the HTML5 canvas object. Play it <a href='http://maciejkus.com/canvas-game/'>here</a>. The source code is on <a href='https://github.com/MaciejKus/canvas-fly-game'>github</a>. I am now familiar enough with Jasmine that I can and will use unit testing for future projects. Wins all around.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Roman numbers]]></title>
@@ -52,24 +72,6 @@
     <updated>2015-11-15T15:18:20-08:00</updated>
     <id>http://maciejkus.com/blog/2015/11/15/pizza-calculator</id>
     <content type="html"><![CDATA[<p>See input the diameter and cost of different pizza&rsquo;s and see which is the best deal. <a href='http://maciejkus.com/pizza_calc/'>Pizza calculator</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Canvas Match 3 Game]]></title>
-    <link href="http://maciejkus.com/blog/2015/09/29/canvas-match-3-game/"/>
-    <updated>2015-09-29T09:39:45-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/09/29/canvas-match-3-game</id>
-    <content type="html"><![CDATA[<p>I decided to make a match three game as a first step to learning a new game engine. Since Enchant.js is pretty much abandoned at this point, I figured it was time to try something new, and I decided on Phaser.js. So I start making the game, but it just seems that using a game engine was overkill for something as simple as a match-three game.</p>
-
-<p>So I decided to save learning Phaser.js for a different project and just make the match-three game using plain old vanilla JavaScript and the html5 canvas element. Play it <a href='http://brogress.smoothiegains.com/smoothie_match/'>here</a>.</p>
-
-<!-- more -->
-
-
-<p>The coolest thing about making the game was dealing with all the animations. I split up the animations to only render the tile which is moving, instead of rendering the whole canvas every time something has to be changed. This saves a lot of resources, making the game run faster and smoother. The trick was to make sure that things didn&rsquo;t overlap.  The animations run asynchronously, so I had to avoid situations where multiple animations were running on top of one another, or that the logic from a running animation did not interfere with the logic of a new mouse click.</p>
-
-<p>The game is pretty basic, but I was able to remove all the little glitches I came across when testing. I&rsquo;m also pleased to have made a game where the graphics actually look OK. This is all thanks to finding creative commons images and playing with GIMP a little bit.</p>
 ]]></content>
   </entry>
   

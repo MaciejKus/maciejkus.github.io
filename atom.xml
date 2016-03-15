@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus is not a Figure Skater]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-02-16T09:43:31-08:00</updated>
+  <updated>2016-03-15T09:21:51-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[canvas-game]]></title>
+    <link href="http://maciejkus.com/blog/2016/03/14/canvas-game/"/>
+    <updated>2016-03-14T10:03:59-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/03/14/canvas-game</id>
+    <content type="html"><![CDATA[<p>I wanted to try out Jasmine, which is a JavaScript unit testing library. I also had an idea for what could be a fun little <a href='http://maciejkus.com/canvas-game/'>game</a>, so I went ahead and made a html5/canvas game and used Jasmine to test things as I coded.</p>
+
+<!-- more -->
+
+
+<p>Though there are some plug-ins out there to make Jasmine work with canvas rendering, I skipped those, so I didn&rsquo;t truly test everything. But I did test all the non-drawing aspects of the game.</p>
+
+<p>The game is simple enough that I don&rsquo;t think the unit testing helped too much, but if I were to expand the game it is useful to have the existing tests in place.</p>
+
+<p>The tricky thing about this game was all the math. Do you remember those smart aleck kids in math class who would ask the teacher when they would ever use the math that they were learning? Well, at times I felt like my work on this game justified as an answer for all those teachers. This might have been the first time I ever had to find the intersection of two line segments outside of a school setting.</p>
+
+<p>The game is all vanilla JavaScript using the HTML5 canvas object. Play it <a href='http://maciejkus.com/canvas-game/'>here</a>. The source code is on <a href='https://github.com/MaciejKus/canvas-fly-game'>github</a>. I am now familiar enough with Jasmine that I can and will use unit testing for future projects. Wins all around.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[design first]]></title>
@@ -481,15 +501,6 @@ Tower2.prototype.constructor = Tower2;
     <content type="html"><![CDATA[<p>I made a fairly simply tower defense game in html5/canvas/javascript. It works fine as is. Most of the features I would want to create are there, the game just needs some work on the actual game play. Details like the cost of towers, and how rapid the attackers are spawned will probably need to be changed to make the game more enjoyable. The current version works well enough to play.</p>
 
 <p>Check it out at <a href="http://maciejkus.com/tower/">http://maciejkus.com/tower/</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[snake]]></title>
-    <link href="http://maciejkus.com/blog/2015/06/26/snake/"/>
-    <updated>2015-06-26T15:20:57-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/06/26/snake</id>
-    <content type="html"><![CDATA[<p>Snake, the classic game, now in html5/Canvas: <a href="http://maciejkus.com/snake/">http://maciejkus.com/snake/</a></p>
 ]]></content>
   </entry>
   

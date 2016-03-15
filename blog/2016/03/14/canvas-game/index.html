@@ -5,22 +5,22 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Contact - Maciej Kus is not a Figure Skater</title>
+	<title>canvas-game - Maciej Kus is not a Figure Skater</title>
 	<meta name="author" content="Maciej Kus">
- <meta name="robots" content="NOINDEX"> 
 
-	<meta name="description" content="Maciej can be reached at &#x6d;&#97;&#99;&#105;&#x65;&#x6a;&#107;&#117;&#x73;&#57;&#x32;&#x35;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&# &hellip;">
+
+	<meta name="description" content="A html5 canvas game">
 	
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="robots" content="noindex"> 
+
 
 	<link href="" rel="alternate" title="Maciej Kus is not a Figure Skater" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://maciejkus.com/contact/">
+	<link rel="canonical" href="http://maciejkus.com/blog/2016/03/14/canvas-game/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -94,13 +94,37 @@
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="page">
-    
-    <h1 class="title">Contact</h1>
-    
-    <div class="entry-content"><p>Maciej can be reached at <a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#x6d;&#97;&#99;&#x69;&#101;&#x6a;&#x6b;&#117;&#x73;&#x39;&#x32;&#53;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x6d;&#97;&#99;&#105;&#x65;&#x6a;&#107;&#117;&#x73;&#57;&#x32;&#x35;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a></p>
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Canvas-game</h1>
+	<div class="entry-content" itemprop="articleBody"><p>I wanted to try out Jasmine, which is a JavaScript unit testing library. I also had an idea for what could be a fun little <a href='/canvas-game/'>game</a>, so I went ahead and made a html5/canvas game and used Jasmine to test things as I coded.</p>
+
+<!-- more -->
+
+
+<p>Though there are some plug-ins out there to make Jasmine work with canvas rendering, I skipped those, so I didn&rsquo;t truly test everything. But I did test all the non-drawing aspects of the game.</p>
+
+<p>The game is simple enough that I don&rsquo;t think the unit testing helped too much, but if I were to expand the game it is useful to have the existing tests in place.</p>
+
+<p>The tricky thing about this game was all the math. Do you remember those smart aleck kids in math class who would ask the teacher when they would ever use the math that they were learning? Well, at times I felt like my work on this game justified as an answer for all those teachers. This might have been the first time I ever had to find the intersection of two line segments outside of a school setting.</p>
+
+<p>The game is all vanilla JavaScript using the HTML5 canvas object. Play it <a href='/canvas-game/'>here</a>. The source code is on <a href='https://github.com/MaciejKus/canvas-fly-game'>github</a>. I am now familiar enough with Jasmine that I can and will use unit testing for future projects. Wins all around.</p>
 </div>
+
 </article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
 
 </div>
