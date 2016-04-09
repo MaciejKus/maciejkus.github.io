@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: reactjs | Maciej Kus -- Bay Area JavaScript Developer]]></title>
+  <link href="http://maciejkus.com/blog/categories/reactjs/atom.xml" rel="self"/>
+  <link href="http://maciejkus.com/"/>
+  <updated>2016-04-09T13:13:34-07:00</updated>
+  <id>http://maciejkus.com/</id>
+  <author>
+    <name><![CDATA[Maciej Kus]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[playing with react]]></title>
+    <link href="http://maciejkus.com/blog/2016/04/09/playing-with-react/"/>
+    <updated>2016-04-09T13:09:53-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/04/09/playing-with-react</id>
+    <content type="html"><![CDATA[<p>Well, I have begun playing with React.js. For my first app I created a <a href='http://maciejkus.com/communist-Lorem-Ipsum
+'>lorem ipsum stylegenerator</a>. Source is <a href='https://github.com/MaciejKus/Communist-Lorem-Ipsum'>here</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

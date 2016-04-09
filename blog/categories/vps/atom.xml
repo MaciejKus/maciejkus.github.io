@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: vps | Maciej Kus is not a Figure Skater]]></title>
+  <title><![CDATA[Category: vps | Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/blog/categories/vps/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-03-15T09:26:21-07:00</updated>
+  <updated>2016-04-09T13:13:34-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>

@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2016/04/09/playing-with-react/</loc>
+    <lastmod>2016-04-09T13:09:53-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2016/03/14/canvas-game/</loc>
     <lastmod>2016-03-14T10:03:59-07:00</lastmod>
     <priority>0.8</priority>
@@ -269,77 +275,77 @@
   
   <url>
     <loc>http://maciejkus.com/kickfurther-data/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/box_whiskers/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/roman-numeral-calculator/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/resume/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/contact/</loc>
-    <lastmod>2016-03-15T09:26:21-07:00</lastmod>
+    <lastmod>2016-04-09T13:13:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -360,6 +366,12 @@
   <url>
     <loc>http://maciejkus.com/404.html</loc>
     <lastmod>2014-07-27T10:51:1406483497Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/communist-lorem-ipsum/index.html</loc>
+    <lastmod>2016-04-09T13:08:1460232534Z</lastmod>
     <priority>0.6</priority>
   </url>
   

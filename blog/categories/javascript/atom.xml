@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: javascript, | Maciej Kus is not a Figure Skater]]></title>
+  <title><![CDATA[Category: javascript, | Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-03-15T09:26:21-07:00</updated>
+  <updated>2016-04-09T13:13:34-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,16 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[playing with react]]></title>
+    <link href="http://maciejkus.com/blog/2016/04/09/playing-with-react/"/>
+    <updated>2016-04-09T13:09:53-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/04/09/playing-with-react</id>
+    <content type="html"><![CDATA[<p>Well, I have begun playing with React.js. For my first app I created a <a href='http://maciejkus.com/communist-Lorem-Ipsum
+'>lorem ipsum stylegenerator</a>. Source is <a href='https://github.com/MaciejKus/Communist-Lorem-Ipsum'>here</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[canvas-game]]></title>
@@ -63,15 +73,6 @@
     <content type="html"><![CDATA[<p>Welp, I made another breakout game. This time with Phaser.js. It was my first project with Phaser and was a nice introduction to the game engine.</p>
 
 <p>Play <a href='http://maciejkus.com/border-breakout/'>Border Breakout</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[pizza calculator]]></title>
-    <link href="http://maciejkus.com/blog/2015/11/15/pizza-calculator/"/>
-    <updated>2015-11-15T15:18:20-08:00</updated>
-    <id>http://maciejkus.com/blog/2015/11/15/pizza-calculator</id>
-    <content type="html"><![CDATA[<p>See input the diameter and cost of different pizza&rsquo;s and see which is the best deal. <a href='http://maciejkus.com/pizza_calc/'>Pizza calculator</a></p>
 ]]></content>
   </entry>
   
