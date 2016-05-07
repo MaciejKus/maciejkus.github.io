@@ -4,7 +4,7 @@
   <title><![CDATA[Category: reactjs | Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/blog/categories/reactjs/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-04-09T13:24:39-07:00</updated>
+  <updated>2016-05-07T10:43:40-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -19,7 +19,7 @@
     <updated>2016-04-09T13:09:53-07:00</updated>
     <id>http://maciejkus.com/blog/2016/04/09/playing-with-react</id>
     <content type="html"><![CDATA[<p>Well, I have begun playing with React.js. For my first app I created a <a href='http://maciejkus.com/communist-lorem-ipsum/
-'>lorem ipsum stylegenerator</a>. Source is <a href='https://github.com/MaciejKus/Communist-Lorem-Ipsum'>here</a>.</p>
+'>lorem ipsum style generator</a>. Source is <a href='https://github.com/MaciejKus/Communist-Lorem-Ipsum'>here</a>.</p>
 ]]></content>
   </entry>
   
