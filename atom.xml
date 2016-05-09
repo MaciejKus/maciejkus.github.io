@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-05-07T10:43:40-07:00</updated>
+  <updated>2016-05-09T16:19:45-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[online screen saver]]></title>
+    <link href="http://maciejkus.com/blog/2016/05/09/online-screen-saver/"/>
+    <updated>2016-05-09T16:17:10-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/05/09/online-screen-saver</id>
+    <content type="html"><![CDATA[<p><a href='http://maciejkus.com/meditation/'>maciejkus.com/meditation</a></p>
+
+<p>I had an idea for a relaxing browser based image display, something similar to the fireplace log you might find on TV during christmas. For those unfamiliar, every year around Christmas a television station would play hours and hours of a burning log in a fireplace. The idea was that those without a fireplace of their own could turn the TV to the log channel and have something similar in their home.</p>
+
+<p>&lt;!—more—></p>
+
+<p>Originally I was looking to use some kind of API to load a bunch of beautiful images and play some relaxing music. But Imgur and other picture hosting sites don’t really allow this. Which totally makes sense on their part, they are not a CDN.</p>
+
+<p>So instead I took a few of the top images from Reddit’s EarthPorn, CityPorn and SpacePorn subreddits and just hosted them locally. I also took three songs from <a href="http://freemusicarchive.org/">http://freemusicarchive.org/</a> and also hosted them locally.</p>
+
+<p>If this app were to ever really go live or become highly popular I would add a bunch more images and more music.</p>
+
+<p>I’m happy with the result. The fade in and fade out when changing images is nice, the arrow on top of the menu bar is cool, the songs run on a loop. If I were to add more images and more music I would gladly leave this running in the background in my house.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[playing with react]]></title>
@@ -491,15 +512,6 @@ Tower2.prototype.constructor = Tower2;
 <p><code>Error: failed in Deferred</code></p>
 
 <p>error. It&rsquo;s unfortunate, but it seems like enchant.js is no longer being maintained, and so I will have to find a new game engine to use, if I ever decide to use a game engine for a game.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Canvas Breakout]]></title>
-    <link href="http://maciejkus.com/blog/2015/08/04/canvas-breakout/"/>
-    <updated>2015-08-04T09:24:11-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/08/04/canvas-breakout</id>
-    <content type="html"><![CDATA[<p>Continuing with the Canvas/JavaScript game theme that I&rsquo;ve been on recently, I just coded a game of <a href="http://maciejkus.com/breakout/">Breakout</a>.</p>
 ]]></content>
   </entry>
   
