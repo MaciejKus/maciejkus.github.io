@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-05-09T16:19:45-07:00</updated>
+  <updated>2016-05-09T16:26:42-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -22,7 +22,8 @@
 
 <p>I had an idea for a relaxing browser based image display, something similar to the fireplace log you might find on TV during christmas. For those unfamiliar, every year around Christmas a television station would play hours and hours of a burning log in a fireplace. The idea was that those without a fireplace of their own could turn the TV to the log channel and have something similar in their home.</p>
 
-<p>&lt;!—more—></p>
+<!--more-->
+
 
 <p>Originally I was looking to use some kind of API to load a bunch of beautiful images and play some relaxing music. But Imgur and other picture hosting sites don’t really allow this. Which totally makes sense on their part, they are not a CDN.</p>
 
