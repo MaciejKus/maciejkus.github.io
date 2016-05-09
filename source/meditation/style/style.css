@@ -1,0 +1,102 @@
+html {
+  height: 100%;
+}
+
+body {
+	height: 100%;
+  min-height: 100%;
+	background-color: black;
+  background-image:url('../images/earth/AmWThvw.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+	margin: 0;
+}
+
+#content {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 1);
+	transition: background-color 1s;
+}
+ 
+/*MENU*/
+
+.upArrow {
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	/*fallback for old non alpha browsers*/
+	border-bottom: 5px solid rgb(0, 0, 0);
+	border-bottom: 5px solid rgba(0, 0, 0, 0.6);
+	border-width: 20px;
+	margin: auto;
+	margin-top: -20px;
+}
+
+.menu {
+  position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100px;
+	width: 100%;
+	/*fallback for browsers which dont support alpha*/
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.6);
+	color: white;
+	margin-bottom: -80px;
+  -webkit-transition-property: margin-bottom;
+  -moz-transition-property: margin-bottom;
+  -o-transition-property: margin-bottom;
+  transition-property: margin-bottom;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  transition-duration: 400ms;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+.menu:hover {
+  margin-bottom: 0;
+}
+
+#menuButton {
+  text-align: center;
+	position: absolute;
+	left: 50%;
+	/*moves object back half its own width*/
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	display: inline-block
+}
+
+.menuOptions {
+	display: inline-block;
+}
+
+.menuOptions ul {
+	list-style: none;
+}
+
+.menuOptions li {
+	padding-top: 8px;
+}
+ 
+.menuOptions a {
+	color: white;
+}
+
+#content.transOut {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.floatRight {
+  float: right;
+	margin-right: 40px;
+	text-align: right;
+}
