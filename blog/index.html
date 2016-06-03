@@ -9,7 +9,8 @@
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="May 9th, 2016 javascript Online Screen Saver maciejkus.com/meditation I had an idea for a relaxing browser based image display, something similar to &hellip;">
+	<meta name="description" content="Jun 3rd, 2016 javascript Browser Latency Check Modern browsers have a really cool feature called resource timing. See here:
+https://www.w3.org/TR/ &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,6 +97,51 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-06-03T13:57:47-07:00" data-updated="true" itemprop="datePublished">Jun 3<sup>rd</sup>, 2016</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/javascript/'>javascript</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2016/06/03/browser-latency-check/" itemprop="url">Browser Latency Check</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Modern browsers have a really cool feature called resource timing. See here:
+<a href="https://www.w3.org/TR/resource-timing/">https://www.w3.org/TR/resource-timing/</a>
+It allows a much more accurate way of measuring latency within the browser. Specifically, separates out things like DNS requests, cache replies, TCP header data etc. This means that a modern browser can be used to make a speed measurement in a very similar way that the PING command is used.</p>
+
+<p>I created a little app which uses this resource timing to compare IPv4 and IPv6 latency directly within the browser. From my own testing the resulting times are very similar to ping times.</p>
+
+<p>A browser is unable to directly access ICMP packets, so one cannot perform operations such as traceroute or ping directly from the browser, but now one can replicate ping to a very accurate level directly from the browser.</p>
+
+<p>You can see this browser latency test at <a href="http://maciejkus.com/latency-v6-v4/">http://maciejkus.com/latency-v6-v4/</a></p>
+
+<p>I also added a fallback test for older browsers. This is much less accurate and uses the loadtime of an image.</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -635,44 +681,6 @@ Tower2.prototype.constructor = Tower2;
 
 		
 		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-09-29T09:39:45-07:00" data-updated="true" itemprop="datePublished">Sep 29<sup>th</sup>, 2015</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/canvas/'>canvas</a>, <a class='category' href='/blog/categories/games/'>games,</a>, <a class='category' href='/blog/categories/javascript/'>javascript,</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/09/29/canvas-match-3-game/" itemprop="url">Canvas Match 3 Game</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>I decided to make a match three game as a first step to learning a new game engine. Since Enchant.js is pretty much abandoned at this point, I figured it was time to try something new, and I decided on Phaser.js. So I start making the game, but it just seems that using a game engine was overkill for something as simple as a match-three game.</p>
-
-<p>So I decided to save learning Phaser.js for a different project and just make the match-three game using plain old vanilla JavaScript and the html5 canvas element. Play it <a href='http://brogress.smoothiegains.com/smoothie_match/'>here</a>.</p>
-
-
-		
-		<a href="/blog/2015/09/29/canvas-match-3-game/" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>

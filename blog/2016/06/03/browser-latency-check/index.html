@@ -5,11 +5,13 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Kickfurther Investment Statistics - Maciej Kus -- Bay Area JavaScript Developer</title>
+	<title>browser latency check - Maciej Kus -- Bay Area JavaScript Developer</title>
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Statistics regarding funded and completed Kickfurther investments.">
+	<meta name="description" content="Browser Latency Check Modern browsers have a really cool feature called resource timing. See here:
+https://www.w3.org/TR/resource-timing/
+It allows &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +22,7 @@
 
 	<link href="" rel="alternate" title="Maciej Kus -- Bay Area JavaScript Developer" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://maciejkus.com/kickfurther-data/">
+	<link rel="canonical" href="http://maciejkus.com/blog/2016/06/03/browser-latency-check/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -94,50 +96,21 @@
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="page">
-    
-    <h1 class="title">Kickfurther Investment Statistics</h1>
-    
-    <div class="entry-content"><style>
-.infobox {
-  display: none;
-  border: 3px solid;
-  min-width: 200px;
-  position: absolute;
-  background-color: &#8216;grey&#8217;;
-}
-</style>
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Browser Latency Check</h1>
+	<div class="entry-content" itemprop="articleBody"><p>Modern browsers have a really cool feature called resource timing. See here:
+<a href="https://www.w3.org/TR/resource-timing/">https://www.w3.org/TR/resource-timing/</a>
+It allows a much more accurate way of measuring latency within the browser. Specifically, separates out things like DNS requests, cache replies, TCP header data etc. This means that a modern browser can be used to make a speed measurement in a very similar way that the PING command is used.</p>
 
-<div class='about'>
-<a href='http://kickfurther.com/s/j1x8s3zjrv'>Kickfurther</a> is a crowd funding platform similar to kickstarter. The difference is that with kickfurther you invest and get a monetary return. 
-<p>
-Existing companies raise a certain amount of funds and then promise to pay back those funds plus a percentage to their backers. 
-<p>
-The following is a graphical representation of funded and completed companies. The data was gathered using Python from the kickfurther website. The graph was made using d3.js.
-<p>
-Larger circles represent more funds raised, and lighter colors represent a higher return. Red are completed offers, green are funded but not yet (as of Jan 18, 2016) completed.
-<p>
-The mean amount raised for completed offers is $8,099 with a mean percent return of 9.2% The monthly return mean was 2.33%. For funded offers the mean amount raised is $20,921 and the mean return is 10.9%. The currently listed funded offers have a monthly mean return of 1.80%.
+<p>I created a little app which uses this resource timing to compare IPv4 and IPv6 latency directly within the browser. From my own testing the resulting times are very similar to ping times.</p>
+
+<p>A browser is unable to directly access ICMP packets, so one cannot perform operations such as traceroute or ping directly from the browser, but now one can replicate ping to a very accurate level directly from the browser.</p>
+
+<p>You can see this browser latency test at <a href="http://maciejkus.com/latency-v6-v4/">http://maciejkus.com/latency-v6-v4/</a></p>
+
+<p>I also added a fallback test for older browsers. This is much less accurate and uses the loadtime of an image.</p>
 </div>
 
-<div class='infobox'>
-Name: <strong><span id='name'></span></strong>
-<br>
-Amount Raised: <strong>$<span id='raised'></span></strong>
-<br>
-Percent Returned: <strong><span id='returned'></span>%</strong>
-<br>
-Monthly Percent Returned: <strong><span id='monthly'></span>%</strong>
-<br>
-Followers: <strong><span id='followers'></span></strong>
-</div>
-<section id="graph"></section>
-
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="completed-data.js" charset="utf-8"></script>
-<script src="funded-data.js" charset="utf-8"></script>
-<script src="kickgraph.js" charset="utf-8"></script>
-</div>
 </article>
 
 	<div class="share">
@@ -153,7 +126,6 @@ Followers: <strong><span id='followers'></span></strong>
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
 
 
 </div>

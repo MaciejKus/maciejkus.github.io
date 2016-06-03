@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-05-09T16:26:42-07:00</updated>
+  <updated>2016-06-03T14:06:51-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[browser latency check]]></title>
+    <link href="http://maciejkus.com/blog/2016/06/03/browser-latency-check/"/>
+    <updated>2016-06-03T13:57:47-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/06/03/browser-latency-check</id>
+    <content type="html"><![CDATA[<p>Modern browsers have a really cool feature called resource timing. See here:
+<a href="https://www.w3.org/TR/resource-timing/">https://www.w3.org/TR/resource-timing/</a>
+It allows a much more accurate way of measuring latency within the browser. Specifically, separates out things like DNS requests, cache replies, TCP header data etc. This means that a modern browser can be used to make a speed measurement in a very similar way that the PING command is used.</p>
+
+<p>I created a little app which uses this resource timing to compare IPv4 and IPv6 latency directly within the browser. From my own testing the resulting times are very similar to ping times.</p>
+
+<p>A browser is unable to directly access ICMP packets, so one cannot perform operations such as traceroute or ping directly from the browser, but now one can replicate ping to a very accurate level directly from the browser.</p>
+
+<p>You can see this browser latency test at <a href="http://maciejkus.com/latency-v6-v4/">http://maciejkus.com/latency-v6-v4/</a></p>
+
+<p>I also added a fallback test for older browsers. This is much less accurate and uses the loadtime of an image.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[online screen saver]]></title>
@@ -486,33 +505,6 @@ Tower2.prototype.constructor = Tower2;
     <updated>2015-08-16T16:43:58-07:00</updated>
     <id>http://maciejkus.com/blog/2015/08/16/tdee-calculator</id>
     <content type="html"><![CDATA[<p>A <a href="http://smoothiegains.com/tdee-and-bmr-calculator/">TDEE and BMR calculator</a> helps measure how many calories are needed to gain or lose weight. The inputs include exercise levels, age and body description.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[jsbreakouts]]></title>
-    <link href="http://maciejkus.com/blog/2015/08/11/jsbreakouts/"/>
-    <updated>2015-08-11T09:12:00-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/08/11/jsbreakouts</id>
-    <content type="html"><![CDATA[<p>There&rsquo;s a project, JavaScript <a href="http://www.jsbreakouts.org/">Breakouts</a> which is a collection of different JavaScript game engines. All the game engines are used to create the same version of Breakout, with the same features, etc. It&rsquo;s a way to allow people to compare different game engines by looking at them in action.</p>
-
-<p>Since I&rsquo;ve used enchant.js before, I figured I would add an enchant.js version to the Breakouts. The game can be played <a href="http://www.jsbreakouts.org/enchantjs/index.html">here</a>. Coding this game I realized that enchant.js is out of date. The last time it has been updated was around 2013. There was one <a href="https://github.com/wise9/enchant.js/issues/312">issue</a> where I actually had to go in and change the code for enchant.js to make the game work. There is an outdated web audio line:</p>
-
-<p><code>this.src.disconnect(this.connectTarget);</code></p>
-
-<p>This caused Chrome and other webkit based browsers to issue a</p>
-
-<p><code>Uncaught InvalidAccessError: Failed to execute 'disconnect' on 'AudioNode': the given destination is not connected.</code></p>
-
-<p>error. This was fixed by changing the above line to</p>
-
-<p><code>this.src.disconnect();</code></p>
-
-<p>Before this change, the game would crash as soon as a sound was played. I see there are other issues with enchant.js. On older versions of Firefox the game does not finish loading. Instead it throws a</p>
-
-<p><code>Error: failed in Deferred</code></p>
-
-<p>error. It&rsquo;s unfortunate, but it seems like enchant.js is no longer being maintained, and so I will have to find a new game engine to use, if I ever decide to use a game engine for a game.</p>
 ]]></content>
   </entry>
   
