@@ -1,0 +1,48 @@
+---
+layout: page
+---
+<h1>Maciej Kus -- Bay Area JavaScript Developer</h1>
+<p>Maciej enjoys front-end development. He currently lives in Fremont, California.</p>
+<p>You can see the kinds of things Maciej has worked on in the <a href='/blog/'>blog</a> section of this page. Here are a few of them:</p>
+<div id='projects'>
+<div class='project' id='tower'><a href='/tower/'>
+<div class='project_pic' style='background:url(images/project-icons.png) -32px 0px;'></div>
+<p>A Canvas/JavaScript Tower Defense Game</p>
+</a>
+</div>
+<div class='project' id='asset'><a href='asset-allocation/'>
+<div class='project_pic' style='background:url(images/project-icons.png) -92px 0px;'></div>
+<p>An investing asset allocation calculator</p>
+</a>
+</div>
+<div class='project' id='calidrought'><a href='california_drought/'>
+<div class='project_pic' style='background:url(images/project-icons.png) 4px 0px;'></div>
+<p>An interactive way to view just how dire the California drought is.</p>
+</a>
+</div>
+<div class='project' id='mideast'><a href='middle-east-diplomacy/'>
+<div class='project_pic' style='background:url(images/project-icons.png) -32px 0px;'></div>
+<p>A turn based diplomacy game dealing with the Middle East. Uses raphael.js.</p>
+</a>
+</div>
+<div class='project' id='record_collector'><a href='record-collector/'>
+<div class='project_pic' style='background:url(images/project-icons.png) -32px 0px;'></div>
+<p>An incremental game created using enchant.js. Walk around, talk to people, collect records.</p>
+</a>
+</div>
+<div class='project' id='chinese'><a href='chinese_remainder/'>
+<div class='project_pic' style='background:url(images/project-icons.png) -92px 0px;'></div>
+<p >A Chinese remainder theorem calculator where the values do not have to be pairwise coprime.</p>
+</a>
+</div><div class='project' id='subnet'><a href='http://subnettingpractice.com'>
+<div class='project_pic' style='background:url(images/project-icons.png) -126px 0px;'></div>
+<p>A subnetting practice and calculator site. Includes html5 graphical questions along with VLSM and IPv6.</p>
+</a>
+</div><div class='project' id='thesis'><a href='http://www.diva-portal.org/smash/get/diva2:425069/FULLTEXT01.pdf'>
+<div class='project_pic' style='background:url(images/project-icons.png) -170px 0px;'></div>
+<p>Economics thesis paper. The Role of Religion in Determining
+Female Labor Force Participation Rates.
+</p>
+</a>
+</div>
+</div>
