@@ -1,0 +1,218 @@
+body, html {
+  font-family: 'Droid Serif', serif;
+  font-size: 16px;
+  text-align: left;
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#head {
+  font-size: 1.1em; 
+  background-color: white;
+  padding: 0.3em;
+  height: 100%; /* fallback */
+  height: 100vh;
+  min-height: 400px;
+}
+ 
+#head .content {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.bigTitle {
+  padding: 0.3em;
+  font-size: 2em;
+  text-align: center;
+}
+
+.smallTitle {
+  padding: 0.2em;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+#links {
+  width: 300px;
+  background-color: #3D4349;
+  color: white;
+  float: left;
+  height: 100%;
+  height: 100vh;
+  min-height: 400px;
+}
+
+.linkContent {
+  margin: 24px 0 0 24px;
+}
+
+#links li {
+  margin-bottom: 16px;
+}
+ 
+#links a {
+  -webkit-transition:color 0.3s;
+  -moz-transition:color 0.3s;
+  -o-transition:color 0.3s;
+  transition: color 0.3s ease 0s;
+  color: #EFEFEF;
+}
+
+#links a:hover {
+  -webkit-transition:color 0.3s;
+  -moz-transition:color 0.3s;
+  -o-transition:color 0.3s;
+  transition: color 0.3s ease 0s;
+  color: #991f00;
+}
+
+.social a.linkedin {
+  background: #005A87 url("../images/social/linkedin.png") no-repeat scroll center center;
+  border: 1px solid #005A87;
+}
+
+.social a.github {
+  background: #AFB6CA url("../images/social/github.png?1406400933") no-repeat scroll center center;
+  border: 1px solid #AFB6CA;
+}
+
+#links .social a {
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  text-indent: -9999px;
+  margin-right: 20px;
+  width: 28px;
+  height: 28px;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s ease 0s;
+  opacity: 0.5;
+}
+
+#links .social a:hover {
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s ease 0s;
+  opacity: 1;
+}
+
+.profilepic img {
+  width: 160px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+#projects {
+  background-color: white;
+  float: left;
+  width: 70%;
+  max-width: 900px;
+  height: 100%;
+  height: 100vh;
+  min-height: 400px;
+}
+
+#projects li {
+  float: left;
+  width: 300px;
+  max-width: 40%;
+  margin: 1em;
+}
+
+.project {
+  position: relative;
+  height: 300px;
+  border: 2px solid #991f00;
+}
+
+.projImgHolder img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.projTitle {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+.projInfo {
+  width: 100%;
+  position: absolute;
+  background-color: #b32400;
+  text-align: center;
+  bottom: 100px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: all 1.8s ease 0s;
+  opacity: 0;
+}
+
+.project:hover > .projInfo {
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: all 0.6s ease 0s;
+  bottom: 0px;
+  opacity: 0.9;
+}
+
+@media (max-width: 1018px) {
+  #links {
+    width: 100%;
+    text-align: center;
+  }
+
+  .linkContent ul, #projects ul {
+    padding-left: 0;
+  }
+
+  #projects {
+    width:100%;
+    max-width:100%;
+    text-align: center;
+  }
+
+  #projects li {
+    float: none;
+    display: inline-block;
+}
+
+@media (max-width: 600px) {
+  body, html {
+    font-size: 1.2em;
+  }
+
+  #projects li {
+    max-width: 100%;
+    margin: 1em auto;
+    float: none;
+  }
+
+  .projInfo {
+    bottom: 0;
+    height: 100%;
+  }
+  
+  #head {
+    height: auto;
+  }
+}
