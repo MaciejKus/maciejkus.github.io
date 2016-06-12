@@ -8,7 +8,7 @@ body, html {
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 ul {
@@ -16,12 +16,26 @@ ul {
 }
 
 #head {
-  font-size: 1.1em; 
-  background-color: white;
+  font-size: 1.3em; 
+  background-color: black;
+  color: white;
+  background: url('images/tracks2.jpg')  no-repeat scroll center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   padding: 0.3em;
   height: 100%; /* fallback */
   height: 100vh;
-  min-height: 400px;
+  min-height: 460px;
+}
+
+
+.headContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
  
 #head .content {
@@ -43,7 +57,7 @@ ul {
 
 #links {
   width: 300px;
-  background-color: #3D4349;
+  background-color: #484848;
   color: white;
   float: left;
   height: 100%;
@@ -154,6 +168,7 @@ ul {
   width: 100%;
   position: absolute;
   background-color: #b32400;
+  color: black;
   text-align: center;
   bottom: 100px;
   max-width: 100%;
@@ -176,9 +191,20 @@ ul {
 }
 
 @media (max-width: 1018px) {
+  .headContent {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    
+  }
   #links {
     width: 100%;
     text-align: center;
+  }
+  
+  .linkContent {
+    margin: 0;
   }
 
   .linkContent ul, #projects ul {
@@ -194,6 +220,7 @@ ul {
   #projects li {
     float: none;
     display: inline-block;
+  }
 }
 
 @media (max-width: 600px) {
@@ -209,10 +236,32 @@ ul {
 
   .projInfo {
     bottom: 0;
-    height: 100%;
+    min-height: 100%;
+    opacity: 0.85;
+  }
+
+  #links {
+    min-height: 550px;
   }
   
   #head {
     height: auto;
+    background: white;
+    color: black;
+  }
+  
+  a {
+    color: black;
+  }
+
+}
+
+/*stop translate from cutting off top of headContent*/
+@media (max-height: 460px) {
+  .headContent {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
   }
 }
