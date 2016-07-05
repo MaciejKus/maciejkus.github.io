@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: metalsmith, | Maciej Kus -- Bay Area JavaScript Developer]]></title>
+  <title><![CDATA[Category: metalsmith | Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/blog/categories/metalsmith/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-06-13T09:36:33-07:00</updated>
+  <updated>2016-07-05T15:15:31-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -14,47 +14,18 @@
 
   
   <entry>
-    <title type="html"><![CDATA[New Website]]></title>
-    <link href="http://maciejkus.com/blog/2015/10/11/new-website/"/>
-    <updated>2015-10-11T15:38:33-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/10/11/new-website</id>
-    <content type="html"><![CDATA[<p>I made a new website. The idea is to create a <a href='http://adminhacks.com/'>IT technician information</a> website. Something for those looking to get into system administration or network administration, but not really knowing where to start. The idea is to write some posts and code some useful tools for those looking to get on the Internet, whether that be by running a web-server, or improving their home routing, or setting up an IPv6 tunnel.</p>
+    <title type="html"><![CDATA[metalsmith-skeleton]]></title>
+    <link href="http://maciejkus.com/blog/2016/07/05/metalsmith-skeleton/"/>
+    <updated>2016-07-05T14:59:36-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/07/05/metalsmith-skeleton</id>
+    <content type="html"><![CDATA[<p>When I was first making a blog/site I wanted a static site, so I could host it on github pages without needing a backend. Octobers seemed like the best choice at the time because it was quick and easy to setup. Octopress is based on Jekyll, which is probably the most popular static website generator. It also had a number of pre-made templates which meant saving time on writing my own CSS.</p>
+
+<p>Basically, it was a quick and relatively easy way of getting a blog on maciejkus.com going. I now have plans to move the blog over to <a href="http://www.metalsmith.io/">metalsmith</a>. Metalsmith is written in JavaScript, and that alone is reason enough for me to switch over. I&rsquo;m much more comfortable in a JavaScript/Nodejs environment than a Ruby one. I also find metalsmith to be a lot more customizable, and at this point I am much more interested in writing my own CSS rather than using a premade template.</p>
 
 <!-- more -->
 
 
-<p>The site is a static html site running off a very low power VPS. It can handle a decent amount of traffic, but if it ever got a reddit hug of death or got slashdotted, it would probably become unaccessible fairly quickly. Setting up nginx was about all that needed to be done on the server side to get the site up and running.</p>
-
-<p>The content is largely created using <a href='http://www.metalsmith.io/'>metalsmith</a> which is JavaScript based static site generator (though it can be used for a lot more than that). I use handlebars.js templates and markdown to make my life a bit easier. The setup is very basic. My build.js file looks like this:</p>
-
-<p>```
-var Metalsmith = require(&lsquo;metalsmith&rsquo;),
-  templates = require(&lsquo;metalsmith-templates&rsquo;),
-  collections = require(&lsquo;metalsmith-collections&rsquo;),
-  markdown = require(&ldquo;metalsmith-markdown&rdquo;);</p>
-
-<p>Metalsmith(__dirname)</p>
-
-<pre><code>.use(collections({
-    articles: {
-      pattern:'*.md',
-      sortBy: 'date',
-      reverse: true
-   }
- }))
-.use(markdown())
-.use(templates('handlebars'))
-.destination('./build')
-.build(function(err) {
-if (err) console.log(err);
-</code></pre>
-
-<p>  })
-```</p>
-
-<p>Nothing too fancy. The collections() part allows me to create an array of all the markdown posts which I can then input into the handlebars.js templates to create an <a href='http://adminhacks.com/all-articles.html'>all posts</a> page.</p>
-
-<p>There is a source/ directory, which the above build.js takes, runs the above functions on and spits out into a build/ directory.</p>
+<p>The move should not be very difficult as both Octopress and Metalsmith work from a source directory and all my posts are already in a markdown format. I&rsquo;ve made a couple static websites using metalsmith, and have posted a <a href="https://github.com/MaciejKus/metalsmith-template">metalsmith skeleton</a> to github for myself and others to use when starting a metalsmith site/blog.</p>
 ]]></content>
   </entry>
   
