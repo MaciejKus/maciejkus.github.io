@@ -27,7 +27,7 @@ ul {
   padding: 0.3em;
   height: 100%; /* fallback */
   height: 100vh;
-  min-height: 460px;
+  min-height: 490px;
 }
 
 
@@ -63,6 +63,24 @@ ul {
   height: 100%;
   height: 100vh;
   min-height: 400px;
+}
+
+.titleLinks {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.titleLinks a {
+  color: #ff5959;
+} 
+
+.titleLink {
+  font-weight: 600;
+  margin: 1em;
+}
+
+.titleLink a:hover { 
+  color: #ff4040;
 }
 
 .linkContent {
@@ -257,7 +275,7 @@ ul {
 }
 
 /*stop translate from cutting off top of headContent*/
-@media (max-height: 460px) {
+@media (max-height: 490px) {
   .headContent {
     position: static;
     top: 0;

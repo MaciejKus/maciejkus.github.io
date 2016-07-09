@@ -4,7 +4,7 @@
   <title><![CDATA[Category: metalsmith | Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/blog/categories/metalsmith/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-07-05T15:15:31-07:00</updated>
+  <updated>2016-07-09T15:47:04-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[new static site]]></title>
+    <link href="http://maciejkus.com/blog/2016/07/09/new-static-site/"/>
+    <updated>2016-07-09T15:36:57-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/07/09/new-static-site</id>
+    <content type="html"><![CDATA[<p>I designed and created a new static website. It&rsquo;s a <a href="http://comfortersetguide.com/">comforter buying guide</a> website. I used MetalSmith to create the site and blog, handlebars for the HTML templates and customer CSS for the styles.</p>
+
+<!--more-->
+
+
+<p>It&rsquo;s nothing too fancy, but it&rsquo;s nice to see more of my work out on the Internet.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[metalsmith-skeleton]]></title>
