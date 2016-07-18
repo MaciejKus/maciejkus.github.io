@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-07-11T09:59:07-07:00</updated>
+  <updated>2016-07-18T15:51:01-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Calculator-App]]></title>
+    <link href="http://maciejkus.com/blog/2016/07/18/calculator-app/"/>
+    <updated>2016-07-18T15:45:32-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/07/18/calculator-app</id>
+    <content type="html"><![CDATA[<p>I have made a smoothie calculator web app using jquery and javascript for my own use in the past. I used it to calculate the amount of calories, proteins, fats and carbs in a smoothie recipe.</p>
+
+<p>Now I have made a very similar <a href="http://smoothiegains.com/smoothie-calculator/">smoothie calculator</a> using reactjs and bootstrap. I have plans to add a few more features to this new calculator, so I figured using a framework like react is a good way to ensure that the code does not become a huge mess as I add more functions and features.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Finally made a todo app]]></title>
@@ -423,19 +434,6 @@ Tower2.prototype.constructor = Tower2;
 <p>The coolest thing about making the game was dealing with all the animations. I split up the animations to only render the tile which is moving, instead of rendering the whole canvas every time something has to be changed. This saves a lot of resources, making the game run faster and smoother. The trick was to make sure that things didn&rsquo;t overlap.  The animations run asynchronously, so I had to avoid situations where multiple animations were running on top of one another, or that the logic from a running animation did not interfere with the logic of a new mouse click.</p>
 
 <p>The game is pretty basic, but I was able to remove all the little glitches I came across when testing. I&rsquo;m also pleased to have made a game where the graphics actually look OK. This is all thanks to finding creative commons images and playing with GIMP a little bit.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Searchable-Reddit-Brogress]]></title>
-    <link href="http://maciejkus.com/blog/2015/09/06/searchable-reddit-brogress/"/>
-    <updated>2015-09-06T11:16:17-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/09/06/searchable-reddit-brogress</id>
-    <content type="html"><![CDATA[<p>Reddit has a number of fitness progress picture communities. The problem is there is no good way to search through the posts. A lot of the posts are either people trying to lose weight, or 16 year olds who gain 30 pounds of muscle in 3 months. I am not interested in losing weight, nor do I have the raging growth hormones of a teenager.</p>
-
-<p>I wanted to be able to search through the posts to find photos of people similar to me in height and weight so I could have a realistic fitness goal to strive for when I go to the gym. So, using angularJS I made my own.</p>
-
-<p>I present the world with a <a href='http://brogress.smoothiegains.com/'>searchable fitness photo</a> web app.</p>
 ]]></content>
   </entry>
   

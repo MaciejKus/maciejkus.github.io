@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript, | Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-07-11T09:59:07-07:00</updated>
+  <updated>2016-07-18T15:51:01-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Calculator-App]]></title>
+    <link href="http://maciejkus.com/blog/2016/07/18/calculator-app/"/>
+    <updated>2016-07-18T15:45:32-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/07/18/calculator-app</id>
+    <content type="html"><![CDATA[<p>I have made a smoothie calculator web app using jquery and javascript for my own use in the past. I used it to calculate the amount of calories, proteins, fats and carbs in a smoothie recipe.</p>
+
+<p>Now I have made a very similar <a href="http://smoothiegains.com/smoothie-calculator/">smoothie calculator</a> using reactjs and bootstrap. I have plans to add a few more features to this new calculator, so I figured using a framework like react is a good way to ensure that the code does not become a huge mess as I add more functions and features.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[playing with react]]></title>
@@ -62,17 +73,6 @@
 <p>From there I used <a href='http://chimera.labs.oreilly.com/books/1230000000345'>Interactive Data Visualization for the Web</a> as an intro to d3.js and built a fun little bubble graph. I don&rsquo;t know if a bubble graph is the most informative way to present this data, but it was the coolest looking, and mainly I was attempting to learn d3.js.</p>
 
 <p>Check out my <a href='http://maciejkus.com/kickfurther-data/'>Kickfurther visualization</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Another Breakout Game]]></title>
-    <link href="http://maciejkus.com/blog/2015/11/22/another-breakout/"/>
-    <updated>2015-11-22T16:06:56-08:00</updated>
-    <id>http://maciejkus.com/blog/2015/11/22/another-breakout</id>
-    <content type="html"><![CDATA[<p>Welp, I made another breakout game. This time with Phaser.js. It was my first project with Phaser and was a nice introduction to the game engine.</p>
-
-<p>Play <a href='http://maciejkus.com/border-breakout/'>Border Breakout</a>.</p>
 ]]></content>
   </entry>
   
