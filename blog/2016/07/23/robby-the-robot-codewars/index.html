@@ -1,0 +1,222 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Robby-the-robot-codewars - Maciej Kus -- Bay Area JavaScript Developer</title>
+	<meta name="author" content="Maciej Kus">
+
+
+	<meta name="description" content="How I solved a maze shortest path with turns.">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link href="" rel="alternate" title="Maciej Kus -- Bay Area JavaScript Developer" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://maciejkus.com/blog/2016/07/23/robby-the-robot-codewars/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-50427363-3']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<a href='/'><img src="/images/profile.jpg" alt="Profile Picture" style="width: 160px;" /></a>
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a rel="nofollow" href="/resume/MaciejKusResume.pdf">Resume</a></li>
+    <li><a href="/blog/archives/">Archives</a></li>
+    <li><a rel="nofollow" href="/contact/">Contact</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/maciejkus" title="GitHub">GitHub</a>
+		
+		
+		
+		
+			<a class="linkedin" href="http://www.linkedin.com/in/maciejkus" title="LinkedIn">LinkedIn</a>
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Robby-the-robot-codewars</h1>
+	<div class="entry-content" itemprop="articleBody"><p>I just solved a 2kyu challenge from codewars called Robby the robot. The algorithm used to solve the challenge was more time consuming than the actual coding, so here I will describe what I did. Others can use this to code their own solution.</p>
+
+<p>I will not be posting any code on here. Codewars is supposed to be a challenge, and posting code here will allow others to cheat. I would be doing them a disservice. Oh, and I did not re-factor or clean up my code before submitting it, so it wouldn&rsquo;t set the best example.</p>
+
+<!--more-->
+
+
+<p>I didn&rsquo;t clean up the code because I know I will never touch it again. The Robby the robot codewars kata was so specific, it will never be useful to reuse this code.</p>
+
+<p>Anyway, the challenge is this: Find the shortest path from one part of a maze to another, when turns count as a move.</p>
+
+<p>Lets say the maze looks like this:</p>
+
+<p>S&hellip;
+&hellip;.</p>
+
+<h1>..T</h1>
+
+<p>&ldquo;S&rdquo; is the start and &ldquo;T&rdquo; is the finish. Dots are valid moves, and hashes are walls that cannot be stepped into. Finally, the starting direction is always facing north.</p>
+
+<p>So my first step was to find the shortest path between the start and end points. I did this using a breadth first traversal. So, every space next to the start point gets a score of 1, every space adjacent to those spaces which we have not already marked gets a 2, and so on. This is only done for spaces which are valid to move into. Walls do not get a number. The result was this:</p>
+
+<p>S123
+1234</p>
+
+<h1>34T</h1>
+
+<p>Now that every possible space has a number, the shortest path would be found by starting at the end (T) and moving backwards along the lowest numbers. So the lowest number next to the &ldquo;T&rdquo; is a 4. From there move to a 3, then a 2 then a 1. As you can see, the above has more than one shortest path. For other mazes, there might be a single shortest path.</p>
+
+<p>However, the problem states that a turn in direction counts as a move. And we always start facing north. To account for turns, I keep track of two numbers, the above number of moves, and also a second number which keeps track of the amount of turns used to reach the current space.</p>
+
+<p>The amount of turns used to reach the end for each space would look like this:</p>
+
+<p>S111
+2222</p>
+
+<h1>33T</h1>
+
+<p>Now we are getting somewhere. To reach T from any of the southernmost row would require at least 3 turns, while reaching T from the eastern most row would require only 2 turns.</p>
+
+<p>Finally, I add the numbers of turns and the number of moves needed to reach T together and get:</p>
+
+<p>S123
+1234</p>
+
+<h1>34T</h1>
+
+<p>+</p>
+
+<p>S111
+2222</p>
+
+<h1>33T</h1>
+
+<p>S234
+3456</p>
+
+<h1>67T</h1>
+
+<p>From here we can trace the shortest path with the least amount of turns back from T to S. Just move from T to the lowest number, and keep moving to the lowest adjacent number. The route would be 6-4-3-2-S.</p>
+
+<p>This solution worked for all mazes tested.</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2016
+
+    Maciej Kus
+
+
+
+</footer>
+		</div>
+	</div>
+	
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
