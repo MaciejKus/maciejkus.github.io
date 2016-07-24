@@ -4,7 +4,7 @@
   <title><![CDATA[Category: react, | Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/blog/categories/react/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-07-23T12:34:27-07:00</updated>
+  <updated>2016-07-24T13:50:55-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[react-bootstrap-smoothie-calculator]]></title>
+    <link href="http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator/"/>
+    <updated>2016-07-24T13:48:23-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator</id>
+    <content type="html"><![CDATA[<p>Using React and Bootstrap I made a <a href="http://smoothiegains.com/smoothie-calculator/">smoothie nutrition calculator</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Calculator-App]]></title>

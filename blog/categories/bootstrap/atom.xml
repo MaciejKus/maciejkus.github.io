@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: bootstrap | Maciej Kus -- Bay Area JavaScript Developer]]></title>
+  <title><![CDATA[Category: bootstrap, | Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/blog/categories/bootstrap/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-07-23T12:34:27-07:00</updated>
+  <updated>2016-07-24T13:50:55-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -14,31 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Calculator-App]]></title>
-    <link href="http://maciejkus.com/blog/2016/07/18/calculator-app/"/>
-    <updated>2016-07-18T15:45:32-07:00</updated>
-    <id>http://maciejkus.com/blog/2016/07/18/calculator-app</id>
-    <content type="html"><![CDATA[<p>I have made a smoothie calculator web app using jquery and javascript for my own use in the past. I used it to calculate the amount of calories, proteins, fats and carbs in a smoothie recipe.</p>
-
-<p>Now I have made a very similar <a href="http://smoothiegains.com/smoothie-calculator/">smoothie calculator</a> using reactjs and bootstrap. I have plans to add a few more features to this new calculator, so I figured using a framework like react is a good way to ensure that the code does not become a huge mess as I add more functions and features.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[asset allocation bootstrap]]></title>
-    <link href="http://maciejkus.com/blog/2015/05/16/asset-allocation-bootstrap/"/>
-    <updated>2015-05-16T10:39:03-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/05/16/asset-allocation-bootstrap</id>
-    <content type="html"><![CDATA[<p>Another bootstrap project is the <a href='http://maciejkus.com/asset-allocation/'>asset allocation calculator</a> I created. The JavaScript is mostly simple math and there&rsquo;s some jQuery to create and remove fields. Thanks to bootstrap the page is responsive, works well across browsers and looks pretty.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[bootstrap is the best]]></title>
-    <link href="http://maciejkus.com/blog/2015/04/28/bootstrap/"/>
-    <updated>2015-04-28T15:35:33-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/04/28/bootstrap</id>
-    <content type="html"><![CDATA[<p>I took a quick little Bootstrap course online through edx. I then made a simple little band website using Bootstrap here: <a href="http://maciejkus.com/we-are-the-best/">We are the Best</a>. It is a fan site for the punk rock band in the Swedish film <em>We are the Best</em>. Practice Practice Practice, it&rsquo;s all one can do to learn.</p>
+    <title type="html"><![CDATA[react-bootstrap-smoothie-calculator]]></title>
+    <link href="http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator/"/>
+    <updated>2016-07-24T13:48:23-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator</id>
+    <content type="html"><![CDATA[<p>Using React and Bootstrap I made a <a href="http://smoothiegains.com/smoothie-calculator/">smoothie nutrition calculator</a>.</p>
 ]]></content>
   </entry>
   

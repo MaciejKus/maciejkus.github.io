@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-07-23T12:34:27-07:00</updated>
+  <updated>2016-07-24T13:50:55-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[react-bootstrap-smoothie-calculator]]></title>
+    <link href="http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator/"/>
+    <updated>2016-07-24T13:48:23-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator</id>
+    <content type="html"><![CDATA[<p>Using React and Bootstrap I made a <a href="http://smoothiegains.com/smoothie-calculator/">smoothie nutrition calculator</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Robby-the-robot-codewars]]></title>
@@ -462,30 +471,6 @@ callbacks[3](); // returns 5
 <p>Basically jQuery animations become jumpy when margins are combined. I haven&rsquo;t looked too in-depth into the jQuery code to see exactly how animations like .slide() work, but the collapsing margins are the reason for the jumpiness.</p>
 
 <p>The solution is simply to remove any overlapping margins in the element which is being animated, along with any bordering elements. Istead of having two buttons both of which have a margin value of 24px (but combined CSS still only created a 24px margin between the two) have one of the buttons have a 0px margin and the other a 24px margin. The space between them will still be the same, and now jQuery animations looks smooth.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[JS object inherit]]></title>
-    <link href="http://maciejkus.com/blog/2015/10/05/js-object-inherit/"/>
-    <updated>2015-10-05T16:43:56-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/10/05/js-object-inherit</id>
-    <content type="html"><![CDATA[<p>As found here: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript</a></p>
-
-<p>Proper JavaScript inheritance looks like this:</p>
-
-<p>//Inherit from Tower  prototype</p>
-
-<p><code>
-var Tower2 = function(x,y,z) {
-  Tower.call(this,x,y);
-  this.z = z; //not from Tower
-}
-Tower2.prototype = Object.create(Tower.prototype);
-Tower2.prototype.constructor = Tower2;
-</code></p>
-
-<p>Mainly this post is a reminder for myself so I don&rsquo;t have to search to see if I got everything correct.</p>
 ]]></content>
   </entry>
   
