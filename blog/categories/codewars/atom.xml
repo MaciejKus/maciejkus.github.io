@@ -4,7 +4,7 @@
   <title><![CDATA[Category: codewars | Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/blog/categories/codewars/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-07-24T13:50:55-07:00</updated>
+  <updated>2016-07-25T18:15:38-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -32,18 +32,16 @@
 <p>Lets say the maze looks like this:</p>
 
 <p>S&hellip;
-&hellip;.</p>
-
-<h1>..T</h1>
+&hellip;.
+&hellip;T</p>
 
 <p>&ldquo;S&rdquo; is the start and &ldquo;T&rdquo; is the finish. Dots are valid moves, and hashes are walls that cannot be stepped into. Finally, the starting direction is always facing north.</p>
 
 <p>So my first step was to find the shortest path between the start and end points. I did this using a breadth first traversal. So, every space next to the start point gets a score of 1, every space adjacent to those spaces which we have not already marked gets a 2, and so on. This is only done for spaces which are valid to move into. Walls do not get a number. The result was this:</p>
 
 <p>S123
-1234</p>
-
-<h1>34T</h1>
+1234
+234T</p>
 
 <p>Now that every possible space has a number, the shortest path would be found by starting at the end (T) and moving backwards along the lowest numbers. So the lowest number next to the &ldquo;T&rdquo; is a 4. From there move to a 3, then a 2 then a 1. As you can see, the above has more than one shortest path. For other mazes, there might be a single shortest path.</p>
 
@@ -52,30 +50,26 @@
 <p>The amount of turns used to reach the end for each space would look like this:</p>
 
 <p>S111
-2222</p>
-
-<h1>33T</h1>
+2222
+333T</p>
 
 <p>Now we are getting somewhere. To reach T from any of the southernmost row would require at least 3 turns, while reaching T from the eastern most row would require only 2 turns.</p>
 
 <p>Finally, I add the numbers of turns and the number of moves needed to reach T together and get:</p>
 
 <p>S123
-1234</p>
-
-<h1>34T</h1>
+1234
+234T</p>
 
 <p>+</p>
 
 <p>S111
-2222</p>
-
-<h1>33T</h1>
+2222
+333T</p>
 
 <p>S234
-3456</p>
-
-<h1>67T</h1>
+3456
+567T</p>
 
 <p>From here we can trace the shortest path with the least amount of turns back from T to S. Just move from T to the lowest number, and keep moving to the lowest adjacent number. The route would be 6-4-3-2-S.</p>
 
