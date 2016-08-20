@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: react, | Maciej Kus -- Bay Area JavaScript Developer]]></title>
-  <link href="http://maciejkus.com/blog/categories/react/atom.xml" rel="self"/>
+  <title><![CDATA[Category: angular, | Maciej Kus -- Bay Area JavaScript Developer]]></title>
+  <link href="http://maciejkus.com/blog/categories/angular/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
   <updated>2016-08-20T11:16:33-07:00</updated>
   <id>http://maciejkus.com/</id>
@@ -25,15 +25,6 @@
 <p>Every job can be edited to update if the user got a reply from the company or any other notes that the user may wish to make. Jobs can also be deleted and added.</p>
 
 <p>I used routing in both the frontends. I didn&rsquo;t necessarily need to, but this app is meant to be a learning/practice experience rather than something I expect others to use.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[react-bootstrap-smoothie-calculator]]></title>
-    <link href="http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator/"/>
-    <updated>2016-07-24T13:48:23-07:00</updated>
-    <id>http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator</id>
-    <content type="html"><![CDATA[<p>Using React and Bootstrap I made a <a href="http://smoothiegains.com/smoothie-calculator/">smoothie nutrition calculator</a>.</p>
 ]]></content>
   </entry>
   

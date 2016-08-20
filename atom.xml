@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-07-25T18:15:38-07:00</updated>
+  <updated>2016-08-20T11:16:33-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CRUD-job-app]]></title>
+    <link href="http://maciejkus.com/blog/2016/08/20/crud-job-app/"/>
+    <updated>2016-08-20T11:07:52-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/08/20/crud-job-app</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been making a full-stack CRUD application. It&rsquo;s meant to keep track of jobs that one has applied to. The backend is Nodejs and Mongodb. I built two different front ends, one with React and the other with Angular. There was no need to build two frontends, but I wanted the practice of building the same project using two different frameworks.</p>
+
+<p>The code is at <a href="https://github.com/MaciejKus/job-search-app">https://github.com/MaciejKus/job-search-app</a>. The app allows the user to input job information, such as the company name and the title. This is saved in the database so that the user can keep track of jobs he or she applied to.</p>
+
+<p>Every job can be edited to update if the user got a reply from the company or any other notes that the user may wish to make. Jobs can also be deleted and added.</p>
+
+<p>I used routing in both the frontends. I didn&rsquo;t necessarily need to, but this app is meant to be a learning/practice experience rather than something I expect others to use.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[react-bootstrap-smoothie-calculator]]></title>
@@ -83,17 +98,6 @@
 <p>From here we can trace the shortest path with the least amount of turns back from T to S. Just move from T to the lowest number, and keep moving to the lowest adjacent number. The route would be 6-4-3-2-S.</p>
 
 <p>This solution worked for all mazes tested.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Calculator-App]]></title>
-    <link href="http://maciejkus.com/blog/2016/07/18/calculator-app/"/>
-    <updated>2016-07-18T15:45:32-07:00</updated>
-    <id>http://maciejkus.com/blog/2016/07/18/calculator-app</id>
-    <content type="html"><![CDATA[<p>I have made a smoothie calculator web app using jquery and javascript for my own use in the past. I used it to calculate the amount of calories, proteins, fats and carbs in a smoothie recipe.</p>
-
-<p>Now I have made a very similar <a href="http://smoothiegains.com/smoothie-calculator/">smoothie calculator</a> using reactjs and bootstrap. I have plans to add a few more features to this new calculator, so I figured using a framework like react is a good way to ensure that the code does not become a huge mess as I add more functions and features.</p>
 ]]></content>
   </entry>
   

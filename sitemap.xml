@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2016/08/20/crud-job-app/</loc>
+    <lastmod>2016-08-20T11:07:52-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator/</loc>
     <lastmod>2016-07-24T13:48:23-07:00</lastmod>
     <priority>0.8</priority>
@@ -11,12 +17,6 @@
   <url>
     <loc>http://maciejkus.com/blog/2016/07/23/robby-the-robot-codewars/</loc>
     <lastmod>2016-07-23T12:12:24-07:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://maciejkus.com/blog/2016/07/18/calculator-app/</loc>
-    <lastmod>2016-07-18T15:45:32-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
@@ -323,63 +323,63 @@
   
   <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2016-07-25T18:15:38-07:00</lastmod>
+    <lastmod>2016-08-20T11:16:33-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/kickfurther-data/</loc>
-    <lastmod>2016-07-25T18:15:38-07:00</lastmod>
+    <lastmod>2016-08-20T11:16:33-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2016-07-25T18:15:38-07:00</lastmod>
+    <lastmod>2016-08-20T11:16:33-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2016-07-25T18:15:38-07:00</lastmod>
+    <lastmod>2016-08-20T11:16:33-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2016-07-25T18:15:38-07:00</lastmod>
+    <lastmod>2016-08-20T11:16:33-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/box_whiskers/</loc>
-    <lastmod>2016-07-25T18:15:38-07:00</lastmod>
+    <lastmod>2016-08-20T11:16:33-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/contact/</loc>
-    <lastmod>2016-07-25T18:15:38-07:00</lastmod>
+    <lastmod>2016-08-20T11:16:33-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/roman-numeral-calculator/</loc>
-    <lastmod>2016-07-25T18:15:38-07:00</lastmod>
+    <lastmod>2016-08-20T11:16:33-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2016-07-25T18:15:38-07:00</lastmod>
+    <lastmod>2016-08-20T11:16:33-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
