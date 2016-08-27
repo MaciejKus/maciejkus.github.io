@@ -328,64 +328,64 @@
   
   
   <url>
-    <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2016-08-22T10:38:53-07:00</lastmod>
+    <loc>http://maciejkus.com/chinese_remainder/</loc>
+    <lastmod>2016-08-27T15:34:39-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/kickfurther-data/</loc>
-    <lastmod>2016-08-22T10:38:53-07:00</lastmod>
+    <lastmod>2016-08-27T15:34:39-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2016-08-22T10:38:53-07:00</lastmod>
+    <loc>http://maciejkus.com/record-collector/</loc>
+    <lastmod>2016-08-27T15:34:39-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2016-08-22T10:38:53-07:00</lastmod>
+    <lastmod>2016-08-27T15:34:39-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2016-08-22T10:38:53-07:00</lastmod>
+    <lastmod>2016-08-27T15:34:39-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/box_whiskers/</loc>
-    <lastmod>2016-08-22T10:38:53-07:00</lastmod>
+    <lastmod>2016-08-27T15:34:39-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/contact/</loc>
-    <lastmod>2016-08-22T10:38:53-07:00</lastmod>
+    <lastmod>2016-08-27T15:34:39-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/roman-numeral-calculator/</loc>
-    <lastmod>2016-08-22T10:38:53-07:00</lastmod>
+    <lastmod>2016-08-27T15:34:39-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2016-08-22T10:38:53-07:00</lastmod>
+    <lastmod>2016-08-27T15:34:39-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -406,6 +406,12 @@
   <url>
     <loc>http://maciejkus.com/404.html</loc>
     <lastmod>2014-07-27T10:51:1406483497Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/2015-punk-graph/index.html</loc>
+    <lastmod>2016-08-27T15:29:1472336996Z</lastmod>
     <priority>0.6</priority>
   </url>
   
@@ -460,6 +466,12 @@
   <url>
     <loc>http://maciejkus.com/elephant/index.html</loc>
     <lastmod>2015-04-27T14:55:1430171736Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/2004-punk-graph/index.html</loc>
+    <lastmod>2016-08-27T15:33:1472337219Z</lastmod>
     <priority>0.6</priority>
   </url>
   
