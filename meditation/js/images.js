@@ -1,7 +1,7 @@
 var imageLocation = 'images/';
 var type = 'earth';
 //time between automatic image change
-var changeTimer = 10000;
+var changeTimer = 5000;
 var changeImagesTimed;
 //if false, never show same image
 var repeatImages = true;
