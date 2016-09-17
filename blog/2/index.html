@@ -9,7 +9,7 @@
 	<meta name="author" content="Maciej Kus">
 
 
-	<meta name="description" content="Nov 23rd, 2015 javascript Javascript-closure-loop Placing a closure inside a loop in JavaScript was a common source of headaches. The results were &hellip;">
+	<meta name="description" content="Dec 1st, 2015 phaserjs Phaser addColor Text So I am making a text game in Phaserjs. Right now I am working on a simple way to move a cursor around a &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,6 +96,53 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-12-01T12:19:00-08:00" data-updated="true" itemprop="datePublished">Dec 1<sup>st</sup>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/phaserjs/'>phaserjs</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/12/01/phaser-addcolor-text/" itemprop="url">Phaser addColor Text</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>So I am making a text game in Phaserjs. Right now I am working on a simple way to move a cursor around a bunch of text. I have a background rectangle which is the same color as the text and the size of a single letter. This is similar to VIM or other text editors. However when moving to a new letter the letter itself have to change color to contrast the background. Again, exactly what VIM and other text editors do.</p>
+
+<p>I currently do this using a simple function:</p>
+
+<pre><code>colorLetter: function(letter, color) {
+  this.text.addColor(color, letter);
+  this.text.addColor('#0f0', letter+1);
+}
+</code></pre>
+
+<p>where &lsquo;letter&rsquo; is the position of the letter. This colors that letter and all the other letters a color &lsquo;color&rsquo;, and then the next line colors all letters after &lsquo;letter&rsquo; back to green.</p>
+
+<p>The problem is, this addColor() function takes forever and the code ends up being really laggy. I might look into doing things with retroFont, or I might have to change the color schemes so that the letters are different colors than the cursor rectangle. Hmmm&hellip;</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -676,43 +723,6 @@ Tower2.prototype.constructor = Tower2;
 	<h1 class="title" itemprop="name"><a href="/blog/2015/08/04/canvas-breakout/" itemprop="url">Canvas Breakout</a></h1>
 	<div class="entry-content" itemprop="articleBody">
 		<p>Continuing with the Canvas/JavaScript game theme that I&rsquo;ve been on recently, I just coded a game of <a href="/breakout/">Breakout</a>.</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-07-06T17:30:41-07:00" data-updated="true" itemprop="datePublished">Jul 6<sup>th</sup>, 2015</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/canvas/'>canvas,</a>, <a class='category' href='/blog/categories/games/'>games</a>, <a class='category' href='/blog/categories/html5/'>html5,</a>, <a class='category' href='/blog/categories/javascript/'>javascript,</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/07/06/canvas-tower-defense/" itemprop="url">Canvas/HTML5 Tower Defense</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>I made a fairly simply tower defense game in html5/canvas/javascript. It works fine as is. Most of the features I would want to create are there, the game just needs some work on the actual game play. Details like the cost of towers, and how rapid the attackers are spawned will probably need to be changed to make the game more enjoyable. The current version works well enough to play.</p>
-
-<p>Check it out at <a href="http://maciejkus.com/tower/">http://maciejkus.com/tower/</a></p>
 
 		
 		

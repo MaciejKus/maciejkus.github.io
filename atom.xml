@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-09-10T18:33:54-07:00</updated>
+  <updated>2016-09-16T18:09:03-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[full stack punk app]]></title>
+    <link href="http://maciejkus.com/blog/2016/09/16/full-stack-punk-app/"/>
+    <updated>2016-09-16T17:46:13-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/09/16/full-stack-punk-app</id>
+    <content type="html"><![CDATA[<p>The San Francisco Bay Area is lucky enough to have someone named Steve who compiled a list of concerts in a simple text format for the last 20+ years. This served as a way for people to know where to find punk rock shows. You can see it <a href="http://jon.luini.com/thelist/thelist.txt">here</a>.</p>
+
+<p>Because the format of the concert listings has largely been the same over the years I was about to use NodeJS to scrape this data. I wrote a script which looked at the archive of concerts, and extracted the band names, the dates, and the venue names.</p>
+
+<p>The script then searches for duplicates. This was a bit challenging as some listings were the same show but with a minor spelling error one week. By looking at band names, concert dates and venue names I was able to remove most duplicates.</p>
+
+<p>After removing duplicates and cleaning out a few other things I had a list of concerts with the dates, bands and venues. I saved this into JSON format and CSV format.</p>
+
+<p>I then used the CSV format to create a network <a href="http://bayareapunk.com/graphs/">graph</a> of each yeah from 1994 to 2015 (I am waiting for 2016 to be over before adding 2016). These graphs show a social network of bands connected to one another with shows that they played. In other words, the graphs are a network of bands who are connected if they shared a stage in that particular year.</p>
+
+<p>After these (pretty massive) graphs were finished I used the Gephi SigmaJS exporter to create JavaScript versions of each graph.</p>
+
+<p>Finally, I added the JSON data to a Mongo database and created a front-end for the site using Ractjs. The routing for the site is fairly simple, so I avoided using React Router. There was no need for it in this case. The final site can be found at <a href="http://bayareapunk.com">bayareapunk.com</a>.</p>
+
+<p>Now I can write NodeJS scripts to query this database. For example, I can see which bands played the most shows since 1994.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[d3 vocalist graph]]></title>
@@ -404,68 +427,6 @@ callbacks[3](); // returns 5
     <content type="html"><![CDATA[<p>I made a list of the <a href='http://adminhacks.com/vps-compare.html'>best VPS hosting</a> providers and threw that information into an angular.js webapp. I used bootstrap for the style of the page.</p>
 
 <p>As far as I can tell the VPS hosts in the app are the most dependable and most well known in the industry. I hope the app is useful to those looking to get a new virtual private server.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[New Website]]></title>
-    <link href="http://maciejkus.com/blog/2015/10/11/new-website/"/>
-    <updated>2015-10-11T15:38:33-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/10/11/new-website</id>
-    <content type="html"><![CDATA[<p>I made a new website. The idea is to create a <a href='http://adminhacks.com/'>IT technician information</a> website. Something for those looking to get into system administration or network administration, but not really knowing where to start. The idea is to write some posts and code some useful tools for those looking to get on the Internet, whether that be by running a web-server, or improving their home routing, or setting up an IPv6 tunnel.</p>
-
-<!-- more -->
-
-
-<p>The site is a static html site running off a very low power VPS. It can handle a decent amount of traffic, but if it ever got a reddit hug of death or got slashdotted, it would probably become unaccessible fairly quickly. Setting up nginx was about all that needed to be done on the server side to get the site up and running.</p>
-
-<p>The content is largely created using <a href='http://www.metalsmith.io/'>metalsmith</a> which is JavaScript based static site generator (though it can be used for a lot more than that). I use handlebars.js templates and markdown to make my life a bit easier. The setup is very basic. My build.js file looks like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>var Metalsmith = require('metalsmith'),
-</span><span class='line'>  templates = require('metalsmith-templates'),
-</span><span class='line'>  collections = require('metalsmith-collections'),
-</span><span class='line'>  markdown = require("metalsmith-markdown");
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>Metalsmith(__dirname)
-</span><span class='line'>    .use(collections({
-</span><span class='line'>        articles: {
-</span><span class='line'>          pattern:'*.md',
-</span><span class='line'>          sortBy: 'date',
-</span><span class='line'>          reverse: true
-</span><span class='line'>       }
-</span><span class='line'>     }))
-</span><span class='line'>    .use(markdown())
-</span><span class='line'>    .use(templates('handlebars'))
-</span><span class='line'>    .destination('./build')
-</span><span class='line'>    .build(function(err) {
-</span><span class='line'>  if (err) console.log(err);
-</span><span class='line'>  })</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Nothing too fancy. The collections() part allows me to create an array of all the markdown posts which I can then input into the handlebars.js templates to create an <a href='http://adminhacks.com/all-articles.html'>all posts</a> page.</p>
-
-<p>There is a source/ directory, which the above build.js takes, runs the above functions on and spits out into a build/ directory.</p>
 ]]></content>
   </entry>
   

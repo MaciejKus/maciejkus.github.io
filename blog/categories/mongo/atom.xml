@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: react, | Maciej Kus -- Bay Area JavaScript Developer]]></title>
-  <link href="http://maciejkus.com/blog/categories/react/atom.xml" rel="self"/>
+  <title><![CDATA[Category: mongo, | Maciej Kus -- Bay Area JavaScript Developer]]></title>
+  <link href="http://maciejkus.com/blog/categories/mongo/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
   <updated>2016-09-16T18:09:03-07:00</updated>
   <id>http://maciejkus.com/</id>
@@ -33,30 +33,6 @@
 <p>Finally, I added the JSON data to a Mongo database and created a front-end for the site using Ractjs. The routing for the site is fairly simple, so I avoided using React Router. There was no need for it in this case. The final site can be found at <a href="http://bayareapunk.com">bayareapunk.com</a>.</p>
 
 <p>Now I can write NodeJS scripts to query this database. For example, I can see which bands played the most shows since 1994.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[CRUD-job-app]]></title>
-    <link href="http://maciejkus.com/blog/2016/08/20/crud-job-app/"/>
-    <updated>2016-08-20T11:07:52-07:00</updated>
-    <id>http://maciejkus.com/blog/2016/08/20/crud-job-app</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve been making a full-stack CRUD application. It&rsquo;s meant to keep track of jobs that one has applied to. The backend is Nodejs and Mongodb. I built two different front ends, one with React and the other with Angular. There was no need to build two frontends, but I wanted the practice of building the same project using two different frameworks.</p>
-
-<p>The code is at <a href="https://github.com/MaciejKus/job-search-app">https://github.com/MaciejKus/job-search-app</a>. The app allows the user to input job information, such as the company name and the title. This is saved in the database so that the user can keep track of jobs he or she applied to.</p>
-
-<p>Every job can be edited to update if the user got a reply from the company or any other notes that the user may wish to make. Jobs can also be deleted and added.</p>
-
-<p>I used routing in both the frontends. I didn&rsquo;t necessarily need to, but this app is meant to be a learning/practice experience rather than something I expect others to use.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[react-bootstrap-smoothie-calculator]]></title>
-    <link href="http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator/"/>
-    <updated>2016-07-24T13:48:23-07:00</updated>
-    <id>http://maciejkus.com/blog/2016/07/24/react-bootstrap-smoothie-calculator</id>
-    <content type="html"><![CDATA[<p>Using React and Bootstrap I made a <a href="http://smoothiegains.com/smoothie-calculator/">smoothie nutrition calculator</a>.</p>
 ]]></content>
   </entry>
   

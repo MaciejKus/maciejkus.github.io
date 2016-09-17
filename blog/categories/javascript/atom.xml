@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript, | Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-09-10T18:33:54-07:00</updated>
+  <updated>2016-09-16T18:09:03-07:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[full stack punk app]]></title>
+    <link href="http://maciejkus.com/blog/2016/09/16/full-stack-punk-app/"/>
+    <updated>2016-09-16T17:46:13-07:00</updated>
+    <id>http://maciejkus.com/blog/2016/09/16/full-stack-punk-app</id>
+    <content type="html"><![CDATA[<p>The San Francisco Bay Area is lucky enough to have someone named Steve who compiled a list of concerts in a simple text format for the last 20+ years. This served as a way for people to know where to find punk rock shows. You can see it <a href="http://jon.luini.com/thelist/thelist.txt">here</a>.</p>
+
+<p>Because the format of the concert listings has largely been the same over the years I was about to use NodeJS to scrape this data. I wrote a script which looked at the archive of concerts, and extracted the band names, the dates, and the venue names.</p>
+
+<p>The script then searches for duplicates. This was a bit challenging as some listings were the same show but with a minor spelling error one week. By looking at band names, concert dates and venue names I was able to remove most duplicates.</p>
+
+<p>After removing duplicates and cleaning out a few other things I had a list of concerts with the dates, bands and venues. I saved this into JSON format and CSV format.</p>
+
+<p>I then used the CSV format to create a network <a href="http://bayareapunk.com/graphs/">graph</a> of each yeah from 1994 to 2015 (I am waiting for 2016 to be over before adding 2016). These graphs show a social network of bands connected to one another with shows that they played. In other words, the graphs are a network of bands who are connected if they shared a stage in that particular year.</p>
+
+<p>After these (pretty massive) graphs were finished I used the Gephi SigmaJS exporter to create JavaScript versions of each graph.</p>
+
+<p>Finally, I added the JSON data to a Mongo database and created a front-end for the site using Ractjs. The routing for the site is fairly simple, so I avoided using React Router. There was no need for it in this case. The final site can be found at <a href="http://bayareapunk.com">bayareapunk.com</a>.</p>
+
+<p>Now I can write NodeJS scripts to query this database. For example, I can see which bands played the most shows since 1994.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Robby-the-robot-codewars]]></title>
@@ -113,19 +136,6 @@
     <updated>2016-02-12T16:07:50-08:00</updated>
     <id>http://maciejkus.com/blog/2016/02/12/roman-numbers</id>
     <content type="html"><![CDATA[<p>A quick <a href='http://maciejkus.com/roman-numeral-calculator/'>Roman numeral converter</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[using-d3-to-visualize-data]]></title>
-    <link href="http://maciejkus.com/blog/2016/01/19/using-d3-to-visualize-data/"/>
-    <updated>2016-01-19T14:10:57-08:00</updated>
-    <id>http://maciejkus.com/blog/2016/01/19/using-d3-to-visualize-data</id>
-    <content type="html"><![CDATA[<p>I started playing with d3.js, a visualization library. I got some data from the kickfurther website using a little python script I wrote. The script parsed out the relevant data and saved it as a JavaScript object.</p>
-
-<p>From there I used <a href='http://chimera.labs.oreilly.com/books/1230000000345'>Interactive Data Visualization for the Web</a> as an intro to d3.js and built a fun little bubble graph. I don&rsquo;t know if a bubble graph is the most informative way to present this data, but it was the coolest looking, and mainly I was attempting to learn d3.js.</p>
-
-<p>Check out my <a href='http://maciejkus.com/kickfurther-data/'>Kickfurther visualization</a>.</p>
 ]]></content>
   </entry>
   
