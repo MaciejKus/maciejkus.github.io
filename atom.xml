@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-09-16T18:25:55-07:00</updated>
+  <updated>2016-12-06T13:57:00-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[d3 world map]]></title>
+    <link href="http://maciejkus.com/blog/2016/12/06/d3-world-map/"/>
+    <updated>2016-12-06T13:52:29-08:00</updated>
+    <id>http://maciejkus.com/blog/2016/12/06/d3-world-map</id>
+    <content type="html"><![CDATA[<p>A D3 <a href="http://bl.ocks.org/MaciejKus/61e9ff1591355b00c1c1caf31e76a668">world map</a> where if you zoom in the states in the USA and Canada are shown, but if you zoom out, only the countries are shown. Also has rotation when scale is set to 1, tooltips and the ability to highlight a country or state.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[full stack punk app]]></title>
@@ -416,17 +425,6 @@ callbacks[3](); // returns 5
     <updated>2015-11-15T15:18:20-08:00</updated>
     <id>http://maciejkus.com/blog/2015/11/15/pizza-calculator</id>
     <content type="html"><![CDATA[<p>See input the diameter and cost of different pizza&rsquo;s and see which is the best deal. <a href='http://maciejkus.com/pizza_calc/'>Pizza calculator</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[which vps app]]></title>
-    <link href="http://maciejkus.com/blog/2015/10/11/which-vps-app/"/>
-    <updated>2015-10-11T16:29:28-07:00</updated>
-    <id>http://maciejkus.com/blog/2015/10/11/which-vps-app</id>
-    <content type="html"><![CDATA[<p>I made a list of the <a href='http://adminhacks.com/vps-compare.html'>best VPS hosting</a> providers and threw that information into an angular.js webapp. I used bootstrap for the style of the page.</p>
-
-<p>As far as I can tell the VPS hosts in the app are the most dependable and most well known in the industry. I hope the app is useful to those looking to get a new virtual private server.</p>
 ]]></content>
   </entry>
   
