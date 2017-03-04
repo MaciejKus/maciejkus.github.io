@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bike and BART</title>
+  <meta name="description" content="Get bicycle and BART directions and times to plan your whole trip in a single click.">
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+  <ul class="nav">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#origin">Origin</a></li>
+    <li><a href="#destination">Destination</a></li>
+  </ul>
+  <!-- React app will be injected into the following `div` element: -->
+  <a name="home"></a>
+  <div id="app"></div>
+  <!-- Include bundled JavaScript: -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVpQ6PBEfsn1O0r8nLRNujXLJw4lFuvvU"></script>
+  <script src="bundle.js"></script>
+  <div>
+    <small>
+    Please note, the above times are estimates. Getting onto the BART platform, waiting for the train, leaving the station will all take some time. 
+    </small>
+  </div>
+</body>
+</html>

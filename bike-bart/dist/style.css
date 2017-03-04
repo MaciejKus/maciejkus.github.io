@@ -1,0 +1,117 @@
+body {
+  margin: 0 auto;
+  margin-top: 1.8em;
+  text-align: center;
+  font-size: 16px;
+  background-color: #F5F9FA;
+}
+
+.nav {
+  background-color: #1863AE;
+  color: #fff;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  border-bottom:  1px solid black;
+  box-shadow: 0px 1px 3px grey;
+}
+
+.nav li {
+  display: inline-block;
+  margin: 0 0.5em;
+  padding: 0.5em 0em;
+}
+
+.nav li a {
+  text-decoration: none;
+  padding: 1em 2em;;
+  color: #fff;
+  margin: 0;
+}
+
+.nav li:hover {
+  background-color: #0070E0;
+}
+
+.searchBar {
+  height: 380px;
+  background-image: url("bart-bike.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2em 1em;
+  font-size: 1.2em;
+  color: #fff;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.addresses {
+  margin: 2em auto;
+  font-size: 0.8em;
+}
+
+.summary {
+  margin: 2em auto;
+}
+
+input, select {
+  width: 10em;
+  font-size: 1em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.subbutton {
+  width: 7em;
+  margin-top: 1em;
+}
+
+.sub {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.labelAndInput {
+  display: inline-block;
+  margin: 4px;
+}
+
+.block {
+  display: block;
+  margin: 0.5em auto 0 auto;
+}
+
+.GMap {
+  height: 400px;
+  width: 600px;
+  margin: 1em auto;
+}
+
+.GMap-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+
+  .GMap{ 
+    width: 100%;
+  }
+
+  .searchBar {
+    height: 500px;
+  }
+
+  .nav li {
+    padding: 0;
+  }
+
+  .nav li a {
+    padding: 0;
+  }
+} 

@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://maciejkus.com/blog/2017/03/03/bike-and-bart/</loc>
+    <lastmod>2017-03-03T16:16:13-08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://maciejkus.com/blog/2016/12/06/d3-world-map/</loc>
     <lastmod>2016-12-06T13:52:29-08:00</lastmod>
     <priority>0.8</priority>
@@ -341,63 +347,63 @@
   
   <url>
     <loc>http://maciejkus.com/chinese_remainder/</loc>
-    <lastmod>2016-12-06T13:57:00-08:00</lastmod>
+    <lastmod>2017-03-03T16:20:22-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/kickfurther-data/</loc>
-    <lastmod>2016-12-06T13:57:00-08:00</lastmod>
+    <lastmod>2017-03-03T16:20:22-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/record-collector/</loc>
-    <lastmod>2016-12-06T13:57:00-08:00</lastmod>
+    <lastmod>2017-03-03T16:20:22-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/</loc>
-    <lastmod>2016-12-06T13:57:00-08:00</lastmod>
+    <lastmod>2017-03-03T16:20:22-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/archives/</loc>
-    <lastmod>2016-12-06T13:57:00-08:00</lastmod>
+    <lastmod>2017-03-03T16:20:22-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/box_whiskers/</loc>
-    <lastmod>2016-12-06T13:57:00-08:00</lastmod>
+    <lastmod>2017-03-03T16:20:22-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/contact/</loc>
-    <lastmod>2016-12-06T13:57:00-08:00</lastmod>
+    <lastmod>2017-03-03T16:20:22-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/roman-numeral-calculator/</loc>
-    <lastmod>2016-12-06T13:57:00-08:00</lastmod>
+    <lastmod>2017-03-03T16:20:22-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://maciejkus.com/blog/categories/</loc>
-    <lastmod>2016-12-06T13:57:00-08:00</lastmod>
+    <lastmod>2017-03-03T16:20:22-08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -460,6 +466,12 @@
   <url>
     <loc>http://maciejkus.com/unit-vector-eyes/index.html</loc>
     <lastmod>2015-08-04T18:01:1438736483Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://maciejkus.com/bike-bart/dist/index.html</loc>
+    <lastmod>2017-03-03T16:14:1488586481Z</lastmod>
     <priority>0.6</priority>
   </url>
   

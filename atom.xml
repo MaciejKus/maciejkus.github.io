@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2016-12-06T13:57:00-08:00</updated>
+  <updated>2017-03-03T16:20:22-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Bike and Bart]]></title>
+    <link href="http://maciejkus.com/blog/2017/03/03/bike-and-bart/"/>
+    <updated>2017-03-03T16:16:13-08:00</updated>
+    <id>http://maciejkus.com/blog/2017/03/03/bike-and-bart</id>
+    <content type="html"><![CDATA[<p>Bay Area cyclists probably know that Google Maps is great for getting riding directions. And BART has a good website for finding out when the next train is coming. But it always takes a few steps to plan a full bicycle and BART trip.</p>
+
+<p>Now this can be done on a single page. I present to you <a href="http://maciejkus.com/bike-bart/">http://maciejkus.com/bike-bart/</a></p>
+
+<p>Google Maps and BART API combined.</p>
+
+<p>source:
+<a href="https://github.com/MaciejKus/whichBart">https://github.com/MaciejKus/whichBart</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[d3 world map]]></title>
@@ -416,15 +432,6 @@ callbacks[3](); // returns 5
     <content type="html"><![CDATA[<p>Welp, I made another breakout game. This time with Phaser.js. It was my first project with Phaser and was a nice introduction to the game engine.</p>
 
 <p>Play <a href='http://maciejkus.com/border-breakout/'>Border Breakout</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[pizza calculator]]></title>
-    <link href="http://maciejkus.com/blog/2015/11/15/pizza-calculator/"/>
-    <updated>2015-11-15T15:18:20-08:00</updated>
-    <id>http://maciejkus.com/blog/2015/11/15/pizza-calculator</id>
-    <content type="html"><![CDATA[<p>See input the diameter and cost of different pizza&rsquo;s and see which is the best deal. <a href='http://maciejkus.com/pizza_calc/'>Pizza calculator</a></p>
 ]]></content>
   </entry>
   
