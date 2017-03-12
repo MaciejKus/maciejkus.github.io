@@ -4,7 +4,7 @@
   <title><![CDATA[Maciej Kus -- Bay Area JavaScript Developer]]></title>
   <link href="http://maciejkus.com/atom.xml" rel="self"/>
   <link href="http://maciejkus.com/"/>
-  <updated>2017-03-03T16:37:21-08:00</updated>
+  <updated>2017-03-11T18:21:35-08:00</updated>
   <id>http://maciejkus.com/</id>
   <author>
     <name><![CDATA[Maciej Kus]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[3d map]]></title>
+    <link href="http://maciejkus.com/blog/2017/03/11/3d-map/"/>
+    <updated>2017-03-11T18:19:54-08:00</updated>
+    <id>http://maciejkus.com/blog/2017/03/11/3d-map</id>
+    <content type="html"><![CDATA[<p>I made an interactive <a href="http://he.net/3d-map/">3D network map</a> for Hurricane Electric. It includes the network locations and circuits along with third party data centers and submarine cables around the world.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Bike and Bart]]></title>
@@ -421,17 +430,6 @@ callbacks[3](); // returns 5
 </code></pre>
 
 <p>Pretty Exciting!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Another Breakout Game]]></title>
-    <link href="http://maciejkus.com/blog/2015/11/22/another-breakout/"/>
-    <updated>2015-11-22T16:06:56-08:00</updated>
-    <id>http://maciejkus.com/blog/2015/11/22/another-breakout</id>
-    <content type="html"><![CDATA[<p>Welp, I made another breakout game. This time with Phaser.js. It was my first project with Phaser and was a nice introduction to the game engine.</p>
-
-<p>Play <a href='http://maciejkus.com/border-breakout/'>Border Breakout</a>.</p>
 ]]></content>
   </entry>
   
