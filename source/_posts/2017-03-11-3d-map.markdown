@@ -1,0 +1,10 @@
+---
+layout: post
+title: "3d map"
+date: 2017-03-11 18:19:54 -0800
+comments: false
+categories: 
+description: 
+---
+
+I made an interactive <a href="http://he.net/3d-map/">3D network map</a> for Hurricane Electric. It includes the network locations and circuits along with third party data centers and submarine cables around the world. 

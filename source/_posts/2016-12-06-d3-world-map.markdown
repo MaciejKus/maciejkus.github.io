@@ -1,0 +1,10 @@
+---
+layout: post
+title: "d3 world map"
+date: 2016-12-06 13:52:29 -0800
+comments: false
+categories: 
+description: A d3 world map
+---
+
+A D3 <a href="http://bl.ocks.org/MaciejKus/61e9ff1591355b00c1c1caf31e76a668">world map</a> where if you zoom in the states in the USA and Canada are shown, but if you zoom out, only the countries are shown. Also has rotation when scale is set to 1, tooltips and the ability to highlight a country or state.
