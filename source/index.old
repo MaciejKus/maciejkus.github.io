@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maciej Kus</title>
+    <meta name="description" content="Maciej Kus - Bay Area Front-End Web Developer">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="index/style.css" />
+  </head>
+  <body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!--fixed/scrolling sidebar-->
+<script>
+$(document).ready(function() {
+  function isScrolledTo(elem) {
+    var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
+    var docViewBottom = docViewTop + $(window).height();
+ 
+    var elemTop = $(elem).offset().top; //num of pixels above the elem
+    var elemBottom = elemTop + $(elem).height();
+ 
+    return ((elemTop <= docViewTop));
+  }
+ 
+  var catcher = $('#catcher');
+  var sticky = $('#sticky');
+  var projects = $('#projects');
+
+  var change = function() {
+    if(window.innerWidth <= 1018) {
+      sticky.css('position','static');
+      projects.css('margin-left', '0px');
+      return;
+    }
+
+    if(isScrolledTo(sticky)) {
+      sticky.css('position','fixed');
+      sticky.css('top','0px');
+      projects.css('margin-left', '300px');
+    } 
+    var stopHeight = catcher.offset().top + catcher.height();
+    if ( stopHeight > sticky.offset().top) {
+      sticky.css('position','absolute');
+      sticky.css('top',stopHeight);
+    }
+  };
+
+  $(window).scroll(change);
+  $(window).resize(change);
+});
+</script>
+<!--smooth scrolling-->
+<script>
+$(document).ready(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+
+    <div id="head">
+      <a name="about"></a>
+       <div class="headContent">
+       <div class="bigTitle">Maciej Kus</div>
+        <div class="titleLinks"> 
+          <span class="titleLink"><a href="#projects">Projects</a></span>  
+          <span class="titleLink"><a href="https://github.com/maciejkus">GitHub</a></span>
+          <span class="titleLink"><a rel="nofollow" href="/resume/MaciejKusResume.pdf">Resume</a></span>
+        </div>
+        <div class='content'>
+       	  Hi, my name is Maciej and I am a Bay Area-based web developer. I like JavaScript and fast loading websites. The web browser is an amazing invention; being able to share information, create tools, and play games without having to download any additional programs is awesome. 
+       	  <p>
+       	  I've made some neat <a href="#projects"><u>projects</u></a> using HTML5/Canvas, React, Angular, Bootstrap, <a href="http://phaser.io/"><u>Phaser</u></a> and <a href="http://enchantjs.com/"><u>enchant.js</u></a>, among others. However, if the project doesn't need a framework, I am happy working in good old vanilla JavaScript - especially now that ES6 is here!
+          <p>
+          Server-side, I've worked mainly with Python and Node.js. MySQL and Mongo are the databases I've used.
+          <p>
+          Take a look at my <a href="https://github.com/maciejkus"><u>GitHub</u></a> page. If you like what you see, please <a rel="nofollow" href="/contact/"><u>say hello</u></a>.
+        </div>
+       </div>
+    </div>
+
+    <div id="catcher"></div><!--needed to catch moving sidebar-->
+    <div id="sticky">
+    <div id="links">
+      <div class="linkContent">
+      <div class="profilepic">
+	<a href="/"><img src="images/profile.jpg" alt="Profile Picture" /></a>
+      </div>
+      <nav id="main-nav">
+       <ul class="main">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+<!--        <li><a href="/blog/">Blog</a></li> -->
+        <li><a rel="nofollow" href="/resume/MaciejKusResume.pdf">Resume</a></li>
+        <li><a href="/blog/archives/">Archives</a></li>
+        <li><a rel="nofollow" href="/contact/">Contact</a></li>
+       </ul>
+      </nav>
+      <nav id="sub-nav">
+	<div class="social">
+          <a class="github" href="https://github.com/maciejkus" title="GitHub">GitHub</a>
+          <a class="linkedin" href="http://www.linkedin.com/in/maciejkus" title="LinkedIn">LinkedIn</a>
+	</div>
+       </nav>
+     </div> <!--end linkContent-->
+    </div>    
+    </div> <!-- end sticky div-->
+
+    <div id="projects">
+      <a name="projects"></a>
+      <div class="bigTitle">Projects</div>
+      <ul>
+
+        <li><a href="http://he.net/3d-map/">
+         <div class="project">
+          <div class="projInfo">
+            <span class="projTitle">3D Network Map</span>
+            An Interactive 3D map. Threejs, Tweenjs, Python.
+          </div>
+          <span class="projImgHolder"><img class="projImg" alt="3d map screenshot" src="index/images/3d-280.png"></img>
+         </div>
+         </a></li>
+
+
+        <li><a href="http://bayareapunk.com/database/">
+         <div class="project">
+          <div class="projInfo">
+            <span class="projTitle">Punk Database</span>
+            Full-stack app displaying punk rock concert history. Data scraped with a custom Node script. React, Node, Mongo 
+          </div>
+          <span class="projImgHolder"><img class="projImg" alt="punk database screenshot" src="index/images/punk280.png"></img>
+         </div>
+         </a></li>
+
+        <li><a href="http://smoothiegains.com/brogress/">
+         <div class="project">
+          <div class="projInfo">
+            <span class="projTitle">Fitness Photo Search</span>
+            Search through fitness photos. 
+            Python to scrape the data from Reddit, then Angular and Bootstrap to build the app.
+          </div>
+          <span class="projImgHolder"><img class="projImg" alt="fitness search screenshot" src="index/images/smoothie280.png"></img>
+         </div>
+         </a></li>
+
+        <li><a href="/canvas-game/">
+         <div class="project">
+          <div class="projInfo">
+            <span class="projTitle">Canvas Game</span>
+            This is an original game made in pure HTML5/Canvas.
+          </div>
+          <span class="projImgHolder"><img class="projImg" alt="Canvas game screenshot" src="index/images/canvas-game280.png"></img>
+         </div>
+         </a></li>
+
+        <li><a href="/bike-bart/">
+         <div class="project">
+          <div class="projInfo">
+            <span class="projTitle">Bike and Bart</span>
+            Combine cycling and BART. React, Redux, BART API, Google Maps.
+          </div>
+          <span class="projImgHolder"><img class="projImg" alt="bike bart screenshot" src="index/images/bike-bart-280.png"></img>
+         </div>
+         </a></li>
+
+        <li><a href="/tower/">
+         <div class="project">
+          <div class="projInfo">
+            <span class="projTitle">Canvas Tower Defense</span>
+            Tower defense game in pure HTML5/Canvas/Javascript
+          </div>
+          <span class="projImgHolder"><img class="projImg" alt="Canvas tower defense screenshot" src="index/images/tower280.png"></img>
+         </div>
+         </a></li>
+
+        <li><a href="/middle-east-diplomacy/">
+         <div class="project">
+          <div class="projInfo">
+            <span class="projTitle">Diplomacy Game</span>
+            An original game using an interactive SVG map. 
+            jQuery and Raphael.js
+          </div>
+          <span class="projImgHolder"><img class="projImg" alt="diplomacy game screenshot" src="index/images/diplomacy280.png"></img>
+         </div>
+         </a></li>
+
+        <li><a href="http://www.jsbreakouts.org/enchantjs/index.html">
+         <div class="project">
+          <div class="projInfo">
+            <span class="projTitle">Breakout Game</span>
+            enchant.js version of the classic breakout game
+          </div>
+          <span class="projImgHolder"><img class="projImg" alt="breakout screenshot" src="index/images/breakouts280.png"></img>
+         </div>
+         </a></li>
+      </ul>    
+    </div>    
+
+    <script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(["_setAccount", "UA-50427363-3"]);
+	_gaq.push(["_trackPageview"]);
+
+	(function() {
+		var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+		ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+		var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+	})();
+    </script>
+  </body>
+</html>
