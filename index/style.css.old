@@ -147,62 +147,66 @@ ul {
 }
 
 #projects {
-  background: white;
-  max-width: 800px;
+  background-color: white;
+  float: left;
+  width: 70%;
+  max-width: 900px;
   height: 100%;
   height: 100vh;
   min-height: 400px;
-  text-align: center;
-  margin: 1em auto;
 }
 
 #projects li {
-  width: 700px;
-  max-width: 90%;
-  background: #ffdddd;
+  float: left;
+  width: 300px;
+  max-width: 40%;
   margin: 1em;
 }
 
-#projects a {
-  color: #000;
-  text-decoration: underline;
-}
-
 .project {
-  height: 358px;
+  position: relative;
+  height: 300px;
   border: 2px solid #991f00;
-  overflow: hidden;
-}
-
-.projImgHolder {
-  float: left;
-  width: 40%;
 }
 
 .projImgHolder img {
+  width: 100%;
   max-width: 100%;
-  border: 1px solid black;
+  height: 100%;
 }
 
 .projTitle {
   display: block;
   text-align: center;
-  font-size: 32px;
-  margin: 20px;
-  color: #222;
-}
-
-.projTitle:hover {
-  color: #000;
+  font-size: 1.5em;
+  margin: 1em;
 }
 
 .projInfo {
-  color: #222;
-  text-align: left;
-  float: right;
-  width: 59%;
+  width: 100%;
+  position: absolute;
+  background-color: #b32400;
+  color: black;
+  text-align: center;
+  bottom: 100px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: all 1.8s ease 0s;
+  opacity: 0;
 }
 
+.project:hover > .projInfo {
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: all 0.6s ease 0s;
+  bottom: 0px;
+  opacity: 0.9;
+}
 
 @media (max-width: 1018px) {
   .headContent {
@@ -242,15 +246,6 @@ ul {
     font-size: 1.2em;
   }
 
-  .projTitle {
-    text-decoration: underline;  
-  }
-  
-  .projImg {
-    width: 0;
-    display: none;
-  }
-
   #projects li {
     max-width: 100%;
     margin: 1em auto;
@@ -260,7 +255,7 @@ ul {
   .projInfo {
     bottom: 0;
     min-height: 100%;
-    width: 100%;
+    opacity: 0.85;
   }
 
   #links {
@@ -269,8 +264,8 @@ ul {
   
   #head {
     height: auto;
-    background: #eee;
-    color: #222;
+    background: white;
+    color: black;
   }
   
   a {
