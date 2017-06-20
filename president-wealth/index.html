@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Presidential Wealth Visualization</title>
+    <meta name="description" content="A visual display of presidential wealth, from Washington to Trump.">
+    <link rel='stylesheet' type='text/css' href='/styles/style.css'>
+    <style>
+    html, body {
+        background-color: #f1f1f2; 
+    }
+    .toolTip {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: absolute;
+        display: none;
+        width: auto;
+        height: auto;
+        background: none repeat scroll 0 0 white;
+        border: 0 none;
+        border-radius: 8px 8px 8px 8px;
+        box-shadow: -3px 3px 15px #888888;
+        color: black;
+        font: 12px sans-serif;
+        padding: 5px;
+        text-align: center;
+    }
+    .bar {
+        fill: #9494b8;
+        stroke: #1f1f2e;
+    }
+    .rep {
+        fill: #ff6666;
+        stroke: #b30000;
+    }
+    .dem {
+        fill: #6666ff;
+        stroke: #0000b3;
+    }
+    #selectBars {
+      display: block; 
+      padding: 1em;
+      margin-left: 4em;
+    }
+    ul.share-buttons{
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.share-buttons li{
+      display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+      position: absolute;
+      clip: rect(1px 1px 1px 1px);
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0;
+      border: 0;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+    }
+    .content {
+      max-width: 800px;
+      margin: auto; 
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="content">
+      <div id='selectBars'>
+      <select id='selectOrder'>
+        <option value='wealth'>By Wealth</option>
+        <option value='date'>By Inaguration Date</option>
+        <option value='party'>By Party</option>
+      </select>
+      </div>
+   
+      <svg width="660" height="400"></svg>
+      <div class='content'>
+        The above data is taken from Wikipedia's <a href="https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States_by_net_worth">List of Presidents of the United States by net worth</a>. I believe most of the data comes from a <a href="http://247wallst.com/banking-finance/2010/05/17/the-net-worth-of-the-american-presidents-washington-to-obama/">24/7 Wall St article</a>  from 2010. 
+        <p>
+          The above article has some details for each president, including how they made most of their money. Most inherited their money, but not all. Some of this wealth is actually the wealth of the president after leaving office. Many modern day presidents such as Bill Clinton, Barack Obama and Gerald Ford only made their millions after leaving office (from book deals).
+          <p>
+            Republican presidents have a total of $3,847 million dollars net worth while Democratic presidents have a total of $1,467 million dollars net worth (in 2016 dollars). 
+
+      <ul class="share-buttons">
+          <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmaciejkus.com%2Fpresident-wealth%2F&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="images/flat_web_icon_set/inverted/Facebook.png"></a></li>
+            <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fmaciejkus.com%2Fpresident-wealth%2F&text=:%20http%3A%2F%2Fmaciejkus.com%2Fpresident-wealth%2F" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="images/flat_web_icon_set/inverted/Twitter.png"></a></li>
+          </ul>
+      </div>
+    </div>    
+    <script src="d3.v4.min.js"></script>
+    <script src="pres.js"></script>
+  </body>
+</html>
