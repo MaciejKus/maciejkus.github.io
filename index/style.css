@@ -17,9 +17,9 @@ ul {
 
 #head {
   font-size: 1.3em; 
-  background-color: black;
+  background-color: #4d4343;
   color: white;
-  background: url('images/tracks2.jpg')  no-repeat scroll center center;
+  /* background: url('images/tracks2.jpg')  no-repeat scroll center center; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
