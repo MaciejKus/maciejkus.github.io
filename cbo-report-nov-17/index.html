@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Republican Tax Law Changes Graph</title>
+<meta name="description" content="Graph representing the changes to different income classes under the Republican tax law.">
+<link rel="stylesheet" href="style.css" />
+<style>
+  footer {
+    margin-top: 50px;
+  }
+</style>
+</head>
+<body>
+  <canvas id="CBOchart"></canvas>
+  <footer>
+    Note: the above values are reversed from the CBO table so that net gains are positive and net losses are negative. The CBO is looking at things from the government's point of view.
+    <br>
+    In the above chart, the bars with the highest positive value are the income groups who gain the most from the Republican tax law.
+    <p>
+    source: <a href="https://www.cbo.gov/system/files/115th-congress-2017-2018/costestimate/reconciliationrecommendationssfc.pdf">https://www.cbo.gov/system/files/115th-congress-2017-2018/costestimate/reconciliationrecommendationssfc.pdf</a>
+  </footer>
+  <script src="Chart.min.js"></script>
+  <script src="CBOscript.js"></script>
+</body>
